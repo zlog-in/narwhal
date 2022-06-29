@@ -159,7 +159,7 @@ class LocalCommittee(Committee):
         assert all(isinstance(x, str) for x in names)
         assert isinstance(port, int)
         assert isinstance(workers, int) and workers > 0
-        addresses = OrderedDict((x, [f'127.0.0.1']*(1+workers)) for x in names)   # f'node-{names.index(x)}.mpc.dsn.kastel.kit.edu'
+        addresses = OrderedDict((x, [f'node-{names.index(x)}.mpc.dsn.kastel.kit.edu']*(1+workers)) for x in names)   # f'node-{names.index(x)}.mpc.dsn.kastel.kit.edu'
         print("Committee IDs and addresses")
         print(addresses, port)
         super().__init__(addresses, port)

@@ -74,8 +74,8 @@ class LocalBench:
             print(f'name and key for node {node_i}:')
             names = [x.name for x in keys]
             secrets = [x.secret for x in keys]
-            print(names[node_i])
-            print(secrets[node_i])
+            #print(names[node_i])
+            #print(secrets[node_i])
             
             #sleep(3)
             committee = LocalCommittee(names, self.BASE_PORT, self.workers, nodes)
