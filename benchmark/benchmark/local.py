@@ -67,7 +67,7 @@ class LocalBench:
             #print(key_files)
             for filename in key_files:
                 cmd = CommandMaker.generate_key(filename).split()
-                #subprocess.run(cmd, check=True)    # ./node generate_keys --filename .node-0.json
+                subprocess.run(cmd, check=True)    # ./node generate_keys --filename .node-0.json
                 keys += [Key.from_file(filename)]
 
             node_i = int(input("Please input node index:"))

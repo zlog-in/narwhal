@@ -7,7 +7,7 @@
 .idea/*
 rust/.idea/*
 .db-*
-.logs/*
+.logs/*.log
 
 target/
 !/**/src/**/target/
