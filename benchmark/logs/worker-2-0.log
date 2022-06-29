@@ -1,0 +1,7 @@
+[2022-06-29T19:02:55.795Z INFO  worker::worker] Worker 0 listening to primary messages on 0.0.0.0:8012
+[2022-06-29T19:02:55.795Z DEBUG network::receiver] Listening on 0.0.0.0:8012
+[2022-06-29T19:02:55.795Z DEBUG network::receiver] Listening on 0.0.0.0:8013
+[2022-06-29T19:02:55.795Z INFO  worker::worker] Worker 0 listening to client transactions on 0.0.0.0:8013
+[2022-06-29T19:02:55.795Z DEBUG network::receiver] Listening on 0.0.0.0:8014
+[2022-06-29T19:02:55.795Z INFO  worker::worker] Worker 0 listening to worker messages on 0.0.0.0:8014
+[2022-06-29T19:02:55.795Z INFO  worker::worker] Worker 0 successfully booted on 129.13.88.184

@@ -1,0 +1,4 @@
+[2022-06-29T19:02:55.548Z INFO  benchmark_client] Node address: 129.13.88.185:8018
+[2022-06-29T19:02:55.548Z INFO  benchmark_client] Transactions size: 512 B
+[2022-06-29T19:02:55.548Z INFO  benchmark_client] Transactions rate: 7500 tx/s
+[2022-06-29T19:02:55.548Z INFO  benchmark_client] Waiting for all nodes to be online...
