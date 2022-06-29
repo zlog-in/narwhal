@@ -1,4 +1,3 @@
-*.json
 .DS_Store
 .storage_*
 .*storage*
@@ -7,7 +6,7 @@
 .idea/*
 rust/.idea/*
 .db-*
-
+benchmark/logs/*
 target/
 !/**/src/**/target/
 .test_*

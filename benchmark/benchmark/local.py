@@ -89,12 +89,13 @@ class LocalBench:
 
             # Run the clients (they will wait for the nodes to be ready).
             workers_addresses = committee.workers_addresses(self.faults)
+            
             print("workers_address")
             print(workers_addresses)
             rate_share = ceil(rate / committee.workers())
             for i, addresses in enumerate(workers_addresses):
-                print("addresses:")
-                print(addresses)
+                #print("addresses:")
+                #print(addresses)
                 for (id, address) in addresses:
                     print("worker address")
                     print(address)
@@ -104,8 +105,8 @@ class LocalBench:
                         rate_share,
                         [x for y in workers_addresses for _, x in y] 
                     )
-                    print("cmd for running client")
-                    print(cmd)
+                    #print("cmd for running client")
+                    #print(cmd)
                     log_file = PathMaker.client_log_file(i, id)
                     self._background_run(cmd, log_file)
             

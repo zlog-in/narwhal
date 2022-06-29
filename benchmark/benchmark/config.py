@@ -43,7 +43,7 @@ class Committee:
         }
     '''
 
-    def __init__(self, addresses, base_port):
+    def __init__(self, addresses, base_port, local):
         ''' The `addresses` field looks as follows:
             { 
                 "name": ["host", "host", ...],
@@ -63,29 +63,80 @@ class Committee:
 
         port = base_port
         self.json = {'authorities': OrderedDict()}
-        for name, hosts in addresses.items():
-            host = hosts.pop(0)
-            primary_addr = {
-                'primary_to_primary': f'{host}:{port}',
-                'worker_to_primary': f'{host}:{port + 1}'
-            }
-            
-            port += 2
-
-            workers_addr = OrderedDict()
-            for j, host in enumerate(hosts):
-                workers_addr[j] = {
-                    'primary_to_worker': f'{host}:{port}',
-                    'transactions': f'{host}:{port + 1}',
-                    'worker_to_worker': f'{host}:{port + 2}',
+        
+        if local == 0:
+            for name, hosts in addresses.items():
+                host = hosts.pop(0)
+                primary_addr = {
+                    'primary_to_primary': f'{host}:{port}',
+                    'worker_to_primary': f'{host}:{port + 1}'
                 }
-                port +=3
+                
+                
 
-            self.json['authorities'][name] = {
-                'stake': 1,
-                'primary': primary_addr,
-                'workers': workers_addr
-            }
+                workers_addr = OrderedDict()
+                for j, host in enumerate(hosts):
+                    workers_addr[j] = {
+                        'primary_to_worker': f'{host}:{port+2}',
+                        'transactions': f'{host}:{port + 3}',
+                        'worker_to_worker': f'{host}:{port + 4}',
+                    }
+
+                self.json['authorities'][name] = {
+                    'stake': 1,
+                    'primary': primary_addr,
+                    'workers': workers_addr
+                }
+        """
+        if local == 0:
+            for name, hosts in addresses.items():
+                host = hosts.pop(0)
+                primary_addr = {
+                    'primary_to_primary': f'{host}:{port}',
+                    'worker_to_primary': f'{host}:{port + 1}'
+                }
+                
+                port += 2
+
+                workers_addr = OrderedDict()
+                for j, host in enumerate(hosts):
+                    workers_addr[j] = {
+                        'primary_to_worker': f'{host}:{port}',
+                        'transactions': f'{host}:{port + 1}',
+                        'worker_to_worker': f'{host}:{port + 2}',
+                    }
+                    port +=3
+
+                self.json['authorities'][name] = {
+                    'stake': 1,
+                    'primary': primary_addr,
+                    'workers': workers_addr
+                }
+        """
+        if local == 1:
+            for name, hosts in addresses.items():
+                host = hosts.pop(0)
+                primary_addr = {
+                    'primary_to_primary': f'{host}:{port}',
+                    'worker_to_primary': f'{host}:{port + 1}'
+                }
+                
+                port += 2
+
+                workers_addr = OrderedDict()
+                for j, host in enumerate(hosts):
+                    workers_addr[j] = {
+                        'primary_to_worker': f'{host}:{port}',
+                        'transactions': f'{host}:{port + 1}',
+                        'worker_to_worker': f'{host}:{port + 2}',
+                    }
+                    port +=3
+
+                self.json['authorities'][name] = {
+                    'stake': 1,
+                    'primary': primary_addr,
+                    'workers': workers_addr
+                }
 
     def primary_addresses(self, faults=0):
         ''' Returns an ordered list of primaries' addresses. '''
@@ -165,7 +216,7 @@ class LocalCommittee(Committee):
             addresses = OrderedDict((x, [f'129.13.88.18{names.index(x)+2}']*(1+workers)) for x in names)   # 129.13.88.18{names.index(x)+2}
         print("Committee IDs and addresses")
         print(addresses, port)
-        super().__init__(addresses, port)
+        super().__init__(addresses, port, local)
         
 
 
