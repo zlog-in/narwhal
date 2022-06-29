@@ -154,12 +154,15 @@ class Committee:
 
 
 class LocalCommittee(Committee):
-    def __init__(self, names, port, workers, nodes):
+    def __init__(self, names, port, workers, nodes, local):
         assert isinstance(names, list)
         assert all(isinstance(x, str) for x in names)
         assert isinstance(port, int)
         assert isinstance(workers, int) and workers > 0
-        addresses = OrderedDict((x, [f'129.13.88.18{names.index(x)+2}']*(1+workers)) for x in names)   # 129.13.88.18{names.index(x)+2}
+        if local == 1:
+            addresses = OrderedDict((x, [f'127.0.0.1']*(1+workers)) for x in names)
+        else:
+            addresses = OrderedDict((x, [f'129.13.88.18{names.index(x)+2}']*(1+workers)) for x in names)   # 129.13.88.18{names.index(x)+2}
         print("Committee IDs and addresses")
         print(addresses, port)
         super().__init__(addresses, port)

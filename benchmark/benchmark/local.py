@@ -60,14 +60,15 @@ class LocalBench:
             subprocess.run([cmd], shell=True)
 
             # Generate configuration files.
-        
+            local = int(input("Is it local?"))
             keys = []
             key_files = [PathMaker.key_file(i) for i in range(nodes)]  # .node-i.json
             #print("key_files:") ['.node-0.json', '.node-1.json', '.node-2.json', '.node-3.json']
             #print(key_files)
             for filename in key_files:
                 cmd = CommandMaker.generate_key(filename).split()
-                subprocess.run(cmd, check=True)    # ./node generate_keys --filename .node-0.json
+                if local:
+                    subprocess.run(cmd, check=True)    # ./node generate_keys --filename .node-0.json
                 keys += [Key.from_file(filename)]
 
             node_i = int(input("Please input node index:"))
@@ -78,7 +79,7 @@ class LocalBench:
             #print(secrets[node_i])
             
             #sleep(3)
-            committee = LocalCommittee(names, self.BASE_PORT, self.workers, nodes)
+            committee = LocalCommittee(names, self.BASE_PORT, self.workers, nodes, local)
             committee.print(PathMaker.committee_file())
             #sleep(3)
             #Z
