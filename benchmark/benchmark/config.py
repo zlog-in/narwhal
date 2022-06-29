@@ -1,6 +1,7 @@
 # Copyright(C) Facebook, Inc. and its affiliates.
 from json import dump, load
 from collections import OrderedDict
+from traceback import print_tb
 
 
 class ConfigError(Exception):
@@ -68,6 +69,7 @@ class Committee:
                 'primary_to_primary': f'{host}:{port}',
                 'worker_to_primary': f'{host}:{port + 1}'
             }
+            
             port += 2
 
             workers_addr = OrderedDict()
@@ -77,7 +79,7 @@ class Committee:
                     'transactions': f'{host}:{port + 1}',
                     'worker_to_worker': f'{host}:{port + 2}',
                 }
-                port += 3
+                port +=3
 
             self.json['authorities'][name] = {
                 'stake': 1,
@@ -152,13 +154,16 @@ class Committee:
 
 
 class LocalCommittee(Committee):
-    def __init__(self, names, port, workers):
+    def __init__(self, names, port, workers, nodes):
         assert isinstance(names, list)
         assert all(isinstance(x, str) for x in names)
         assert isinstance(port, int)
         assert isinstance(workers, int) and workers > 0
-        addresses = OrderedDict((x, ['127.0.0.1']*(1+workers)) for x in names)
+        addresses = OrderedDict((x, [f'127.0.0.1']*(1+workers)) for x in names)   # f'node-{names.index(x)}.mpc.dsn.kastel.kit.edu'
+        print("Committee IDs and addresses")
+        print(addresses, port)
         super().__init__(addresses, port)
+        
 
 
 class NodeParameters:
@@ -177,6 +182,10 @@ class NodeParameters:
 
         if not all(isinstance(x, int) for x in inputs):
             raise ConfigError('Invalid parameters type')
+        
+        #Z
+        print("Node parameters:")
+        print(json)
 
         self.json = json
 
@@ -224,6 +233,10 @@ class BenchParameters:
 
         if min(self.nodes) <= self.faults:
             raise ConfigError('There should be more nodes than faults')
+        
+        #Z
+        print("Bench parameters:")
+        print(json)
 
 
 class PlotParameters:
@@ -268,6 +281,10 @@ class PlotParameters:
             raise ConfigError(
                 'Either the "nodes" or the "workers can be a list (not both)'
             )
+        
+        #Z
+        print("Plot paramenters:")
+        print(json)
 
     def scalability(self):
         return len(self.workers) > 1

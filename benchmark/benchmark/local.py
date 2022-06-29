@@ -11,7 +11,7 @@ from benchmark.utils import Print, BenchError, PathMaker
 
 
 class LocalBench:
-    BASE_PORT = 3000
+    BASE_PORT = 8000
 
     def __init__(self, bench_parameters_dict, node_parameters_dict):
         try:
@@ -44,13 +44,13 @@ class LocalBench:
 
         try:
             Print.info('Setting up testbed...')
-            nodes, rate = self.nodes[0], self.rate[0]
-
-            # Cleanup all files.
+            nodes, rate = self.nodes[0], self.rate[0]   #self is the fabfile.py
+            print("remove logs")
             cmd = f'{CommandMaker.clean_logs()} ; {CommandMaker.cleanup()}'
+            #cmd = f'{CommandMaker.clean_logs()}'
             subprocess.run([cmd], shell=True, stderr=subprocess.DEVNULL)
-            sleep(0.5)  # Removing the store may take time.
-
+            # Removing the store may take time.
+            sleep(0.5)
             # Recompile the latest code.
             cmd = CommandMaker.compile().split()
             subprocess.run(cmd, check=True, cwd=PathMaker.node_crate_path())
@@ -60,33 +60,56 @@ class LocalBench:
             subprocess.run([cmd], shell=True)
 
             # Generate configuration files.
+        
             keys = []
-            key_files = [PathMaker.key_file(i) for i in range(nodes)]
+            key_files = [PathMaker.key_file(i) for i in range(nodes)]  # .node-i.json
+            #print("key_files:") ['.node-0.json', '.node-1.json', '.node-2.json', '.node-3.json']
+            #print(key_files)
             for filename in key_files:
                 cmd = CommandMaker.generate_key(filename).split()
-                subprocess.run(cmd, check=True)
+                #subprocess.run(cmd, check=True)    # ./node generate_keys --filename .node-0.json
                 keys += [Key.from_file(filename)]
 
+            node_i = int(input("Please input node index:"))
+            print(f'name and key for node {node_i}:')
             names = [x.name for x in keys]
-            committee = LocalCommittee(names, self.BASE_PORT, self.workers)
+            secrets = [x.secret for x in keys]
+            print(names[node_i])
+            print(secrets[node_i])
+            
+            #sleep(3)
+            committee = LocalCommittee(names, self.BASE_PORT, self.workers, nodes)
             committee.print(PathMaker.committee_file())
-
+            #sleep(3)
+            #Z
+           
             self.node_parameters.print(PathMaker.parameters_file())
+
 
             # Run the clients (they will wait for the nodes to be ready).
             workers_addresses = committee.workers_addresses(self.faults)
+            print("workers_address")
+            print(workers_addresses)
             rate_share = ceil(rate / committee.workers())
             for i, addresses in enumerate(workers_addresses):
+                print("addresses:")
+                print(addresses)
                 for (id, address) in addresses:
+                    print("worker address")
+                    print(address)
                     cmd = CommandMaker.run_client(
                         address,
                         self.tx_size,
                         rate_share,
-                        [x for y in workers_addresses for _, x in y]
+                        [x for y in workers_addresses for _, x in y] 
                     )
+                    print("cmd for running client")
+                    print(cmd)
                     log_file = PathMaker.client_log_file(i, id)
                     self._background_run(cmd, log_file)
+            
 
+            
             # Run the primaries (except the faulty ones).
             for i, address in enumerate(committee.primary_addresses(self.faults)):
                 cmd = CommandMaker.run_primary(
@@ -96,6 +119,8 @@ class LocalBench:
                     PathMaker.parameters_file(),
                     debug=debug
                 )
+                #print("cmd for running primaries")
+                #print(cmd)
                 log_file = PathMaker.primary_log_file(i)
                 self._background_run(cmd, log_file)
 
@@ -108,8 +133,10 @@ class LocalBench:
                         PathMaker.db_path(i, id),
                         PathMaker.parameters_file(),
                         id,  # The worker's id.
-                        debug=debug
+                        debug=debug                       
                     )
+                    #print("cmd for works")
+                    #print(cmd)
                     log_file = PathMaker.worker_log_file(i, id)
                     self._background_run(cmd, log_file)
 
@@ -117,7 +144,7 @@ class LocalBench:
             Print.info(f'Running benchmark ({self.duration} sec)...')
             sleep(self.duration)
             self._kill_nodes()
-
+            print("Benchmarking ends")
             # Parse logs and return the parser.
             Print.info('Parsing logs...')
             return LogParser.process(PathMaker.logs_path(), faults=self.faults)
