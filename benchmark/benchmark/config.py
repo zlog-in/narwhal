@@ -63,7 +63,7 @@ class Committee:
 
         port = base_port
         self.json = {'authorities': OrderedDict()}
-        """
+        
         if local == 0:
             for name, hosts in addresses.items():
                 host = hosts.pop(0)
@@ -112,7 +112,7 @@ class Committee:
                     'primary': primary_addr,
                     'workers': workers_addr
                 }
-        
+        """
         if local == 1:
             for name, hosts in addresses.items():
                 host = hosts.pop(0)
