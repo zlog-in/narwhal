@@ -13,7 +13,7 @@ from benchmark.utils import Print, BenchError, PathMaker
 
 
 class LocalBench:
-    BASE_PORT = 8000
+    BASE_PORT = 9000
 
     def __init__(self, bench_parameters_dict, node_parameters_dict):
         try:
@@ -45,14 +45,17 @@ class LocalBench:
         self._kill_nodes()
 
         try:
+            
             Print.info('Setting up testbed...')
             nodes, rate = self.nodes[0], self.rate[0]   #self is the fabfile.py
             print("remove logs")
+            
             cmd = f'{CommandMaker.clean_logs()} ; {CommandMaker.cleanup()}'
             #cmd = f'{CommandMaker.clean_logs()}'
             subprocess.run([cmd], shell=True, stderr=subprocess.DEVNULL)
             # Removing the store may take time.
             sleep(0.5)
+            
             # Recompile the latest code.
             cmd = CommandMaker.compile().split()
             subprocess.run(cmd, check=True, cwd=PathMaker.node_crate_path())
@@ -226,7 +229,9 @@ class LocalBench:
             # Wait for all transactions to be processed.
             Print.info(f'Running benchmark ({self.duration} sec)...')
             sleep(self.duration)
+            
             self._kill_nodes()
+            
             print("Benchmarking ends")
             # Parse logs and return the parser.
             Print.info('Parsing logs...')

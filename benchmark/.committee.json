@@ -2,57 +2,57 @@
     "authorities": {
         "/fQ7pHcYLG1436IO5syCxiXEodDfeWk1pMVkMY9lmYw=": {
             "primary": {
-                "primary_to_primary": "127.0.0.1:8010",
-                "worker_to_primary": "127.0.0.1:8011"
+                "primary_to_primary": "127.0.0.1:9010",
+                "worker_to_primary": "127.0.0.1:9011"
             },
             "stake": 1,
             "workers": {
                 "0": {
-                    "primary_to_worker": "127.0.0.1:8012",
-                    "transactions": "127.0.0.1:8013",
-                    "worker_to_worker": "127.0.0.1:8014"
+                    "primary_to_worker": "127.0.0.1:9012",
+                    "transactions": "127.0.0.1:9013",
+                    "worker_to_worker": "127.0.0.1:9014"
                 }
             }
         },
         "1jBE9eojeq41AbsATCpRVBe97R108Ik/kF7mK5p6KmM=": {
             "primary": {
-                "primary_to_primary": "127.0.0.1:8000",
-                "worker_to_primary": "127.0.0.1:8001"
+                "primary_to_primary": "127.0.0.1:9000",
+                "worker_to_primary": "127.0.0.1:9001"
             },
             "stake": 1,
             "workers": {
                 "0": {
-                    "primary_to_worker": "127.0.0.1:8002",
-                    "transactions": "127.0.0.1:8003",
-                    "worker_to_worker": "127.0.0.1:8004"
+                    "primary_to_worker": "127.0.0.1:9002",
+                    "transactions": "127.0.0.1:9003",
+                    "worker_to_worker": "127.0.0.1:9004"
                 }
             }
         },
         "5SPFL4RJT+6lZ6/MvZFLecuSlHTnldpb+047jqlkv+4=": {
             "primary": {
-                "primary_to_primary": "127.0.0.1:8005",
-                "worker_to_primary": "127.0.0.1:8006"
+                "primary_to_primary": "127.0.0.1:9005",
+                "worker_to_primary": "127.0.0.1:9006"
             },
             "stake": 1,
             "workers": {
                 "0": {
-                    "primary_to_worker": "127.0.0.1:8007",
-                    "transactions": "127.0.0.1:8008",
-                    "worker_to_worker": "127.0.0.1:8009"
+                    "primary_to_worker": "127.0.0.1:9007",
+                    "transactions": "127.0.0.1:9008",
+                    "worker_to_worker": "127.0.0.1:9009"
                 }
             }
         },
         "mlDsekhAdM8NMvAcsAalBlksXIhTmsWtJiHfpZzPF3E=": {
             "primary": {
-                "primary_to_primary": "127.0.0.1:8015",
-                "worker_to_primary": "127.0.0.1:8016"
+                "primary_to_primary": "127.0.0.1:9015",
+                "worker_to_primary": "127.0.0.1:9016"
             },
             "stake": 1,
             "workers": {
                 "0": {
-                    "primary_to_worker": "127.0.0.1:8017",
-                    "transactions": "127.0.0.1:8018",
-                    "worker_to_worker": "127.0.0.1:8019"
+                    "primary_to_worker": "127.0.0.1:9017",
+                    "transactions": "127.0.0.1:9018",
+                    "worker_to_worker": "127.0.0.1:9019"
                 }
             }
         }
