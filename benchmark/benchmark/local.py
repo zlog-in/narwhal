@@ -77,9 +77,9 @@ class LocalBench:
                     print(local)
                 keys += [Key.from_file(filename)]
 
-            node_i = int(input("Please input node index:"))
+            node_i = subprocess.check_output(['tail', '-1', 'index.txt'])
             node_ip = '127.0.0.1'
-            match node_i:
+            match int(node_i):
                 case 0: node_ip = '129.13.88.182'
                 case 1: node_ip = '129.13.88.183'
                 case 2: node_ip = '129.13.88.184'
@@ -91,7 +91,7 @@ class LocalBench:
                 case 8: node_ip = '129.13.88.190' 
                 case 9: node_ip = '129.13.88.180'
             print(node_ip)
-            print(type(node_ip))
+
             #print(f'name and key for node {node_i}:')
             names = [x.name for x in keys]
             secrets = [x.secret for x in keys]

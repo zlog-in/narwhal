@@ -1,6 +1,6 @@
 {
     "authorities": {
-        "N0IfgRSeS2dGQEL/z/PAbNHGQ+UYfRKXlgmNnH8vWKU=": {
+        "0xYAFHKAWmnzPFd9Necx8LX2jHGeB/Fmj+lavL3YcP0=": {
             "primary": {
                 "primary_to_primary": "129.13.88.184:9000",
                 "worker_to_primary": "129.13.88.184:9001"
@@ -14,21 +14,21 @@
                 }
             }
         },
-        "NQ86A7QG1pwZHrUVFL5KSt/E4r6Z0cfrK9D+mYhKInE=": {
+        "Xl2dTEqYO41q4k/1fxZ7ZYQ/FYzyB2c7NwgDm8O/6DQ=": {
             "primary": {
-                "primary_to_primary": "129.13.88.185:9000",
-                "worker_to_primary": "129.13.88.185:9001"
+                "primary_to_primary": "129.13.88.182:9000",
+                "worker_to_primary": "129.13.88.182:9001"
             },
             "stake": 1,
             "workers": {
                 "0": {
-                    "primary_to_worker": "129.13.88.185:9002",
-                    "transactions": "129.13.88.185:9003",
-                    "worker_to_worker": "129.13.88.185:9004"
+                    "primary_to_worker": "129.13.88.182:9002",
+                    "transactions": "129.13.88.182:9003",
+                    "worker_to_worker": "129.13.88.182:9004"
                 }
             }
         },
-        "Tp5HL4OOHbdLvQSX30/Qq4KtL0VEoetQmO9iT2etxKs=": {
+        "l4TjW7fD/aCHpKy8dCGehNy08icKGHivSpFkq3FJSbM=": {
             "primary": {
                 "primary_to_primary": "129.13.88.183:9000",
                 "worker_to_primary": "129.13.88.183:9001"
@@ -42,17 +42,17 @@
                 }
             }
         },
-        "s00Tl9QY1NZBT5Bl+iHrEa+J6uW2pcIXMwYgdd4iSys=": {
+        "zIf3AN/Jl0Q+rWeyFO30hGY4ZBX7AZJ5wBjvEs0r2ZU=": {
             "primary": {
-                "primary_to_primary": "129.13.88.182:9000",
-                "worker_to_primary": "129.13.88.182:9001"
+                "primary_to_primary": "129.13.88.185:9000",
+                "worker_to_primary": "129.13.88.185:9001"
             },
             "stake": 1,
             "workers": {
                 "0": {
-                    "primary_to_worker": "129.13.88.182:9002",
-                    "transactions": "129.13.88.182:9003",
-                    "worker_to_worker": "129.13.88.182:9004"
+                    "primary_to_worker": "129.13.88.185:9002",
+                    "transactions": "129.13.88.185:9003",
+                    "worker_to_worker": "129.13.88.185:9004"
                 }
             }
         }
