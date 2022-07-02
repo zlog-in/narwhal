@@ -77,9 +77,9 @@ class LocalBench:
                     print(local)
                 keys += [Key.from_file(filename)]
 
-            node_i = subprocess.check_output(['tail', '-1', 'index.txt'])
+            node_i = int(subprocess.check_output(['tail', '-1', 'index.txt']))
             node_ip = '127.0.0.1'
-            match int(node_i):
+            match node_i:
                 case 0: node_ip = '129.13.88.182'
                 case 1: node_ip = '129.13.88.183'
                 case 2: node_ip = '129.13.88.184'
