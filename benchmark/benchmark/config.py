@@ -1,4 +1,5 @@
 # Copyright(C) Facebook, Inc. and its affiliates.
+from audioop import add
 from json import dump, load
 from collections import OrderedDict
 from traceback import print_tb
@@ -65,11 +66,20 @@ class Committee:
         self.json = {'authorities': OrderedDict()}
         
         if local == 0:
+            round = 0
+            index = 0
             for name, hosts in addresses.items():
+                
+                print(len(addresses))
+                
+                print("name, hosts:")
+                print(name)
+                print(hosts)
                 host = hosts.pop(0)
+                print(host)
                 primary_addr = {
-                    'primary_to_primary': f'{host}:{port}',
-                    'worker_to_primary': f'{host}:{port + 1}'
+                    'primary_to_primary': f'{host}:{port + round}',
+                    'worker_to_primary': f'{host}:{port + round + 1}'
                 }
                 
                 
@@ -77,9 +87,9 @@ class Committee:
                 workers_addr = OrderedDict()
                 for j, host in enumerate(hosts):
                     workers_addr[j] = {
-                        'primary_to_worker': f'{host}:{port+2}',
-                        'transactions': f'{host}:{port + 3}',
-                        'worker_to_worker': f'{host}:{port + 4}',
+                        'primary_to_worker': f'{host}:{port+ round + 2}',
+                        'transactions': f'{host}:{port + round + 3}',
+                        'worker_to_worker': f'{host}:{port + round + 4}',
                     }
 
                 self.json['authorities'][name] = {
@@ -87,32 +97,11 @@ class Committee:
                     'primary': primary_addr,
                     'workers': workers_addr
                 }
-        """
-        if local == 0:
-            for name, hosts in addresses.items():
-                host = hosts.pop(0)
-                primary_addr = {
-                    'primary_to_primary': f'{host}:{port}',
-                    'worker_to_primary': f'{host}:{port + 1}'
-                }
-                
-                port += 2
+                if index % 10 == 9:
+                    round = round + 5
+                index = index + 1
+                    
 
-                workers_addr = OrderedDict()
-                for j, host in enumerate(hosts):
-                    workers_addr[j] = {
-                        'primary_to_worker': f'{host}:{port}',
-                        'transactions': f'{host}:{port + 1}',
-                        'worker_to_worker': f'{host}:{port + 2}',
-                    }
-                    port +=3
-
-                self.json['authorities'][name] = {
-                    'stake': 1,
-                    'primary': primary_addr,
-                    'workers': workers_addr
-                }
-        """
         if local == 1:
             for name, hosts in addresses.items():
                 host = hosts.pop(0)
@@ -205,7 +194,7 @@ class Committee:
 
 
 class LocalCommittee(Committee):
-    def __init__(self, names, port, workers, nodes, local):
+    def __init__(self, names, port, workers, nodes, local, N):
         assert isinstance(names, list)
         assert all(isinstance(x, str) for x in names)
         assert isinstance(port, int)
@@ -215,14 +204,14 @@ class LocalCommittee(Committee):
             #addresses = OrderedDict((x, [f'127.0.0.1']*(1+workers)) for x in names)
             for x in names:
                 addresses[x] = [f'127.0.0.1']*(1+workers)
-                print(names.index(x))
+                #print(names.index(x))
         else:
             #addresses = OrderedDict((x, [f'129.13.88.1{names.index(x)+82}']*(1+workers)) for x in names)   # 129.13.88.18{names.index(x)+2}
-            for x in names:
-                if names.index(x) < (len(names) -1):
-                    addresses[x] = [f'129.13.88.1{names.index(x)+82}']*(1+workers)
+            for x in names:                
+                if (names.index(x) % 10) != 9:
+                    addresses[x] = [f'129.13.88.1{(names.index(x) % 10) +82}']*(1+workers)
                 else:
-                    addresses[x] = [f'129.13.88.1{names.index(x)+71}']*(1+workers)
+                    addresses[x] = [f'129.13.88.1{(names.index(x) % 10)+71}']*(1+workers)
                     
         print(names)    
         print("Committee IDs and addresses")
