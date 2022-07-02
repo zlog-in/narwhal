@@ -73,7 +73,7 @@ class LocalBench:
             for filename in key_files:
                 cmd = CommandMaker.generate_key(filename).split()
                 if local:
-                    #subprocess.run(cmd, check=True)    # ./node generate_keys --filename .node-0.json
+                    subprocess.run(cmd, check=True)    # ./node generate_keys --filename .node-0.json
                     print(local)
                 keys += [Key.from_file(filename)]
 
@@ -84,6 +84,12 @@ class LocalBench:
                 case 1: node_ip = '129.13.88.183'
                 case 2: node_ip = '129.13.88.184'
                 case 3: node_ip = '129.13.88.185'
+                case 4: node_ip = '129.13.88.186'
+                case 5: node_ip = '129.13.88.187'
+                case 6: node_ip = '129.13.88.188'
+                case 7: node_ip = '129.13.88.189'
+                case 8: node_ip = '129.13.88.190' 
+                case 9: node_ip = '129.13.88.180'
             print(node_ip)
             print(type(node_ip))
             #print(f'name and key for node {node_i}:')
