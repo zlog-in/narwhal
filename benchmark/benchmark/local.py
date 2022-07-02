@@ -52,6 +52,7 @@ class LocalBench:
             
             N = int(input("How many clients on each node: "))
             nodes = N * 10
+            duration = int(input("Duration for benchmarking: "))
             
             cmd = f'{CommandMaker.clean_logs()} ; {CommandMaker.cleanup()}'
             #cmd = f'{CommandMaker.clean_logs()}'
@@ -235,8 +236,8 @@ class LocalBench:
                             self._background_run(cmd, log_file)
 
             # Wait for all transactions to be processed.
-            Print.info(f'Running benchmark ({self.duration} sec)...')
-            sleep(self.duration)
+            Print.info(f'Running benchmark ({duration} sec)...')
+            sleep(duration)
             
             self._kill_nodes()
             
