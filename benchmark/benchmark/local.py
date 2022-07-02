@@ -202,7 +202,7 @@ class LocalBench:
                 # Run the primaries (except the faulty ones).
                 for i, address in enumerate(committee.primary_addresses(self.faults)):
                     #print(f'primary index: {i}')
-                    if i == node_i:
+                    if node_i == i % 10:
                         cmd = CommandMaker.run_primary(
                             PathMaker.key_file(i),
                             PathMaker.committee_file(),
@@ -210,16 +210,16 @@ class LocalBench:
                             PathMaker.parameters_file(),
                             debug=debug
                         )
-                        #print("cmd for running primaries")
-                        #print(cmd)
+                        print("cmd for running primaries")
+                        print(cmd)
                         log_file = PathMaker.primary_log_file(i)
-                        #self._background_run(cmd, log_file)
+                        self._background_run(cmd, log_file)
 
                 # Run the workers (except the faulty ones).
                 for i, addresses in enumerate(workers_addresses):
                     #print(f'work index {i}')
             
-                    if node_i == i:
+                    if node_i == i % 10:
                         for (id, address) in addresses:
                             cmd = CommandMaker.run_worker(
                                 PathMaker.key_file(i),
@@ -229,10 +229,10 @@ class LocalBench:
                                 id,  # The worker's id.
                                 debug=debug                       
                             )
-                            #print("cmd for works")
-                            #print(cmd)
+                            print("cmd for works")
+                            print(cmd)
                             log_file = PathMaker.worker_log_file(i, id)
-                            #self._background_run(cmd, log_file)
+                            self._background_run(cmd, log_file)
 
             # Wait for all transactions to be processed.
             Print.info(f'Running benchmark ({self.duration} sec)...')
