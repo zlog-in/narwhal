@@ -53,6 +53,7 @@ class LocalBench:
             N = int(input("How many clients on each node: "))
             nodes = N * 10
             duration = int(input("Duration for benchmarking: "))
+            rate = int(input("Input rate? "))
             
             cmd = f'{CommandMaker.clean_logs()} ; {CommandMaker.cleanup()}'
             #cmd = f'{CommandMaker.clean_logs()}'
