@@ -72,11 +72,11 @@ class Committee:
                 
                 print(len(addresses))
                 
-                print("name, hosts:")
-                print(name)
-                print(hosts)
+                #print("name, hosts:")
+                #print(name)
+                #print(hosts)
                 host = hosts.pop(0)
-                print(host)
+                #print(host)
                 primary_addr = {
                     'primary_to_primary': f'{host}:{port + round}',
                     'worker_to_primary': f'{host}:{port + round + 1}'
@@ -213,9 +213,9 @@ class LocalCommittee(Committee):
                 else:
                     addresses[x] = [f'129.13.88.1{(names.index(x) % 10)+71}']*(1+workers)
                     
-        print(names)    
-        print("Committee IDs and addresses")
-        print(addresses, port)
+        #print(names)    
+        #print("Committee IDs and addresses")
+        #print(addresses, port)
         super().__init__(addresses, port, local)
         
 
@@ -238,8 +238,8 @@ class NodeParameters:
             raise ConfigError('Invalid parameters type')
         
         #Z
-        print("Node parameters:")
-        print(json)
+        #print("Node parameters:")
+        #print(json)
 
         self.json = json
 
@@ -289,8 +289,8 @@ class BenchParameters:
             raise ConfigError('There should be more nodes than faults')
         
         #Z
-        print("Bench parameters:")
-        print(json)
+        #print("Bench parameters:")
+        #print(json)
 
 
 class PlotParameters:

@@ -82,8 +82,8 @@ class LocalBench:
                 keys += [Key.from_file(filename)]
 
             node_i = int(subprocess.check_output(['tail', '-1', 'index.txt']))
-            print("node_i:")
-            print(node_i)
+            #print("node_i:")
+            #print(node_i)
             node_ip = '127.0.0.1'
             match node_i:
                 case 0: node_ip = '129.13.88.182'
@@ -114,8 +114,8 @@ class LocalBench:
                 # Run the clients (they will wait for the nodes to be ready).
                 workers_addresses = committee.workers_addresses(self.faults)
                 
-                print("workers_address")
-                print(workers_addresses)
+                #print("workers_address")
+                #print(workers_addresses)
                 rate_share = ceil(rate / committee.workers())
                 for i, addresses in enumerate(workers_addresses):
                     #print("addresses:")
@@ -170,8 +170,8 @@ class LocalBench:
                 # Run the a client (they will wait for the nodes to be ready).
                 workers_addresses = committee.workers_addresses(self.faults)
                 
-                print("workers_address")
-                print(workers_addresses)
+                #print("workers_address")
+                #print(workers_addresses)
                 rate_share = ceil(rate / committee.workers())
                 for i, addresses in enumerate(workers_addresses):
                     #print("addresses:")
@@ -194,7 +194,7 @@ class LocalBench:
                                 rate_share,
                                 [x for y in workers_addresses for _, x in y] 
                             )
-                            print(f"cmd for running client on node {node_ip}")
+                            print(f"cmd for client on node {node_ip}")
                             print(cmd)
                             log_file = PathMaker.client_log_file(i, id)
                             self._background_run(cmd, log_file)
@@ -212,7 +212,7 @@ class LocalBench:
                             PathMaker.parameters_file(),
                             debug=debug
                         )
-                        print("cmd for running primaries")
+                        print("cmd for primaries")
                         print(cmd)
                         log_file = PathMaker.primary_log_file(i)
                         self._background_run(cmd, log_file)
