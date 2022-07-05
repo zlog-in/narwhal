@@ -70,7 +70,7 @@ class Committee:
             index = 0
             for name, hosts in addresses.items():
                 
-                print(len(addresses))
+                #print(len(addresses))
                 
                 #print("name, hosts:")
                 #print(name)

@@ -102,7 +102,7 @@ class LocalBench:
             #print(names[node_i])
             #print(secrets[node_i])
             
-            #sleep(3)
+            sleep(3)
             committee = LocalCommittee(names, self.BASE_PORT, self.workers, nodes, local, N)
             committee.print(PathMaker.committee_file())
             #sleep(3)
