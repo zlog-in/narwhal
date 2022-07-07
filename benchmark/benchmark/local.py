@@ -49,11 +49,11 @@ class LocalBench:
             Print.info('Setting up testbed...')
             nodes, rate = self.nodes[0], self.rate[0]   #self is the fabfile.py
             print("remove logs")
-            
-            N = int(input("How many clients on each node: "))
+            local = int(input("Is it local?"))
+            N = int(input("How many replicas on each node: "))
             nodes = N * 10
             duration = int(input("Duration for benchmarking: "))
-            rate = int(input("Input rate? "))
+            #rate = int(input("Input rate? "))
             
             cmd = f'{CommandMaker.clean_logs()} ; {CommandMaker.cleanup()}'
             #cmd = f'{CommandMaker.clean_logs()}'
@@ -70,7 +70,7 @@ class LocalBench:
             subprocess.run([cmd], shell=True)
 
             # Generate configuration files.
-            local = int(input("Is it local?"))
+            
             keys = []
             key_files = [PathMaker.key_file(i) for i in range(nodes)]  # .node-i.json
             #print("key_files:") ['.node-0.json', '.node-1.json', '.node-2.json', '.node-3.json']
@@ -102,7 +102,7 @@ class LocalBench:
             #print(names[node_i])
             #print(secrets[node_i])
             
-            sleep(3)
+            #sleep(3)
             committee = LocalCommittee(names, self.BASE_PORT, self.workers, nodes, local, N)
             committee.print(PathMaker.committee_file())
             #sleep(3)
