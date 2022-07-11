@@ -54,7 +54,8 @@ class LocalBench:
             if read == 1:
                 replicas = config['replicas']
                 servers = config['servers']
-                local = config['local']        
+                local = config['local'] 
+                duration = config['duration']       
             nodes = replicas * servers
 
             # Cleanup all files.
@@ -188,8 +189,8 @@ class LocalBench:
                         self._background_run(cmd, log_file)
 
             # Wait for all transactions to be processed.
-            Print.info(f'Running benchmark ({self.duration} sec)...')
-            sleep(self.duration)
+            Print.info(f'Running benchmark ({duration} sec)...')
+            sleep(duration)
             self._kill_nodes()
 
             # Parse logs and return the parser.
