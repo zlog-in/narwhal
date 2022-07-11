@@ -31,6 +31,6 @@ def build(ctx):
     hosts.run('mkdir  narwhal/')
     #hosts.run('docker stop hotstuff')
     hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/mpc/Dockerfile', remote='/home/zhan/narwhal')
-    #hosts.run('docker rm -f narwhal')
-    #hosts.run('docker rmi image_narwhal')
+    hosts.run('docker rm -f narwhal')
+    hosts.run('docker rmi image_narwhal')
     hosts.run('docker build -f /home/zhan/narwhal/Dockerfile -t image_narwhal .')

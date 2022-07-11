@@ -19,7 +19,7 @@ def local(ctx, debug=True):
         'rate': 50_000,
         'tx_size': 512,
         'duration': 20,
-        'replicas': 1,
+        'replicas': 10,
         'servers': 10,
         'local': 0,
     }
