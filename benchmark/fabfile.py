@@ -18,8 +18,8 @@ def local(ctx, debug=True):
         'workers': 1,
         'rate': 30_000,
         'tx_size': 512,
-        'duration': 100,
-        'replicas': 3,
+        'duration': 20,
+        'replicas': 10,
         'servers': 10,
         'local': 0,
     }

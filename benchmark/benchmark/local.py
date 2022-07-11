@@ -64,7 +64,8 @@ class LocalBench:
             key_files = [PathMaker.key_file(i) for i in range(nodes)]
             for filename in key_files:
                 cmd = CommandMaker.generate_key(filename).split()
-                #subprocess.run(cmd, check=True)
+                if local == 1:
+                    subprocess.run(cmd, check=True)
                 keys += [Key.from_file(filename)]
             node_i = int(subprocess.check_output(['tail', '-1', 'index.txt']))
             node_ip = '127.0.0.1'
@@ -85,7 +86,6 @@ class LocalBench:
             committee.print(PathMaker.committee_file())
 
             self.node_parameters.print(PathMaker.parameters_file())
-
             # Run the clients (they will wait for the nodes to be ready).
             workers_addresses = committee.workers_addresses(self.faults)
             rate_share = ceil(rate / committee.workers())
