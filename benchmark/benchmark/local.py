@@ -64,8 +64,7 @@ class LocalBench:
             key_files = [PathMaker.key_file(i) for i in range(nodes)]
             for filename in key_files:
                 cmd = CommandMaker.generate_key(filename).split()
-                if local == 1:
-                    subprocess.run(cmd, check=True)
+                #subprocess.run(cmd, check=True)
                 keys += [Key.from_file(filename)]
             node_i = int(subprocess.check_output(['tail', '-1', 'index.txt']))
             node_ip = '127.0.0.1'
