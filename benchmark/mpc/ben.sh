@@ -1,5 +1,5 @@
 source /root/.cargo/env
-cd /home/hotstuff/benchmark/
+cd /home/narwhal/benchmark/
 git checkout benchmarking
 git restore .committee.json
 git pull

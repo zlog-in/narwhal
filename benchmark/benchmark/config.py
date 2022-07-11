@@ -1,6 +1,8 @@
 # Copyright(C) Facebook, Inc. and its affiliates.
+from audioop import add
 from json import dump, load
 from collections import OrderedDict
+from traceback import print_tb
 
 
 class ConfigError(Exception):
@@ -42,7 +44,7 @@ class Committee:
         }
     '''
 
-    def __init__(self, addresses, base_port):
+    def __init__(self, addresses, base_port, local, servers):
         ''' The `addresses` field looks as follows:
             { 
                 "name": ["host", "host", ...],
@@ -62,28 +64,68 @@ class Committee:
 
         port = base_port
         self.json = {'authorities': OrderedDict()}
-        for name, hosts in addresses.items():
-            host = hosts.pop(0)
-            primary_addr = {
-                'primary_to_primary': f'{host}:{port}',
-                'worker_to_primary': f'{host}:{port + 1}'
-            }
-            port += 2
-
-            workers_addr = OrderedDict()
-            for j, host in enumerate(hosts):
-                workers_addr[j] = {
-                    'primary_to_worker': f'{host}:{port}',
-                    'transactions': f'{host}:{port + 1}',
-                    'worker_to_worker': f'{host}:{port + 2}',
+        
+        if local == 0:
+            round = 0
+            index = 0
+            for name, hosts in addresses.items():
+                
+                #print(len(addresses))
+                
+                #print("name, hosts:")
+                #print(name)
+                #print(hosts)
+                host = hosts.pop(0)
+                #print(host)
+                primary_addr = {
+                    'primary_to_primary': f'{host}:{port + round}',
+                    'worker_to_primary': f'{host}:{port + round + 1}'
                 }
-                port += 3
+                
+                
 
-            self.json['authorities'][name] = {
-                'stake': 1,
-                'primary': primary_addr,
-                'workers': workers_addr
-            }
+                workers_addr = OrderedDict()
+                for j, host in enumerate(hosts):
+                    workers_addr[j] = {
+                        'primary_to_worker': f'{host}:{port+ round + 2}',
+                        'transactions': f'{host}:{port + round + 3}',
+                        'worker_to_worker': f'{host}:{port + round + 4}',
+                    }
+
+                self.json['authorities'][name] = {
+                    'stake': 1,
+                    'primary': primary_addr,
+                    'workers': workers_addr
+                }
+                if index % servers == (servers-1):
+                    round = round + 5
+                index = index + 1
+                    
+
+        if local == 1:
+            for name, hosts in addresses.items():
+                host = hosts.pop(0)
+                primary_addr = {
+                    'primary_to_primary': f'{host}:{port}',
+                    'worker_to_primary': f'{host}:{port + 1}'
+                }
+                
+                port += 2
+
+                workers_addr = OrderedDict()
+                for j, host in enumerate(hosts):
+                    workers_addr[j] = {
+                        'primary_to_worker': f'{host}:{port}',
+                        'transactions': f'{host}:{port + 1}',
+                        'worker_to_worker': f'{host}:{port + 2}',
+                    }
+                    port +=3
+
+                self.json['authorities'][name] = {
+                    'stake': 1,
+                    'primary': primary_addr,
+                    'workers': workers_addr
+                }
 
     def primary_addresses(self, faults=0):
         ''' Returns an ordered list of primaries' addresses. '''
@@ -152,13 +194,30 @@ class Committee:
 
 
 class LocalCommittee(Committee):
-    def __init__(self, names, port, workers):
+    def __init__(self, names, port, workers, local, servers):
         assert isinstance(names, list)
         assert all(isinstance(x, str) for x in names)
         assert isinstance(port, int)
         assert isinstance(workers, int) and workers > 0
-        addresses = OrderedDict((x, ['127.0.0.1']*(1+workers)) for x in names)
-        super().__init__(addresses, port)
+        addresses = OrderedDict()
+        if local == 1:
+            #addresses = OrderedDict((x, [f'127.0.0.1']*(1+workers)) for x in names)
+            for x in names:
+                addresses[x] = [f'127.0.0.1']*(1+workers)
+                #print(names.index(x))
+        else:
+            #addresses = OrderedDict((x, [f'129.13.88.1{names.index(x)+82}']*(1+workers)) for x in names)   # 129.13.88.18{names.index(x)+2}
+            for x in names:                
+                if (names.index(x) % servers) != (servers-1):
+                    addresses[x] = [f'129.13.88.1{(names.index(x) % 10) +82}']*(1+workers)
+                else:
+                    addresses[x] = [f'129.13.88.1{(names.index(x) % 10)+71}']*(1+workers)
+                    
+        #print(names)    
+        #print("Committee IDs and addresses")
+        #print(addresses, port)
+        super().__init__(addresses, port, local, servers)
+        
 
 
 class NodeParameters:
@@ -177,6 +236,10 @@ class NodeParameters:
 
         if not all(isinstance(x, int) for x in inputs):
             raise ConfigError('Invalid parameters type')
+        
+        #Z
+        #print("Node parameters:")
+        #print(json)
 
         self.json = json
 
@@ -214,6 +277,9 @@ class BenchParameters:
             self.tx_size = int(json['tx_size'])
            
             self.duration = int(json['duration'])
+            self.replicas = int(json['replicas'])
+            self.servers = int(json['servers'])
+            self.local = int(json['local'])
 
             self.runs = int(json['runs']) if 'runs' in json else 1
         except KeyError as e:
@@ -224,6 +290,10 @@ class BenchParameters:
 
         if min(self.nodes) <= self.faults:
             raise ConfigError('There should be more nodes than faults')
+        
+        #Z
+        #print("Bench parameters:")
+        #print(json)
 
 
 class PlotParameters:
@@ -268,6 +338,10 @@ class PlotParameters:
             raise ConfigError(
                 'Either the "nodes" or the "workers can be a list (not both)'
             )
+        
+        #Z
+        print("Plot paramenters:")
+        print(json)
 
     def scalability(self):
         return len(self.workers) > 1
