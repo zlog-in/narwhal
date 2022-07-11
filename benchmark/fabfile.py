@@ -21,7 +21,7 @@ def local(ctx, debug=True):
         'duration': 20,
         'replicas': 1,
         'servers': 10,
-        'local': 1,
+        'local': 0,
     }
     node_params = {
         'header_size': 1_000,  # bytes
