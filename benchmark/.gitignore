@@ -1,6 +1,7 @@
 node
 benchmark_client
 index.txt
+config.json
 results
 plots
 
