@@ -1,0 +1,7 @@
+{
+    "replicas": 1,
+    "duration": 20,
+    "local": 1,
+    "faults": 0,
+    "servers": 10
+}

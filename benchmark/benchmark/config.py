@@ -340,8 +340,8 @@ class PlotParameters:
             )
         
         #Z
-        print("Plot paramenters:")
-        print(json)
+        #print("Plot paramenters:")
+        #print(json)
 
     def scalability(self):
         return len(self.workers) > 1

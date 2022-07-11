@@ -3,6 +3,7 @@ import subprocess
 from math import ceil
 from os.path import basename, splitext
 from time import sleep
+import json
 
 from benchmark.commands import CommandMaker
 from benchmark.config import Key, LocalCommittee, NodeParameters, BenchParameters, ConfigError
@@ -44,8 +45,18 @@ class LocalBench:
 
         try:
             Print.info('Setting up testbed...')
+            Print.info('Reading configuration')
+            with open('config.json') as f:
+                config = json.load(f)
+            read = 1 
+            
             nodes, rate, replicas, servers, local = self.nodes[0], self.rate[0], self.replicas, self.servers, self.local
+            if read == 1:
+                replicas = config['replicas']
+                servers = config['servers']
+                local = config['local']        
             nodes = replicas * servers
+
             # Cleanup all files.
             cmd = f'{CommandMaker.clean_logs()} ; {CommandMaker.cleanup()}'
             subprocess.run([cmd], shell=True, stderr=subprocess.DEVNULL)
