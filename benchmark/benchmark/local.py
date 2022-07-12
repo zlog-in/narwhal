@@ -55,7 +55,8 @@ class LocalBench:
                 replicas = config['replicas']
                 servers = config['servers']
                 local = config['local'] 
-                duration = config['duration']       
+                duration = config['duration']  
+                rate = config['input_rate']     
             nodes = replicas * servers
 
             # Cleanup all files.
