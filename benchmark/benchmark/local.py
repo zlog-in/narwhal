@@ -4,6 +4,7 @@ from math import ceil
 from os.path import basename, splitext
 from time import sleep
 import json
+import benchmark.readconfig
 
 from benchmark.commands import CommandMaker
 from benchmark.config import Key, LocalCommittee, NodeParameters, BenchParameters, ConfigError
@@ -56,7 +57,10 @@ class LocalBench:
                 servers = config['servers']
                 local = config['local'] 
                 duration = config['duration']  
-                rate = config['input_rate']     
+                rate = config['input_rate'] 
+                faults = config['faults']  
+
+            f.close() 
             nodes = replicas * servers
 
             # Cleanup all files.
@@ -196,7 +200,7 @@ class LocalBench:
 
             # Parse logs and return the parser.
             Print.info('Parsing logs...')
-            return LogParser.process(PathMaker.logs_path(), faults=self.faults)
+            return LogParser.process(PathMaker.logs_path(), faults=faults)
 
         except (subprocess.SubprocessError, ParseError) as e:
             self._kill_nodes()

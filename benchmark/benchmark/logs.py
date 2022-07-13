@@ -1,13 +1,14 @@
 # Copyright(C) Facebook, Inc. and its affiliates.
-from datetime import datetime
+from datetime import date, datetime
 from glob import glob
 from multiprocessing import Pool
 from os.path import join
 from re import findall, search
 from statistics import mean
-
+from datetime import datetime
+import sqlite3
 from benchmark.utils import Print
-
+import json
 
 class ParseError(Exception):
     pass
@@ -21,6 +22,8 @@ class LogParser:
         assert all(x for x in inputs)
 
         self.faults = faults
+        # print(faults)
+        # print(len(primaries))
         if isinstance(faults, int):
             self.committee_size = len(primaries) + int(faults)
             self.workers =  len(workers) // len(primaries)
@@ -200,6 +203,28 @@ class LogParser:
         consensus_tps, consensus_bps, _ = self._consensus_throughput()
         end_to_end_tps, end_to_end_bps, duration = self._end_to_end_throughput()
         end_to_end_latency = self._end_to_end_latency() * 1_000
+
+        with open('config.json') as f:
+            config = json.load(f)
+        read = 1 
+        
+        if read == 1:
+            replicas = config['replicas']
+            servers = config['servers']
+            local = config['local'] 
+            duration = config['duration']  
+            rate = config['input_rate'] 
+            faults = config['faults']   
+        nodes = replicas * servers
+        f.close()
+
+        results_db = sqlite3.connect('./mpc/results.db')
+        insert_S1Narwhal_results = f'INSERT INTO S1Narwhal VALUES ("{datetime.now()}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
+        results_db.cursor().execute(insert_S1Narwhal_results)
+        results_db.commit()
+        results_db.close()
+       
+        # add results to sqlite
 
         return (
             '\n'
