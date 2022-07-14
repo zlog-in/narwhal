@@ -2,6 +2,7 @@ node
 benchmark_client
 index.txt
 config.json
+mpc/results.db
 results
 plots
 
