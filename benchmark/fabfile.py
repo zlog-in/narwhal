@@ -7,6 +7,7 @@ from benchmark.utils import Print
 from benchmark.plot import Ploter, PlotError
 from benchmark.instance import InstanceManager
 from benchmark.remote import Bench, BenchError
+import json
 
 
 @task
@@ -33,8 +34,18 @@ def local(ctx, debug=True):
         'max_batch_delay': 200  # ms
     }
     try:
-        ret = LocalBench(bench_params, node_params).run(debug)
-        print(ret.result())
+        with open('config.json') as f:
+            config = json.load(f)
+        read = 1
+        if read == 1:
+            local = config['local']
+        if local == 1:
+            ret = LocalBench(bench_params, node_params).run(debug)
+            print(ret.result())
+        if local == 0:
+            LocalBench(bench_params,node_params).run(debug)
+            print("Parsing logs locally")
+        
     except BenchError as e:
         Print.error(e)
 
