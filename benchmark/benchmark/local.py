@@ -200,7 +200,7 @@ class LocalBench:
             self._kill_nodes()
 
             # Parse logs and return the parser.
-            Print.info('Parsing logs...')
+            
             return LogParser.process(PathMaker.logs_path(), faults=faults)
 
         except (subprocess.SubprocessError, ParseError) as e:

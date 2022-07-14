@@ -41,6 +41,7 @@ def local(ctx, debug=True):
             local = config['local']
         if local == 1:
             ret = LocalBench(bench_params, node_params).run(debug)
+            Print.info('Parsing logs...')
             print(ret.result())
         if local == 0:
             LocalBench(bench_params,node_params).run(debug)
