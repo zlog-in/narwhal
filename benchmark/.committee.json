@@ -28,20 +28,6 @@
                 }
             }
         },
-        "JmS+gyZ6gJerF8RqDbq+3+XaQZDKPFXYnhR6J+jbzX8=": {
-            "primary": {
-                "primary_to_primary": "127.0.0.1:9035",
-                "worker_to_primary": "127.0.0.1:9036"
-            },
-            "stake": 1,
-            "workers": {
-                "0": {
-                    "primary_to_worker": "127.0.0.1:9037",
-                    "transactions": "127.0.0.1:9038",
-                    "worker_to_worker": "127.0.0.1:9039"
-                }
-            }
-        },
         "PAvTV/CxG7fyXi4DW4TrlRURzjNu58XT4lGxknOLj+c=": {
             "primary": {
                 "primary_to_primary": "127.0.0.1:9020",
@@ -53,34 +39,6 @@
                     "primary_to_worker": "127.0.0.1:9022",
                     "transactions": "127.0.0.1:9023",
                     "worker_to_worker": "127.0.0.1:9024"
-                }
-            }
-        },
-        "S3y2T1Scu7rbzMNG/3AVEDO1COWEdixhBddNlo6nd4c=": {
-            "primary": {
-                "primary_to_primary": "127.0.0.1:9045",
-                "worker_to_primary": "127.0.0.1:9046"
-            },
-            "stake": 1,
-            "workers": {
-                "0": {
-                    "primary_to_worker": "127.0.0.1:9047",
-                    "transactions": "127.0.0.1:9048",
-                    "worker_to_worker": "127.0.0.1:9049"
-                }
-            }
-        },
-        "a/IcmY9E1TTmckh/hC15vId/C06x3YfPIuH7F7T1ifI=": {
-            "primary": {
-                "primary_to_primary": "127.0.0.1:9040",
-                "worker_to_primary": "127.0.0.1:9041"
-            },
-            "stake": 1,
-            "workers": {
-                "0": {
-                    "primary_to_worker": "127.0.0.1:9042",
-                    "transactions": "127.0.0.1:9043",
-                    "worker_to_worker": "127.0.0.1:9044"
                 }
             }
         },
