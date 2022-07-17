@@ -212,7 +212,8 @@ class LocalBench:
                 print(f'This server mpc-{node_i} is faulty')
                 sleep(faulty_config[f'{node_i}'][1])
                 self._kill_faulty(node_i)
-                print(f'kill faulty replicas after {faulty_config[{node_i}][1]}s')
+                #print(f'kill faulty replicas after {faulty_config[{node_i}][1]}s')
+                print(f'This server mpc-{node_i} is crashed')
             else:
                 sleep(duration)
                 self._kill_nodes()
