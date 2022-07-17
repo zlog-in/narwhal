@@ -201,9 +201,9 @@ class LocalBench:
                 f.close()
             
             Print.info(f'Running benchmark ({duration} sec)...')
-            if faulty_config[f'{index}'][0] == 1:
+            if faulty_config[f'{node_i}'][0] == 1:
                 print("This server is faulty")
-                sleep(faulty_config[f'{index}'][1])
+                sleep(faulty_config[f'{node_i}'][1])
             else:
                 sleep(duration)
             self._kill_nodes()
