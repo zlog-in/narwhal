@@ -1,6 +1,8 @@
 from fabric import Connection, ThreadingGroup
 from fabric import task
 import subprocess
+import random
+import json
 
 
 @task
@@ -11,6 +13,22 @@ def benchmarking(ctx):
     hosts.run('docker start narwhal')
     hosts.run('docker cp narwhal/config.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker exec -t narwhal bash ben.sh')
+
+@task
+def faulty(ctx):
+    hosts = ThreadingGroup('mpc-0','mpc-1','mpc-2','mpc-3','mpc-4','mpc-5','mpc-6','mpc-7','mpc-8','mpc-9')
+    faulty_config()
+    hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/config.json', remote  = '/home/zhan/narwhal/')
+    hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/faulty.json', remote  = '/home/zhan/narwhal/')
+    hosts.run('docker stop hotstuff')
+    hosts.run('docker start narwhal')
+    hosts.run('docker cp narwhal/config.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker cp narwhal/faulty.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker exec -t narwhal bash ben.sh')
+
+
+
+
 
 @task
 def container(ctx):
@@ -44,3 +62,35 @@ def build(ctx):
     hosts.run('docker rm -f narwhal')
     hosts.run('docker rmi image_narwhal')
     hosts.run('docker build -f /home/zhan/narwhal/Dockerfile -t image_narwhal .')
+
+
+def faulty_config():
+    with open('../config.json', 'r') as f:
+        config = json.load(f)
+        f.close()
+    faults = config['faults']
+    servers = config['servers']
+    faulty_servers = set()
+    
+    while len(faulty_servers) != faults:
+        faulty_servers.add(random.randrange(0, servers))
+    print(faulty_servers)
+    
+    with open('../faulty.json', 'w') as f:
+        print("The json for faulty servers is created")
+        json.dump({f'{idx}': [0,0] for idx in range(servers)}, f, indent=4, sort_keys=True)
+        f.close()
+    
+    with open('../faulty.json', 'r') as f:
+        faulty_config = json.load(f)
+        f.close()
+    # faulty_config['0'][1] = faults
+
+    while len(faulty_servers) != 0:
+        idx = faulty_servers.pop()
+        faulty_config[f'{idx}'][0] = 1
+        faulty_config[f'{idx}'][1] = 15
+    
+    with open('../faulty.json', 'w') as f:
+        json.dump(faulty_config, f, indent=4, sort_keys=True)
+        f.close()
