@@ -29,6 +29,7 @@ class LocalBench:
     def _background_run(self, command, log_file):
         name = splitext(basename(log_file))[0]
         cmd = f'{command} 2> {log_file}'
+        #print(name)
         subprocess.run(['tmux', 'new', '-d', '-s', name, cmd], check=True)
 
     def _kill_nodes(self):
@@ -37,6 +38,11 @@ class LocalBench:
             subprocess.run(cmd, stderr=subprocess.DEVNULL)
         except subprocess.SubprocessError as e:
             raise BenchError('Failed to kill testbed', e)
+    
+    def _kill_faulty(self, id):
+        subprocess.run(['tmux', 'kill-session', '-t', f'client-{id}-0'])
+        subprocess.run(['tmux', 'kill-session', '-t', f'primary-{id}'])
+        subprocess.run(['tmux', 'kill-session', '-t', f'worker-{id}-0'])
 
     def run(self, debug=False):
         assert isinstance(debug, bool)
@@ -201,12 +207,15 @@ class LocalBench:
                 f.close()
             
             Print.info(f'Running benchmark ({duration} sec)...')
+            #print(faulty_config[f'{node_i}'][0])
             if faulty_config[f'{node_i}'][0] == 1:
                 print(f'This server mpc-{node_i} is faulty')
                 sleep(faulty_config[f'{node_i}'][1])
+                self._kill_faulty(node_i)
+                print(f'kill faulty replicas after {faulty_config[{node_i}][1]}s')
             else:
                 sleep(duration)
-            self._kill_nodes()
+                self._kill_nodes()
 
             # Parse logs and return the parser.
             

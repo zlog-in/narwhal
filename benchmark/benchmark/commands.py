@@ -59,6 +59,9 @@ class CommandMaker:
     @staticmethod
     def kill():
         return 'tmux kill-server'
+    # @staticmethod
+    # def kill_faulty(id):
+    #     return f'tmux kill-session -t client-{id}-0' and f'tmux kill-session -t primary-{id}' and f'tmux kill-session -t worker-{id}-0'
 
     @staticmethod
     def alias_binaries(origin):

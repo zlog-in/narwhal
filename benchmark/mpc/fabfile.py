@@ -70,6 +70,7 @@ def faulty_config():
         f.close()
     faults = config['faults']
     servers = config['servers']
+    duration = config['duration']
     faulty_servers = set()
     
     while len(faulty_servers) != faults:
@@ -86,12 +87,11 @@ def faulty_config():
         f.close()
     # faulty_config['0'][1] = faults
 
-    span = 1
+    
     while len(faulty_servers) != 0:
         idx = faulty_servers.pop()
         faulty_config[f'{idx}'][0] = 1
-        faulty_config[f'{idx}'][1] = 10 * span
-        span = span + 1
+        faulty_config[f'{idx}'][1] = random.randrange(0,duration)
     
     with open('../faulty.json', 'w') as f:
         json.dump(faulty_config, f, indent=4, sort_keys=True)
