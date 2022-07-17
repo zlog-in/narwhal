@@ -219,8 +219,8 @@ class LogParser:
         f.close()
 
         results_db = sqlite3.connect('./mpc/results.db')
-        insert_S1Narwhal_results = f'INSERT INTO S1Narwhal VALUES ("{datetime.now()}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
-        results_db.cursor().execute(insert_S1Narwhal_results)
+        insert_S2Narwhal_results = f'INSERT INTO S2Narwhal VALUES ("{datetime.now()}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
+        results_db.cursor().execute(insert_S2Narwhal_results)
         results_db.commit()
         results_db.close()
        

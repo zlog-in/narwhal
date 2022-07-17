@@ -1,4 +1,4 @@
-
+cd /home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/
 rm logs/*.log
 
 

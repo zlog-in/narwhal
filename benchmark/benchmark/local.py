@@ -147,8 +147,8 @@ class LocalBench:
                             PathMaker.parameters_file(),
                             debug=debug
                         )
-                        print("cmd for primaries")
-                        print(cmd)
+                        #print("cmd for primaries")
+                        #print(cmd)
                         log_file = PathMaker.primary_log_file(i)
                         self._background_run(cmd, log_file)
             if local == 1:
@@ -177,8 +177,8 @@ class LocalBench:
                                 id,  # The worker's id.
                                 debug=debug                       
                             )
-                            print("cmd for works")
-                            print(cmd)
+                            # print("cmd for works")
+                            # print(cmd)
                             log_file = PathMaker.worker_log_file(i, id)
                             self._background_run(cmd, log_file)
             if local == 1:
@@ -202,7 +202,7 @@ class LocalBench:
             
             Print.info(f'Running benchmark ({duration} sec)...')
             if faulty_config[f'{node_i}'][0] == 1:
-                print("This server is faulty")
+                print(f'This server mpc-{node_i} is faulty')
                 sleep(faulty_config[f'{node_i}'][1])
             else:
                 sleep(duration)
