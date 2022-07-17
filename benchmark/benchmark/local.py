@@ -126,8 +126,8 @@ class LocalBench:
                                 rate_share,
                                 [x for y in workers_addresses for _, x in y] 
                             )
-                            #print(f"cmd for client on node {node_ip}")
-                            #print(cmd)
+                            print(f"cmd for client on node {node_ip}")
+                            print(cmd)
                             log_file = PathMaker.client_log_file(i, id)
                             self._background_run(cmd, log_file)
             if local == 1:
@@ -153,8 +153,8 @@ class LocalBench:
                             PathMaker.parameters_file(),
                             debug=debug
                         )
-                        #print("cmd for primaries")
-                        #print(cmd)
+                        print("cmd for primaries")
+                        print(cmd)
                         log_file = PathMaker.primary_log_file(i)
                         self._background_run(cmd, log_file)
             if local == 1:
@@ -183,8 +183,8 @@ class LocalBench:
                                 id,  # The worker's id.
                                 debug=debug                       
                             )
-                            # print("cmd for works")
-                            # print(cmd)
+                            print("cmd for works")
+                            print(cmd)
                             log_file = PathMaker.worker_log_file(i, id)
                             self._background_run(cmd, log_file)
             if local == 1:
