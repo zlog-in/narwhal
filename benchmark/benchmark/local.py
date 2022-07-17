@@ -1,4 +1,5 @@
 # Copyright(C) Facebook, Inc. and its affiliates.
+from operator import index
 import subprocess
 from math import ceil
 from os.path import basename, splitext
@@ -195,8 +196,16 @@ class LocalBench:
                         self._background_run(cmd, log_file)
 
             # Wait for all transactions to be processed.
+            with open('faulty.json','r') as f:
+                faulty_config = json.load(f)
+                f.close()
+            
             Print.info(f'Running benchmark ({duration} sec)...')
-            sleep(duration)
+            if faulty_config[f'{index}'][0] == 1:
+                print("This server is faulty")
+                sleep(faulty_config[f'{index}'][1])
+            else:
+                sleep(duration)
             self._kill_nodes()
 
             # Parse logs and return the parser.

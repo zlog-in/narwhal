@@ -3,6 +3,7 @@ benchmark_client
 index.txt
 config.json
 mpc/results.db
+faulty.json
 results
 plots
 
