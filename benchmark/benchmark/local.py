@@ -222,13 +222,11 @@ class LocalBench:
             for r in range(config['replicas']):
                 # print(f'r: {r}')
                 replica_i = node_i + r * config['servers']
-                # print(faulty_config[f'{replica_i}'][0])
-                # print(f'replica_i: {replica_i}')
-                # print(faulty_config[f'{replica_i}'][0])
-                # print(faulty_config[f'{replica_i}'][1])
-                if faulty_config[f'{replica_i}'][0] == 1:
-                     faulty_duration = faulty_config[f'{node_i}'][1]
-                     Thread(target=self._kill_faulty, args=(node_i,faulty_duration)).start()
+                flag = faulty_config[f'{replica_i}'][0]
+                if flag == 1:
+                    print(f'flag: {flag}')
+                    faulty_duration = faulty_config[f'{node_i}'][1]
+                    Thread(target=self._kill_faulty, args=(node_i,faulty_duration)).start()
             
             Print.info(f'Running benchmark ({duration} sec)...')
             sleep(duration)

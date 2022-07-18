@@ -20,6 +20,7 @@ def faulty(ctx):
     faulty_config()
     hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/config.json', remote  = '/home/zhan/narwhal/')
     hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/faulty.json', remote  = '/home/zhan/narwhal/')
+    hosts.run('docker stop narwhal')
     hosts.run('docker stop hotstuff')
     hosts.run('docker start narwhal')
     hosts.run('docker cp narwhal/config.json narwhal:/home/narwhal/benchmark/')
@@ -82,6 +83,7 @@ def faulty_config():
         print("The json for faulty servers is created")
         json.dump({f'{idx}': [0,0] for idx in range(servers * replicas)}, f, indent=4)
         f.close()
+
     
     with open('../faulty.json', 'r') as f:
         faulty_config = json.load(f)
