@@ -224,7 +224,7 @@ class LocalBench:
                 replica_i = node_i + r * config['servers']
                 flag = faulty_config[f'{replica_i}'][0]
                 if flag == 1:
-                    print(f'flag: {flag}')
+                    # print(f'flag: {flag}')
                     faulty_duration = faulty_config[f'{replica_i}'][1]
                     Thread(target=self._kill_faulty, args=(replica_i,faulty_duration)).start()
             
