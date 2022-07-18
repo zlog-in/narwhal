@@ -71,15 +71,16 @@ def faulty_config():
     faults = config['faults']
     servers = config['servers']
     duration = config['duration']
+    replicas = config['replicas']
     faulty_servers = set()
     
     while len(faulty_servers) != faults:
-        faulty_servers.add(random.randrange(0, servers))
+        faulty_servers.add(random.randrange(0, servers*replicas))
     print(faulty_servers)
     
     with open('../faulty.json', 'w') as f:
         print("The json for faulty servers is created")
-        json.dump({f'{idx}': [0,0] for idx in range(servers)}, f, indent=4, sort_keys=True)
+        json.dump({f'{idx}': [0,0] for idx in range(servers * replicas)}, f, indent=4)
         f.close()
     
     with open('../faulty.json', 'r') as f:
@@ -94,5 +95,5 @@ def faulty_config():
         faulty_config[f'{idx}'][1] = random.randrange(0,duration)
     
     with open('../faulty.json', 'w') as f:
-        json.dump(faulty_config, f, indent=4, sort_keys=True)
+        json.dump(faulty_config, f, indent=4)
         f.close()
