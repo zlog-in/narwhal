@@ -225,8 +225,8 @@ class LocalBench:
                 flag = faulty_config[f'{replica_i}'][0]
                 if flag == 1:
                     print(f'flag: {flag}')
-                    faulty_duration = faulty_config[f'{node_i}'][1]
-                    Thread(target=self._kill_faulty, args=(node_i,faulty_duration)).start()
+                    faulty_duration = faulty_config[f'{replica_i}'][1]
+                    Thread(target=self._kill_faulty, args=(replica_i,faulty_duration)).start()
             
             Print.info(f'Running benchmark ({duration} sec)...')
             sleep(duration)
