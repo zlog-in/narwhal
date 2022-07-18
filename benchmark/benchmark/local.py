@@ -40,12 +40,13 @@ class LocalBench:
             raise BenchError('Failed to kill testbed', e)
     
     def _kill_faulty(self, id, duration):
-        print(f'server {id} is faulty and will be crashed after {duration} s execution')
+        print(f'server {id} is faulty and will be crashed after {duration}s execution')
         sleep(duration)
-        subprocess.run(['tmux', 'kill-session', '-t', f'client-{id}-0'])
+        
         subprocess.run(['tmux', 'kill-session', '-t', f'primary-{id}'])
         subprocess.run(['tmux', 'kill-session', '-t', f'worker-{id}-0'])
-        print(f'and server {id} crashed')
+        subprocess.run(['tmux', 'kill-session', '-t', f'client-{id}-0'])
+        print(f'and server {id} crashed after {duration}s exectution')
 
     def run(self, debug=False):
         assert isinstance(debug, bool)
@@ -79,7 +80,7 @@ class LocalBench:
             sleep(0.5)  # Removing the store may take time.
 
             # Recompile the latest code.
-            print("For the first running, compilation halts a little longer")
+            print("For the first run, it takes a little longer to compile")
             cmd = CommandMaker.compile().split()
             subprocess.run(cmd, check=True, cwd=PathMaker.node_crate_path())
 
