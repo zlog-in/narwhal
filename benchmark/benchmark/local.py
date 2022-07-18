@@ -122,7 +122,7 @@ class LocalBench:
                     for (id, address) in addresses:
                         addr_ip = address[:-5]
                         if node_ip == addr_ip:
-                            print("!!!!!!!!!!!!!!!")
+                            #print("!!!!!!!!!!!!!!!")
                             cmd = CommandMaker.run_client(
                                 address,
                                 self.tx_size,
@@ -156,8 +156,8 @@ class LocalBench:
                             PathMaker.parameters_file(),
                             debug=debug
                         )
-                        print("cmd for primaries")
-                        print(cmd)
+                        # print("cmd for primaries")
+                        # print(cmd)
                         log_file = PathMaker.primary_log_file(i)
                         self._background_run(cmd, log_file)
             if local == 1:
@@ -186,8 +186,8 @@ class LocalBench:
                                 id,  # The worker's id.
                                 debug=debug                       
                             )
-                            print("cmd for works")
-                            print(cmd)
+                            # print("cmd for works")
+                            # print(cmd)
                             log_file = PathMaker.worker_log_file(i, id)
                             self._background_run(cmd, log_file)
             if local == 1:
@@ -220,12 +220,12 @@ class LocalBench:
             #     faulty_duration = faulty_config[f'{node_i}'][1]
             #     Thread(target=self._kill_faulty, args=(node_i,faulty_duration)).start()
             for r in range(config['replicas']):
-                print(f'r: {r}')
+                # print(f'r: {r}')
                 replica_i = node_i + r * config['servers']
                 # print(faulty_config[f'{replica_i}'][0])
-                print(f'replica_i: {replica_i}')
-                print(faulty_config[f'{replica_i}'][0])
-                print(faulty_config[f'{replica_i}'][1])
+                # print(f'replica_i: {replica_i}')
+                # print(faulty_config[f'{replica_i}'][0])
+                # print(faulty_config[f'{replica_i}'][1])
                 if faulty_config[f'{replica_i}'][0] == 1:
                      faulty_duration = faulty_config[f'{node_i}'][1]
                      Thread(target=self._kill_faulty, args=(node_i,faulty_duration)).start()
