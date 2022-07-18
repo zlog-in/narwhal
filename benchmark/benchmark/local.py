@@ -39,7 +39,7 @@ class LocalBench:
         except subprocess.SubprocessError as e:
             raise BenchError('Failed to kill testbed', e)
     
-    def _kill_faulty(id, duration):
+    def _kill_faulty(self, id, duration):
         print(f'server {id} is faulty and will be crashed after {duration} s')
         sleep(duration)
         subprocess.run(['tmux', 'kill-session', '-t', f'client-{id}-0'])
@@ -208,7 +208,7 @@ class LocalBench:
                 faulty_config = json.load(f)
                 f.close()
             
-            Print.info(f'Running benchmark ({duration} sec)...')
+            
             #print(faulty_config[f'{node_i}'][0])
             if faulty_config[f'{node_i}'][0] == 1:
                 # print(f'This server mpc-{node_i} is faulty')
@@ -216,10 +216,12 @@ class LocalBench:
                 # self._kill_faulty(node_i)
                 # #print(f'kill faulty replicas after {faulty_config[{node_i}][1]}s')
                 # print(f'This server mpc-{node_i} is crashed')
-                Thread.start(self._kill_faulty, (node_i,faulty_config[f'{node_i}'][1]))
-            else:
-                sleep(duration)
-                self._kill_nodes()
+                faulty_duration = faulty_config[f'{node_i}'][1]
+                Thread(target=self._kill_faulty, args=(node_i,faulty_duration)).start()
+            
+            Print.info(f'Running benchmark ({duration} sec)...')
+            sleep(duration)
+            self._kill_nodes()
 
             # Parse logs and return the parser.
             
