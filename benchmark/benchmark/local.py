@@ -211,14 +211,24 @@ class LocalBench:
             
             
             #print(faulty_config[f'{node_i}'][0])
-            if faulty_config[f'{node_i}'][0] == 1:
-                # print(f'This server mpc-{node_i} is faulty')
-                # sleep(faulty_config[f'{node_i}'][1])
-                # self._kill_faulty(node_i)
-                # #print(f'kill faulty replicas after {faulty_config[{node_i}][1]}s')
-                # print(f'This server mpc-{node_i} is crashed')
-                faulty_duration = faulty_config[f'{node_i}'][1]
-                Thread(target=self._kill_faulty, args=(node_i,faulty_duration)).start()
+            # if faulty_config[f'{node_i}'][0] == 1:
+            #     # print(f'This server mpc-{node_i} is faulty')
+            #     # sleep(faulty_config[f'{node_i}'][1])
+            #     # self._kill_faulty(node_i)
+            #     # #print(f'kill faulty replicas after {faulty_config[{node_i}][1]}s')
+            #     # print(f'This server mpc-{node_i} is crashed')
+            #     faulty_duration = faulty_config[f'{node_i}'][1]
+            #     Thread(target=self._kill_faulty, args=(node_i,faulty_duration)).start()
+            for r in range(config['replicas']):
+                print(f'r: {r}')
+                replica_i = node_i + r * config['servers']
+                # print(faulty_config[f'{replica_i}'][0])
+                print(f'replica_i: {replica_i}')
+                print(faulty_config[f'{replica_i}'][0])
+                print(faulty_config[f'{replica_i}'][1])
+                if faulty_config[f'{replica_i}'][0] == 1:
+                     faulty_duration = faulty_config[f'{node_i}'][1]
+                     Thread(target=self._kill_faulty, args=(node_i,faulty_duration)).start()
             
             Print.info(f'Running benchmark ({duration} sec)...')
             sleep(duration)
