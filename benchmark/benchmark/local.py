@@ -40,13 +40,13 @@ class LocalBench:
             raise BenchError('Failed to kill testbed', e)
     
     def _kill_faulty(self, id, duration):
-        print(f'server {id} is faulty and will be crashed after {duration}s execution')
+        print(f'replica {id} is faulty and will be crashed after {duration}s execution')
         sleep(duration)
         
         subprocess.run(['tmux', 'kill-session', '-t', f'primary-{id}'])
         subprocess.run(['tmux', 'kill-session', '-t', f'worker-{id}-0'])
         subprocess.run(['tmux', 'kill-session', '-t', f'client-{id}-0'])
-        print(f'and server {id} crashed after {duration}s exectution')
+        print(f'and replica {id} crashed after {duration}s exectution')
 
     def run(self, debug=False):
         assert isinstance(debug, bool)
