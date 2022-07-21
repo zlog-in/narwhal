@@ -37,6 +37,7 @@ def local(ctx, debug=True):
         with open('config.json') as f:
             config = json.load(f)
         read = 1
+        f.close()
         if read == 1:
             local = config['local']
         if local == 1:

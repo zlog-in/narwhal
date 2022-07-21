@@ -1,5 +1,5 @@
 # Copyright(C) Facebook, Inc. and its affiliates.
-from datetime import date, datetime
+from datetime import datetime
 from glob import glob
 from multiprocessing import Pool
 from os.path import join
@@ -83,7 +83,7 @@ class LogParser:
     def _parse_clients(self, log):
         if search(r'Error', log) is not None:
             raise ParseError('Client(s) panicked')
-
+        # something missing in log files
         size = int(search(r'Transactions size: (\d+)', log).group(1))
         rate = int(search(r'Transactions rate: (\d+)', log).group(1))
 
@@ -280,5 +280,6 @@ class LogParser:
         for filename in sorted(glob(join(directory, 'worker-*.log'))):
             with open(filename, 'r') as f:
                 workers += [f.read()]
-
+        # cls means class, which is the first parameters of a class method.
+        # clients, primaries and workers are the names of all logs under folder log
         return cls(clients, primaries, workers, faults=faults)

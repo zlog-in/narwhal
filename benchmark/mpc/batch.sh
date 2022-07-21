@@ -1,7 +1,10 @@
 #!/bin/bash
 
-for i in {0 .. 9}
+for i in {1..10}
 do
+
     fab faulty
+
     fab parsing
+
 done

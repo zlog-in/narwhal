@@ -205,21 +205,13 @@ class LocalBench:
                         log_file = PathMaker.worker_log_file(i, id)
                         self._background_run(cmd, log_file)
 
-            # Wait for all transactions to be processed.
+
             with open('faulty.json','r') as f:
                 faulty_config = json.load(f)
                 f.close()
             
             
-            #print(faulty_config[f'{node_i}'][0])
-            # if faulty_config[f'{node_i}'][0] == 1:
-            #     # print(f'This server mpc-{node_i} is faulty')
-            #     # sleep(faulty_config[f'{node_i}'][1])
-            #     # self._kill_faulty(node_i)
-            #     # #print(f'kill faulty replicas after {faulty_config[{node_i}][1]}s')
-            #     # print(f'This server mpc-{node_i} is crashed')
-            #     faulty_duration = faulty_config[f'{node_i}'][1]
-            #     Thread(target=self._kill_faulty, args=(node_i,faulty_duration)).start()
+
             for r in range(config['replicas']):
                 # print(f'r: {r}')
                 replica_i = node_i + r * config['servers']

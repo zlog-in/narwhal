@@ -20,7 +20,7 @@ def faulty(ctx):
     faulty_config()
     hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/config.json', remote  = '/home/zhan/narwhal/')
     hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/faulty.json', remote  = '/home/zhan/narwhal/')
-    hosts.run('docker stop narwhal')
+    # hosts.run('docker stop narwhal')
     hosts.run('docker stop hotstuff')
     hosts.run('docker start narwhal')
     hosts.run('docker cp narwhal/config.json narwhal:/home/narwhal/benchmark/')
