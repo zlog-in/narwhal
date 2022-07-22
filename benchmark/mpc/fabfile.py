@@ -99,7 +99,7 @@ def faulty_config():
     while len(faulty_servers) != 0:
         idx = faulty_servers.pop()
         faulty_config[f'{idx}'][0] = 1
-        faulty_config[f'{idx}'][1] = random.randrange(0,duration)
+        faulty_config[f'{idx}'][1] = random.randrange(10,duration)
     
     with open('../faulty.json', 'w') as f:
         json.dump(faulty_config, f, indent=4)
