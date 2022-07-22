@@ -1,8 +1,10 @@
+from sqlite3 import Time
 from fabric import Connection, ThreadingGroup
 from fabric import task
 import subprocess
 import random
 import json
+from datetime import datetime
 
 
 @task
@@ -74,7 +76,10 @@ def faulty_config():
     duration = config['duration']
     replicas = config['replicas']
     faulty_servers = set()
-    
+    #time_seed = read_time()
+    time_seed = datetime.now()
+    print(time_seed)
+    random.seed(time_seed)
     while len(faulty_servers) != faults:
         faulty_servers.add(random.randrange(0, servers*replicas))
     print(faulty_servers)
@@ -99,3 +104,21 @@ def faulty_config():
     with open('../faulty.json', 'w') as f:
         json.dump(faulty_config, f, indent=4)
         f.close()
+
+    write_time(time_seed)
+
+def write_time(seed):
+    with open(f'../faulty.json') as f:
+        faulty_config = json.load(f)
+        f.close()
+    faulty_config.update({'time_seed': f'{seed}'})
+
+    with open('../faulty.json', 'w') as f:
+        json.dump(faulty_config, f, indent=4)
+        f.close()
+
+def read_time():
+    with open(f'../faulty.json') as f:
+        faulty_config = json.load(f)
+        f.close()
+    return faulty_config['time_seed']

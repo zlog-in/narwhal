@@ -218,8 +218,12 @@ class LogParser:
         nodes = replicas * servers
         f.close()
 
+        with open('faulty.json') as f:
+            faulty_config = json.load(f)
+            f.close()
+        time_seed = faulty_config['time_seed']
         results_db = sqlite3.connect('./mpc/results.db')
-        insert_S2Narwhal_results = f'INSERT INTO S2Narwhal VALUES ("{datetime.now()}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
+        insert_S2Narwhal_results = f'INSERT INTO S2Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
         results_db.cursor().execute(insert_S2Narwhal_results)
         results_db.commit()
         results_db.close()

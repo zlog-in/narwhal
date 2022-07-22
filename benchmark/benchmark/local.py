@@ -211,7 +211,6 @@ class LocalBench:
                 faulty_config = json.load(f)
                 f.close()
             
-            
 
             for r in range(config['replicas']):
                 # print(f'r: {r}')
