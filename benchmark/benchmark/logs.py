@@ -13,9 +13,14 @@ import json
 class ParseError(Exception):
     pass
 
+with open('index.txt') as f:
+    NODE_I = int(f.readline())
+    f.close()
+print(f'NODE_I: {NODE_I}')
+
 
 class LogParser:
-    def __init__(self, clients, primaries, workers, node_i, faults=0):
+    def __init__(self, clients, primaries, workers, faults=0):
         inputs = [clients, primaries, workers]
         assert all(isinstance(x, list) for x in inputs)
         assert all(isinstance(x, str) for y in inputs for x in y)
@@ -58,13 +63,26 @@ class LogParser:
             raise ParseError(f'Failed to parse nodes\' logs: {e}')
         
         proposals, commits, self.configs, primary_ips = zip(*results)
-       
-        print(f'configs:{self.configs}')
-        print(f'primary_ips: {primary_ips}')
+        # print(f'proposal: {type(proposals)}')
+        print(len(proposals))
+        print(len(commits))
+        print(len(self.configs))
+        print(len(primary_ips))
+        # print(proposals)
+        # print(f'configs:{self.configs}')
+        # print(f'primary_ips: {primary_ips}')
         self.proposals = self._merge_results([x.items() for x in proposals])
+        print(len(self.proposals))
+        print(type(self.proposals))
+        # print(self.proposals)
         self.commits = self._merge_results([x.items() for x in commits])
-        print(f'proposals:{self.proposals}')
-        print(f'commits: {self.commits}')
+        print(type(self.proposals))
+        # print(self.proposals)
+        # print(f'proposals:{self.proposals}')
+        print(len(self.commits))
+        print(type(self.commits))
+        # print(self.commits)
+        # print(f'commits: {self.commits}')
         # Parse the workers logs.
         try:
             with Pool() as p:
@@ -72,10 +90,11 @@ class LogParser:
         except (ValueError, IndexError, AttributeError) as e:
             raise ParseError(f'Failed to parse workers\' logs: {e}')
         sizes, self.received_samples, workers_ips = zip(*results)
+        print(f'size: {sizes}')
         self.sizes = {
             k: v for x in sizes for k, v in x.items() if k in self.commits
         }
-
+        print(self.sizes)
         # Determine whether the primary and the workers are collocated.
         self.collocate = set(primary_ips) == set(workers_ips)
         
@@ -172,7 +191,7 @@ class LogParser:
         # print(f'size of workers: {sizes}')
         tmp = findall(r'Batch ([^ ]+) contains sample tx (\d+)', log)
         samples = {int(s): d for d, s in tmp}
-        print(f'samples of workers: {samples}')
+        # print(f'samples of workers: {samples}')
         ip = search(r'booted on (\d+.\d+.\d+.\d+)', log).group(1)
         
         return sizes, samples, ip
@@ -189,10 +208,22 @@ class LogParser:
         bytes = sum(self.sizes.values())
         bps = bytes / duration
         tps = bps / self.size[0]
+        print(f'size[0]: {self.size[0]}')
+        with open(f'./mpc/result-{NODE_I}.json') as f:
+            result = json.load(f)
+            f.close()
+        result.update({'consensus_start': start, 'consensus_end': end, 'consensus_bytes': bytes, 'consensus_size': self.size[0]})
+
+        with open(f'./mpc/result-{NODE_I}.json', 'w') as f:
+            json.dump(result, f, indent=4)
+            f.close()
+
         return tps, bps, duration
 
     def _consensus_latency(self):
+        print("_consensu_latency")
         latency = [c - self.proposals[d] for d, c in self.commits.items()]
+
         return mean(latency) if latency else 0
 
     def _end_to_end_throughput(self):
@@ -203,6 +234,14 @@ class LogParser:
         bytes = sum(self.sizes.values())
         bps = bytes / duration
         tps = bps / self.size[0]
+        with open(f'./mpc/result-{NODE_I}.json') as f:
+            result = json.load(f)
+            f.close()
+        result.update({'end2end_start': start, 'end2end_end': end, 'end2end_bytes': bytes, 'end2end_size': self.size[0]})
+
+        with open(f'./mpc/result-{NODE_I}.json', 'w') as f:
+            json.dump(result, f, indent=4)
+            f.close()
         return tps, bps, duration
 
     def _end_to_end_latency(self):
@@ -217,8 +256,6 @@ class LogParser:
         return mean(latency) if latency else 0
 
     def result(self):
-        print("reults printed")
-        # print(self)
         header_size = self.configs[0]['header_size']
         max_header_delay = self.configs[0]['max_header_delay']
         gc_depth = self.configs[0]['gc_depth']
@@ -294,7 +331,7 @@ class LogParser:
     #     with open(filename, 'a') as f:
     #         f.write(self.result())
 
-    def local_result(self):
+    def remote_result(self):
         print("reults printed")
         # print(self)
         header_size = self.configs[0]['header_size']
@@ -305,17 +342,42 @@ class LogParser:
         batch_size = self.configs[0]['batch_size']
         max_batch_delay = self.configs[0]['max_batch_delay']
 
+        with open(f'./mpc/result-{NODE_I}.json', 'w') as f:
+            json.dump({'header_size': int(header_size), 'max_header_delay':int(max_header_delay), 'gc_depth': int(gc_depth), 'sync_retry_delay': int(sync_retry_delay), 'sync_retry_nodes': int(sync_retry_nodes), 'batch_size': int(batch_size), 'max_batch_delay': int(max_batch_delay) }, f, indent=4)
+            f.close()
+
         # consensus_latency = self._consensus_latency() * 1_000
-        consensus_latency =  1_000
+        consensus_latency = 1000
         consensus_tps, consensus_bps, _ = self._consensus_throughput()
         end_to_end_tps, end_to_end_bps, duration = self._end_to_end_throughput()
         end_to_end_latency = self._end_to_end_latency() * 1_000
 
+        with open(f'./mpc/result-{NODE_I}.json') as f:
+            result = json.load(f)
+            f.close()
+        result.update({'onsensus_latency': consensus_latency, 'consensus_tps': consensus_tps, 'consensus_bps': consensus_bps})
+        
+        # print(result)
+        with open(f'./mpc/result-{NODE_I}.json', 'w') as f:
+            json.dump(result, f, indent=4)
+            f.close()
+
+    def _update_json(json_file, entries):
+
+        with open(f'./mpc/{json_file}') as f:
+            file = json.load(f)
+            f.close()
+        file.update(entries, f ,inden=4)
+
+        with open(f'./mpc/{json_file}', 'w') as f:
+            json.dump(file, f, indent=4)
+
+
 
     @classmethod
-    def process(cls, directory, node_i, faults=0):
+    def process(cls, directory, faults=0):
         assert isinstance(directory, str)
-        print(cls)
+        # print(cls)
         clients = []
         for filename in sorted(glob(join(directory, 'client-*.log'))):
             # print(filename)
@@ -332,4 +394,5 @@ class LogParser:
         # cls means class, which is the first parameters of a class method.
         # clients, primaries and workers are the names of all logs under folder log
         print("process ends")
-        return cls(clients, primaries, workers, node_i, faults=faults)
+        
+        return cls(clients, primaries, workers, faults=faults)

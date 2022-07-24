@@ -4,6 +4,7 @@ index.txt
 config.json
 .parameters.json
 mpc/results.db
+mpc/result-*.json
 faulty.json
 results
 plots

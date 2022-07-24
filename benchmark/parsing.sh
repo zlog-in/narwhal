@@ -16,7 +16,7 @@ rm logs/*.log
     #done
 #done
 
-scp mpc-0:/home/zhan/narwhal/logs/*.log /home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/logs/
+scp mpc-0:/home/zhan/narwhal/logs/* /home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/logs/
 scp mpc-1:/home/zhan/narwhal/logs/*.log /home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/logs/
 scp mpc-2:/home/zhan/narwhal/logs/*.log /home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/logs/
 scp mpc-3:/home/zhan/narwhal/logs/*.log /home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/logs/
@@ -26,6 +26,7 @@ scp mpc-6:/home/zhan/narwhal/logs/*.log /home/z/Sync/Study/DSN/Marc/Code/narwhal
 scp mpc-7:/home/zhan/narwhal/logs/*.log /home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/logs/
 scp mpc-8:/home/zhan/narwhal/logs/*.log /home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/logs/
 scp mpc-9:/home/zhan/narwhal/logs/*.log /home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/logs/
+
 cd /home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/
 fab logs 
 
