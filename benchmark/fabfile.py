@@ -169,6 +169,7 @@ def logs(ctx):
         f.close()
         with open('index.txt') as f:
             node_i = int(f.readline())
+            f.close()
         print(node_i)
         # if config['local'] == 1:
         #     print(LogParser.process('./logs', node_i, faults='?').result())

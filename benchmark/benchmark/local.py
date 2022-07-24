@@ -97,7 +97,10 @@ class LocalBench:
                 # if local == 1:
                 #     subprocess.run(cmd, check=True)
                 keys += [Key.from_file(filename)]
-            node_i = int(subprocess.check_output(['tail', '-1', 'index.txt']))
+            with open('index.txt') as f:
+                node_i = int(f.readline())
+                f.close()
+
             node_ip = '127.0.0.1'
             match node_i:
                 case 0: node_ip = '129.13.88.182'
