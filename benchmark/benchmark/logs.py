@@ -90,11 +90,11 @@ class LogParser:
         except (ValueError, IndexError, AttributeError) as e:
             raise ParseError(f'Failed to parse workers\' logs: {e}')
         sizes, self.received_samples, workers_ips = zip(*results)
-        print(f'size: {sizes}')
+        # print(f'size: {sizes}')
         self.sizes = {
             k: v for x in sizes for k, v in x.items() if k in self.commits
         }
-        print(self.sizes)
+        # print(self.sizes)
         # Determine whether the primary and the workers are collocated.
         self.collocate = set(primary_ips) == set(workers_ips)
         
@@ -208,13 +208,13 @@ class LogParser:
         bytes = sum(self.sizes.values())
         bps = bytes / duration
         tps = bps / self.size[0]
-        print(f'size[0]: {self.size[0]}')
-        with open(f'./mpc/result-{NODE_I}.json') as f:
+        # print(f'size[0]: {self.size[0]}')
+        with open(f'./logs/result-{NODE_I}.json') as f:
             result = json.load(f)
             f.close()
         result.update({'consensus_start': start, 'consensus_end': end, 'consensus_bytes': bytes, 'consensus_size': self.size[0]})
 
-        with open(f'./mpc/result-{NODE_I}.json', 'w') as f:
+        with open(f'./logs/result-{NODE_I}.json', 'w') as f:
             json.dump(result, f, indent=4)
             f.close()
 
@@ -234,12 +234,12 @@ class LogParser:
         bytes = sum(self.sizes.values())
         bps = bytes / duration
         tps = bps / self.size[0]
-        with open(f'./mpc/result-{NODE_I}.json') as f:
+        with open(f'./logs/result-{NODE_I}.json') as f:
             result = json.load(f)
             f.close()
         result.update({'end2end_start': start, 'end2end_end': end, 'end2end_bytes': bytes, 'end2end_size': self.size[0]})
 
-        with open(f'./mpc/result-{NODE_I}.json', 'w') as f:
+        with open(f'./logs/result-{NODE_I}.json', 'w') as f:
             json.dump(result, f, indent=4)
             f.close()
         return tps, bps, duration
@@ -333,7 +333,6 @@ class LogParser:
 
     def remote_result(self):
         print("reults printed")
-        # print(self)
         header_size = self.configs[0]['header_size']
         max_header_delay = self.configs[0]['max_header_delay']
         gc_depth = self.configs[0]['gc_depth']
@@ -342,7 +341,7 @@ class LogParser:
         batch_size = self.configs[0]['batch_size']
         max_batch_delay = self.configs[0]['max_batch_delay']
 
-        with open(f'./mpc/result-{NODE_I}.json', 'w') as f:
+        with open(f'./logs/result-{NODE_I}.json', 'w') as f:
             json.dump({'header_size': int(header_size), 'max_header_delay':int(max_header_delay), 'gc_depth': int(gc_depth), 'sync_retry_delay': int(sync_retry_delay), 'sync_retry_nodes': int(sync_retry_nodes), 'batch_size': int(batch_size), 'max_batch_delay': int(max_batch_delay) }, f, indent=4)
             f.close()
 
@@ -350,15 +349,15 @@ class LogParser:
         consensus_latency = 1000
         consensus_tps, consensus_bps, _ = self._consensus_throughput()
         end_to_end_tps, end_to_end_bps, duration = self._end_to_end_throughput()
-        end_to_end_latency = self._end_to_end_latency() * 1_000
+        # end_to_end_latency = self._end_to_end_latency() * 1_000
 
-        with open(f'./mpc/result-{NODE_I}.json') as f:
+        with open(f'./logs/result-{NODE_I}.json') as f:
             result = json.load(f)
             f.close()
         result.update({'onsensus_latency': consensus_latency, 'consensus_tps': consensus_tps, 'consensus_bps': consensus_bps})
         
-        # print(result)
-        with open(f'./mpc/result-{NODE_I}.json', 'w') as f:
+        
+        with open(f'./logs/result-{NODE_I}.json', 'w') as f:
             json.dump(result, f, indent=4)
             f.close()
 
