@@ -164,6 +164,16 @@ def kill(ctx):
 def logs(ctx):
     ''' Print a summary of the logs '''
     try:
-        print(LogParser.process('./logs', faults='?').result())
+        with open('config.json') as f:
+            config = json.load(f)
+        f.close()
+        with open('index.txt') as f:
+            node_i = int(f.readline())
+        print(node_i)
+        # if config['local'] == 1:
+        #     print(LogParser.process('./logs', node_i, faults='?').result())
+        # if config['local'] == 0:
+        #     print(LogParser.process('./logs', faults='?'))
+        print(LogParser.process('./logs', node_i, faults='?').result())
     except ParseError as e:
         Print.error(BenchError('Failed to parse logs', e))

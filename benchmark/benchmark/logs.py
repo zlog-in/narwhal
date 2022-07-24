@@ -15,22 +15,25 @@ class ParseError(Exception):
 
 
 class LogParser:
-    def __init__(self, clients, primaries, workers, faults=0):
+    def __init__(self, clients, primaries, workers, node_i, faults=0):
         inputs = [clients, primaries, workers]
         assert all(isinstance(x, list) for x in inputs)
         assert all(isinstance(x, str) for y in inputs for x in y)
         assert all(x for x in inputs)
 
         self.faults = faults
-        # print(faults)
-        # print(len(primaries))
+        print(len(primaries))
+        print(len(clients))
+        print(len(workers))
         if isinstance(faults, int):
             self.committee_size = len(primaries) + int(faults)
             self.workers =  len(workers) // len(primaries)
         else:
             self.committee_size = '?'
             self.workers = '?'
-
+        
+        # print(clients[0])
+        # print(clients[9])
         # Parse the clients logs.
         try:
             with Pool() as p:
@@ -39,7 +42,13 @@ class LogParser:
             raise ParseError(f'Failed to parse clients\' logs: {e}')
         self.size, self.rate, self.start, misses, self.sent_samples \
             = zip(*results)
+        
         self.misses = sum(misses)
+
+        # print(f'results: {results}')
+        # print(len(results))
+        # print(f'miss: {misses}')
+        # print(self.size, self.rate, self.start, self.misses, self.sent_samples, self.misses)
 
         # Parse the primaries logs.
         try:
@@ -47,10 +56,15 @@ class LogParser:
                 results = p.map(self._parse_primaries, primaries)
         except (ValueError, IndexError, AttributeError) as e:
             raise ParseError(f'Failed to parse nodes\' logs: {e}')
+        
         proposals, commits, self.configs, primary_ips = zip(*results)
+       
+        print(f'configs:{self.configs}')
+        print(f'primary_ips: {primary_ips}')
         self.proposals = self._merge_results([x.items() for x in proposals])
         self.commits = self._merge_results([x.items() for x in commits])
-
+        print(f'proposals:{self.proposals}')
+        print(f'commits: {self.commits}')
         # Parse the workers logs.
         try:
             with Pool() as p:
@@ -64,12 +78,14 @@ class LogParser:
 
         # Determine whether the primary and the workers are collocated.
         self.collocate = set(primary_ips) == set(workers_ips)
-
+        
         # Check whether clients missed their target rate.
         if self.misses != 0:
             Print.warn(
                 f'Clients missed their target rate {self.misses:,} time(s)'
             )
+        
+        print("__init__ ends")
 
     def _merge_results(self, input):
         # Keep the earliest timestamp.
@@ -84,25 +100,35 @@ class LogParser:
         if search(r'Error', log) is not None:
             raise ParseError('Client(s) panicked')
         # something missing in log files
-        size = int(search(r'Transactions size: (\d+)', log).group(1))
+        size = int(search(r'Transactions size: (\d+)', log).group(1))  # () indicates a group that whatever regex matched inside is.
         rate = int(search(r'Transactions rate: (\d+)', log).group(1))
 
-        tmp = search(r'\[(.*Z) .* Start ', log).group(1)
+        tmp = search(r'\[(.*Z) .* Start ', log).group(1)   # timestap of starting sending tx 
         start = self._to_posix(tmp)
 
         misses = len(findall(r'rate too high', log))
 
         tmp = findall(r'\[(.*Z) .* sample transaction (\d+)', log)
+        # print(tmp)
         samples = {int(s): self._to_posix(t) for t, s in tmp}
-
+        # print(samples)
+        # print(f'size:{size}')
+        # print(f'rate:{rate}')
+        # print(f'start:{start}')
+        # print(f'misses:{misses}')
+        # print(f'samples:{samples}')
         return size, rate, start, misses, samples
 
     def _parse_primaries(self, log):
         if search(r'(?:panicked|Error)', log) is not None:
             raise ParseError('Primary(s) panicked')
-
+        print("Parsing primaries")
+        # print(log)
         tmp = findall(r'\[(.*Z) .* Created B\d+\([^ ]+\) -> ([^ ]+=)', log)
+        # print(tmp)
         tmp = [(d, self._to_posix(t)) for t, d in tmp]
+        # print("after formatted")
+        # print(tmp)
         proposals = self._merge_results([tmp])
 
         tmp = findall(r'\[(.*Z) .* Committed B\d+\([^ ]+\) -> ([^ ]+=)', log)
@@ -143,12 +169,12 @@ class LogParser:
 
         tmp = findall(r'Batch ([^ ]+) contains (\d+) B', log)
         sizes = {d: int(s) for d, s in tmp}
-
+        # print(f'size of workers: {sizes}')
         tmp = findall(r'Batch ([^ ]+) contains sample tx (\d+)', log)
         samples = {int(s): d for d, s in tmp}
-
+        print(f'samples of workers: {samples}')
         ip = search(r'booted on (\d+.\d+.\d+.\d+)', log).group(1)
-
+        
         return sizes, samples, ip
 
     def _to_posix(self, string):
@@ -191,6 +217,8 @@ class LogParser:
         return mean(latency) if latency else 0
 
     def result(self):
+        print("reults printed")
+        # print(self)
         header_size = self.configs[0]['header_size']
         max_header_delay = self.configs[0]['max_header_delay']
         gc_depth = self.configs[0]['gc_depth']
@@ -206,15 +234,13 @@ class LogParser:
 
         with open('config.json') as f:
             config = json.load(f)
-        read = 1 
         
-        if read == 1:
-            replicas = config['replicas']
-            servers = config['servers']
-            local = config['local'] 
-            duration = config['duration']  
-            rate = config['input_rate'] 
-            faults = config['faults']   
+        replicas = config['replicas']
+        servers = config['servers']
+        local = config['local'] 
+        duration = config['duration']  
+        rate = config['input_rate'] 
+        faults = config['faults']   
         nodes = replicas * servers
         f.close()
 
@@ -263,17 +289,36 @@ class LogParser:
             '-----------------------------------------\n'
         )
 
-    def print(self, filename):
-        assert isinstance(filename, str)
-        with open(filename, 'a') as f:
-            f.write(self.result())
+    # def print(self, filename):
+    #     assert isinstance(filename, str)
+    #     with open(filename, 'a') as f:
+    #         f.write(self.result())
+
+    def local_result(self):
+        print("reults printed")
+        # print(self)
+        header_size = self.configs[0]['header_size']
+        max_header_delay = self.configs[0]['max_header_delay']
+        gc_depth = self.configs[0]['gc_depth']
+        sync_retry_delay = self.configs[0]['sync_retry_delay']
+        sync_retry_nodes = self.configs[0]['sync_retry_nodes']
+        batch_size = self.configs[0]['batch_size']
+        max_batch_delay = self.configs[0]['max_batch_delay']
+
+        # consensus_latency = self._consensus_latency() * 1_000
+        consensus_latency =  1_000
+        consensus_tps, consensus_bps, _ = self._consensus_throughput()
+        end_to_end_tps, end_to_end_bps, duration = self._end_to_end_throughput()
+        end_to_end_latency = self._end_to_end_latency() * 1_000
+
 
     @classmethod
-    def process(cls, directory, faults=0):
+    def process(cls, directory, node_i, faults=0):
         assert isinstance(directory, str)
-
+        print(cls)
         clients = []
         for filename in sorted(glob(join(directory, 'client-*.log'))):
+            # print(filename)
             with open(filename, 'r') as f:
                 clients += [f.read()]
         primaries = []
@@ -286,4 +331,5 @@ class LogParser:
                 workers += [f.read()]
         # cls means class, which is the first parameters of a class method.
         # clients, primaries and workers are the names of all logs under folder log
-        return cls(clients, primaries, workers, faults=faults)
+        print("process ends")
+        return cls(clients, primaries, workers, node_i, faults=faults)
