@@ -164,15 +164,22 @@ def kill(ctx):
 def logs(ctx):
     ''' Print a summary of the logs '''
     try:
+        
+        print(LogParser.process('./logs', faults='?').result())
+        
+
+        # print(LogParser.process('./logs', node_i, faults='?').result())
+
+    except ParseError as e:
+        Print.error(BenchError('Failed to parse logs', e))
+
+@task 
+def parsing_remote(ctx):
+    ''' Parsing logs remotely '''
+    try:
         with open('config.json') as f:
             config = json.load(f)
         f.close()
-        with open('index.txt') as f:
-            node_i = int(f.readline())
-            f.close()
-        
-        if config['parsing'] == 0:
-            print(LogParser.process('./logs', faults='?').result())
         if config['parsing'] == 1:
             print(LogParser.process('./logs', faults='?').remote_result())
 
@@ -180,3 +187,4 @@ def logs(ctx):
 
     except ParseError as e:
         Print.error(BenchError('Failed to parse logs', e))
+
