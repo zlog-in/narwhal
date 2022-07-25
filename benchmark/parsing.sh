@@ -49,5 +49,5 @@ scp mpc-9:/home/zhan/narwhal/logs/*.json /home/z/Sync/Study/DSN/Marc/Code/narwha
 
 
 cd /home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/
-#fab logs 
+fab logs 
 

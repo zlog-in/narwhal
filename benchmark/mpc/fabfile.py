@@ -1,4 +1,5 @@
 from sqlite3 import Time
+from statistics import mean
 from fabric import Connection, ThreadingGroup
 from fabric import task
 import subprocess
@@ -87,20 +88,57 @@ def summary(ctx):
             end2end_latency_list.append(result['end2end_latency'])
             end2end_size_list.append(result['end2end_size'])
     
-
+    print(consensus_bytes_list)
+    print(end2end_bytes_list)
 
     consensus_duration = max(consensus_end_list) - min(consensus_start_list)
     end2end_duration = max(end2end_end_list) - min(end2end_start_list)
     print(consensus_duration)
     print(end2end_duration)
     
-    consensus_bps = sum(consensus_bytes_list) / consensus_duration
-    end2end_bps = sum(end2end_bytes_list) / end2end_duration
+    consensus_bps = (sum(consensus_bytes_list)) / consensus_duration
+    end2end_bps = (sum(end2end_bytes_list)) / end2end_duration
     consensus_tps = consensus_bps / result['consensus_size']
     end2end_tps = end2end_bps / result['end2end_size']
     print(consensus_bps, consensus_tps)
     print(end2end_bps, end2end_tps)
 
+    consensus_latency = mean(consensus_latency_list)
+    end2end_latency = mean(end2end_latency_list)
+    print(round(consensus_latency), round(end2end_latency))
+
+    # print(
+    #         '\n'
+    #         '-----------------------------------------\n'
+    #         ' SUMMARY:\n'
+    #         '-----------------------------------------\n'
+    #         ' + CONFIG:\n'
+    #         f' Faults: {config['faults']} node(s)\n'
+    #         f' Committee size: {nodes} node(s)\n'
+    #         f' Worker(s) per node: 1 worker(s)\n'
+    #         f' Collocate primary and workers: {self.collocate}\n'
+    #         f' Input rate: {sum(self.rate):,} tx/s\n'
+    #         f' Transaction size: {self.size[0]:,} B\n'
+    #         f' Execution time: {round(duration):,} s\n'
+    #         '\n'
+    #         f' Header size: {header_size:,} B\n'
+    #         f' Max header delay: {max_header_delay:,} ms\n'
+    #         f' GC depth: {gc_depth:,} round(s)\n'
+    #         f' Sync retry delay: {sync_retry_delay:,} ms\n'
+    #         f' Sync retry nodes: {sync_retry_nodes:,} node(s)\n'
+    #         f' batch size: {batch_size:,} B\n'
+    #         f' Max batch delay: {max_batch_delay:,} ms\n'
+    #         '\n'
+    #         ' + RESULTS:\n'
+    #         f' Consensus TPS: {round(consensus_tps):,} tx/s\n'
+    #         f' Consensus BPS: {round(consensus_bps):,} B/s\n'
+    #         f' Consensus latency: {round(consensus_latency):,} ms\n'
+    #         '\n'
+    #         f' End-to-end TPS: {round(end_to_end_tps):,} tx/s\n'
+    #         f' End-to-end BPS: {round(end_to_end_bps):,} B/s\n'
+    #         f' End-to-end latency: {round(end_to_end_latency):,} ms\n'
+    #         '-----------------------------------------\n'
+    #     )
     
         
 

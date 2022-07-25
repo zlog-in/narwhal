@@ -89,7 +89,7 @@ class LogParser:
                 f'Clients missed their target rate {self.misses:,} time(s)'
             )
         
-        print("__init__ ends")
+        # print("__init__ ends")
 
     def _merge_results(self, input):
         # Keep the earliest timestamp.
@@ -174,7 +174,7 @@ class LogParser:
         return datetime.timestamp(x)
 
     def _consensus_throughput(self):
-        print("consensus tps")
+        # print("consensus tps")
         if not self.commits:
             return 0, 0, 0
         start, end = min(self.proposals.values()), max(self.commits.values())
@@ -186,7 +186,7 @@ class LogParser:
             with open(f'./logs/result-{NODE_I}.json') as f:
                 result = json.load(f)
                 f.close()
-            result.update({'consensus_start': start, 'consensus_end': end, 'consensus_bytes': bytes, 'consensus_size': self.size[0]})
+            result.update({'consensus_start': start, 'consensus_end': end, 'consensus_bytes': bytes, 'consensus_size': self.size[0], 'consensus_bps': bps, 'consensus_tps': tps})
 
             with open(f'./logs/result-{NODE_I}.json', 'w') as f:
                 json.dump(result, f, indent=4)
@@ -195,7 +195,7 @@ class LogParser:
         return tps, bps, duration
 
     def _consensus_latency(self):
-        print("_consensu_latency")
+        # print("_consensu_latency")
         if PARSING == 0:
             latency = [c - self.proposals[d] for d, c in self.commits.items()]
         if PARSING == 1:
@@ -210,7 +210,7 @@ class LogParser:
         return mean(latency) if latency else 0
 
     def _end_to_end_throughput(self):
-        print("end to end tps")
+        # print("end to end tps")
         if not self.commits:
             return 0, 0, 0
         start, end = min(self.start), max(self.commits.values())
@@ -222,7 +222,7 @@ class LogParser:
             with open(f'./logs/result-{NODE_I}.json') as f:
                 result = json.load(f)
                 f.close()
-            result.update({'end2end_start': start, 'end2end_end': end, 'end2end_bytes': bytes, 'end2end_size': self.size[0]})
+            result.update({'end2end_start': start, 'end2end_end': end, 'end2end_bytes': bytes, 'end2end_size': self.size[0], 'end2end_bps': bps, 'end2end_tps':tps})
 
             with open(f'./logs/result-{NODE_I}.json', 'w') as f:
                 json.dump(result, f, indent=4)
@@ -230,7 +230,7 @@ class LogParser:
         return tps, bps, duration
 
     def _end_to_end_latency(self):
-        print("end to end latency")
+        # print("end to end latency")
         
             
 
@@ -333,7 +333,7 @@ class LogParser:
     #         f.write(self.result())
 
     def remote_result(self):
-        print("reults printed")
+        # print("reults printed")
         header_size = self.configs[0]['header_size']
         max_header_delay = self.configs[0]['max_header_delay']
         gc_depth = self.configs[0]['gc_depth']
@@ -375,6 +375,6 @@ class LogParser:
                 workers += [f.read()]
         # cls means class, which is the first parameters of a class method.
         # clients, primaries and workers are the names of all logs under folder log
-        print("process ends")
+        # print("process ends")
         
         return cls(clients, primaries, workers, faults=faults)
