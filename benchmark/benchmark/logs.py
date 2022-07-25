@@ -16,7 +16,12 @@ class ParseError(Exception):
 with open('index.txt') as f:
     NODE_I = int(f.readline())
     f.close()
-print(f'NODE_I: {NODE_I}')
+
+
+with open('config.json') as f:
+    config = json.load(f)
+    f.close()
+LOCAL = config['local']
 
 
 class LogParser:
@@ -27,9 +32,6 @@ class LogParser:
         assert all(x for x in inputs)
 
         self.faults = faults
-        print(len(primaries))
-        print(len(clients))
-        print(len(workers))
         if isinstance(faults, int):
             self.committee_size = len(primaries) + int(faults)
             self.workers =  len(workers) // len(primaries)
@@ -37,8 +39,7 @@ class LogParser:
             self.committee_size = '?'
             self.workers = '?'
         
-        # print(clients[0])
-        # print(clients[9])
+
         # Parse the clients logs.
         try:
             with Pool() as p:
@@ -50,10 +51,8 @@ class LogParser:
         
         self.misses = sum(misses)
 
-        # print(f'results: {results}')
-        # print(len(results))
-        # print(f'miss: {misses}')
-        # print(self.size, self.rate, self.start, self.misses, self.sent_samples, self.misses)
+        
+        # print(f'self.sent_samples: {self.sent_samples}')
 
         # Parse the primaries logs.
         try:
@@ -63,26 +62,12 @@ class LogParser:
             raise ParseError(f'Failed to parse nodes\' logs: {e}')
         
         proposals, commits, self.configs, primary_ips = zip(*results)
-        # print(f'proposal: {type(proposals)}')
-        print(len(proposals))
-        print(len(commits))
-        print(len(self.configs))
-        print(len(primary_ips))
-        # print(proposals)
-        # print(f'configs:{self.configs}')
-        # print(f'primary_ips: {primary_ips}')
+
+      
         self.proposals = self._merge_results([x.items() for x in proposals])
-        print(len(self.proposals))
-        print(type(self.proposals))
-        # print(self.proposals)
+  
         self.commits = self._merge_results([x.items() for x in commits])
-        print(type(self.proposals))
-        # print(self.proposals)
-        # print(f'proposals:{self.proposals}')
-        print(len(self.commits))
-        print(type(self.commits))
-        # print(self.commits)
-        # print(f'commits: {self.commits}')
+        # print(f'self.commits: {self.commits}')
         # Parse the workers logs.
         try:
             with Pool() as p:
@@ -90,14 +75,14 @@ class LogParser:
         except (ValueError, IndexError, AttributeError) as e:
             raise ParseError(f'Failed to parse workers\' logs: {e}')
         sizes, self.received_samples, workers_ips = zip(*results)
-        # print(f'size: {sizes}')
+        # print(f'sizes: {sizes}')
         self.sizes = {
             k: v for x in sizes for k, v in x.items() if k in self.commits
         }
-        # print(self.sizes)
         # Determine whether the primary and the workers are collocated.
         self.collocate = set(primary_ips) == set(workers_ips)
         
+        # print(f'self.received_sample: {self.received_samples}')
         # Check whether clients missed their target rate.
         if self.misses != 0:
             Print.warn(
@@ -128,26 +113,16 @@ class LogParser:
         misses = len(findall(r'rate too high', log))
 
         tmp = findall(r'\[(.*Z) .* sample transaction (\d+)', log)
-        # print(tmp)
-        samples = {int(s): self._to_posix(t) for t, s in tmp}
-        # print(samples)
-        # print(f'size:{size}')
-        # print(f'rate:{rate}')
-        # print(f'start:{start}')
-        # print(f'misses:{misses}')
-        # print(f'samples:{samples}')
+        samples = {int(s): self._to_posix(t) for t, s in tmp}  # timestap for sending each tx
+
         return size, rate, start, misses, samples
 
     def _parse_primaries(self, log):
         if search(r'(?:panicked|Error)', log) is not None:
             raise ParseError('Primary(s) panicked')
-        print("Parsing primaries")
-        # print(log)
+
         tmp = findall(r'\[(.*Z) .* Created B\d+\([^ ]+\) -> ([^ ]+=)', log)
-        # print(tmp)
         tmp = [(d, self._to_posix(t)) for t, d in tmp]
-        # print("after formatted")
-        # print(tmp)
         proposals = self._merge_results([tmp])
 
         tmp = findall(r'\[(.*Z) .* Committed B\d+\([^ ]+\) -> ([^ ]+=)', log)
@@ -188,19 +163,18 @@ class LogParser:
 
         tmp = findall(r'Batch ([^ ]+) contains (\d+) B', log)
         sizes = {d: int(s) for d, s in tmp}
-        # print(f'size of workers: {sizes}')
         tmp = findall(r'Batch ([^ ]+) contains sample tx (\d+)', log)
         samples = {int(s): d for d, s in tmp}
-        # print(f'samples of workers: {samples}')
         ip = search(r'booted on (\d+.\d+.\d+.\d+)', log).group(1)
         
-        return sizes, samples, ip
+        return sizes, samples, ip  # received samples
 
     def _to_posix(self, string):
         x = datetime.fromisoformat(string.replace('Z', '+00:00'))
         return datetime.timestamp(x)
 
     def _consensus_throughput(self):
+        print("consensus tps")
         if not self.commits:
             return 0, 0, 0
         start, end = min(self.proposals.values()), max(self.commits.values())
@@ -208,25 +182,35 @@ class LogParser:
         bytes = sum(self.sizes.values())
         bps = bytes / duration
         tps = bps / self.size[0]
-        # print(f'size[0]: {self.size[0]}')
-        with open(f'./logs/result-{NODE_I}.json') as f:
-            result = json.load(f)
-            f.close()
-        result.update({'consensus_start': start, 'consensus_end': end, 'consensus_bytes': bytes, 'consensus_size': self.size[0]})
+        if LOCAL == 0:
+            with open(f'./logs/result-{NODE_I}.json') as f:
+                result = json.load(f)
+                f.close()
+            result.update({'consensus_start': start, 'consensus_end': end, 'consensus_bytes': bytes, 'consensus_size': self.size[0]})
 
-        with open(f'./logs/result-{NODE_I}.json', 'w') as f:
-            json.dump(result, f, indent=4)
-            f.close()
+            with open(f'./logs/result-{NODE_I}.json', 'w') as f:
+                json.dump(result, f, indent=4)
+                f.close()
 
         return tps, bps, duration
 
     def _consensus_latency(self):
         print("_consensu_latency")
-        latency = [c - self.proposals[d] for d, c in self.commits.items()]
-
+        if LOCAL == 1:
+            latency = [c - self.proposals[d] for d, c in self.commits.items()]
+        if LOCAL == 0:
+            latency = [c - self.proposals[d] for d, c in self.commits.items() if d in self.proposals]
+            with open(f'./logs/result-{NODE_I}.json') as f:
+                result = json.load(f)
+                f.close()
+                result.update({'consensus_latency': mean(latency) * 1000})
+            with open(f'./logs/result-{NODE_I}.json', 'w') as f:
+                json.dump(result, f, indent=4)
+               
         return mean(latency) if latency else 0
 
     def _end_to_end_throughput(self):
+        print("end to end tps")
         if not self.commits:
             return 0, 0, 0
         start, end = min(self.start), max(self.commits.values())
@@ -234,17 +218,22 @@ class LogParser:
         bytes = sum(self.sizes.values())
         bps = bytes / duration
         tps = bps / self.size[0]
-        with open(f'./logs/result-{NODE_I}.json') as f:
-            result = json.load(f)
-            f.close()
-        result.update({'end2end_start': start, 'end2end_end': end, 'end2end_bytes': bytes, 'end2end_size': self.size[0]})
+        if LOCAL == 0:
+            with open(f'./logs/result-{NODE_I}.json') as f:
+                result = json.load(f)
+                f.close()
+            result.update({'end2end_start': start, 'end2end_end': end, 'end2end_bytes': bytes, 'end2end_size': self.size[0]})
 
-        with open(f'./logs/result-{NODE_I}.json', 'w') as f:
-            json.dump(result, f, indent=4)
-            f.close()
+            with open(f'./logs/result-{NODE_I}.json', 'w') as f:
+                json.dump(result, f, indent=4)
+                f.close()
         return tps, bps, duration
 
     def _end_to_end_latency(self):
+        print("end to end latency")
+        
+            
+
         latency = []
         for sent, received in zip(self.sent_samples, self.received_samples):
             for tx_id, batch_id in received.items():
@@ -253,6 +242,18 @@ class LogParser:
                     start = sent[tx_id]
                     end = self.commits[batch_id]
                     latency += [end-start]
+                    # print(latency)
+        
+        if LOCAL == 0:
+            with open(f'./logs/result-{NODE_I}.json') as f:
+                result = json.load(f)
+                f.close()
+            result.update({'end2end_latency': mean(latency)*1000})
+            
+            with open(f'./logs/result-{NODE_I}.json', 'w') as f:
+                json.dump(result, f, indent=4)
+                f.close()
+
         return mean(latency) if latency else 0
 
     def result(self):
@@ -340,36 +341,18 @@ class LogParser:
         sync_retry_nodes = self.configs[0]['sync_retry_nodes']
         batch_size = self.configs[0]['batch_size']
         max_batch_delay = self.configs[0]['max_batch_delay']
+        
 
         with open(f'./logs/result-{NODE_I}.json', 'w') as f:
             json.dump({'header_size': int(header_size), 'max_header_delay':int(max_header_delay), 'gc_depth': int(gc_depth), 'sync_retry_delay': int(sync_retry_delay), 'sync_retry_nodes': int(sync_retry_nodes), 'batch_size': int(batch_size), 'max_batch_delay': int(max_batch_delay) }, f, indent=4)
             f.close()
 
-        # consensus_latency = self._consensus_latency() * 1_000
-        consensus_latency = 1000
-        consensus_tps, consensus_bps, _ = self._consensus_throughput()
-        end_to_end_tps, end_to_end_bps, duration = self._end_to_end_throughput()
-        # end_to_end_latency = self._end_to_end_latency() * 1_000
+        self._consensus_latency()
+        self._consensus_throughput()
+        self._end_to_end_throughput()
+        self._end_to_end_latency()
 
-        with open(f'./logs/result-{NODE_I}.json') as f:
-            result = json.load(f)
-            f.close()
-        result.update({'onsensus_latency': consensus_latency, 'consensus_tps': consensus_tps, 'consensus_bps': consensus_bps})
-        
-        
-        with open(f'./logs/result-{NODE_I}.json', 'w') as f:
-            json.dump(result, f, indent=4)
-            f.close()
-
-    def _update_json(json_file, entries):
-
-        with open(f'./mpc/{json_file}') as f:
-            file = json.load(f)
-            f.close()
-        file.update(entries, f ,inden=4)
-
-        with open(f'./mpc/{json_file}', 'w') as f:
-            json.dump(file, f, indent=4)
+        print('Remote results are summarized')
 
 
 

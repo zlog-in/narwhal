@@ -5,6 +5,7 @@ import subprocess
 import random
 import json
 from datetime import datetime
+from multiprocessing import Pool
 
 
 @task
@@ -54,6 +55,55 @@ def container(ctx):
 @task
 def parsing(ctx):
     subprocess.call(['bash', '../parsing.sh'])
+
+@task
+def summary(ctx):
+    with open('../config.json') as f:
+        config = json.load(f)
+        f.close()
+    consensus_bytes_list = []
+    consensus_start_list = []
+    consensus_end_list = []
+    consensus_latency_list = []
+    consensus_size_list = []
+    end2end_bytes_list = []
+    end2end_start_list = []
+    end2end_end_list = []
+    end2end_latency_list = []
+    end2end_size_list = []
+
+    for node_i in range(config['servers']):
+        with open(f'../logs/result-{node_i}.json') as f:
+            result = json.load(f)
+            f.close()
+            consensus_bytes_list.append(result['consensus_bytes'])
+            consensus_start_list.append(result['consensus_start'])
+            consensus_end_list.append(result['consensus_end'])
+            consensus_latency_list.append(result['consensus_latency'])
+            consensus_size_list.append(result['consensus_size'])
+            end2end_bytes_list.append(result['end2end_bytes'])
+            end2end_start_list.append(result['end2end_start'])
+            end2end_end_list.append(result['end2end_end'])
+            end2end_latency_list.append(result['end2end_latency'])
+            end2end_size_list.append(result['end2end_size'])
+    
+
+
+    consensus_duration = max(consensus_end_list) - min(consensus_start_list)
+    end2end_duration = max(end2end_end_list) - min(end2end_start_list)
+    print(consensus_duration)
+    print(end2end_duration)
+    
+    consensus_bps = sum(consensus_bytes_list) / consensus_duration
+    end2end_bps = sum(end2end_bytes_list) / end2end_duration
+    consensus_tps = consensus_bps / result['consensus_size']
+    end2end_tps = end2end_bps / result['end2end_size']
+    print(consensus_bps, consensus_tps)
+    print(end2end_bps, end2end_tps)
+
+    
+        
+
 
 @task
 def build(ctx):
