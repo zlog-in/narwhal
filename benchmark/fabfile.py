@@ -171,9 +171,9 @@ def logs(ctx):
             node_i = int(f.readline())
             f.close()
         
-        if config['local'] == 1:
+        if config['parsing'] == 0 and config['local'] == 1:
             print(LogParser.process('./logs', faults='?').result())
-        if config['local'] == 0:
+        if config['parsing'] == 1:
             print(LogParser.process('./logs', faults='?').remote_result())
 
         # print(LogParser.process('./logs', node_i, faults='?').result())

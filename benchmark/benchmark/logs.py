@@ -21,7 +21,7 @@ with open('index.txt') as f:
 with open('config.json') as f:
     config = json.load(f)
     f.close()
-LOCAL = config['local']
+PARSING = config['parsing']
 
 
 class LogParser:
@@ -182,7 +182,7 @@ class LogParser:
         bytes = sum(self.sizes.values())
         bps = bytes / duration
         tps = bps / self.size[0]
-        if LOCAL == 0:
+        if PARSING == 1:
             with open(f'./logs/result-{NODE_I}.json') as f:
                 result = json.load(f)
                 f.close()
@@ -196,9 +196,9 @@ class LogParser:
 
     def _consensus_latency(self):
         print("_consensu_latency")
-        if LOCAL == 1:
+        if PARSING == 0:
             latency = [c - self.proposals[d] for d, c in self.commits.items()]
-        if LOCAL == 0:
+        if PARSING == 1:
             latency = [c - self.proposals[d] for d, c in self.commits.items() if d in self.proposals]
             with open(f'./logs/result-{NODE_I}.json') as f:
                 result = json.load(f)
@@ -218,7 +218,7 @@ class LogParser:
         bytes = sum(self.sizes.values())
         bps = bytes / duration
         tps = bps / self.size[0]
-        if LOCAL == 0:
+        if PARSING == 1:
             with open(f'./logs/result-{NODE_I}.json') as f:
                 result = json.load(f)
                 f.close()
@@ -244,7 +244,7 @@ class LogParser:
                     latency += [end-start]
                     # print(latency)
         
-        if LOCAL == 0:
+        if PARSING == 1:
             with open(f'./logs/result-{NODE_I}.json') as f:
                 result = json.load(f)
                 f.close()
