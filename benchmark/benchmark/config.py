@@ -66,7 +66,7 @@ class Committee:
         port = base_port
         self.json = {'authorities': OrderedDict()}
         
-        if local == 0:
+        if local == False:
             round = 0
             index = 0
             for name, hosts in addresses.items():
@@ -103,7 +103,7 @@ class Committee:
                 index = index + 1
                     
 
-        if local == 1:
+        if local == True:
             for name, hosts in addresses.items():
                 host = hosts.pop(0)
                 primary_addr = {
@@ -208,11 +208,14 @@ class LocalCommittee(Committee):
                 #print(names.index(x))
         else:
             #addresses = OrderedDict((x, [f'129.13.88.1{names.index(x)+82}']*(1+workers)) for x in names)   # 129.13.88.18{names.index(x)+2}
-            for x in names:                
-                if (names.index(x) % servers) != (servers-1):
-                    addresses[x] = [f'129.13.88.1{(names.index(x) % 10) +82}']*(1+workers)
+            for x in names:
+                if servers == 10:               
+                    if (names.index(x) % servers) != (servers-1):
+                        addresses[x] = [f'129.13.88.1{(names.index(x) % servers) +82}']*(1+workers)
+                    else:
+                        addresses[x] = [f'129.13.88.1{(names.index(x) % servers)+71}']*(1+workers)
                 else:
-                    addresses[x] = [f'129.13.88.1{(names.index(x) % 10)+71}']*(1+workers)
+                    addresses[x] = [f'129.13.88.1{(names.index(x) % servers) +82}']*(1+workers)
                     
         #print(names)    
         #print("Committee IDs and addresses")
