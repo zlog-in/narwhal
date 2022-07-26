@@ -34,7 +34,6 @@ scp mpc-6:/home/zhan/narwhal/logs/*.log /home/z/Sync/Study/DSN/Marc/Code/narwhal
 scp mpc-7:/home/zhan/narwhal/logs/*.log /home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/logs/
 
 scp mpc-8:/home/zhan/narwhal/logs/*.log /home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/logs/
-scp mpc-8:/home/zhan/narwhal/logs/*.json /home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/logs/
 
 scp mpc-9:/home/zhan/narwhal/logs/*.log /home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/logs/
 
