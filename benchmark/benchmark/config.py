@@ -201,7 +201,7 @@ class LocalCommittee(Committee):
         assert isinstance(port, int)
         assert isinstance(workers, int) and workers > 0
         addresses = OrderedDict()
-        if local == 1:
+        if local == True:
             #addresses = OrderedDict((x, [f'127.0.0.1']*(1+workers)) for x in names)
             for x in names:
                 addresses[x] = [f'127.0.0.1']*(1+workers)
@@ -306,7 +306,8 @@ class BenchParameters:
         except ValueError:
             raise ConfigError('Invalid parameters type')
 
-        if min(self.nodes) <= self.faults:
+        # if min(self.nodes) <= self.faults:
+        if self.replicas * self.servers <= self.faults
             raise ConfigError('There should be more nodes than faults')
         
         #Z
