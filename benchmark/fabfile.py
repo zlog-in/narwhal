@@ -45,16 +45,12 @@ def local(ctx, debug=True):
         f.close()
     print(node_parameters)
     try:
-        with open('config.json') as f:
-            config = json.load(f)
-        read = 1
-        if read == 1:
-            local = config['local']
-        if local == 1:
+       
+        if bench_parameters['local'] == True:
             ret = LocalBench(bench_parameters, node_parameters).run(debug)
             Print.info('Parsing logs...')
             print(ret.result())
-        if local == 0:
+        if bench_parameters['local'] == False:
             LocalBench(bench_parameters,node_parameters).run(debug)
             print("Parsing logs locally")
         

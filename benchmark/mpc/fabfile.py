@@ -7,9 +7,13 @@ import subprocess
 def benchmarking(ctx):
     hosts = ThreadingGroup('mpc-0','mpc-1','mpc-2','mpc-3','mpc-4','mpc-5','mpc-6','mpc-7','mpc-8','mpc-9')
     hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/config.json', remote  = '/home/zhan/narwhal/')
+    hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/bench_parameters.json', remote  = '/home/zhan/narwhal/')
+    hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/node_parameters.json', remote  = '/home/zhan/narwhal/')
     hosts.run('docker stop hotstuff')
     hosts.run('docker start narwhal')
     hosts.run('docker cp narwhal/config.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker cp narwhal/bench_parameters.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker cp narwhal/node_parameters.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker exec -t narwhal bash ben.sh')
 
 @task
