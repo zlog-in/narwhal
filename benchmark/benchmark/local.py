@@ -47,21 +47,14 @@ class LocalBench:
         try:
             Print.info('Setting up testbed...')
             Print.info('Reading configuration')
-            with open('config.json') as f:
-                config = json.load(f)
-            read = 1 
-            
+           
             nodes, rate, replicas, servers, local = self.nodes[0], self.rate[0], self.replicas, self.servers, self.local
-            if read == 1:
-                replicas = config['replicas']
-                servers = config['servers']
-                local = config['local'] 
-                duration = config['duration']  
-                rate = config['input_rate'] 
-                faults = config['faults']  
-
-            f.close() 
+                        
+            duration = self.duration
+            faults = self.faults
             nodes = replicas * servers
+
+            print()
 
             # Cleanup all files.
             cmd = f'{CommandMaker.clean_logs()} ; {CommandMaker.cleanup()}'
@@ -85,7 +78,10 @@ class LocalBench:
                 # if local == 1:
                 #     subprocess.run(cmd, check=True)
                 keys += [Key.from_file(filename)]
-            node_i = int(subprocess.check_output(['tail', '-1', 'index.txt']))
+            with open('index.txt') as f:
+                node_i = int(f.readline())
+                f.close()
+           
             node_ip = '127.0.0.1'
             match node_i:
                 case 0: node_ip = '129.13.88.182'
@@ -104,10 +100,11 @@ class LocalBench:
             committee.print(PathMaker.committee_file())
 
             self.node_parameters.print(PathMaker.parameters_file())
+
             # Run the clients (they will wait for the nodes to be ready).
             workers_addresses = committee.workers_addresses(self.faults)
             rate_share = ceil(rate / committee.workers())
-            if local == 0:
+            if local == False:
                 for i, addresses in enumerate(workers_addresses):
                     for (id, address) in addresses:
                         addr_ip = address[:-5]
@@ -123,7 +120,7 @@ class LocalBench:
                             #print(cmd)
                             log_file = PathMaker.client_log_file(i, id)
                             self._background_run(cmd, log_file)
-            if local == 1:
+            if local == True:
                 for i, addresses in enumerate(workers_addresses):
                     for (id, address) in addresses:
                         cmd = CommandMaker.run_client(

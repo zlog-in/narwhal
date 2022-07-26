@@ -3,6 +3,7 @@ from audioop import add
 from json import dump, load
 from collections import OrderedDict
 from traceback import print_tb
+from xmlrpc.client import Boolean
 
 
 class ConfigError(Exception):
@@ -237,11 +238,9 @@ class NodeParameters:
         if not all(isinstance(x, int) for x in inputs):
             raise ConfigError('Invalid parameters type')
         
-        #Z
-        #print("Node parameters:")
-        #print(json)
 
         self.json = json
+        print(self.json)
 
     def print(self, filename):
         assert isinstance(filename, str)
@@ -252,36 +251,55 @@ class NodeParameters:
 class BenchParameters:
     def __init__(self, json):
         try:
+            print(type(json))
             self.faults = int(json['faults'])
 
             nodes = json['nodes']
             nodes = nodes if isinstance(nodes, list) else [nodes]
-            if not nodes or any(x <= 1 for x in nodes):
+            if not nodes or any(x <= 1 for x in nodes):                 
                 raise ConfigError('Missing or invalid number of nodes')
             self.nodes = [int(x) for x in nodes]
-
+            print(self.nodes)
             rate = json['rate']
             rate = rate if isinstance(rate, list) else [rate]
             if not rate:
                 raise ConfigError('Missing input rate')
             self.rate = [int(x) for x in rate]
 
+            print(self.rate)
+
             
             self.workers = int(json['workers'])
 
-            if 'collocate' in json:
+            if 'collocate' in json: # for missing fields in json file / dirctionary
                 self.collocate = bool(json['collocate'])
             else:
                 self.collocate = True
 
+            print(self.collocate)
             self.tx_size = int(json['tx_size'])
            
             self.duration = int(json['duration'])
             self.replicas = int(json['replicas'])
             self.servers = int(json['servers'])
-            self.local = int(json['local'])
-
+            self.local = bool(json['local'])
             self.runs = int(json['runs']) if 'runs' in json else 1
+            self.parsing = bool(json['parsing'])
+            print(self.faults)
+            print(self.nodes)
+            print(self.rate)
+            print(self.workers)
+            print(self.collocate)
+            print(self.tx_size)
+            print(self.duration)
+            print(self.replicas)
+            print(self.servers)
+            print(self.local)
+            print(self.runs)
+            print(self.parsing)
+            
+
+
         except KeyError as e:
             raise ConfigError(f'Malformed bench parameters: missing key {e}')
 

@@ -6,6 +6,8 @@ mpc/results.db
 logs/
 faulty.json
 mpc/*.json
+bench_parameters.json
+node_parameters.json
 results
 plots
 
