@@ -204,19 +204,20 @@ class LogParser:
         end_to_end_tps, end_to_end_bps, duration = self._end_to_end_throughput()
         end_to_end_latency = self._end_to_end_latency() * 1_000
 
-        with open('config.json') as f:
-            config = json.load(f)
-        read = 1 
+        with open('bench_parameters.json') as f:
+            bench_parameters = json.load(f)
+            f.close()
         
-        if read == 1:
-            replicas = config['replicas']
-            servers = config['servers']
-            local = config['local'] 
-            duration = config['duration']  
-            rate = config['input_rate'] 
-            faults = config['faults']   
+     
+        
+    
+        replicas = bench_parameters['replicas']
+        servers = bench_parameters['servers']
+        local = bench_parameters['local'] 
+        duration = bench_parameters['duration']  
+        rate = bench_parameters['rate'] 
+        faults = bench_parameters['faults']   
         nodes = replicas * servers
-        f.close()
 
         results_db = sqlite3.connect('./mpc/results.db')
         insert_S1Narwhal_results = f'INSERT INTO S1Narwhal VALUES ("{datetime.now()}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
@@ -232,9 +233,9 @@ class LogParser:
             ' SUMMARY:\n'
             '-----------------------------------------\n'
             ' + CONFIG:\n'
-            f' Faults: {self.faults} node(s)\n'
-            f' Committee size: {self.committee_size} node(s)\n'
-            f' Worker(s) per node: {self.workers} worker(s)\n'
+            f' Faults: {faults} node(s)\n'
+            f' Committee size: {nodes} node(s)\n'
+            f' Worker(s) per node: {1} worker(s)\n'
             f' Collocate primary and workers: {self.collocate}\n'
             f' Input rate: {sum(self.rate):,} tx/s\n'
             f' Transaction size: {self.size[0]:,} B\n'
