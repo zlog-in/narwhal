@@ -101,7 +101,7 @@ impl Client {
         // Submit all transactions.
         let burst = self.rate / PRECISION;
         let mut tx = BytesMut::with_capacity(self.size);
-        let mut counter = 1;
+        let mut counter = 0;
         let mut r = rand::thread_rng().gen();
         let mut transport = Framed::new(stream, LengthDelimitedCodec::new());
         let interval = interval(Duration::from_millis(BURST_DURATION));
@@ -131,7 +131,7 @@ impl Client {
                 let bytes = tx.split().freeze();
                 if let Err(e) = transport.send(bytes).await {
                     warn!("Failed to send transaction: {}", e);
-                    break 'main;
+                    //break 'main;
                 }
             }
             if now.elapsed().as_millis() > BURST_DURATION as u128 {
