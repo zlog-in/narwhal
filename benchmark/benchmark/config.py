@@ -307,7 +307,7 @@ class BenchParameters:
             raise ConfigError('Invalid parameters type')
 
         # if min(self.nodes) <= self.faults:
-        if self.replicas * self.servers <= self.faults
+        if self.replicas * self.servers <= self.faults:
             raise ConfigError('There should be more nodes than faults')
         
         #Z

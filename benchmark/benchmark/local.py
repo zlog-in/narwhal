@@ -75,7 +75,7 @@ class LocalBench:
             key_files = [PathMaker.key_file(i) for i in range(nodes)]
             for filename in key_files:
                 cmd = CommandMaker.generate_key(filename).split()
-                # if local == 1:
+                # if local == True:
                 #     subprocess.run(cmd, check=True)
                 keys += [Key.from_file(filename)]
             with open('index.txt') as f:
@@ -104,6 +104,67 @@ class LocalBench:
             # Run the clients (they will wait for the nodes to be ready).
             workers_addresses = committee.workers_addresses(self.faults)
             rate_share = ceil(rate / committee.workers())
+            
+
+            # Run the primaries (except the faulty ones).
+            if local == False:
+                for i, address in enumerate(committee.primary_addresses(self.faults)):
+                    if node_i == i % servers:
+                        cmd = CommandMaker.run_primary(
+                            PathMaker.key_file(i),
+                            PathMaker.committee_file(),
+                            PathMaker.db_path(i),
+                            PathMaker.parameters_file(),
+                            debug=debug
+                        )
+                        print("cmd for primaries")
+                        print(cmd)
+                        log_file = PathMaker.primary_log_file(i)
+                        self._background_run(cmd, log_file)
+            if local == True:
+                for i, address in enumerate(committee.primary_addresses(self.faults)):
+                    cmd = CommandMaker.run_primary(
+                        PathMaker.key_file(i),
+                        PathMaker.committee_file(),
+                        PathMaker.db_path(i),
+                        PathMaker.parameters_file(),
+                        debug=debug
+                    )
+                    log_file = PathMaker.primary_log_file(i)
+                    self._background_run(cmd, log_file)
+            
+
+            # Run the workers (except the faulty ones).
+            if local == False:
+                for i, addresses in enumerate(workers_addresses):
+                    if node_i == i % servers:
+                        for (id, address) in addresses:
+                            cmd = CommandMaker.run_worker(
+                                PathMaker.key_file(i),
+                                PathMaker.committee_file(),
+                                PathMaker.db_path(i, id),
+                                PathMaker.parameters_file(),
+                                id,  # The worker's id.
+                                debug=debug                       
+                            )
+                            print("cmd for works")
+                            print(cmd)
+                            log_file = PathMaker.worker_log_file(i, id)
+                            self._background_run(cmd, log_file)
+            if local == True:
+                for i, addresses in enumerate(workers_addresses):
+                    for (id, address) in addresses:
+                        cmd = CommandMaker.run_worker(
+                            PathMaker.key_file(i),
+                            PathMaker.committee_file(),
+                            PathMaker.db_path(i, id),
+                            PathMaker.parameters_file(),
+                            id,  # The worker's id.
+                            debug=debug
+                        )
+                        log_file = PathMaker.worker_log_file(i, id)
+                        self._background_run(cmd, log_file)
+
             if local == False:
                 for i, addresses in enumerate(workers_addresses):
                     for (id, address) in addresses:
@@ -132,64 +193,6 @@ class LocalBench:
                         log_file = PathMaker.client_log_file(i, id)
                         self._background_run(cmd, log_file)
 
-            # Run the primaries (except the faulty ones).
-            if local == 0:
-                for i, address in enumerate(committee.primary_addresses(self.faults)):
-                    if node_i == i % servers:
-                        cmd = CommandMaker.run_primary(
-                            PathMaker.key_file(i),
-                            PathMaker.committee_file(),
-                            PathMaker.db_path(i),
-                            PathMaker.parameters_file(),
-                            debug=debug
-                        )
-                        print("cmd for primaries")
-                        print(cmd)
-                        log_file = PathMaker.primary_log_file(i)
-                        self._background_run(cmd, log_file)
-            if local == 1:
-                for i, address in enumerate(committee.primary_addresses(self.faults)):
-                    cmd = CommandMaker.run_primary(
-                        PathMaker.key_file(i),
-                        PathMaker.committee_file(),
-                        PathMaker.db_path(i),
-                        PathMaker.parameters_file(),
-                        debug=debug
-                    )
-                    log_file = PathMaker.primary_log_file(i)
-                    self._background_run(cmd, log_file)
-            
-
-            # Run the workers (except the faulty ones).
-            if local == 0:
-                for i, addresses in enumerate(workers_addresses):
-                    if node_i == i % servers:
-                        for (id, address) in addresses:
-                            cmd = CommandMaker.run_worker(
-                                PathMaker.key_file(i),
-                                PathMaker.committee_file(),
-                                PathMaker.db_path(i, id),
-                                PathMaker.parameters_file(),
-                                id,  # The worker's id.
-                                debug=debug                       
-                            )
-                            print("cmd for works")
-                            print(cmd)
-                            log_file = PathMaker.worker_log_file(i, id)
-                            self._background_run(cmd, log_file)
-            if local == 1:
-                for i, addresses in enumerate(workers_addresses):
-                    for (id, address) in addresses:
-                        cmd = CommandMaker.run_worker(
-                            PathMaker.key_file(i),
-                            PathMaker.committee_file(),
-                            PathMaker.db_path(i, id),
-                            PathMaker.parameters_file(),
-                            id,  # The worker's id.
-                            debug=debug
-                        )
-                        log_file = PathMaker.worker_log_file(i, id)
-                        self._background_run(cmd, log_file)
 
             # Wait for all transactions to be processed.
             Print.info(f'Running benchmark ({duration} sec)...')
