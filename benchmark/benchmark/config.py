@@ -214,7 +214,7 @@ class LocalCommittee(Committee):
                         addresses[x] = [f'129.13.88.1{(names.index(x) % servers) +82}']*(1+workers)
                     else:
                         addresses[x] = [f'129.13.88.1{(names.index(x) % servers)+71}']*(1+workers)
-                else:
+                if servers < 10:
                     addresses[x] = [f'129.13.88.1{(names.index(x) % servers) +82}']*(1+workers)
                     
         #print(names)    
