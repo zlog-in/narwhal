@@ -133,8 +133,8 @@ impl Client {
                     warn!("Failed to send transaction: {}", e);
                     break 'main;
                     //break;
-                    print!(e);
-                    warn!(bytes);
+                    print!("{}", e);
+                    warn!("{}", bytes);
                     
                 }
             }
