@@ -133,6 +133,9 @@ impl Client {
                     warn!("Failed to send transaction: {}", e);
                     break 'main;
                     //break;
+                    print!(e);
+                    warn!(bytes);
+                    
                 }
             }
             if now.elapsed().as_millis() > BURST_DURATION as u128 {
