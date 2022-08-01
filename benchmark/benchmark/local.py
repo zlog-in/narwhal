@@ -59,8 +59,6 @@ class LocalBench:
         try:
             Print.info('Setting up testbed...')
             Print.info('Reading configuration')
-            with open('config.json') as f:
-                config = json.load(f)
 
             
             nodes, rate, replicas, servers, local, faults, duration = self.nodes[0], self.rate[0], self.replicas, self.servers, self.local, self.faults, self.duration
