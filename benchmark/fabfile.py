@@ -34,18 +34,21 @@ def local(ctx, debug=True):
         'max_batch_delay': 200  # ms
     }
     try:
-        with open('config.json') as f:
-            config = json.load(f)
-        read = 1
-        f.close()
-        if read == 1:
-            local = config['local']
-        if local == 1:
-            ret = LocalBench(bench_params, node_params).run(debug)
+    
+
+        with open('bench_parameters.json') as f:
+            bench_parameters = json.load(f)
+            f.close()
+        with open('node_parameters.json') as f:
+            node_parameters = json.load(f)
+            f.close()
+        
+        if bench_parameters['local'] == True:
+            ret = LocalBench(bench_parameters, node_parameters).run(debug)
             Print.info('Parsing logs...')
             print(ret.result())
-        if local == 0:
-            LocalBench(bench_params,node_params).run(debug)
+        if bench_parameters['local'] == False:
+            LocalBench(bench_parameters,node_parameters).run(debug)
             print("Parsing logs locally")
         
     except BenchError as e:

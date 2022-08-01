@@ -22,13 +22,17 @@ def benchmarking(ctx):
 def faulty(ctx):
     hosts = ThreadingGroup('mpc-0','mpc-1','mpc-2','mpc-3','mpc-4','mpc-5','mpc-6','mpc-7','mpc-8','mpc-9')
     faulty_config()
-    hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/config.json', remote  = '/home/zhan/narwhal/')
+    # hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/config.json', remote  = '/home/zhan/narwhal/')
     hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/faulty.json', remote  = '/home/zhan/narwhal/')
+    hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/bench_parameters.json', remote  = '/home/zhan/narwhal/')
+    hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/node_parameters.json', remote  = '/home/zhan/narwhal/')
     # hosts.run('docker stop narwhal')
     hosts.run('docker stop hotstuff')
     hosts.run('docker start narwhal')
-    hosts.run('docker cp narwhal/config.json narwhal:/home/narwhal/benchmark/')
+    # hosts.run('docker cp narwhal/config.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/faulty.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker cp narwhal/bench_parameters.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker cp narwhal/node_parameters.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker exec -t narwhal bash ben.sh')
 
 
@@ -174,13 +178,13 @@ def build(ctx):
 
 
 def faulty_config():
-    with open('../config.json', 'r') as f:
-        config = json.load(f)
+    with open('../bench_parameters.json', 'r') as f:
+        bench_parameters = json.load(f)
         f.close()
-    faults = config['faults']
-    servers = config['servers']
-    duration = config['duration']
-    replicas = config['replicas']
+    faults = bench_parameters['faults']
+    servers = bench_parameters['servers']
+    duration = bench_parameters['duration']
+    replicas = bench_parameters['replicas']
     faulty_servers = set()
     #time_seed = read_time()
     time_seed = datetime.now()

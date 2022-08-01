@@ -2,6 +2,7 @@ node
 benchmark_client
 index.txt
 config.json
+.committee.json
 .parameters.json
 mpc/results.db
 mpc/result-*.json

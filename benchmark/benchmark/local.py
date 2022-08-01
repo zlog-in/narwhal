@@ -61,18 +61,10 @@ class LocalBench:
             Print.info('Reading configuration')
             with open('config.json') as f:
                 config = json.load(f)
-            read = 1 
-            
-            nodes, rate, replicas, servers, local = self.nodes[0], self.rate[0], self.replicas, self.servers, self.local
-            if read == 1:
-                replicas = config['replicas']
-                servers = config['servers']
-                local = config['local'] 
-                duration = config['duration']  
-                rate = config['input_rate'] 
-                faults = config['faults']  
 
-            f.close() 
+            
+            nodes, rate, replicas, servers, local, faults, duration = self.nodes[0], self.rate[0], self.replicas, self.servers, self.local, self.faults, self.duration
+          
             nodes = replicas * servers
 
             # Cleanup all files.
@@ -94,7 +86,7 @@ class LocalBench:
             key_files = [PathMaker.key_file(i) for i in range(nodes)]
             for filename in key_files:
                 cmd = CommandMaker.generate_key(filename).split()
-                # if local == 1:
+                # if local == True:
                 #     subprocess.run(cmd, check=True)
                 keys += [Key.from_file(filename)]
             with open('index.txt') as f:
@@ -120,9 +112,10 @@ class LocalBench:
 
             self.node_parameters.print(PathMaker.parameters_file())
             # Run the clients (they will wait for the nodes to be ready).
-            workers_addresses = committee.workers_addresses(self.faults)
+            # workers_addresses = committee.workers_addresses(self.faults)
+            workers_addresses = committee.workers_addresses(0)
             rate_share = ceil(rate / committee.workers())
-            if local == 0:
+            if local == False:
                 for i, addresses in enumerate(workers_addresses):
                     for (id, address) in addresses:
                         addr_ip = address[:-5]
@@ -138,7 +131,7 @@ class LocalBench:
                             #print(cmd)
                             log_file = PathMaker.client_log_file(i, id)
                             self._background_run(cmd, log_file)
-            if local == 1:
+            if local == True:
                 for i, addresses in enumerate(workers_addresses):
                     for (id, address) in addresses:
                         cmd = CommandMaker.run_client(
@@ -151,8 +144,8 @@ class LocalBench:
                         self._background_run(cmd, log_file)
 
             # Run the primaries (except the faulty ones).
-            if local == 0:
-                for i, address in enumerate(committee.primary_addresses(self.faults)):
+            if local == False:
+                for i, address in enumerate(committee.primary_addresses(0)):
                     if node_i == i % servers:
                         cmd = CommandMaker.run_primary(
                             PathMaker.key_file(i),
@@ -165,8 +158,8 @@ class LocalBench:
                         # print(cmd)
                         log_file = PathMaker.primary_log_file(i)
                         self._background_run(cmd, log_file)
-            if local == 1:
-                for i, address in enumerate(committee.primary_addresses(self.faults)):
+            if local == True:
+                for i, address in enumerate(committee.primary_addresses(0)):
                     cmd = CommandMaker.run_primary(
                         PathMaker.key_file(i),
                         PathMaker.committee_file(),
@@ -179,7 +172,7 @@ class LocalBench:
             
 
             # Run the workers (except the faulty ones).
-            if local == 0:
+            if local == False:
                 for i, addresses in enumerate(workers_addresses):
                     if node_i == i % servers:
                         for (id, address) in addresses:
@@ -195,7 +188,7 @@ class LocalBench:
                             # print(cmd)
                             log_file = PathMaker.worker_log_file(i, id)
                             self._background_run(cmd, log_file)
-            if local == 1:
+            if local == True:
                 for i, addresses in enumerate(workers_addresses):
                     for (id, address) in addresses:
                         cmd = CommandMaker.run_worker(
@@ -215,9 +208,9 @@ class LocalBench:
                 f.close()
             
 
-            for r in range(config['replicas']):
+            for r in range(replicas):
                 # print(f'r: {r}')
-                replica_i = node_i + r * config['servers']
+                replica_i = node_i + r * servers
                 flag = faulty_config[f'{replica_i}'][0]
                 if flag == 1:
                     # print(f'flag: {flag}')

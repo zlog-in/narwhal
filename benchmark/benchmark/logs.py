@@ -18,10 +18,10 @@ with open('index.txt') as f:
     f.close()
 
 
-with open('config.json') as f:
-    config = json.load(f)
+with open('bench_parameters.json') as f:
+    bench_parameters = json.load(f)
     f.close()
-PARSING = config['parsing']
+PARSING = bench_parameters['parsing']
 
 
 class LogParser:
@@ -270,15 +270,15 @@ class LogParser:
         end_to_end_tps, end_to_end_bps, duration = self._end_to_end_throughput()
         end_to_end_latency = self._end_to_end_latency() * 1_000
 
-        with open('config.json') as f:
-            config = json.load(f)
+        with open('bench_parameters.json') as f:
+            bench_parameters = json.load(f)
         
-        replicas = config['replicas']
-        servers = config['servers']
-        local = config['local'] 
-        duration = config['duration']  
-        rate = config['input_rate'] 
-        faults = config['faults']   
+        replicas = bench_parameters['replicas']
+        servers = bench_parameters['servers']
+        local = bench_parameters['local'] 
+        duration = bench_parameters['duration']  
+        rate = bench_parameters['rate'] 
+        faults = bench_parameters['faults']   
         nodes = replicas * servers
         f.close()
 
