@@ -6,4 +6,4 @@ cd /home/narwhal/benchmark/
 #rm logs/*.log
 
 fab local
-fab parsing-remote
+# fab parsing-remote
