@@ -71,13 +71,9 @@ class Committee:
             index = 0
             for name, hosts in addresses.items():
                 
-                #print(len(addresses))
                 
-                #print("name, hosts:")
-                #print(name)
-                #print(hosts)
                 host = hosts.pop(0)
-                #print(host)
+       
                 primary_addr = {
                     'primary_to_primary': f'{host}:{port + round}',
                     'worker_to_primary': f'{host}:{port + round + 1}'
@@ -205,7 +201,7 @@ class LocalCommittee(Committee):
             #addresses = OrderedDict((x, [f'127.0.0.1']*(1+workers)) for x in names)
             for x in names:
                 addresses[x] = [f'127.0.0.1']*(1+workers)
-                #print(names.index(x))
+                
         else:
             #addresses = OrderedDict((x, [f'129.13.88.1{names.index(x)+82}']*(1+workers)) for x in names)   # 129.13.88.18{names.index(x)+2}
             for x in names:
@@ -217,9 +213,7 @@ class LocalCommittee(Committee):
                 if servers < 10:
                     addresses[x] = [f'129.13.88.1{(names.index(x) % servers) +82}']*(1+workers)
                     
-        #print(names)    
-        #print("Committee IDs and addresses")
-        #print(addresses, port)
+       
         super().__init__(addresses, port, local, servers)
         
 
@@ -254,7 +248,7 @@ class NodeParameters:
 class BenchParameters:
     def __init__(self, json):
         try:
-            print(type(json))
+           
             self.faults = int(json['faults'])
 
             nodes = json['nodes']
@@ -262,14 +256,14 @@ class BenchParameters:
             if not nodes or any(x <= 1 for x in nodes):                 
                 raise ConfigError('Missing or invalid number of nodes')
             self.nodes = [int(x) for x in nodes]
-            print(self.nodes)
+         
             rate = json['rate']
             rate = rate if isinstance(rate, list) else [rate]
             if not rate:
                 raise ConfigError('Missing input rate')
             self.rate = [int(x) for x in rate]
 
-            print(self.rate)
+          
 
             
             self.workers = int(json['workers'])
@@ -279,7 +273,7 @@ class BenchParameters:
             else:
                 self.collocate = True
 
-            print(self.collocate)
+         
             self.tx_size = int(json['tx_size'])
            
             self.duration = int(json['duration'])
@@ -288,18 +282,7 @@ class BenchParameters:
             self.local = bool(json['local'])
             self.runs = int(json['runs']) if 'runs' in json else 1
             self.parsing = bool(json['parsing'])
-            print(self.faults)
-            print(self.nodes)
-            print(self.rate)
-            print(self.workers)
-            print(self.collocate)
-            print(self.tx_size)
-            print(self.duration)
-            print(self.replicas)
-            print(self.servers)
-            print(self.local)
-            print(self.runs)
-            print(self.parsing)
+      
             
 
 
@@ -313,9 +296,7 @@ class BenchParameters:
         if self.replicas * self.servers <= self.faults:
             raise ConfigError('There should be more nodes than faults')
         
-        #Z
-        #print("Bench parameters:")
-        #print(json)
+  
 
 
 class PlotParameters:
@@ -361,9 +342,6 @@ class PlotParameters:
                 'Either the "nodes" or the "workers can be a list (not both)'
             )
         
-        #Z
-        #print("Plot paramenters:")
-        #print(json)
-
+    
     def scalability(self):
         return len(self.workers) > 1

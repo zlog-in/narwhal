@@ -38,12 +38,10 @@ def local(ctx, debug=True):
     with open('bench_parameters.json') as f:
         bench_parameters = json.load(f)
         f.close()
-    print(type(bench_parameters))
-    print(bench_parameters)
+    
     with open('node_parameters.json') as f:
         node_parameters = json.load(f)
         f.close()
-    print(node_parameters)
     try:
        
         if bench_parameters['local'] == True:

@@ -54,7 +54,6 @@ class LocalBench:
             faults = self.faults
             nodes = replicas * servers
 
-            print()
 
             # Cleanup all files.
             cmd = f'{CommandMaker.clean_logs()} ; {CommandMaker.cleanup()}'
@@ -117,8 +116,8 @@ class LocalBench:
                             PathMaker.parameters_file(),
                             debug=debug
                         )
-                        print("cmd for primaries")
-                        print(cmd)
+                        # print("cmd for primaries")
+                        # print(cmd)
                         log_file = PathMaker.primary_log_file(i)
                         self._background_run(cmd, log_file)
             if local == True:
@@ -147,8 +146,8 @@ class LocalBench:
                                 id,  # The worker's id.
                                 debug=debug                       
                             )
-                            print("cmd for works")
-                            print(cmd)
+                            # print("cmd for works")
+                            # print(cmd)
                             log_file = PathMaker.worker_log_file(i, id)
                             self._background_run(cmd, log_file)
             if local == True:
@@ -170,7 +169,7 @@ class LocalBench:
                     for (id, address) in addresses:
                         addr_ip = address[:-5]
                         if node_ip == addr_ip:
-                            print("!!!!!!!!!!!!!!!")
+                          
                             cmd = CommandMaker.run_client(
                                 address,
                                 self.tx_size,
