@@ -5,8 +5,8 @@ config.json
 mpc/results.db
 faulty.json
 mpc/*.json
-bench_parameters.json
-node_parameters.json
+# bench_parameters.json
+# node_parameters.json
 results
 plots
 

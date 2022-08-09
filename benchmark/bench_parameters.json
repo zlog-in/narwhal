@@ -1,0 +1,12 @@
+{
+    "faults": 0,
+    "nodes": 4,
+    "workers": 1,
+    "rate": 10000,
+    "tx_size": 512,
+    "duration": 25,
+    "replicas": 3 ,
+    "servers": 10,
+    "local": false,
+    "parsing": false
+}
