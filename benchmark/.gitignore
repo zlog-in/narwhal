@@ -3,7 +3,6 @@ benchmark_client
 index.txt
 config.json
 mpc/results.db
-logs/
 faulty.json
 mpc/*.json
 bench_parameters.json
