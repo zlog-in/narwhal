@@ -1,0 +1,753 @@
+[2022-08-09T14:57:25.658Z INFO  worker::worker] Worker 0 listening to primary messages on 0.0.0.0:9012
+[2022-08-09T14:57:25.658Z DEBUG network::receiver] Listening on 0.0.0.0:9012
+[2022-08-09T14:57:25.659Z DEBUG network::receiver] Listening on 0.0.0.0:9013
+[2022-08-09T14:57:25.659Z INFO  worker::worker] Worker 0 listening to client transactions on 0.0.0.0:9013
+[2022-08-09T14:57:25.659Z INFO  worker::worker] Worker 0 listening to worker messages on 0.0.0.0:9014
+[2022-08-09T14:57:25.659Z DEBUG network::receiver] Listening on 0.0.0.0:9014
+[2022-08-09T14:57:25.659Z INFO  worker::worker] Worker 0 successfully booted on 129.13.88.182
+[2022-08-09T14:57:25.661Z INFO  network::receiver] Incoming connection established with 129.13.88.185:57574
+[2022-08-09T14:57:25.661Z WARN  network::receiver] Connection closed by peer 129.13.88.185:57574
+[2022-08-09T14:57:25.662Z INFO  network::receiver] Incoming connection established with 129.13.88.185:57576
+[2022-08-09T14:57:25.662Z WARN  network::receiver] Connection closed by peer 129.13.88.185:57576
+[2022-08-09T14:57:25.662Z INFO  network::receiver] Incoming connection established with 129.13.88.186:60408
+[2022-08-09T14:57:25.662Z WARN  network::receiver] Connection closed by peer 129.13.88.186:60408
+[2022-08-09T14:57:25.664Z INFO  network::receiver] Incoming connection established with 129.13.88.188:46820
+[2022-08-09T14:57:25.664Z INFO  network::receiver] Incoming connection established with 129.13.88.183:39840
+[2022-08-09T14:57:25.664Z WARN  network::receiver] Connection closed by peer 129.13.88.183:39840
+[2022-08-09T14:57:25.664Z WARN  network::receiver] Connection closed by peer 129.13.88.188:46820
+[2022-08-09T14:57:25.664Z INFO  network::receiver] Incoming connection established with 129.13.88.180:46558
+[2022-08-09T14:57:25.664Z INFO  network::receiver] Incoming connection established with 129.13.88.185:57578
+[2022-08-09T14:57:25.665Z WARN  network::receiver] Connection closed by peer 129.13.88.185:57578
+[2022-08-09T14:57:25.665Z INFO  network::receiver] Incoming connection established with 129.13.88.184:52404
+[2022-08-09T14:57:25.665Z WARN  network::receiver] Connection closed by peer 129.13.88.180:46558
+[2022-08-09T14:57:25.665Z WARN  network::receiver] Connection closed by peer 129.13.88.184:52404
+[2022-08-09T14:57:25.665Z INFO  network::receiver] Incoming connection established with 129.13.88.183:39842
+[2022-08-09T14:57:25.665Z INFO  network::receiver] Incoming connection established with 129.13.88.186:60410
+[2022-08-09T14:57:25.666Z WARN  network::receiver] Connection closed by peer 129.13.88.183:39842
+[2022-08-09T14:57:25.666Z WARN  network::receiver] Connection closed by peer 129.13.88.186:60410
+[2022-08-09T14:57:25.666Z INFO  network::receiver] Incoming connection established with 129.13.88.190:58092
+[2022-08-09T14:57:25.666Z WARN  network::receiver] Connection closed by peer 129.13.88.190:58092
+[2022-08-09T14:57:25.666Z INFO  network::receiver] Incoming connection established with 129.13.88.186:60412
+[2022-08-09T14:57:25.666Z INFO  network::receiver] Incoming connection established with 129.13.88.189:47736
+[2022-08-09T14:57:25.666Z INFO  network::receiver] Incoming connection established with 129.13.88.188:46822
+[2022-08-09T14:57:25.666Z WARN  network::receiver] Connection closed by peer 129.13.88.188:46822
+[2022-08-09T14:57:25.666Z WARN  network::receiver] Connection closed by peer 129.13.88.186:60412
+[2022-08-09T14:57:25.666Z WARN  network::receiver] Connection closed by peer 129.13.88.189:47736
+[2022-08-09T14:57:25.667Z INFO  network::receiver] Incoming connection established with 129.13.88.184:52406
+[2022-08-09T14:57:25.667Z INFO  network::receiver] Incoming connection established with 129.13.88.187:37316
+[2022-08-09T14:57:25.667Z WARN  network::receiver] Connection closed by peer 129.13.88.187:37316
+[2022-08-09T14:57:25.667Z WARN  network::receiver] Connection closed by peer 129.13.88.184:52406
+[2022-08-09T14:57:25.667Z INFO  network::receiver] Incoming connection established with 129.13.88.183:39844
+[2022-08-09T14:57:25.667Z INFO  network::receiver] Incoming connection established with 129.13.88.187:37318
+[2022-08-09T14:57:25.667Z WARN  network::receiver] Connection closed by peer 129.13.88.183:39844
+[2022-08-09T14:57:25.667Z WARN  network::receiver] Connection closed by peer 129.13.88.187:37318
+[2022-08-09T14:57:25.668Z INFO  network::receiver] Incoming connection established with 129.13.88.180:46560
+[2022-08-09T14:57:25.668Z WARN  network::receiver] Connection closed by peer 129.13.88.180:46560
+[2022-08-09T14:57:25.668Z INFO  network::receiver] Incoming connection established with 129.13.88.189:47740
+[2022-08-09T14:57:25.668Z WARN  network::receiver] Connection closed by peer 129.13.88.189:47740
+[2022-08-09T14:57:25.669Z INFO  network::receiver] Incoming connection established with 129.13.88.184:52408
+[2022-08-09T14:57:25.669Z INFO  network::receiver] Incoming connection established with 129.13.88.180:46562
+[2022-08-09T14:57:25.669Z WARN  network::receiver] Connection closed by peer 129.13.88.184:52408
+[2022-08-09T14:57:25.669Z WARN  network::receiver] Connection closed by peer 129.13.88.180:46562
+[2022-08-09T14:57:25.669Z INFO  network::receiver] Incoming connection established with 129.13.88.190:58094
+[2022-08-09T14:57:25.669Z INFO  network::receiver] Incoming connection established with 129.13.88.188:46824
+[2022-08-09T14:57:25.669Z WARN  network::receiver] Connection closed by peer 129.13.88.188:46824
+[2022-08-09T14:57:25.669Z WARN  network::receiver] Connection closed by peer 129.13.88.190:58094
+[2022-08-09T14:57:25.669Z INFO  network::receiver] Incoming connection established with 129.13.88.190:58096
+[2022-08-09T14:57:25.669Z WARN  network::receiver] Connection closed by peer 129.13.88.190:58096
+[2022-08-09T14:57:25.670Z INFO  network::receiver] Incoming connection established with 129.13.88.187:37320
+[2022-08-09T14:57:25.670Z INFO  network::receiver] Incoming connection established with 129.13.88.189:47742
+[2022-08-09T14:57:25.670Z WARN  network::receiver] Connection closed by peer 129.13.88.189:47742
+[2022-08-09T14:57:25.670Z WARN  network::receiver] Connection closed by peer 129.13.88.187:37320
+[2022-08-09T14:57:25.738Z INFO  network::receiver] Incoming connection established with 10.112.112.1:41620
+[2022-08-09T14:57:25.829Z INFO  network::receiver] Incoming connection established with 129.13.88.187:36558
+[2022-08-09T14:57:25.831Z INFO  network::simple_sender] Outgoing connection established with 129.13.88.182:9011
+[2022-08-09T14:57:25.832Z INFO  network::receiver] Incoming connection established with 129.13.88.187:36560
+[2022-08-09T14:57:25.833Z INFO  network::receiver] Incoming connection established with 129.13.88.187:36562
+[2022-08-09T14:57:25.853Z INFO  network::receiver] Incoming connection established with 129.13.88.186:49144
+[2022-08-09T14:57:25.855Z INFO  network::receiver] Incoming connection established with 129.13.88.186:49146
+[2022-08-09T14:57:25.855Z INFO  network::receiver] Incoming connection established with 129.13.88.186:49148
+[2022-08-09T14:57:25.856Z INFO  network::receiver] Incoming connection established with 10.112.112.1:33288
+[2022-08-09T14:57:25.860Z INFO  worker::batch_maker] Batch THi0rU/neluAQcaKEXYM03NYViYqFktp3tWH2PPtr7M= contains sample tx 0
+[2022-08-09T14:57:25.860Z INFO  worker::batch_maker] Batch THi0rU/neluAQcaKEXYM03NYViYqFktp3tWH2PPtr7M= contains sample tx 1
+[2022-08-09T14:57:25.860Z INFO  worker::batch_maker] Batch THi0rU/neluAQcaKEXYM03NYViYqFktp3tWH2PPtr7M= contains sample tx 2
+[2022-08-09T14:57:25.860Z INFO  worker::batch_maker] Batch THi0rU/neluAQcaKEXYM03NYViYqFktp3tWH2PPtr7M= contains 24576 B
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.186:9009
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.182:9004
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.182:9009
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.186:9014
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.186:9004
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.187:9009
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.190:9014
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.189:9009
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.183:9009
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.180:9009
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.189:9014
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.189:9004
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.183:9004
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.188:9009
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.184:9009
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.190:9004
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.187:9004
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.187:9014
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.185:9004
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.183:9014
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.184:9004
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.188:9004
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.185:9014
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.185:9009
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.188:9014
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.184:9014
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.180:9014
+[2022-08-09T14:57:25.861Z INFO  network::receiver] Incoming connection established with 10.112.112.1:33290
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.180:9004
+[2022-08-09T14:57:25.861Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.190:9009
+[2022-08-09T14:57:25.882Z INFO  network::receiver] Incoming connection established with 129.13.88.188:53908
+[2022-08-09T14:57:25.883Z INFO  network::receiver] Incoming connection established with 129.13.88.188:53910
+[2022-08-09T14:57:25.884Z INFO  network::receiver] Incoming connection established with 129.13.88.190:53792
+[2022-08-09T14:57:25.884Z INFO  network::receiver] Incoming connection established with 129.13.88.183:41742
+[2022-08-09T14:57:25.885Z INFO  network::receiver] Incoming connection established with 129.13.88.190:53794
+[2022-08-09T14:57:25.886Z INFO  network::receiver] Incoming connection established with 129.13.88.183:41744
+[2022-08-09T14:57:25.887Z INFO  network::receiver] Incoming connection established with 129.13.88.190:53796
+[2022-08-09T14:57:25.927Z INFO  network::receiver] Incoming connection established with 129.13.88.188:53912
+[2022-08-09T14:57:25.927Z INFO  network::receiver] Incoming connection established with 129.13.88.183:41746
+[2022-08-09T14:57:25.927Z INFO  network::receiver] Incoming connection established with 129.13.88.180:56904
+[2022-08-09T14:57:25.927Z INFO  network::receiver] Incoming connection established with 129.13.88.180:56906
+[2022-08-09T14:57:25.927Z INFO  network::receiver] Incoming connection established with 129.13.88.180:56908
+[2022-08-09T14:57:25.927Z INFO  network::receiver] Incoming connection established with 129.13.88.185:54702
+[2022-08-09T14:57:25.927Z INFO  network::receiver] Incoming connection established with 129.13.88.185:54704
+[2022-08-09T14:57:25.935Z INFO  network::receiver] Incoming connection established with 129.13.88.184:54842
+[2022-08-09T14:57:25.959Z INFO  network::receiver] Incoming connection established with 129.13.88.184:54844
+[2022-08-09T14:57:25.959Z INFO  network::receiver] Incoming connection established with 129.13.88.185:54706
+[2022-08-09T14:57:25.963Z INFO  network::receiver] Incoming connection established with 129.13.88.184:54846
+[2022-08-09T14:57:26.062Z INFO  worker::batch_maker] Batch SFU5TgfqvJsXxY2QbGeJMkzOvNqTvkHiHHhuHkO6XZM= contains sample tx 3
+[2022-08-09T14:57:26.062Z INFO  worker::batch_maker] Batch SFU5TgfqvJsXxY2QbGeJMkzOvNqTvkHiHHhuHkO6XZM= contains sample tx 4
+[2022-08-09T14:57:26.062Z INFO  worker::batch_maker] Batch SFU5TgfqvJsXxY2QbGeJMkzOvNqTvkHiHHhuHkO6XZM= contains sample tx 5
+[2022-08-09T14:57:26.062Z INFO  worker::batch_maker] Batch SFU5TgfqvJsXxY2QbGeJMkzOvNqTvkHiHHhuHkO6XZM= contains sample tx 6
+[2022-08-09T14:57:26.062Z INFO  worker::batch_maker] Batch SFU5TgfqvJsXxY2QbGeJMkzOvNqTvkHiHHhuHkO6XZM= contains 32768 B
+[2022-08-09T14:57:26.264Z INFO  worker::batch_maker] Batch ncqvCUSkkFoeoXd3WMfcle2dvvfzlYQnRik15eYP3iQ= contains sample tx 7
+[2022-08-09T14:57:26.264Z INFO  worker::batch_maker] Batch ncqvCUSkkFoeoXd3WMfcle2dvvfzlYQnRik15eYP3iQ= contains sample tx 8
+[2022-08-09T14:57:26.264Z INFO  worker::batch_maker] Batch ncqvCUSkkFoeoXd3WMfcle2dvvfzlYQnRik15eYP3iQ= contains sample tx 9
+[2022-08-09T14:57:26.264Z INFO  worker::batch_maker] Batch ncqvCUSkkFoeoXd3WMfcle2dvvfzlYQnRik15eYP3iQ= contains sample tx 10
+[2022-08-09T14:57:26.264Z INFO  worker::batch_maker] Batch ncqvCUSkkFoeoXd3WMfcle2dvvfzlYQnRik15eYP3iQ= contains 32768 B
+[2022-08-09T14:57:26.466Z INFO  worker::batch_maker] Batch fuLjqtIQeZUy8ZB6x+ANjlPqKImBW3J4fNUY7oEgB4U= contains sample tx 11
+[2022-08-09T14:57:26.466Z INFO  worker::batch_maker] Batch fuLjqtIQeZUy8ZB6x+ANjlPqKImBW3J4fNUY7oEgB4U= contains sample tx 12
+[2022-08-09T14:57:26.466Z INFO  worker::batch_maker] Batch fuLjqtIQeZUy8ZB6x+ANjlPqKImBW3J4fNUY7oEgB4U= contains sample tx 13
+[2022-08-09T14:57:26.466Z INFO  worker::batch_maker] Batch fuLjqtIQeZUy8ZB6x+ANjlPqKImBW3J4fNUY7oEgB4U= contains sample tx 14
+[2022-08-09T14:57:26.466Z INFO  worker::batch_maker] Batch fuLjqtIQeZUy8ZB6x+ANjlPqKImBW3J4fNUY7oEgB4U= contains 32768 B
+[2022-08-09T14:57:26.668Z INFO  worker::batch_maker] Batch jKeqMI6gcmAH7Ofli+s1fKAlJ6Fh2aKjxRVb0t9nEZY= contains sample tx 15
+[2022-08-09T14:57:26.668Z INFO  worker::batch_maker] Batch jKeqMI6gcmAH7Ofli+s1fKAlJ6Fh2aKjxRVb0t9nEZY= contains sample tx 16
+[2022-08-09T14:57:26.668Z INFO  worker::batch_maker] Batch jKeqMI6gcmAH7Ofli+s1fKAlJ6Fh2aKjxRVb0t9nEZY= contains sample tx 17
+[2022-08-09T14:57:26.668Z INFO  worker::batch_maker] Batch jKeqMI6gcmAH7Ofli+s1fKAlJ6Fh2aKjxRVb0t9nEZY= contains sample tx 18
+[2022-08-09T14:57:26.668Z INFO  worker::batch_maker] Batch jKeqMI6gcmAH7Ofli+s1fKAlJ6Fh2aKjxRVb0t9nEZY= contains 32768 B
+[2022-08-09T14:57:26.870Z INFO  worker::batch_maker] Batch GNn6+gaw5zH47wQW+j74MIJ3jhzcRfsthUAETzX4gxc= contains sample tx 19
+[2022-08-09T14:57:26.870Z INFO  worker::batch_maker] Batch GNn6+gaw5zH47wQW+j74MIJ3jhzcRfsthUAETzX4gxc= contains sample tx 20
+[2022-08-09T14:57:26.870Z INFO  worker::batch_maker] Batch GNn6+gaw5zH47wQW+j74MIJ3jhzcRfsthUAETzX4gxc= contains sample tx 21
+[2022-08-09T14:57:26.870Z INFO  worker::batch_maker] Batch GNn6+gaw5zH47wQW+j74MIJ3jhzcRfsthUAETzX4gxc= contains sample tx 22
+[2022-08-09T14:57:26.870Z INFO  worker::batch_maker] Batch GNn6+gaw5zH47wQW+j74MIJ3jhzcRfsthUAETzX4gxc= contains 32768 B
+[2022-08-09T14:57:26.927Z INFO  network::receiver] Incoming connection established with 10.112.112.1:33590
+[2022-08-09T14:57:27.073Z INFO  worker::batch_maker] Batch Olt4lkiBEmfbwOvtj0zupuqr/MbqAhrmmVQ342SGev4= contains sample tx 23
+[2022-08-09T14:57:27.073Z INFO  worker::batch_maker] Batch Olt4lkiBEmfbwOvtj0zupuqr/MbqAhrmmVQ342SGev4= contains sample tx 24
+[2022-08-09T14:57:27.073Z INFO  worker::batch_maker] Batch Olt4lkiBEmfbwOvtj0zupuqr/MbqAhrmmVQ342SGev4= contains sample tx 25
+[2022-08-09T14:57:27.073Z INFO  worker::batch_maker] Batch Olt4lkiBEmfbwOvtj0zupuqr/MbqAhrmmVQ342SGev4= contains sample tx 26
+[2022-08-09T14:57:27.073Z INFO  worker::batch_maker] Batch Olt4lkiBEmfbwOvtj0zupuqr/MbqAhrmmVQ342SGev4= contains 32768 B
+[2022-08-09T14:57:27.275Z INFO  worker::batch_maker] Batch nrWB5hRd+cmeObOrp4Go7gXyhyHur6WXHUG8qWLBFn8= contains sample tx 27
+[2022-08-09T14:57:27.275Z INFO  worker::batch_maker] Batch nrWB5hRd+cmeObOrp4Go7gXyhyHur6WXHUG8qWLBFn8= contains sample tx 28
+[2022-08-09T14:57:27.275Z INFO  worker::batch_maker] Batch nrWB5hRd+cmeObOrp4Go7gXyhyHur6WXHUG8qWLBFn8= contains sample tx 29
+[2022-08-09T14:57:27.275Z INFO  worker::batch_maker] Batch nrWB5hRd+cmeObOrp4Go7gXyhyHur6WXHUG8qWLBFn8= contains sample tx 30
+[2022-08-09T14:57:27.275Z INFO  worker::batch_maker] Batch nrWB5hRd+cmeObOrp4Go7gXyhyHur6WXHUG8qWLBFn8= contains 32768 B
+[2022-08-09T14:57:27.477Z INFO  worker::batch_maker] Batch Qe3bVZ9h8+JpnQUmcmXWmoNDXC1Y9BITA39yz9Tou1E= contains sample tx 31
+[2022-08-09T14:57:27.477Z INFO  worker::batch_maker] Batch Qe3bVZ9h8+JpnQUmcmXWmoNDXC1Y9BITA39yz9Tou1E= contains sample tx 32
+[2022-08-09T14:57:27.477Z INFO  worker::batch_maker] Batch Qe3bVZ9h8+JpnQUmcmXWmoNDXC1Y9BITA39yz9Tou1E= contains sample tx 33
+[2022-08-09T14:57:27.477Z INFO  worker::batch_maker] Batch Qe3bVZ9h8+JpnQUmcmXWmoNDXC1Y9BITA39yz9Tou1E= contains sample tx 34
+[2022-08-09T14:57:27.477Z INFO  worker::batch_maker] Batch Qe3bVZ9h8+JpnQUmcmXWmoNDXC1Y9BITA39yz9Tou1E= contains 32768 B
+[2022-08-09T14:57:27.679Z INFO  worker::batch_maker] Batch YLXH+toPbvkzqo8xDDOMwvCy8ofYYHUqx0wPVgC9F7k= contains sample tx 35
+[2022-08-09T14:57:27.679Z INFO  worker::batch_maker] Batch YLXH+toPbvkzqo8xDDOMwvCy8ofYYHUqx0wPVgC9F7k= contains sample tx 36
+[2022-08-09T14:57:27.679Z INFO  worker::batch_maker] Batch YLXH+toPbvkzqo8xDDOMwvCy8ofYYHUqx0wPVgC9F7k= contains sample tx 37
+[2022-08-09T14:57:27.679Z INFO  worker::batch_maker] Batch YLXH+toPbvkzqo8xDDOMwvCy8ofYYHUqx0wPVgC9F7k= contains sample tx 38
+[2022-08-09T14:57:27.679Z INFO  worker::batch_maker] Batch YLXH+toPbvkzqo8xDDOMwvCy8ofYYHUqx0wPVgC9F7k= contains 32768 B
+[2022-08-09T14:57:27.880Z INFO  worker::batch_maker] Batch g1Q+FE+JlkvuFhksZYCAF307DiMzlMmoZFlXnDxeqG4= contains sample tx 39
+[2022-08-09T14:57:27.881Z INFO  worker::batch_maker] Batch g1Q+FE+JlkvuFhksZYCAF307DiMzlMmoZFlXnDxeqG4= contains sample tx 40
+[2022-08-09T14:57:27.881Z INFO  worker::batch_maker] Batch g1Q+FE+JlkvuFhksZYCAF307DiMzlMmoZFlXnDxeqG4= contains sample tx 41
+[2022-08-09T14:57:27.881Z INFO  worker::batch_maker] Batch g1Q+FE+JlkvuFhksZYCAF307DiMzlMmoZFlXnDxeqG4= contains sample tx 42
+[2022-08-09T14:57:27.881Z INFO  worker::batch_maker] Batch g1Q+FE+JlkvuFhksZYCAF307DiMzlMmoZFlXnDxeqG4= contains 32768 B
+[2022-08-09T14:57:28.083Z INFO  worker::batch_maker] Batch CJ8Rd3S9v/Xuz6gNKJnnWq78XDCnaof096WfsPcdtr4= contains sample tx 43
+[2022-08-09T14:57:28.083Z INFO  worker::batch_maker] Batch CJ8Rd3S9v/Xuz6gNKJnnWq78XDCnaof096WfsPcdtr4= contains sample tx 44
+[2022-08-09T14:57:28.083Z INFO  worker::batch_maker] Batch CJ8Rd3S9v/Xuz6gNKJnnWq78XDCnaof096WfsPcdtr4= contains sample tx 45
+[2022-08-09T14:57:28.083Z INFO  worker::batch_maker] Batch CJ8Rd3S9v/Xuz6gNKJnnWq78XDCnaof096WfsPcdtr4= contains sample tx 46
+[2022-08-09T14:57:28.083Z INFO  worker::batch_maker] Batch CJ8Rd3S9v/Xuz6gNKJnnWq78XDCnaof096WfsPcdtr4= contains 32768 B
+[2022-08-09T14:57:28.286Z INFO  worker::batch_maker] Batch P0ep69fwvJR+c+Ya5YGXVu/zlEPd7s7uNj3fSPGFmqg= contains sample tx 47
+[2022-08-09T14:57:28.286Z INFO  worker::batch_maker] Batch P0ep69fwvJR+c+Ya5YGXVu/zlEPd7s7uNj3fSPGFmqg= contains sample tx 48
+[2022-08-09T14:57:28.286Z INFO  worker::batch_maker] Batch P0ep69fwvJR+c+Ya5YGXVu/zlEPd7s7uNj3fSPGFmqg= contains sample tx 49
+[2022-08-09T14:57:28.286Z INFO  worker::batch_maker] Batch P0ep69fwvJR+c+Ya5YGXVu/zlEPd7s7uNj3fSPGFmqg= contains sample tx 50
+[2022-08-09T14:57:28.286Z INFO  worker::batch_maker] Batch P0ep69fwvJR+c+Ya5YGXVu/zlEPd7s7uNj3fSPGFmqg= contains 32768 B
+[2022-08-09T14:57:28.488Z INFO  worker::batch_maker] Batch M41WM77bUb1Ns2Fw4dV/cey3wKfFW3Y0gsH8hjMk9ww= contains sample tx 51
+[2022-08-09T14:57:28.488Z INFO  worker::batch_maker] Batch M41WM77bUb1Ns2Fw4dV/cey3wKfFW3Y0gsH8hjMk9ww= contains sample tx 52
+[2022-08-09T14:57:28.488Z INFO  worker::batch_maker] Batch M41WM77bUb1Ns2Fw4dV/cey3wKfFW3Y0gsH8hjMk9ww= contains sample tx 53
+[2022-08-09T14:57:28.488Z INFO  worker::batch_maker] Batch M41WM77bUb1Ns2Fw4dV/cey3wKfFW3Y0gsH8hjMk9ww= contains sample tx 54
+[2022-08-09T14:57:28.488Z INFO  worker::batch_maker] Batch M41WM77bUb1Ns2Fw4dV/cey3wKfFW3Y0gsH8hjMk9ww= contains 32768 B
+[2022-08-09T14:57:28.689Z INFO  worker::batch_maker] Batch j+r9pyRO2grqxSSvLl/nlbBKvTykjck9F57WUYOohTE= contains sample tx 55
+[2022-08-09T14:57:28.689Z INFO  worker::batch_maker] Batch j+r9pyRO2grqxSSvLl/nlbBKvTykjck9F57WUYOohTE= contains sample tx 56
+[2022-08-09T14:57:28.690Z INFO  worker::batch_maker] Batch j+r9pyRO2grqxSSvLl/nlbBKvTykjck9F57WUYOohTE= contains sample tx 57
+[2022-08-09T14:57:28.690Z INFO  worker::batch_maker] Batch j+r9pyRO2grqxSSvLl/nlbBKvTykjck9F57WUYOohTE= contains sample tx 58
+[2022-08-09T14:57:28.690Z INFO  worker::batch_maker] Batch j+r9pyRO2grqxSSvLl/nlbBKvTykjck9F57WUYOohTE= contains 32768 B
+[2022-08-09T14:57:28.892Z INFO  worker::batch_maker] Batch uaQXuC4KxSjH1JSq71/vSMtb792WT/PLPC8IzNj+Cyc= contains sample tx 59
+[2022-08-09T14:57:28.892Z INFO  worker::batch_maker] Batch uaQXuC4KxSjH1JSq71/vSMtb792WT/PLPC8IzNj+Cyc= contains sample tx 60
+[2022-08-09T14:57:28.892Z INFO  worker::batch_maker] Batch uaQXuC4KxSjH1JSq71/vSMtb792WT/PLPC8IzNj+Cyc= contains sample tx 61
+[2022-08-09T14:57:28.892Z INFO  worker::batch_maker] Batch uaQXuC4KxSjH1JSq71/vSMtb792WT/PLPC8IzNj+Cyc= contains sample tx 62
+[2022-08-09T14:57:28.892Z INFO  worker::batch_maker] Batch uaQXuC4KxSjH1JSq71/vSMtb792WT/PLPC8IzNj+Cyc= contains sample tx 63
+[2022-08-09T14:57:28.892Z INFO  worker::batch_maker] Batch uaQXuC4KxSjH1JSq71/vSMtb792WT/PLPC8IzNj+Cyc= contains 40960 B
+[2022-08-09T14:57:29.094Z INFO  worker::batch_maker] Batch R0m0NPWjSuwYkw7tCES5lFTlRALFnnXOJFhW1U7ZU+g= contains sample tx 64
+[2022-08-09T14:57:29.094Z INFO  worker::batch_maker] Batch R0m0NPWjSuwYkw7tCES5lFTlRALFnnXOJFhW1U7ZU+g= contains sample tx 65
+[2022-08-09T14:57:29.094Z INFO  worker::batch_maker] Batch R0m0NPWjSuwYkw7tCES5lFTlRALFnnXOJFhW1U7ZU+g= contains sample tx 66
+[2022-08-09T14:57:29.094Z INFO  worker::batch_maker] Batch R0m0NPWjSuwYkw7tCES5lFTlRALFnnXOJFhW1U7ZU+g= contains sample tx 67
+[2022-08-09T14:57:29.094Z INFO  worker::batch_maker] Batch R0m0NPWjSuwYkw7tCES5lFTlRALFnnXOJFhW1U7ZU+g= contains 32768 B
+[2022-08-09T14:57:29.296Z INFO  worker::batch_maker] Batch NCmGDg0yfbWb5G24iMhRRdfOYq9ukqWs6cE/rIPAbXU= contains sample tx 68
+[2022-08-09T14:57:29.296Z INFO  worker::batch_maker] Batch NCmGDg0yfbWb5G24iMhRRdfOYq9ukqWs6cE/rIPAbXU= contains sample tx 69
+[2022-08-09T14:57:29.296Z INFO  worker::batch_maker] Batch NCmGDg0yfbWb5G24iMhRRdfOYq9ukqWs6cE/rIPAbXU= contains sample tx 70
+[2022-08-09T14:57:29.296Z INFO  worker::batch_maker] Batch NCmGDg0yfbWb5G24iMhRRdfOYq9ukqWs6cE/rIPAbXU= contains sample tx 71
+[2022-08-09T14:57:29.296Z INFO  worker::batch_maker] Batch NCmGDg0yfbWb5G24iMhRRdfOYq9ukqWs6cE/rIPAbXU= contains 32768 B
+[2022-08-09T14:57:29.498Z INFO  worker::batch_maker] Batch qe3JWs3pzRpwdySAtzU8GYF0KUDgM6RlBN+24i4W2YU= contains sample tx 72
+[2022-08-09T14:57:29.498Z INFO  worker::batch_maker] Batch qe3JWs3pzRpwdySAtzU8GYF0KUDgM6RlBN+24i4W2YU= contains sample tx 73
+[2022-08-09T14:57:29.498Z INFO  worker::batch_maker] Batch qe3JWs3pzRpwdySAtzU8GYF0KUDgM6RlBN+24i4W2YU= contains sample tx 74
+[2022-08-09T14:57:29.498Z INFO  worker::batch_maker] Batch qe3JWs3pzRpwdySAtzU8GYF0KUDgM6RlBN+24i4W2YU= contains sample tx 75
+[2022-08-09T14:57:29.498Z INFO  worker::batch_maker] Batch qe3JWs3pzRpwdySAtzU8GYF0KUDgM6RlBN+24i4W2YU= contains 32768 B
+[2022-08-09T14:57:29.700Z INFO  worker::batch_maker] Batch SXZagJBdDHWAZVX5tr5XWVNne+l/csZNwNpDIDVOpHc= contains sample tx 76
+[2022-08-09T14:57:29.700Z INFO  worker::batch_maker] Batch SXZagJBdDHWAZVX5tr5XWVNne+l/csZNwNpDIDVOpHc= contains sample tx 77
+[2022-08-09T14:57:29.700Z INFO  worker::batch_maker] Batch SXZagJBdDHWAZVX5tr5XWVNne+l/csZNwNpDIDVOpHc= contains sample tx 78
+[2022-08-09T14:57:29.700Z INFO  worker::batch_maker] Batch SXZagJBdDHWAZVX5tr5XWVNne+l/csZNwNpDIDVOpHc= contains sample tx 79
+[2022-08-09T14:57:29.700Z INFO  worker::batch_maker] Batch SXZagJBdDHWAZVX5tr5XWVNne+l/csZNwNpDIDVOpHc= contains 32768 B
+[2022-08-09T14:57:29.902Z INFO  worker::batch_maker] Batch WsNoJLMXSPs7DpBr9g0dnZWCM9mGlt/pHF4sK0LKGcg= contains sample tx 80
+[2022-08-09T14:57:29.902Z INFO  worker::batch_maker] Batch WsNoJLMXSPs7DpBr9g0dnZWCM9mGlt/pHF4sK0LKGcg= contains sample tx 81
+[2022-08-09T14:57:29.902Z INFO  worker::batch_maker] Batch WsNoJLMXSPs7DpBr9g0dnZWCM9mGlt/pHF4sK0LKGcg= contains sample tx 82
+[2022-08-09T14:57:29.902Z INFO  worker::batch_maker] Batch WsNoJLMXSPs7DpBr9g0dnZWCM9mGlt/pHF4sK0LKGcg= contains sample tx 83
+[2022-08-09T14:57:29.902Z INFO  worker::batch_maker] Batch WsNoJLMXSPs7DpBr9g0dnZWCM9mGlt/pHF4sK0LKGcg= contains 32768 B
+[2022-08-09T14:57:30.105Z INFO  worker::batch_maker] Batch ow4CQocnF/jqo1/BY/Z/MzE4E8z6n8n7GUpicPRRwsk= contains sample tx 84
+[2022-08-09T14:57:30.105Z INFO  worker::batch_maker] Batch ow4CQocnF/jqo1/BY/Z/MzE4E8z6n8n7GUpicPRRwsk= contains sample tx 85
+[2022-08-09T14:57:30.105Z INFO  worker::batch_maker] Batch ow4CQocnF/jqo1/BY/Z/MzE4E8z6n8n7GUpicPRRwsk= contains sample tx 86
+[2022-08-09T14:57:30.105Z INFO  worker::batch_maker] Batch ow4CQocnF/jqo1/BY/Z/MzE4E8z6n8n7GUpicPRRwsk= contains sample tx 87
+[2022-08-09T14:57:30.105Z INFO  worker::batch_maker] Batch ow4CQocnF/jqo1/BY/Z/MzE4E8z6n8n7GUpicPRRwsk= contains 32768 B
+[2022-08-09T14:57:30.307Z INFO  worker::batch_maker] Batch SVxus45oI80E8DNqKnX2rIWLXiejMBjvKWIreXUWvPA= contains sample tx 88
+[2022-08-09T14:57:30.307Z INFO  worker::batch_maker] Batch SVxus45oI80E8DNqKnX2rIWLXiejMBjvKWIreXUWvPA= contains sample tx 89
+[2022-08-09T14:57:30.307Z INFO  worker::batch_maker] Batch SVxus45oI80E8DNqKnX2rIWLXiejMBjvKWIreXUWvPA= contains sample tx 90
+[2022-08-09T14:57:30.307Z INFO  worker::batch_maker] Batch SVxus45oI80E8DNqKnX2rIWLXiejMBjvKWIreXUWvPA= contains sample tx 91
+[2022-08-09T14:57:30.307Z INFO  worker::batch_maker] Batch SVxus45oI80E8DNqKnX2rIWLXiejMBjvKWIreXUWvPA= contains 32768 B
+[2022-08-09T14:57:30.509Z INFO  worker::batch_maker] Batch JBkgFFa/s1pSakl54ZskPhayEer+DcgtkKwl65js5z4= contains sample tx 92
+[2022-08-09T14:57:30.509Z INFO  worker::batch_maker] Batch JBkgFFa/s1pSakl54ZskPhayEer+DcgtkKwl65js5z4= contains sample tx 93
+[2022-08-09T14:57:30.509Z INFO  worker::batch_maker] Batch JBkgFFa/s1pSakl54ZskPhayEer+DcgtkKwl65js5z4= contains sample tx 94
+[2022-08-09T14:57:30.509Z INFO  worker::batch_maker] Batch JBkgFFa/s1pSakl54ZskPhayEer+DcgtkKwl65js5z4= contains sample tx 95
+[2022-08-09T14:57:30.509Z INFO  worker::batch_maker] Batch JBkgFFa/s1pSakl54ZskPhayEer+DcgtkKwl65js5z4= contains 32768 B
+[2022-08-09T14:57:30.711Z INFO  worker::batch_maker] Batch hiNEtyOzOndRuavgE3yKuhdAPhtr/WMH+Gbdt5oMU28= contains sample tx 96
+[2022-08-09T14:57:30.711Z INFO  worker::batch_maker] Batch hiNEtyOzOndRuavgE3yKuhdAPhtr/WMH+Gbdt5oMU28= contains sample tx 97
+[2022-08-09T14:57:30.711Z INFO  worker::batch_maker] Batch hiNEtyOzOndRuavgE3yKuhdAPhtr/WMH+Gbdt5oMU28= contains sample tx 98
+[2022-08-09T14:57:30.711Z INFO  worker::batch_maker] Batch hiNEtyOzOndRuavgE3yKuhdAPhtr/WMH+Gbdt5oMU28= contains sample tx 99
+[2022-08-09T14:57:30.711Z INFO  worker::batch_maker] Batch hiNEtyOzOndRuavgE3yKuhdAPhtr/WMH+Gbdt5oMU28= contains 32768 B
+[2022-08-09T14:57:30.913Z INFO  worker::batch_maker] Batch KldN1u5cKGj4jbmGRpoKTa2yyW+1MGm7xBXQMX3QUB8= contains sample tx 100
+[2022-08-09T14:57:30.913Z INFO  worker::batch_maker] Batch KldN1u5cKGj4jbmGRpoKTa2yyW+1MGm7xBXQMX3QUB8= contains sample tx 101
+[2022-08-09T14:57:30.913Z INFO  worker::batch_maker] Batch KldN1u5cKGj4jbmGRpoKTa2yyW+1MGm7xBXQMX3QUB8= contains sample tx 102
+[2022-08-09T14:57:30.913Z INFO  worker::batch_maker] Batch KldN1u5cKGj4jbmGRpoKTa2yyW+1MGm7xBXQMX3QUB8= contains sample tx 103
+[2022-08-09T14:57:30.913Z INFO  worker::batch_maker] Batch KldN1u5cKGj4jbmGRpoKTa2yyW+1MGm7xBXQMX3QUB8= contains 32768 B
+[2022-08-09T14:57:31.115Z INFO  worker::batch_maker] Batch a6i2isxxptXRAgbPuOMY3AjfStCrz9BwEvhMJ2Km+YE= contains sample tx 104
+[2022-08-09T14:57:31.115Z INFO  worker::batch_maker] Batch a6i2isxxptXRAgbPuOMY3AjfStCrz9BwEvhMJ2Km+YE= contains sample tx 105
+[2022-08-09T14:57:31.115Z INFO  worker::batch_maker] Batch a6i2isxxptXRAgbPuOMY3AjfStCrz9BwEvhMJ2Km+YE= contains sample tx 106
+[2022-08-09T14:57:31.115Z INFO  worker::batch_maker] Batch a6i2isxxptXRAgbPuOMY3AjfStCrz9BwEvhMJ2Km+YE= contains sample tx 107
+[2022-08-09T14:57:31.115Z INFO  worker::batch_maker] Batch a6i2isxxptXRAgbPuOMY3AjfStCrz9BwEvhMJ2Km+YE= contains 32768 B
+[2022-08-09T14:57:31.317Z INFO  worker::batch_maker] Batch qS94ny+yZCM+xRqGtk9h6VmKK0lOWXeNYlg6tA92EV4= contains sample tx 108
+[2022-08-09T14:57:31.317Z INFO  worker::batch_maker] Batch qS94ny+yZCM+xRqGtk9h6VmKK0lOWXeNYlg6tA92EV4= contains sample tx 109
+[2022-08-09T14:57:31.317Z INFO  worker::batch_maker] Batch qS94ny+yZCM+xRqGtk9h6VmKK0lOWXeNYlg6tA92EV4= contains sample tx 110
+[2022-08-09T14:57:31.317Z INFO  worker::batch_maker] Batch qS94ny+yZCM+xRqGtk9h6VmKK0lOWXeNYlg6tA92EV4= contains sample tx 111
+[2022-08-09T14:57:31.317Z INFO  worker::batch_maker] Batch qS94ny+yZCM+xRqGtk9h6VmKK0lOWXeNYlg6tA92EV4= contains 32768 B
+[2022-08-09T14:57:31.518Z INFO  worker::batch_maker] Batch QtZ0Prg3BZQKyU8PjcJkg/UZMyxkNLdin550d6EWquk= contains sample tx 112
+[2022-08-09T14:57:31.518Z INFO  worker::batch_maker] Batch QtZ0Prg3BZQKyU8PjcJkg/UZMyxkNLdin550d6EWquk= contains sample tx 113
+[2022-08-09T14:57:31.518Z INFO  worker::batch_maker] Batch QtZ0Prg3BZQKyU8PjcJkg/UZMyxkNLdin550d6EWquk= contains sample tx 114
+[2022-08-09T14:57:31.518Z INFO  worker::batch_maker] Batch QtZ0Prg3BZQKyU8PjcJkg/UZMyxkNLdin550d6EWquk= contains sample tx 115
+[2022-08-09T14:57:31.518Z INFO  worker::batch_maker] Batch QtZ0Prg3BZQKyU8PjcJkg/UZMyxkNLdin550d6EWquk= contains 32768 B
+[2022-08-09T14:57:31.720Z INFO  worker::batch_maker] Batch VJWjCC9AQpAAajcbwhNsC9DzG7p6UquzbL3sLDyQF8M= contains sample tx 116
+[2022-08-09T14:57:31.720Z INFO  worker::batch_maker] Batch VJWjCC9AQpAAajcbwhNsC9DzG7p6UquzbL3sLDyQF8M= contains sample tx 117
+[2022-08-09T14:57:31.720Z INFO  worker::batch_maker] Batch VJWjCC9AQpAAajcbwhNsC9DzG7p6UquzbL3sLDyQF8M= contains sample tx 118
+[2022-08-09T14:57:31.720Z INFO  worker::batch_maker] Batch VJWjCC9AQpAAajcbwhNsC9DzG7p6UquzbL3sLDyQF8M= contains sample tx 119
+[2022-08-09T14:57:31.720Z INFO  worker::batch_maker] Batch VJWjCC9AQpAAajcbwhNsC9DzG7p6UquzbL3sLDyQF8M= contains 32768 B
+[2022-08-09T14:57:31.921Z INFO  worker::batch_maker] Batch mtqn6AsgwSF9W+E4RGu6kYvGPGljlyhiAQ9T/sU0CxA= contains sample tx 120
+[2022-08-09T14:57:31.921Z INFO  worker::batch_maker] Batch mtqn6AsgwSF9W+E4RGu6kYvGPGljlyhiAQ9T/sU0CxA= contains sample tx 121
+[2022-08-09T14:57:31.921Z INFO  worker::batch_maker] Batch mtqn6AsgwSF9W+E4RGu6kYvGPGljlyhiAQ9T/sU0CxA= contains sample tx 122
+[2022-08-09T14:57:31.921Z INFO  worker::batch_maker] Batch mtqn6AsgwSF9W+E4RGu6kYvGPGljlyhiAQ9T/sU0CxA= contains sample tx 123
+[2022-08-09T14:57:31.921Z INFO  worker::batch_maker] Batch mtqn6AsgwSF9W+E4RGu6kYvGPGljlyhiAQ9T/sU0CxA= contains 32768 B
+[2022-08-09T14:57:32.124Z INFO  worker::batch_maker] Batch KnkqfqzmhIAv9yCX+y7NytbpVeGp4rZwsGoS2lzO9Bk= contains sample tx 124
+[2022-08-09T14:57:32.124Z INFO  worker::batch_maker] Batch KnkqfqzmhIAv9yCX+y7NytbpVeGp4rZwsGoS2lzO9Bk= contains sample tx 125
+[2022-08-09T14:57:32.124Z INFO  worker::batch_maker] Batch KnkqfqzmhIAv9yCX+y7NytbpVeGp4rZwsGoS2lzO9Bk= contains sample tx 126
+[2022-08-09T14:57:32.124Z INFO  worker::batch_maker] Batch KnkqfqzmhIAv9yCX+y7NytbpVeGp4rZwsGoS2lzO9Bk= contains sample tx 127
+[2022-08-09T14:57:32.124Z INFO  worker::batch_maker] Batch KnkqfqzmhIAv9yCX+y7NytbpVeGp4rZwsGoS2lzO9Bk= contains 32768 B
+[2022-08-09T14:57:32.326Z INFO  worker::batch_maker] Batch akBbXZglUZo5RCx7r7bQbpZp8utoRN0za3f83hIQZm8= contains sample tx 128
+[2022-08-09T14:57:32.326Z INFO  worker::batch_maker] Batch akBbXZglUZo5RCx7r7bQbpZp8utoRN0za3f83hIQZm8= contains sample tx 129
+[2022-08-09T14:57:32.326Z INFO  worker::batch_maker] Batch akBbXZglUZo5RCx7r7bQbpZp8utoRN0za3f83hIQZm8= contains sample tx 130
+[2022-08-09T14:57:32.326Z INFO  worker::batch_maker] Batch akBbXZglUZo5RCx7r7bQbpZp8utoRN0za3f83hIQZm8= contains sample tx 131
+[2022-08-09T14:57:32.326Z INFO  worker::batch_maker] Batch akBbXZglUZo5RCx7r7bQbpZp8utoRN0za3f83hIQZm8= contains 32768 B
+[2022-08-09T14:57:32.528Z INFO  worker::batch_maker] Batch kjv9kl8uKe9os7eSziTp2qC6+73Me0/CSvJy1WKYXj8= contains sample tx 132
+[2022-08-09T14:57:32.528Z INFO  worker::batch_maker] Batch kjv9kl8uKe9os7eSziTp2qC6+73Me0/CSvJy1WKYXj8= contains sample tx 133
+[2022-08-09T14:57:32.528Z INFO  worker::batch_maker] Batch kjv9kl8uKe9os7eSziTp2qC6+73Me0/CSvJy1WKYXj8= contains sample tx 134
+[2022-08-09T14:57:32.528Z INFO  worker::batch_maker] Batch kjv9kl8uKe9os7eSziTp2qC6+73Me0/CSvJy1WKYXj8= contains sample tx 135
+[2022-08-09T14:57:32.528Z INFO  worker::batch_maker] Batch kjv9kl8uKe9os7eSziTp2qC6+73Me0/CSvJy1WKYXj8= contains 32768 B
+[2022-08-09T14:57:32.730Z INFO  worker::batch_maker] Batch eQ2EtfvXKLiXGomwvfT735DXy7wdfoeyorJ6NoHcK70= contains sample tx 136
+[2022-08-09T14:57:32.730Z INFO  worker::batch_maker] Batch eQ2EtfvXKLiXGomwvfT735DXy7wdfoeyorJ6NoHcK70= contains sample tx 137
+[2022-08-09T14:57:32.730Z INFO  worker::batch_maker] Batch eQ2EtfvXKLiXGomwvfT735DXy7wdfoeyorJ6NoHcK70= contains sample tx 138
+[2022-08-09T14:57:32.730Z INFO  worker::batch_maker] Batch eQ2EtfvXKLiXGomwvfT735DXy7wdfoeyorJ6NoHcK70= contains sample tx 139
+[2022-08-09T14:57:32.730Z INFO  worker::batch_maker] Batch eQ2EtfvXKLiXGomwvfT735DXy7wdfoeyorJ6NoHcK70= contains 32768 B
+[2022-08-09T14:57:32.931Z INFO  worker::batch_maker] Batch HN323yIM8hjr/IxiLbZJv9FSFxCVEo75loBOvTV8Zmo= contains sample tx 140
+[2022-08-09T14:57:32.931Z INFO  worker::batch_maker] Batch HN323yIM8hjr/IxiLbZJv9FSFxCVEo75loBOvTV8Zmo= contains sample tx 141
+[2022-08-09T14:57:32.931Z INFO  worker::batch_maker] Batch HN323yIM8hjr/IxiLbZJv9FSFxCVEo75loBOvTV8Zmo= contains sample tx 142
+[2022-08-09T14:57:32.931Z INFO  worker::batch_maker] Batch HN323yIM8hjr/IxiLbZJv9FSFxCVEo75loBOvTV8Zmo= contains sample tx 143
+[2022-08-09T14:57:32.931Z INFO  worker::batch_maker] Batch HN323yIM8hjr/IxiLbZJv9FSFxCVEo75loBOvTV8Zmo= contains 32768 B
+[2022-08-09T14:57:33.132Z INFO  worker::batch_maker] Batch xWwJY86tB/6VosMK0CgFZGFdswUiQ3cZBF+iIJjcVrM= contains sample tx 144
+[2022-08-09T14:57:33.132Z INFO  worker::batch_maker] Batch xWwJY86tB/6VosMK0CgFZGFdswUiQ3cZBF+iIJjcVrM= contains sample tx 145
+[2022-08-09T14:57:33.132Z INFO  worker::batch_maker] Batch xWwJY86tB/6VosMK0CgFZGFdswUiQ3cZBF+iIJjcVrM= contains sample tx 146
+[2022-08-09T14:57:33.132Z INFO  worker::batch_maker] Batch xWwJY86tB/6VosMK0CgFZGFdswUiQ3cZBF+iIJjcVrM= contains sample tx 147
+[2022-08-09T14:57:33.132Z INFO  worker::batch_maker] Batch xWwJY86tB/6VosMK0CgFZGFdswUiQ3cZBF+iIJjcVrM= contains 32768 B
+[2022-08-09T14:57:33.333Z INFO  worker::batch_maker] Batch qtbEoq1wZYJiSi4zYlYh9c0AQ9yJnphaNBEdcdvbp7M= contains sample tx 148
+[2022-08-09T14:57:33.333Z INFO  worker::batch_maker] Batch qtbEoq1wZYJiSi4zYlYh9c0AQ9yJnphaNBEdcdvbp7M= contains sample tx 149
+[2022-08-09T14:57:33.333Z INFO  worker::batch_maker] Batch qtbEoq1wZYJiSi4zYlYh9c0AQ9yJnphaNBEdcdvbp7M= contains sample tx 150
+[2022-08-09T14:57:33.333Z INFO  worker::batch_maker] Batch qtbEoq1wZYJiSi4zYlYh9c0AQ9yJnphaNBEdcdvbp7M= contains sample tx 151
+[2022-08-09T14:57:33.333Z INFO  worker::batch_maker] Batch qtbEoq1wZYJiSi4zYlYh9c0AQ9yJnphaNBEdcdvbp7M= contains 32768 B
+[2022-08-09T14:57:33.535Z INFO  worker::batch_maker] Batch wsv4s/ldCsH4bnk/PMf9pp6Gcx62v5WMkj0vpW8hpkc= contains sample tx 152
+[2022-08-09T14:57:33.535Z INFO  worker::batch_maker] Batch wsv4s/ldCsH4bnk/PMf9pp6Gcx62v5WMkj0vpW8hpkc= contains sample tx 153
+[2022-08-09T14:57:33.535Z INFO  worker::batch_maker] Batch wsv4s/ldCsH4bnk/PMf9pp6Gcx62v5WMkj0vpW8hpkc= contains sample tx 154
+[2022-08-09T14:57:33.535Z INFO  worker::batch_maker] Batch wsv4s/ldCsH4bnk/PMf9pp6Gcx62v5WMkj0vpW8hpkc= contains sample tx 155
+[2022-08-09T14:57:33.535Z INFO  worker::batch_maker] Batch wsv4s/ldCsH4bnk/PMf9pp6Gcx62v5WMkj0vpW8hpkc= contains 32768 B
+[2022-08-09T14:57:33.737Z INFO  worker::batch_maker] Batch 9j6Bu+HHYFLtq3xYcYfkzPFgoSp97ahmM9UwQJ5Zzj8= contains sample tx 156
+[2022-08-09T14:57:33.737Z INFO  worker::batch_maker] Batch 9j6Bu+HHYFLtq3xYcYfkzPFgoSp97ahmM9UwQJ5Zzj8= contains sample tx 157
+[2022-08-09T14:57:33.737Z INFO  worker::batch_maker] Batch 9j6Bu+HHYFLtq3xYcYfkzPFgoSp97ahmM9UwQJ5Zzj8= contains sample tx 158
+[2022-08-09T14:57:33.737Z INFO  worker::batch_maker] Batch 9j6Bu+HHYFLtq3xYcYfkzPFgoSp97ahmM9UwQJ5Zzj8= contains sample tx 159
+[2022-08-09T14:57:33.737Z INFO  worker::batch_maker] Batch 9j6Bu+HHYFLtq3xYcYfkzPFgoSp97ahmM9UwQJ5Zzj8= contains 32768 B
+[2022-08-09T14:57:33.938Z INFO  worker::batch_maker] Batch R2ijBwu8Y7OSsRJHg+Gc4IVk2erQ3fs3bx67VjfWHf8= contains sample tx 160
+[2022-08-09T14:57:33.938Z INFO  worker::batch_maker] Batch R2ijBwu8Y7OSsRJHg+Gc4IVk2erQ3fs3bx67VjfWHf8= contains sample tx 161
+[2022-08-09T14:57:33.938Z INFO  worker::batch_maker] Batch R2ijBwu8Y7OSsRJHg+Gc4IVk2erQ3fs3bx67VjfWHf8= contains sample tx 162
+[2022-08-09T14:57:33.938Z INFO  worker::batch_maker] Batch R2ijBwu8Y7OSsRJHg+Gc4IVk2erQ3fs3bx67VjfWHf8= contains sample tx 163
+[2022-08-09T14:57:33.938Z INFO  worker::batch_maker] Batch R2ijBwu8Y7OSsRJHg+Gc4IVk2erQ3fs3bx67VjfWHf8= contains 32768 B
+[2022-08-09T14:57:34.141Z INFO  worker::batch_maker] Batch 8D297yrCNHklZ5TjSbobJPD4CKH9in3AEJlTpAy66lw= contains sample tx 164
+[2022-08-09T14:57:34.141Z INFO  worker::batch_maker] Batch 8D297yrCNHklZ5TjSbobJPD4CKH9in3AEJlTpAy66lw= contains sample tx 165
+[2022-08-09T14:57:34.141Z INFO  worker::batch_maker] Batch 8D297yrCNHklZ5TjSbobJPD4CKH9in3AEJlTpAy66lw= contains sample tx 166
+[2022-08-09T14:57:34.141Z INFO  worker::batch_maker] Batch 8D297yrCNHklZ5TjSbobJPD4CKH9in3AEJlTpAy66lw= contains sample tx 167
+[2022-08-09T14:57:34.141Z INFO  worker::batch_maker] Batch 8D297yrCNHklZ5TjSbobJPD4CKH9in3AEJlTpAy66lw= contains sample tx 168
+[2022-08-09T14:57:34.141Z INFO  worker::batch_maker] Batch 8D297yrCNHklZ5TjSbobJPD4CKH9in3AEJlTpAy66lw= contains 40960 B
+[2022-08-09T14:57:34.343Z INFO  worker::batch_maker] Batch cM8OBv2tWNCO1w/1d+IL7JnbDh7AWlHXlIw2lSqrdGs= contains sample tx 169
+[2022-08-09T14:57:34.343Z INFO  worker::batch_maker] Batch cM8OBv2tWNCO1w/1d+IL7JnbDh7AWlHXlIw2lSqrdGs= contains sample tx 170
+[2022-08-09T14:57:34.343Z INFO  worker::batch_maker] Batch cM8OBv2tWNCO1w/1d+IL7JnbDh7AWlHXlIw2lSqrdGs= contains sample tx 171
+[2022-08-09T14:57:34.343Z INFO  worker::batch_maker] Batch cM8OBv2tWNCO1w/1d+IL7JnbDh7AWlHXlIw2lSqrdGs= contains sample tx 172
+[2022-08-09T14:57:34.343Z INFO  worker::batch_maker] Batch cM8OBv2tWNCO1w/1d+IL7JnbDh7AWlHXlIw2lSqrdGs= contains 32768 B
+[2022-08-09T14:57:34.545Z INFO  worker::batch_maker] Batch 4mTOhHWiBxPHF3WG4JF853SUqJ7sV8zyNTgDWAwin8k= contains sample tx 173
+[2022-08-09T14:57:34.545Z INFO  worker::batch_maker] Batch 4mTOhHWiBxPHF3WG4JF853SUqJ7sV8zyNTgDWAwin8k= contains sample tx 174
+[2022-08-09T14:57:34.545Z INFO  worker::batch_maker] Batch 4mTOhHWiBxPHF3WG4JF853SUqJ7sV8zyNTgDWAwin8k= contains sample tx 175
+[2022-08-09T14:57:34.545Z INFO  worker::batch_maker] Batch 4mTOhHWiBxPHF3WG4JF853SUqJ7sV8zyNTgDWAwin8k= contains sample tx 176
+[2022-08-09T14:57:34.545Z INFO  worker::batch_maker] Batch 4mTOhHWiBxPHF3WG4JF853SUqJ7sV8zyNTgDWAwin8k= contains 32768 B
+[2022-08-09T14:57:34.747Z INFO  worker::batch_maker] Batch 2/+G+YuXUQOSFYj6BBvyyUzBsHG+64CPZ8mfXmntjhA= contains sample tx 177
+[2022-08-09T14:57:34.747Z INFO  worker::batch_maker] Batch 2/+G+YuXUQOSFYj6BBvyyUzBsHG+64CPZ8mfXmntjhA= contains sample tx 178
+[2022-08-09T14:57:34.747Z INFO  worker::batch_maker] Batch 2/+G+YuXUQOSFYj6BBvyyUzBsHG+64CPZ8mfXmntjhA= contains sample tx 179
+[2022-08-09T14:57:34.747Z INFO  worker::batch_maker] Batch 2/+G+YuXUQOSFYj6BBvyyUzBsHG+64CPZ8mfXmntjhA= contains sample tx 180
+[2022-08-09T14:57:34.747Z INFO  worker::batch_maker] Batch 2/+G+YuXUQOSFYj6BBvyyUzBsHG+64CPZ8mfXmntjhA= contains 32768 B
+[2022-08-09T14:57:34.948Z INFO  worker::batch_maker] Batch TBIK76BNIjvhpwbuUuvPwqIfJR8cGJ5AEp+aRndptcE= contains sample tx 181
+[2022-08-09T14:57:34.948Z INFO  worker::batch_maker] Batch TBIK76BNIjvhpwbuUuvPwqIfJR8cGJ5AEp+aRndptcE= contains sample tx 182
+[2022-08-09T14:57:34.948Z INFO  worker::batch_maker] Batch TBIK76BNIjvhpwbuUuvPwqIfJR8cGJ5AEp+aRndptcE= contains sample tx 183
+[2022-08-09T14:57:34.948Z INFO  worker::batch_maker] Batch TBIK76BNIjvhpwbuUuvPwqIfJR8cGJ5AEp+aRndptcE= contains sample tx 184
+[2022-08-09T14:57:34.948Z INFO  worker::batch_maker] Batch TBIK76BNIjvhpwbuUuvPwqIfJR8cGJ5AEp+aRndptcE= contains 32768 B
+[2022-08-09T14:57:35.149Z INFO  worker::batch_maker] Batch 0NItQ28Qip7RwCdZv+/kZVart81BewGMFnWr/AWr67k= contains sample tx 185
+[2022-08-09T14:57:35.149Z INFO  worker::batch_maker] Batch 0NItQ28Qip7RwCdZv+/kZVart81BewGMFnWr/AWr67k= contains sample tx 186
+[2022-08-09T14:57:35.149Z INFO  worker::batch_maker] Batch 0NItQ28Qip7RwCdZv+/kZVart81BewGMFnWr/AWr67k= contains sample tx 187
+[2022-08-09T14:57:35.149Z INFO  worker::batch_maker] Batch 0NItQ28Qip7RwCdZv+/kZVart81BewGMFnWr/AWr67k= contains sample tx 188
+[2022-08-09T14:57:35.149Z INFO  worker::batch_maker] Batch 0NItQ28Qip7RwCdZv+/kZVart81BewGMFnWr/AWr67k= contains 32768 B
+[2022-08-09T14:57:35.350Z INFO  worker::batch_maker] Batch T5+cVWWpS4AUUAVtCKs+2ViXBtR2E5tk9GamFjhd/Y0= contains sample tx 189
+[2022-08-09T14:57:35.350Z INFO  worker::batch_maker] Batch T5+cVWWpS4AUUAVtCKs+2ViXBtR2E5tk9GamFjhd/Y0= contains sample tx 190
+[2022-08-09T14:57:35.350Z INFO  worker::batch_maker] Batch T5+cVWWpS4AUUAVtCKs+2ViXBtR2E5tk9GamFjhd/Y0= contains sample tx 191
+[2022-08-09T14:57:35.350Z INFO  worker::batch_maker] Batch T5+cVWWpS4AUUAVtCKs+2ViXBtR2E5tk9GamFjhd/Y0= contains sample tx 192
+[2022-08-09T14:57:35.350Z INFO  worker::batch_maker] Batch T5+cVWWpS4AUUAVtCKs+2ViXBtR2E5tk9GamFjhd/Y0= contains 32768 B
+[2022-08-09T14:57:35.551Z INFO  worker::batch_maker] Batch OxENW+DM4S6/4wJzx4fkLRKM5Izs8R6UMv+/poGkPv0= contains sample tx 193
+[2022-08-09T14:57:35.551Z INFO  worker::batch_maker] Batch OxENW+DM4S6/4wJzx4fkLRKM5Izs8R6UMv+/poGkPv0= contains sample tx 194
+[2022-08-09T14:57:35.551Z INFO  worker::batch_maker] Batch OxENW+DM4S6/4wJzx4fkLRKM5Izs8R6UMv+/poGkPv0= contains sample tx 195
+[2022-08-09T14:57:35.551Z INFO  worker::batch_maker] Batch OxENW+DM4S6/4wJzx4fkLRKM5Izs8R6UMv+/poGkPv0= contains sample tx 196
+[2022-08-09T14:57:35.551Z INFO  worker::batch_maker] Batch OxENW+DM4S6/4wJzx4fkLRKM5Izs8R6UMv+/poGkPv0= contains 32768 B
+[2022-08-09T14:57:35.752Z INFO  worker::batch_maker] Batch /j0Oy8Rv8nxkqeAOFcgGHUUiKDfrxL33t6ZYdud/FZw= contains sample tx 197
+[2022-08-09T14:57:35.752Z INFO  worker::batch_maker] Batch /j0Oy8Rv8nxkqeAOFcgGHUUiKDfrxL33t6ZYdud/FZw= contains sample tx 198
+[2022-08-09T14:57:35.752Z INFO  worker::batch_maker] Batch /j0Oy8Rv8nxkqeAOFcgGHUUiKDfrxL33t6ZYdud/FZw= contains sample tx 199
+[2022-08-09T14:57:35.752Z INFO  worker::batch_maker] Batch /j0Oy8Rv8nxkqeAOFcgGHUUiKDfrxL33t6ZYdud/FZw= contains sample tx 200
+[2022-08-09T14:57:35.752Z INFO  worker::batch_maker] Batch /j0Oy8Rv8nxkqeAOFcgGHUUiKDfrxL33t6ZYdud/FZw= contains 32768 B
+[2022-08-09T14:57:35.954Z INFO  worker::batch_maker] Batch JOsMOuklUMM205VNH99hKICjTXWofRF35Qrm81QC6l8= contains sample tx 201
+[2022-08-09T14:57:35.954Z INFO  worker::batch_maker] Batch JOsMOuklUMM205VNH99hKICjTXWofRF35Qrm81QC6l8= contains sample tx 202
+[2022-08-09T14:57:35.954Z INFO  worker::batch_maker] Batch JOsMOuklUMM205VNH99hKICjTXWofRF35Qrm81QC6l8= contains sample tx 203
+[2022-08-09T14:57:35.954Z INFO  worker::batch_maker] Batch JOsMOuklUMM205VNH99hKICjTXWofRF35Qrm81QC6l8= contains sample tx 204
+[2022-08-09T14:57:35.954Z INFO  worker::batch_maker] Batch JOsMOuklUMM205VNH99hKICjTXWofRF35Qrm81QC6l8= contains 32768 B
+[2022-08-09T14:57:36.156Z INFO  worker::batch_maker] Batch 2ADaBm1zt/ly5Fn4UaCn3QhuUCH7+sO6e9mnK+Af0zQ= contains sample tx 205
+[2022-08-09T14:57:36.156Z INFO  worker::batch_maker] Batch 2ADaBm1zt/ly5Fn4UaCn3QhuUCH7+sO6e9mnK+Af0zQ= contains sample tx 206
+[2022-08-09T14:57:36.156Z INFO  worker::batch_maker] Batch 2ADaBm1zt/ly5Fn4UaCn3QhuUCH7+sO6e9mnK+Af0zQ= contains sample tx 207
+[2022-08-09T14:57:36.156Z INFO  worker::batch_maker] Batch 2ADaBm1zt/ly5Fn4UaCn3QhuUCH7+sO6e9mnK+Af0zQ= contains sample tx 208
+[2022-08-09T14:57:36.156Z INFO  worker::batch_maker] Batch 2ADaBm1zt/ly5Fn4UaCn3QhuUCH7+sO6e9mnK+Af0zQ= contains 32768 B
+[2022-08-09T14:57:36.358Z INFO  worker::batch_maker] Batch S8a/Pw9BMhvo9xjbEfpFggC7lGb2btzEUdj5YdQ7OoM= contains sample tx 209
+[2022-08-09T14:57:36.358Z INFO  worker::batch_maker] Batch S8a/Pw9BMhvo9xjbEfpFggC7lGb2btzEUdj5YdQ7OoM= contains sample tx 210
+[2022-08-09T14:57:36.358Z INFO  worker::batch_maker] Batch S8a/Pw9BMhvo9xjbEfpFggC7lGb2btzEUdj5YdQ7OoM= contains sample tx 211
+[2022-08-09T14:57:36.358Z INFO  worker::batch_maker] Batch S8a/Pw9BMhvo9xjbEfpFggC7lGb2btzEUdj5YdQ7OoM= contains sample tx 212
+[2022-08-09T14:57:36.358Z INFO  worker::batch_maker] Batch S8a/Pw9BMhvo9xjbEfpFggC7lGb2btzEUdj5YdQ7OoM= contains 32768 B
+[2022-08-09T14:57:36.559Z INFO  worker::batch_maker] Batch eN6LscAd9Z5mplOjuKVcW3WEF8f0nWKAuwWz53zgqdg= contains sample tx 213
+[2022-08-09T14:57:36.559Z INFO  worker::batch_maker] Batch eN6LscAd9Z5mplOjuKVcW3WEF8f0nWKAuwWz53zgqdg= contains sample tx 214
+[2022-08-09T14:57:36.559Z INFO  worker::batch_maker] Batch eN6LscAd9Z5mplOjuKVcW3WEF8f0nWKAuwWz53zgqdg= contains sample tx 215
+[2022-08-09T14:57:36.559Z INFO  worker::batch_maker] Batch eN6LscAd9Z5mplOjuKVcW3WEF8f0nWKAuwWz53zgqdg= contains sample tx 216
+[2022-08-09T14:57:36.560Z INFO  worker::batch_maker] Batch eN6LscAd9Z5mplOjuKVcW3WEF8f0nWKAuwWz53zgqdg= contains 32768 B
+[2022-08-09T14:57:36.761Z INFO  worker::batch_maker] Batch uEW8XnmrxsCX+yUYgNeK1UrOsO4+ubdDqcZI50Ypsek= contains sample tx 217
+[2022-08-09T14:57:36.761Z INFO  worker::batch_maker] Batch uEW8XnmrxsCX+yUYgNeK1UrOsO4+ubdDqcZI50Ypsek= contains sample tx 218
+[2022-08-09T14:57:36.761Z INFO  worker::batch_maker] Batch uEW8XnmrxsCX+yUYgNeK1UrOsO4+ubdDqcZI50Ypsek= contains sample tx 219
+[2022-08-09T14:57:36.761Z INFO  worker::batch_maker] Batch uEW8XnmrxsCX+yUYgNeK1UrOsO4+ubdDqcZI50Ypsek= contains sample tx 220
+[2022-08-09T14:57:36.761Z INFO  worker::batch_maker] Batch uEW8XnmrxsCX+yUYgNeK1UrOsO4+ubdDqcZI50Ypsek= contains 32768 B
+[2022-08-09T14:57:36.963Z INFO  worker::batch_maker] Batch Gtr0QveCXw1KVgfjVpBvVjsQdbUnVOdfuFxC/eh0IgY= contains sample tx 221
+[2022-08-09T14:57:36.963Z INFO  worker::batch_maker] Batch Gtr0QveCXw1KVgfjVpBvVjsQdbUnVOdfuFxC/eh0IgY= contains sample tx 222
+[2022-08-09T14:57:36.963Z INFO  worker::batch_maker] Batch Gtr0QveCXw1KVgfjVpBvVjsQdbUnVOdfuFxC/eh0IgY= contains sample tx 223
+[2022-08-09T14:57:36.963Z INFO  worker::batch_maker] Batch Gtr0QveCXw1KVgfjVpBvVjsQdbUnVOdfuFxC/eh0IgY= contains sample tx 224
+[2022-08-09T14:57:36.963Z INFO  worker::batch_maker] Batch Gtr0QveCXw1KVgfjVpBvVjsQdbUnVOdfuFxC/eh0IgY= contains 32768 B
+[2022-08-09T14:57:37.165Z INFO  worker::batch_maker] Batch rgiDsoe+DNRTTEsyG9CKFUrlEXR9cWvLUnxx4iseQ9Y= contains sample tx 225
+[2022-08-09T14:57:37.165Z INFO  worker::batch_maker] Batch rgiDsoe+DNRTTEsyG9CKFUrlEXR9cWvLUnxx4iseQ9Y= contains sample tx 226
+[2022-08-09T14:57:37.165Z INFO  worker::batch_maker] Batch rgiDsoe+DNRTTEsyG9CKFUrlEXR9cWvLUnxx4iseQ9Y= contains sample tx 227
+[2022-08-09T14:57:37.165Z INFO  worker::batch_maker] Batch rgiDsoe+DNRTTEsyG9CKFUrlEXR9cWvLUnxx4iseQ9Y= contains sample tx 228
+[2022-08-09T14:57:37.165Z INFO  worker::batch_maker] Batch rgiDsoe+DNRTTEsyG9CKFUrlEXR9cWvLUnxx4iseQ9Y= contains 32768 B
+[2022-08-09T14:57:37.367Z INFO  worker::batch_maker] Batch 8ZkTJgHAjTDl9vbjXK+AvC0yisq9f4Q4u7l2b7ZT6VE= contains sample tx 229
+[2022-08-09T14:57:37.367Z INFO  worker::batch_maker] Batch 8ZkTJgHAjTDl9vbjXK+AvC0yisq9f4Q4u7l2b7ZT6VE= contains sample tx 230
+[2022-08-09T14:57:37.367Z INFO  worker::batch_maker] Batch 8ZkTJgHAjTDl9vbjXK+AvC0yisq9f4Q4u7l2b7ZT6VE= contains sample tx 231
+[2022-08-09T14:57:37.367Z INFO  worker::batch_maker] Batch 8ZkTJgHAjTDl9vbjXK+AvC0yisq9f4Q4u7l2b7ZT6VE= contains sample tx 232
+[2022-08-09T14:57:37.367Z INFO  worker::batch_maker] Batch 8ZkTJgHAjTDl9vbjXK+AvC0yisq9f4Q4u7l2b7ZT6VE= contains 32768 B
+[2022-08-09T14:57:37.569Z INFO  worker::batch_maker] Batch KvMNMVVFDuOp25fCy/lIIrGJxEr+tBQEopyv76NYXHo= contains sample tx 233
+[2022-08-09T14:57:37.569Z INFO  worker::batch_maker] Batch KvMNMVVFDuOp25fCy/lIIrGJxEr+tBQEopyv76NYXHo= contains sample tx 234
+[2022-08-09T14:57:37.569Z INFO  worker::batch_maker] Batch KvMNMVVFDuOp25fCy/lIIrGJxEr+tBQEopyv76NYXHo= contains sample tx 235
+[2022-08-09T14:57:37.569Z INFO  worker::batch_maker] Batch KvMNMVVFDuOp25fCy/lIIrGJxEr+tBQEopyv76NYXHo= contains sample tx 236
+[2022-08-09T14:57:37.569Z INFO  worker::batch_maker] Batch KvMNMVVFDuOp25fCy/lIIrGJxEr+tBQEopyv76NYXHo= contains 32768 B
+[2022-08-09T14:57:37.770Z INFO  worker::batch_maker] Batch guULmbcsvE50GwI0z8DqPWjVhhTocXTAHwLlyLp4H3c= contains sample tx 237
+[2022-08-09T14:57:37.770Z INFO  worker::batch_maker] Batch guULmbcsvE50GwI0z8DqPWjVhhTocXTAHwLlyLp4H3c= contains sample tx 238
+[2022-08-09T14:57:37.770Z INFO  worker::batch_maker] Batch guULmbcsvE50GwI0z8DqPWjVhhTocXTAHwLlyLp4H3c= contains sample tx 239
+[2022-08-09T14:57:37.770Z INFO  worker::batch_maker] Batch guULmbcsvE50GwI0z8DqPWjVhhTocXTAHwLlyLp4H3c= contains sample tx 240
+[2022-08-09T14:57:37.770Z INFO  worker::batch_maker] Batch guULmbcsvE50GwI0z8DqPWjVhhTocXTAHwLlyLp4H3c= contains 32768 B
+[2022-08-09T14:57:37.972Z INFO  worker::batch_maker] Batch Uka5qFisqMpPLnBtZ5I5pcYQSl0YOLDFiQpTORhhOdA= contains sample tx 241
+[2022-08-09T14:57:37.972Z INFO  worker::batch_maker] Batch Uka5qFisqMpPLnBtZ5I5pcYQSl0YOLDFiQpTORhhOdA= contains sample tx 242
+[2022-08-09T14:57:37.972Z INFO  worker::batch_maker] Batch Uka5qFisqMpPLnBtZ5I5pcYQSl0YOLDFiQpTORhhOdA= contains sample tx 243
+[2022-08-09T14:57:37.972Z INFO  worker::batch_maker] Batch Uka5qFisqMpPLnBtZ5I5pcYQSl0YOLDFiQpTORhhOdA= contains sample tx 244
+[2022-08-09T14:57:37.972Z INFO  worker::batch_maker] Batch Uka5qFisqMpPLnBtZ5I5pcYQSl0YOLDFiQpTORhhOdA= contains 32768 B
+[2022-08-09T14:57:38.174Z INFO  worker::batch_maker] Batch HLKyn/60t2pZ0/6JpNqNhw1Z2vyZcxCVu7Dtw2oCfRY= contains sample tx 245
+[2022-08-09T14:57:38.174Z INFO  worker::batch_maker] Batch HLKyn/60t2pZ0/6JpNqNhw1Z2vyZcxCVu7Dtw2oCfRY= contains sample tx 246
+[2022-08-09T14:57:38.174Z INFO  worker::batch_maker] Batch HLKyn/60t2pZ0/6JpNqNhw1Z2vyZcxCVu7Dtw2oCfRY= contains sample tx 247
+[2022-08-09T14:57:38.174Z INFO  worker::batch_maker] Batch HLKyn/60t2pZ0/6JpNqNhw1Z2vyZcxCVu7Dtw2oCfRY= contains sample tx 248
+[2022-08-09T14:57:38.174Z INFO  worker::batch_maker] Batch HLKyn/60t2pZ0/6JpNqNhw1Z2vyZcxCVu7Dtw2oCfRY= contains 32768 B
+[2022-08-09T14:57:38.377Z INFO  worker::batch_maker] Batch toii8SMizDvp1j7WNvihJCPpp4WjNQTCxL14PRqIOzw= contains sample tx 249
+[2022-08-09T14:57:38.377Z INFO  worker::batch_maker] Batch toii8SMizDvp1j7WNvihJCPpp4WjNQTCxL14PRqIOzw= contains sample tx 250
+[2022-08-09T14:57:38.377Z INFO  worker::batch_maker] Batch toii8SMizDvp1j7WNvihJCPpp4WjNQTCxL14PRqIOzw= contains sample tx 251
+[2022-08-09T14:57:38.377Z INFO  worker::batch_maker] Batch toii8SMizDvp1j7WNvihJCPpp4WjNQTCxL14PRqIOzw= contains sample tx 252
+[2022-08-09T14:57:38.377Z INFO  worker::batch_maker] Batch toii8SMizDvp1j7WNvihJCPpp4WjNQTCxL14PRqIOzw= contains 32768 B
+[2022-08-09T14:57:38.579Z INFO  worker::batch_maker] Batch h+ANuYG/XEAmV08Eg3ARWQjP/nZv+fxZjd5GprTtcbQ= contains sample tx 253
+[2022-08-09T14:57:38.579Z INFO  worker::batch_maker] Batch h+ANuYG/XEAmV08Eg3ARWQjP/nZv+fxZjd5GprTtcbQ= contains sample tx 254
+[2022-08-09T14:57:38.579Z INFO  worker::batch_maker] Batch h+ANuYG/XEAmV08Eg3ARWQjP/nZv+fxZjd5GprTtcbQ= contains sample tx 255
+[2022-08-09T14:57:38.579Z INFO  worker::batch_maker] Batch h+ANuYG/XEAmV08Eg3ARWQjP/nZv+fxZjd5GprTtcbQ= contains sample tx 256
+[2022-08-09T14:57:38.579Z INFO  worker::batch_maker] Batch h+ANuYG/XEAmV08Eg3ARWQjP/nZv+fxZjd5GprTtcbQ= contains 32768 B
+[2022-08-09T14:57:38.781Z INFO  worker::batch_maker] Batch N71ZVxRMTuBwHfEq+2Q5HYR2HL+1iIDEfxqmgSITdNc= contains sample tx 257
+[2022-08-09T14:57:38.781Z INFO  worker::batch_maker] Batch N71ZVxRMTuBwHfEq+2Q5HYR2HL+1iIDEfxqmgSITdNc= contains sample tx 258
+[2022-08-09T14:57:38.781Z INFO  worker::batch_maker] Batch N71ZVxRMTuBwHfEq+2Q5HYR2HL+1iIDEfxqmgSITdNc= contains sample tx 259
+[2022-08-09T14:57:38.781Z INFO  worker::batch_maker] Batch N71ZVxRMTuBwHfEq+2Q5HYR2HL+1iIDEfxqmgSITdNc= contains sample tx 260
+[2022-08-09T14:57:38.781Z INFO  worker::batch_maker] Batch N71ZVxRMTuBwHfEq+2Q5HYR2HL+1iIDEfxqmgSITdNc= contains 32768 B
+[2022-08-09T14:57:38.983Z INFO  worker::batch_maker] Batch 0FGOXHxtwjtZ3JGuF2l183AXaNn+HPkDqDQukDM4w10= contains sample tx 261
+[2022-08-09T14:57:38.983Z INFO  worker::batch_maker] Batch 0FGOXHxtwjtZ3JGuF2l183AXaNn+HPkDqDQukDM4w10= contains sample tx 262
+[2022-08-09T14:57:38.983Z INFO  worker::batch_maker] Batch 0FGOXHxtwjtZ3JGuF2l183AXaNn+HPkDqDQukDM4w10= contains sample tx 263
+[2022-08-09T14:57:38.983Z INFO  worker::batch_maker] Batch 0FGOXHxtwjtZ3JGuF2l183AXaNn+HPkDqDQukDM4w10= contains sample tx 264
+[2022-08-09T14:57:38.983Z INFO  worker::batch_maker] Batch 0FGOXHxtwjtZ3JGuF2l183AXaNn+HPkDqDQukDM4w10= contains 32768 B
+[2022-08-09T14:57:39.185Z INFO  worker::batch_maker] Batch HvQaj8q5cGvxedZUqKumBj+WopjicjHOG1t1HvLvZ4Y= contains sample tx 265
+[2022-08-09T14:57:39.186Z INFO  worker::batch_maker] Batch HvQaj8q5cGvxedZUqKumBj+WopjicjHOG1t1HvLvZ4Y= contains sample tx 266
+[2022-08-09T14:57:39.186Z INFO  worker::batch_maker] Batch HvQaj8q5cGvxedZUqKumBj+WopjicjHOG1t1HvLvZ4Y= contains sample tx 267
+[2022-08-09T14:57:39.186Z INFO  worker::batch_maker] Batch HvQaj8q5cGvxedZUqKumBj+WopjicjHOG1t1HvLvZ4Y= contains sample tx 268
+[2022-08-09T14:57:39.186Z INFO  worker::batch_maker] Batch HvQaj8q5cGvxedZUqKumBj+WopjicjHOG1t1HvLvZ4Y= contains 32768 B
+[2022-08-09T14:57:39.388Z INFO  worker::batch_maker] Batch Z+p+OV7meE5nZhNfKjVbepF4jY0hnTfaRFV0+zdL3V8= contains sample tx 269
+[2022-08-09T14:57:39.388Z INFO  worker::batch_maker] Batch Z+p+OV7meE5nZhNfKjVbepF4jY0hnTfaRFV0+zdL3V8= contains sample tx 270
+[2022-08-09T14:57:39.388Z INFO  worker::batch_maker] Batch Z+p+OV7meE5nZhNfKjVbepF4jY0hnTfaRFV0+zdL3V8= contains sample tx 271
+[2022-08-09T14:57:39.388Z INFO  worker::batch_maker] Batch Z+p+OV7meE5nZhNfKjVbepF4jY0hnTfaRFV0+zdL3V8= contains sample tx 272
+[2022-08-09T14:57:39.388Z INFO  worker::batch_maker] Batch Z+p+OV7meE5nZhNfKjVbepF4jY0hnTfaRFV0+zdL3V8= contains 32768 B
+[2022-08-09T14:57:39.590Z INFO  worker::batch_maker] Batch BoLm5wlNl55cnapHrSl4V7z7st9WpXMIGEgA92BJQ7Q= contains sample tx 273
+[2022-08-09T14:57:39.590Z INFO  worker::batch_maker] Batch BoLm5wlNl55cnapHrSl4V7z7st9WpXMIGEgA92BJQ7Q= contains sample tx 274
+[2022-08-09T14:57:39.590Z INFO  worker::batch_maker] Batch BoLm5wlNl55cnapHrSl4V7z7st9WpXMIGEgA92BJQ7Q= contains sample tx 275
+[2022-08-09T14:57:39.590Z INFO  worker::batch_maker] Batch BoLm5wlNl55cnapHrSl4V7z7st9WpXMIGEgA92BJQ7Q= contains sample tx 276
+[2022-08-09T14:57:39.590Z INFO  worker::batch_maker] Batch BoLm5wlNl55cnapHrSl4V7z7st9WpXMIGEgA92BJQ7Q= contains 32768 B
+[2022-08-09T14:57:39.792Z INFO  worker::batch_maker] Batch TWsQmBS5m//IoV3C1iWnq9dh1WGDhKwYV9pw8A4C8ew= contains sample tx 277
+[2022-08-09T14:57:39.792Z INFO  worker::batch_maker] Batch TWsQmBS5m//IoV3C1iWnq9dh1WGDhKwYV9pw8A4C8ew= contains sample tx 278
+[2022-08-09T14:57:39.792Z INFO  worker::batch_maker] Batch TWsQmBS5m//IoV3C1iWnq9dh1WGDhKwYV9pw8A4C8ew= contains sample tx 279
+[2022-08-09T14:57:39.792Z INFO  worker::batch_maker] Batch TWsQmBS5m//IoV3C1iWnq9dh1WGDhKwYV9pw8A4C8ew= contains sample tx 280
+[2022-08-09T14:57:39.792Z INFO  worker::batch_maker] Batch TWsQmBS5m//IoV3C1iWnq9dh1WGDhKwYV9pw8A4C8ew= contains sample tx 281
+[2022-08-09T14:57:39.792Z INFO  worker::batch_maker] Batch TWsQmBS5m//IoV3C1iWnq9dh1WGDhKwYV9pw8A4C8ew= contains 40960 B
+[2022-08-09T14:57:39.995Z INFO  worker::batch_maker] Batch qRlB8UhHkkiOj1FmYYDidXvXSvvHk3hJw021K6rtH5Q= contains sample tx 282
+[2022-08-09T14:57:39.995Z INFO  worker::batch_maker] Batch qRlB8UhHkkiOj1FmYYDidXvXSvvHk3hJw021K6rtH5Q= contains sample tx 283
+[2022-08-09T14:57:39.995Z INFO  worker::batch_maker] Batch qRlB8UhHkkiOj1FmYYDidXvXSvvHk3hJw021K6rtH5Q= contains sample tx 284
+[2022-08-09T14:57:39.995Z INFO  worker::batch_maker] Batch qRlB8UhHkkiOj1FmYYDidXvXSvvHk3hJw021K6rtH5Q= contains sample tx 285
+[2022-08-09T14:57:39.995Z INFO  worker::batch_maker] Batch qRlB8UhHkkiOj1FmYYDidXvXSvvHk3hJw021K6rtH5Q= contains 32768 B
+[2022-08-09T14:57:40.197Z INFO  worker::batch_maker] Batch PtXS6khC4LRVR24nK5EJJffdCBa2zbcborKvBU0LhM8= contains sample tx 286
+[2022-08-09T14:57:40.197Z INFO  worker::batch_maker] Batch PtXS6khC4LRVR24nK5EJJffdCBa2zbcborKvBU0LhM8= contains sample tx 287
+[2022-08-09T14:57:40.197Z INFO  worker::batch_maker] Batch PtXS6khC4LRVR24nK5EJJffdCBa2zbcborKvBU0LhM8= contains sample tx 288
+[2022-08-09T14:57:40.197Z INFO  worker::batch_maker] Batch PtXS6khC4LRVR24nK5EJJffdCBa2zbcborKvBU0LhM8= contains sample tx 289
+[2022-08-09T14:57:40.197Z INFO  worker::batch_maker] Batch PtXS6khC4LRVR24nK5EJJffdCBa2zbcborKvBU0LhM8= contains 32768 B
+[2022-08-09T14:57:40.399Z INFO  worker::batch_maker] Batch 4r077E2bteEVqJCC6N7KYPsv1/UyNp/LngqDTTWpvtg= contains sample tx 290
+[2022-08-09T14:57:40.399Z INFO  worker::batch_maker] Batch 4r077E2bteEVqJCC6N7KYPsv1/UyNp/LngqDTTWpvtg= contains sample tx 291
+[2022-08-09T14:57:40.399Z INFO  worker::batch_maker] Batch 4r077E2bteEVqJCC6N7KYPsv1/UyNp/LngqDTTWpvtg= contains sample tx 292
+[2022-08-09T14:57:40.399Z INFO  worker::batch_maker] Batch 4r077E2bteEVqJCC6N7KYPsv1/UyNp/LngqDTTWpvtg= contains sample tx 293
+[2022-08-09T14:57:40.399Z INFO  worker::batch_maker] Batch 4r077E2bteEVqJCC6N7KYPsv1/UyNp/LngqDTTWpvtg= contains 32768 B
+[2022-08-09T14:57:40.601Z INFO  worker::batch_maker] Batch E5n6tOY/ANkNokg+TKFpJA7cjXC8ZzscO+cvhn7bhC4= contains sample tx 294
+[2022-08-09T14:57:40.601Z INFO  worker::batch_maker] Batch E5n6tOY/ANkNokg+TKFpJA7cjXC8ZzscO+cvhn7bhC4= contains sample tx 295
+[2022-08-09T14:57:40.601Z INFO  worker::batch_maker] Batch E5n6tOY/ANkNokg+TKFpJA7cjXC8ZzscO+cvhn7bhC4= contains sample tx 296
+[2022-08-09T14:57:40.601Z INFO  worker::batch_maker] Batch E5n6tOY/ANkNokg+TKFpJA7cjXC8ZzscO+cvhn7bhC4= contains sample tx 297
+[2022-08-09T14:57:40.601Z INFO  worker::batch_maker] Batch E5n6tOY/ANkNokg+TKFpJA7cjXC8ZzscO+cvhn7bhC4= contains 32768 B
+[2022-08-09T14:57:40.803Z INFO  worker::batch_maker] Batch 3mILgwtHd8V6cACpVbDSbZzyVAE+RAUJ+G64N6Votfw= contains sample tx 298
+[2022-08-09T14:57:40.803Z INFO  worker::batch_maker] Batch 3mILgwtHd8V6cACpVbDSbZzyVAE+RAUJ+G64N6Votfw= contains sample tx 299
+[2022-08-09T14:57:40.803Z INFO  worker::batch_maker] Batch 3mILgwtHd8V6cACpVbDSbZzyVAE+RAUJ+G64N6Votfw= contains sample tx 300
+[2022-08-09T14:57:40.803Z INFO  worker::batch_maker] Batch 3mILgwtHd8V6cACpVbDSbZzyVAE+RAUJ+G64N6Votfw= contains sample tx 301
+[2022-08-09T14:57:40.803Z INFO  worker::batch_maker] Batch 3mILgwtHd8V6cACpVbDSbZzyVAE+RAUJ+G64N6Votfw= contains 32768 B
+[2022-08-09T14:57:41.004Z INFO  worker::batch_maker] Batch WxGNWxU+yllITHeeWqDIdZ/vR9MwQYUUcEmVK6V0Zoo= contains sample tx 302
+[2022-08-09T14:57:41.004Z INFO  worker::batch_maker] Batch WxGNWxU+yllITHeeWqDIdZ/vR9MwQYUUcEmVK6V0Zoo= contains sample tx 303
+[2022-08-09T14:57:41.004Z INFO  worker::batch_maker] Batch WxGNWxU+yllITHeeWqDIdZ/vR9MwQYUUcEmVK6V0Zoo= contains sample tx 304
+[2022-08-09T14:57:41.004Z INFO  worker::batch_maker] Batch WxGNWxU+yllITHeeWqDIdZ/vR9MwQYUUcEmVK6V0Zoo= contains sample tx 305
+[2022-08-09T14:57:41.004Z INFO  worker::batch_maker] Batch WxGNWxU+yllITHeeWqDIdZ/vR9MwQYUUcEmVK6V0Zoo= contains 32768 B
+[2022-08-09T14:57:41.208Z INFO  worker::batch_maker] Batch mXSUh4VT5UAgfeBr+7NAaaiu+w93BYjq4OPLGngH5Bc= contains sample tx 306
+[2022-08-09T14:57:41.208Z INFO  worker::batch_maker] Batch mXSUh4VT5UAgfeBr+7NAaaiu+w93BYjq4OPLGngH5Bc= contains sample tx 307
+[2022-08-09T14:57:41.208Z INFO  worker::batch_maker] Batch mXSUh4VT5UAgfeBr+7NAaaiu+w93BYjq4OPLGngH5Bc= contains sample tx 308
+[2022-08-09T14:57:41.208Z INFO  worker::batch_maker] Batch mXSUh4VT5UAgfeBr+7NAaaiu+w93BYjq4OPLGngH5Bc= contains sample tx 309
+[2022-08-09T14:57:41.208Z INFO  worker::batch_maker] Batch mXSUh4VT5UAgfeBr+7NAaaiu+w93BYjq4OPLGngH5Bc= contains 32768 B
+[2022-08-09T14:57:41.410Z INFO  worker::batch_maker] Batch GdMsl5B0so56q7GatcOzXvezGRjejmm1jqItLzDVEvY= contains sample tx 310
+[2022-08-09T14:57:41.410Z INFO  worker::batch_maker] Batch GdMsl5B0so56q7GatcOzXvezGRjejmm1jqItLzDVEvY= contains sample tx 311
+[2022-08-09T14:57:41.410Z INFO  worker::batch_maker] Batch GdMsl5B0so56q7GatcOzXvezGRjejmm1jqItLzDVEvY= contains sample tx 312
+[2022-08-09T14:57:41.410Z INFO  worker::batch_maker] Batch GdMsl5B0so56q7GatcOzXvezGRjejmm1jqItLzDVEvY= contains sample tx 313
+[2022-08-09T14:57:41.410Z INFO  worker::batch_maker] Batch GdMsl5B0so56q7GatcOzXvezGRjejmm1jqItLzDVEvY= contains 32768 B
+[2022-08-09T14:57:41.611Z INFO  worker::batch_maker] Batch cUAiXl3xZiZCWEYoZ0L8/UDrhWAIRHjQBjIXnMZt/Ys= contains sample tx 314
+[2022-08-09T14:57:41.611Z INFO  worker::batch_maker] Batch cUAiXl3xZiZCWEYoZ0L8/UDrhWAIRHjQBjIXnMZt/Ys= contains sample tx 315
+[2022-08-09T14:57:41.611Z INFO  worker::batch_maker] Batch cUAiXl3xZiZCWEYoZ0L8/UDrhWAIRHjQBjIXnMZt/Ys= contains sample tx 316
+[2022-08-09T14:57:41.611Z INFO  worker::batch_maker] Batch cUAiXl3xZiZCWEYoZ0L8/UDrhWAIRHjQBjIXnMZt/Ys= contains sample tx 317
+[2022-08-09T14:57:41.611Z INFO  worker::batch_maker] Batch cUAiXl3xZiZCWEYoZ0L8/UDrhWAIRHjQBjIXnMZt/Ys= contains 32768 B
+[2022-08-09T14:57:41.812Z INFO  worker::batch_maker] Batch 6JpymDv08luGmj9GVPWnBQiEt3HDY1s/+/oZayAwyFk= contains sample tx 318
+[2022-08-09T14:57:41.812Z INFO  worker::batch_maker] Batch 6JpymDv08luGmj9GVPWnBQiEt3HDY1s/+/oZayAwyFk= contains sample tx 319
+[2022-08-09T14:57:41.812Z INFO  worker::batch_maker] Batch 6JpymDv08luGmj9GVPWnBQiEt3HDY1s/+/oZayAwyFk= contains sample tx 320
+[2022-08-09T14:57:41.812Z INFO  worker::batch_maker] Batch 6JpymDv08luGmj9GVPWnBQiEt3HDY1s/+/oZayAwyFk= contains sample tx 321
+[2022-08-09T14:57:41.812Z INFO  worker::batch_maker] Batch 6JpymDv08luGmj9GVPWnBQiEt3HDY1s/+/oZayAwyFk= contains 32768 B
+[2022-08-09T14:57:42.013Z INFO  worker::batch_maker] Batch v/3qdIth4xud9A4H751GfGfH4W3BrFQNAdcNwjqDi8M= contains sample tx 322
+[2022-08-09T14:57:42.013Z INFO  worker::batch_maker] Batch v/3qdIth4xud9A4H751GfGfH4W3BrFQNAdcNwjqDi8M= contains sample tx 323
+[2022-08-09T14:57:42.013Z INFO  worker::batch_maker] Batch v/3qdIth4xud9A4H751GfGfH4W3BrFQNAdcNwjqDi8M= contains sample tx 324
+[2022-08-09T14:57:42.013Z INFO  worker::batch_maker] Batch v/3qdIth4xud9A4H751GfGfH4W3BrFQNAdcNwjqDi8M= contains sample tx 325
+[2022-08-09T14:57:42.013Z INFO  worker::batch_maker] Batch v/3qdIth4xud9A4H751GfGfH4W3BrFQNAdcNwjqDi8M= contains 32768 B
+[2022-08-09T14:57:42.215Z INFO  worker::batch_maker] Batch qFS4315OMzbp7W0ciyZBeuW03TNhUDLwqdnxeiho7YA= contains sample tx 326
+[2022-08-09T14:57:42.215Z INFO  worker::batch_maker] Batch qFS4315OMzbp7W0ciyZBeuW03TNhUDLwqdnxeiho7YA= contains sample tx 327
+[2022-08-09T14:57:42.215Z INFO  worker::batch_maker] Batch qFS4315OMzbp7W0ciyZBeuW03TNhUDLwqdnxeiho7YA= contains sample tx 328
+[2022-08-09T14:57:42.215Z INFO  worker::batch_maker] Batch qFS4315OMzbp7W0ciyZBeuW03TNhUDLwqdnxeiho7YA= contains sample tx 329
+[2022-08-09T14:57:42.215Z INFO  worker::batch_maker] Batch qFS4315OMzbp7W0ciyZBeuW03TNhUDLwqdnxeiho7YA= contains 32768 B
+[2022-08-09T14:57:42.416Z INFO  worker::batch_maker] Batch 91SN4oYXiFJiB1TYI9dtoIRwcUCLtjuP25lrpNwJ6aA= contains sample tx 330
+[2022-08-09T14:57:42.416Z INFO  worker::batch_maker] Batch 91SN4oYXiFJiB1TYI9dtoIRwcUCLtjuP25lrpNwJ6aA= contains sample tx 331
+[2022-08-09T14:57:42.416Z INFO  worker::batch_maker] Batch 91SN4oYXiFJiB1TYI9dtoIRwcUCLtjuP25lrpNwJ6aA= contains sample tx 332
+[2022-08-09T14:57:42.416Z INFO  worker::batch_maker] Batch 91SN4oYXiFJiB1TYI9dtoIRwcUCLtjuP25lrpNwJ6aA= contains sample tx 333
+[2022-08-09T14:57:42.416Z INFO  worker::batch_maker] Batch 91SN4oYXiFJiB1TYI9dtoIRwcUCLtjuP25lrpNwJ6aA= contains 32768 B
+[2022-08-09T14:57:42.618Z INFO  worker::batch_maker] Batch GI6OD3FTOE5rrVv7p9C+UT+BwKiKn/a5d0jGCNuAxfM= contains sample tx 334
+[2022-08-09T14:57:42.618Z INFO  worker::batch_maker] Batch GI6OD3FTOE5rrVv7p9C+UT+BwKiKn/a5d0jGCNuAxfM= contains sample tx 335
+[2022-08-09T14:57:42.618Z INFO  worker::batch_maker] Batch GI6OD3FTOE5rrVv7p9C+UT+BwKiKn/a5d0jGCNuAxfM= contains sample tx 336
+[2022-08-09T14:57:42.618Z INFO  worker::batch_maker] Batch GI6OD3FTOE5rrVv7p9C+UT+BwKiKn/a5d0jGCNuAxfM= contains sample tx 337
+[2022-08-09T14:57:42.618Z INFO  worker::batch_maker] Batch GI6OD3FTOE5rrVv7p9C+UT+BwKiKn/a5d0jGCNuAxfM= contains 32768 B
+[2022-08-09T14:57:42.820Z INFO  worker::batch_maker] Batch P25D3iqKdCG04rrRS/0jobZK2j4CDN9xo9aDjAOMyps= contains sample tx 338
+[2022-08-09T14:57:42.820Z INFO  worker::batch_maker] Batch P25D3iqKdCG04rrRS/0jobZK2j4CDN9xo9aDjAOMyps= contains sample tx 339
+[2022-08-09T14:57:42.820Z INFO  worker::batch_maker] Batch P25D3iqKdCG04rrRS/0jobZK2j4CDN9xo9aDjAOMyps= contains sample tx 340
+[2022-08-09T14:57:42.820Z INFO  worker::batch_maker] Batch P25D3iqKdCG04rrRS/0jobZK2j4CDN9xo9aDjAOMyps= contains sample tx 341
+[2022-08-09T14:57:42.820Z INFO  worker::batch_maker] Batch P25D3iqKdCG04rrRS/0jobZK2j4CDN9xo9aDjAOMyps= contains 32768 B
+[2022-08-09T14:57:43.021Z INFO  worker::batch_maker] Batch Q+5PupsMfOh1NPZOcHIeMMkXVOqsA3TF42R4iDQvw3w= contains sample tx 342
+[2022-08-09T14:57:43.021Z INFO  worker::batch_maker] Batch Q+5PupsMfOh1NPZOcHIeMMkXVOqsA3TF42R4iDQvw3w= contains sample tx 343
+[2022-08-09T14:57:43.021Z INFO  worker::batch_maker] Batch Q+5PupsMfOh1NPZOcHIeMMkXVOqsA3TF42R4iDQvw3w= contains sample tx 344
+[2022-08-09T14:57:43.021Z INFO  worker::batch_maker] Batch Q+5PupsMfOh1NPZOcHIeMMkXVOqsA3TF42R4iDQvw3w= contains sample tx 345
+[2022-08-09T14:57:43.021Z INFO  worker::batch_maker] Batch Q+5PupsMfOh1NPZOcHIeMMkXVOqsA3TF42R4iDQvw3w= contains 32768 B
+[2022-08-09T14:57:43.223Z INFO  worker::batch_maker] Batch yq9xhV1wzaq+LLxi7lISnaG/rFyt5UO2LM7IivzJi34= contains sample tx 346
+[2022-08-09T14:57:43.223Z INFO  worker::batch_maker] Batch yq9xhV1wzaq+LLxi7lISnaG/rFyt5UO2LM7IivzJi34= contains sample tx 347
+[2022-08-09T14:57:43.223Z INFO  worker::batch_maker] Batch yq9xhV1wzaq+LLxi7lISnaG/rFyt5UO2LM7IivzJi34= contains sample tx 348
+[2022-08-09T14:57:43.223Z INFO  worker::batch_maker] Batch yq9xhV1wzaq+LLxi7lISnaG/rFyt5UO2LM7IivzJi34= contains sample tx 349
+[2022-08-09T14:57:43.223Z INFO  worker::batch_maker] Batch yq9xhV1wzaq+LLxi7lISnaG/rFyt5UO2LM7IivzJi34= contains 32768 B
+[2022-08-09T14:57:43.424Z INFO  worker::batch_maker] Batch 7tISk7WJZpu7Jyxz4BPYQsBlMRawThdLPJ6RimO0Vn0= contains sample tx 350
+[2022-08-09T14:57:43.424Z INFO  worker::batch_maker] Batch 7tISk7WJZpu7Jyxz4BPYQsBlMRawThdLPJ6RimO0Vn0= contains sample tx 351
+[2022-08-09T14:57:43.424Z INFO  worker::batch_maker] Batch 7tISk7WJZpu7Jyxz4BPYQsBlMRawThdLPJ6RimO0Vn0= contains sample tx 352
+[2022-08-09T14:57:43.424Z INFO  worker::batch_maker] Batch 7tISk7WJZpu7Jyxz4BPYQsBlMRawThdLPJ6RimO0Vn0= contains sample tx 353
+[2022-08-09T14:57:43.424Z INFO  worker::batch_maker] Batch 7tISk7WJZpu7Jyxz4BPYQsBlMRawThdLPJ6RimO0Vn0= contains 32768 B
+[2022-08-09T14:57:43.625Z INFO  worker::batch_maker] Batch 540MlDftbI1b9On7VJ1yCNx28+2zZeXE3oFZQDsaGMk= contains sample tx 354
+[2022-08-09T14:57:43.625Z INFO  worker::batch_maker] Batch 540MlDftbI1b9On7VJ1yCNx28+2zZeXE3oFZQDsaGMk= contains sample tx 355
+[2022-08-09T14:57:43.625Z INFO  worker::batch_maker] Batch 540MlDftbI1b9On7VJ1yCNx28+2zZeXE3oFZQDsaGMk= contains sample tx 356
+[2022-08-09T14:57:43.625Z INFO  worker::batch_maker] Batch 540MlDftbI1b9On7VJ1yCNx28+2zZeXE3oFZQDsaGMk= contains sample tx 357
+[2022-08-09T14:57:43.625Z INFO  worker::batch_maker] Batch 540MlDftbI1b9On7VJ1yCNx28+2zZeXE3oFZQDsaGMk= contains 32768 B
+[2022-08-09T14:57:43.826Z INFO  worker::batch_maker] Batch O7AA/yMgPE74epvOzxMnOT2+GpOgtdrsgQQzHZvHtT8= contains sample tx 358
+[2022-08-09T14:57:43.826Z INFO  worker::batch_maker] Batch O7AA/yMgPE74epvOzxMnOT2+GpOgtdrsgQQzHZvHtT8= contains sample tx 359
+[2022-08-09T14:57:43.826Z INFO  worker::batch_maker] Batch O7AA/yMgPE74epvOzxMnOT2+GpOgtdrsgQQzHZvHtT8= contains sample tx 360
+[2022-08-09T14:57:43.826Z INFO  worker::batch_maker] Batch O7AA/yMgPE74epvOzxMnOT2+GpOgtdrsgQQzHZvHtT8= contains sample tx 361
+[2022-08-09T14:57:43.826Z INFO  worker::batch_maker] Batch O7AA/yMgPE74epvOzxMnOT2+GpOgtdrsgQQzHZvHtT8= contains 32768 B
+[2022-08-09T14:57:44.029Z INFO  worker::batch_maker] Batch 7zexEwr9yYWOmsIhNI3A6qsf7cxkJJjdlQ9QSCbhDwE= contains sample tx 362
+[2022-08-09T14:57:44.029Z INFO  worker::batch_maker] Batch 7zexEwr9yYWOmsIhNI3A6qsf7cxkJJjdlQ9QSCbhDwE= contains sample tx 363
+[2022-08-09T14:57:44.029Z INFO  worker::batch_maker] Batch 7zexEwr9yYWOmsIhNI3A6qsf7cxkJJjdlQ9QSCbhDwE= contains sample tx 364
+[2022-08-09T14:57:44.029Z INFO  worker::batch_maker] Batch 7zexEwr9yYWOmsIhNI3A6qsf7cxkJJjdlQ9QSCbhDwE= contains sample tx 365
+[2022-08-09T14:57:44.029Z INFO  worker::batch_maker] Batch 7zexEwr9yYWOmsIhNI3A6qsf7cxkJJjdlQ9QSCbhDwE= contains 32768 B
+[2022-08-09T14:57:44.230Z INFO  worker::batch_maker] Batch LO+pBfTdorCQE56DbOQ5V8M4F0w/g4T3AIPl1miV1K0= contains sample tx 366
+[2022-08-09T14:57:44.230Z INFO  worker::batch_maker] Batch LO+pBfTdorCQE56DbOQ5V8M4F0w/g4T3AIPl1miV1K0= contains sample tx 367
+[2022-08-09T14:57:44.230Z INFO  worker::batch_maker] Batch LO+pBfTdorCQE56DbOQ5V8M4F0w/g4T3AIPl1miV1K0= contains sample tx 368
+[2022-08-09T14:57:44.230Z INFO  worker::batch_maker] Batch LO+pBfTdorCQE56DbOQ5V8M4F0w/g4T3AIPl1miV1K0= contains sample tx 369
+[2022-08-09T14:57:44.230Z INFO  worker::batch_maker] Batch LO+pBfTdorCQE56DbOQ5V8M4F0w/g4T3AIPl1miV1K0= contains 32768 B
+[2022-08-09T14:57:44.431Z INFO  worker::batch_maker] Batch PKh2z4GQ7ZUhfflR2M44/CD4GzlixTGZKt/TeiAFqew= contains sample tx 370
+[2022-08-09T14:57:44.431Z INFO  worker::batch_maker] Batch PKh2z4GQ7ZUhfflR2M44/CD4GzlixTGZKt/TeiAFqew= contains sample tx 371
+[2022-08-09T14:57:44.431Z INFO  worker::batch_maker] Batch PKh2z4GQ7ZUhfflR2M44/CD4GzlixTGZKt/TeiAFqew= contains sample tx 372
+[2022-08-09T14:57:44.431Z INFO  worker::batch_maker] Batch PKh2z4GQ7ZUhfflR2M44/CD4GzlixTGZKt/TeiAFqew= contains sample tx 373
+[2022-08-09T14:57:44.431Z INFO  worker::batch_maker] Batch PKh2z4GQ7ZUhfflR2M44/CD4GzlixTGZKt/TeiAFqew= contains 32768 B
+[2022-08-09T14:57:44.632Z INFO  worker::batch_maker] Batch byjJCTMlNHqgpuPcTnXZp0B9JhGtakJlP12pxPUVZSg= contains sample tx 374
+[2022-08-09T14:57:44.633Z INFO  worker::batch_maker] Batch byjJCTMlNHqgpuPcTnXZp0B9JhGtakJlP12pxPUVZSg= contains sample tx 375
+[2022-08-09T14:57:44.633Z INFO  worker::batch_maker] Batch byjJCTMlNHqgpuPcTnXZp0B9JhGtakJlP12pxPUVZSg= contains sample tx 376
+[2022-08-09T14:57:44.633Z INFO  worker::batch_maker] Batch byjJCTMlNHqgpuPcTnXZp0B9JhGtakJlP12pxPUVZSg= contains sample tx 377
+[2022-08-09T14:57:44.633Z INFO  worker::batch_maker] Batch byjJCTMlNHqgpuPcTnXZp0B9JhGtakJlP12pxPUVZSg= contains 32768 B
+[2022-08-09T14:57:44.834Z INFO  worker::batch_maker] Batch PkRytdqvVb+oChWTGoIJkv5uwkebflPbLDh86IJH1dI= contains sample tx 378
+[2022-08-09T14:57:44.834Z INFO  worker::batch_maker] Batch PkRytdqvVb+oChWTGoIJkv5uwkebflPbLDh86IJH1dI= contains sample tx 379
+[2022-08-09T14:57:44.834Z INFO  worker::batch_maker] Batch PkRytdqvVb+oChWTGoIJkv5uwkebflPbLDh86IJH1dI= contains sample tx 380
+[2022-08-09T14:57:44.834Z INFO  worker::batch_maker] Batch PkRytdqvVb+oChWTGoIJkv5uwkebflPbLDh86IJH1dI= contains sample tx 381
+[2022-08-09T14:57:44.834Z INFO  worker::batch_maker] Batch PkRytdqvVb+oChWTGoIJkv5uwkebflPbLDh86IJH1dI= contains 32768 B
+[2022-08-09T14:57:45.036Z INFO  worker::batch_maker] Batch TJmsh2nXTntLBNalUIvhyopn6k4ASPEAoFKNtFC5AXs= contains sample tx 382
+[2022-08-09T14:57:45.036Z INFO  worker::batch_maker] Batch TJmsh2nXTntLBNalUIvhyopn6k4ASPEAoFKNtFC5AXs= contains sample tx 383
+[2022-08-09T14:57:45.036Z INFO  worker::batch_maker] Batch TJmsh2nXTntLBNalUIvhyopn6k4ASPEAoFKNtFC5AXs= contains sample tx 384
+[2022-08-09T14:57:45.036Z INFO  worker::batch_maker] Batch TJmsh2nXTntLBNalUIvhyopn6k4ASPEAoFKNtFC5AXs= contains sample tx 385
+[2022-08-09T14:57:45.036Z INFO  worker::batch_maker] Batch TJmsh2nXTntLBNalUIvhyopn6k4ASPEAoFKNtFC5AXs= contains 32768 B
+[2022-08-09T14:57:45.237Z INFO  worker::batch_maker] Batch xnvP18EsOhWy6xsstEuxFyBvBd6bZ26iuPyX85H2irI= contains sample tx 386
+[2022-08-09T14:57:45.237Z INFO  worker::batch_maker] Batch xnvP18EsOhWy6xsstEuxFyBvBd6bZ26iuPyX85H2irI= contains sample tx 387
+[2022-08-09T14:57:45.237Z INFO  worker::batch_maker] Batch xnvP18EsOhWy6xsstEuxFyBvBd6bZ26iuPyX85H2irI= contains sample tx 388
+[2022-08-09T14:57:45.237Z INFO  worker::batch_maker] Batch xnvP18EsOhWy6xsstEuxFyBvBd6bZ26iuPyX85H2irI= contains sample tx 389
+[2022-08-09T14:57:45.237Z INFO  worker::batch_maker] Batch xnvP18EsOhWy6xsstEuxFyBvBd6bZ26iuPyX85H2irI= contains 32768 B
+[2022-08-09T14:57:45.438Z INFO  worker::batch_maker] Batch ehx/Nz17PXf3+Bq3EFPeWSn93/4PmWS8k/KqNo5+buE= contains sample tx 390
+[2022-08-09T14:57:45.438Z INFO  worker::batch_maker] Batch ehx/Nz17PXf3+Bq3EFPeWSn93/4PmWS8k/KqNo5+buE= contains sample tx 391
+[2022-08-09T14:57:45.438Z INFO  worker::batch_maker] Batch ehx/Nz17PXf3+Bq3EFPeWSn93/4PmWS8k/KqNo5+buE= contains sample tx 392
+[2022-08-09T14:57:45.438Z INFO  worker::batch_maker] Batch ehx/Nz17PXf3+Bq3EFPeWSn93/4PmWS8k/KqNo5+buE= contains sample tx 393
+[2022-08-09T14:57:45.438Z INFO  worker::batch_maker] Batch ehx/Nz17PXf3+Bq3EFPeWSn93/4PmWS8k/KqNo5+buE= contains 32768 B
+[2022-08-09T14:57:45.639Z INFO  worker::batch_maker] Batch jjyvzbSseRNuFaM95B1jk8MQABVFJBGMz8L+ZCC9g+c= contains sample tx 394
+[2022-08-09T14:57:45.639Z INFO  worker::batch_maker] Batch jjyvzbSseRNuFaM95B1jk8MQABVFJBGMz8L+ZCC9g+c= contains sample tx 395
+[2022-08-09T14:57:45.639Z INFO  worker::batch_maker] Batch jjyvzbSseRNuFaM95B1jk8MQABVFJBGMz8L+ZCC9g+c= contains sample tx 396
+[2022-08-09T14:57:45.639Z INFO  worker::batch_maker] Batch jjyvzbSseRNuFaM95B1jk8MQABVFJBGMz8L+ZCC9g+c= contains sample tx 397
+[2022-08-09T14:57:45.639Z INFO  worker::batch_maker] Batch jjyvzbSseRNuFaM95B1jk8MQABVFJBGMz8L+ZCC9g+c= contains 32768 B
+[2022-08-09T14:57:45.841Z INFO  worker::batch_maker] Batch hdQJdddrLj2Ouvpw92x4Vte5TmuXremX0NtlP+17xJY= contains sample tx 398
+[2022-08-09T14:57:45.841Z INFO  worker::batch_maker] Batch hdQJdddrLj2Ouvpw92x4Vte5TmuXremX0NtlP+17xJY= contains sample tx 399
+[2022-08-09T14:57:45.841Z INFO  worker::batch_maker] Batch hdQJdddrLj2Ouvpw92x4Vte5TmuXremX0NtlP+17xJY= contains sample tx 400
+[2022-08-09T14:57:45.841Z INFO  worker::batch_maker] Batch hdQJdddrLj2Ouvpw92x4Vte5TmuXremX0NtlP+17xJY= contains sample tx 401
+[2022-08-09T14:57:45.841Z INFO  worker::batch_maker] Batch hdQJdddrLj2Ouvpw92x4Vte5TmuXremX0NtlP+17xJY= contains sample tx 402
+[2022-08-09T14:57:45.841Z INFO  worker::batch_maker] Batch hdQJdddrLj2Ouvpw92x4Vte5TmuXremX0NtlP+17xJY= contains 40960 B
+[2022-08-09T14:57:46.042Z INFO  worker::batch_maker] Batch OPcU2cZfBK77heFsD9Tsj0vQoFfe6K3DDgSpWSOOW48= contains sample tx 403
+[2022-08-09T14:57:46.042Z INFO  worker::batch_maker] Batch OPcU2cZfBK77heFsD9Tsj0vQoFfe6K3DDgSpWSOOW48= contains sample tx 404
+[2022-08-09T14:57:46.042Z INFO  worker::batch_maker] Batch OPcU2cZfBK77heFsD9Tsj0vQoFfe6K3DDgSpWSOOW48= contains sample tx 405
+[2022-08-09T14:57:46.042Z INFO  worker::batch_maker] Batch OPcU2cZfBK77heFsD9Tsj0vQoFfe6K3DDgSpWSOOW48= contains sample tx 406
+[2022-08-09T14:57:46.042Z INFO  worker::batch_maker] Batch OPcU2cZfBK77heFsD9Tsj0vQoFfe6K3DDgSpWSOOW48= contains 32768 B
+[2022-08-09T14:57:46.243Z INFO  worker::batch_maker] Batch FbVm5DPSUqvV3UQ1dKr5HLjngzvt5vFJulcCNZURAR8= contains sample tx 407
+[2022-08-09T14:57:46.243Z INFO  worker::batch_maker] Batch FbVm5DPSUqvV3UQ1dKr5HLjngzvt5vFJulcCNZURAR8= contains sample tx 408
+[2022-08-09T14:57:46.243Z INFO  worker::batch_maker] Batch FbVm5DPSUqvV3UQ1dKr5HLjngzvt5vFJulcCNZURAR8= contains sample tx 409
+[2022-08-09T14:57:46.243Z INFO  worker::batch_maker] Batch FbVm5DPSUqvV3UQ1dKr5HLjngzvt5vFJulcCNZURAR8= contains sample tx 410
+[2022-08-09T14:57:46.243Z INFO  worker::batch_maker] Batch FbVm5DPSUqvV3UQ1dKr5HLjngzvt5vFJulcCNZURAR8= contains 32768 B
+[2022-08-09T14:57:46.444Z INFO  worker::batch_maker] Batch 6TdfRky6ak7s/+ubak/1VuqNu6uWAfxo407wWBU+V8g= contains sample tx 411
+[2022-08-09T14:57:46.444Z INFO  worker::batch_maker] Batch 6TdfRky6ak7s/+ubak/1VuqNu6uWAfxo407wWBU+V8g= contains sample tx 412
+[2022-08-09T14:57:46.444Z INFO  worker::batch_maker] Batch 6TdfRky6ak7s/+ubak/1VuqNu6uWAfxo407wWBU+V8g= contains sample tx 413
+[2022-08-09T14:57:46.444Z INFO  worker::batch_maker] Batch 6TdfRky6ak7s/+ubak/1VuqNu6uWAfxo407wWBU+V8g= contains sample tx 414
+[2022-08-09T14:57:46.444Z INFO  worker::batch_maker] Batch 6TdfRky6ak7s/+ubak/1VuqNu6uWAfxo407wWBU+V8g= contains 32768 B
+[2022-08-09T14:57:46.645Z INFO  worker::batch_maker] Batch BoaVEZyiZeMUWjsxeJJN1Cb2yWIlJeDZn0TADBS05Zw= contains sample tx 415
+[2022-08-09T14:57:46.645Z INFO  worker::batch_maker] Batch BoaVEZyiZeMUWjsxeJJN1Cb2yWIlJeDZn0TADBS05Zw= contains sample tx 416
+[2022-08-09T14:57:46.645Z INFO  worker::batch_maker] Batch BoaVEZyiZeMUWjsxeJJN1Cb2yWIlJeDZn0TADBS05Zw= contains sample tx 417
+[2022-08-09T14:57:46.645Z INFO  worker::batch_maker] Batch BoaVEZyiZeMUWjsxeJJN1Cb2yWIlJeDZn0TADBS05Zw= contains sample tx 418
+[2022-08-09T14:57:46.645Z INFO  worker::batch_maker] Batch BoaVEZyiZeMUWjsxeJJN1Cb2yWIlJeDZn0TADBS05Zw= contains 32768 B
+[2022-08-09T14:57:46.847Z INFO  worker::batch_maker] Batch coBtLxwA/QrjqVTRt3UUOoOSlzi9cHJjODeOcpk6idM= contains sample tx 419
+[2022-08-09T14:57:46.847Z INFO  worker::batch_maker] Batch coBtLxwA/QrjqVTRt3UUOoOSlzi9cHJjODeOcpk6idM= contains sample tx 420
+[2022-08-09T14:57:46.847Z INFO  worker::batch_maker] Batch coBtLxwA/QrjqVTRt3UUOoOSlzi9cHJjODeOcpk6idM= contains sample tx 421
+[2022-08-09T14:57:46.847Z INFO  worker::batch_maker] Batch coBtLxwA/QrjqVTRt3UUOoOSlzi9cHJjODeOcpk6idM= contains sample tx 422
+[2022-08-09T14:57:46.847Z INFO  worker::batch_maker] Batch coBtLxwA/QrjqVTRt3UUOoOSlzi9cHJjODeOcpk6idM= contains 32768 B
+[2022-08-09T14:57:47.048Z INFO  worker::batch_maker] Batch gKuUQvlaecmbDR08Pc/Wyz8c7YvKH/r0AW1AOOrnJKU= contains sample tx 423
+[2022-08-09T14:57:47.048Z INFO  worker::batch_maker] Batch gKuUQvlaecmbDR08Pc/Wyz8c7YvKH/r0AW1AOOrnJKU= contains sample tx 424
+[2022-08-09T14:57:47.048Z INFO  worker::batch_maker] Batch gKuUQvlaecmbDR08Pc/Wyz8c7YvKH/r0AW1AOOrnJKU= contains sample tx 425
+[2022-08-09T14:57:47.048Z INFO  worker::batch_maker] Batch gKuUQvlaecmbDR08Pc/Wyz8c7YvKH/r0AW1AOOrnJKU= contains sample tx 426
+[2022-08-09T14:57:47.048Z INFO  worker::batch_maker] Batch gKuUQvlaecmbDR08Pc/Wyz8c7YvKH/r0AW1AOOrnJKU= contains 32768 B
+[2022-08-09T14:57:47.250Z INFO  worker::batch_maker] Batch uK8udLuX/l3/fzMnHR7kGQkZreR3/4il7c4ypiPnhOM= contains sample tx 427
+[2022-08-09T14:57:47.250Z INFO  worker::batch_maker] Batch uK8udLuX/l3/fzMnHR7kGQkZreR3/4il7c4ypiPnhOM= contains sample tx 428
+[2022-08-09T14:57:47.250Z INFO  worker::batch_maker] Batch uK8udLuX/l3/fzMnHR7kGQkZreR3/4il7c4ypiPnhOM= contains sample tx 429
+[2022-08-09T14:57:47.250Z INFO  worker::batch_maker] Batch uK8udLuX/l3/fzMnHR7kGQkZreR3/4il7c4ypiPnhOM= contains sample tx 430
+[2022-08-09T14:57:47.250Z INFO  worker::batch_maker] Batch uK8udLuX/l3/fzMnHR7kGQkZreR3/4il7c4ypiPnhOM= contains 32768 B
+[2022-08-09T14:57:47.451Z INFO  worker::batch_maker] Batch dgFyGnSdzcFmd2Hej6qq0ku1TrPm4FdyZj7qhRqpQA4= contains sample tx 431
+[2022-08-09T14:57:47.451Z INFO  worker::batch_maker] Batch dgFyGnSdzcFmd2Hej6qq0ku1TrPm4FdyZj7qhRqpQA4= contains sample tx 432
+[2022-08-09T14:57:47.451Z INFO  worker::batch_maker] Batch dgFyGnSdzcFmd2Hej6qq0ku1TrPm4FdyZj7qhRqpQA4= contains sample tx 433
+[2022-08-09T14:57:47.451Z INFO  worker::batch_maker] Batch dgFyGnSdzcFmd2Hej6qq0ku1TrPm4FdyZj7qhRqpQA4= contains sample tx 434
+[2022-08-09T14:57:47.451Z INFO  worker::batch_maker] Batch dgFyGnSdzcFmd2Hej6qq0ku1TrPm4FdyZj7qhRqpQA4= contains 32768 B
+[2022-08-09T14:57:47.652Z INFO  worker::batch_maker] Batch ITKccS+gW9BqL4FToCyt9GGerysvkTpDbd5d/spuPWc= contains sample tx 435
+[2022-08-09T14:57:47.652Z INFO  worker::batch_maker] Batch ITKccS+gW9BqL4FToCyt9GGerysvkTpDbd5d/spuPWc= contains sample tx 436
+[2022-08-09T14:57:47.652Z INFO  worker::batch_maker] Batch ITKccS+gW9BqL4FToCyt9GGerysvkTpDbd5d/spuPWc= contains sample tx 437
+[2022-08-09T14:57:47.652Z INFO  worker::batch_maker] Batch ITKccS+gW9BqL4FToCyt9GGerysvkTpDbd5d/spuPWc= contains sample tx 438
+[2022-08-09T14:57:47.652Z INFO  worker::batch_maker] Batch ITKccS+gW9BqL4FToCyt9GGerysvkTpDbd5d/spuPWc= contains 32768 B
+[2022-08-09T14:57:47.853Z INFO  worker::batch_maker] Batch K1UhVpmNsgL8qHl8UAz+RUYtAgldo0t7LOYGSE1wrBs= contains sample tx 439
+[2022-08-09T14:57:47.853Z INFO  worker::batch_maker] Batch K1UhVpmNsgL8qHl8UAz+RUYtAgldo0t7LOYGSE1wrBs= contains sample tx 440
+[2022-08-09T14:57:47.853Z INFO  worker::batch_maker] Batch K1UhVpmNsgL8qHl8UAz+RUYtAgldo0t7LOYGSE1wrBs= contains sample tx 441
+[2022-08-09T14:57:47.853Z INFO  worker::batch_maker] Batch K1UhVpmNsgL8qHl8UAz+RUYtAgldo0t7LOYGSE1wrBs= contains sample tx 442
+[2022-08-09T14:57:47.853Z INFO  worker::batch_maker] Batch K1UhVpmNsgL8qHl8UAz+RUYtAgldo0t7LOYGSE1wrBs= contains 32768 B
+[2022-08-09T14:57:48.055Z INFO  worker::batch_maker] Batch JknVZlqLSuDSOZX8Jo/9O2dt4WE3rUYWcs1mHAnvqlk= contains sample tx 443
+[2022-08-09T14:57:48.055Z INFO  worker::batch_maker] Batch JknVZlqLSuDSOZX8Jo/9O2dt4WE3rUYWcs1mHAnvqlk= contains sample tx 444
+[2022-08-09T14:57:48.055Z INFO  worker::batch_maker] Batch JknVZlqLSuDSOZX8Jo/9O2dt4WE3rUYWcs1mHAnvqlk= contains sample tx 445
+[2022-08-09T14:57:48.055Z INFO  worker::batch_maker] Batch JknVZlqLSuDSOZX8Jo/9O2dt4WE3rUYWcs1mHAnvqlk= contains sample tx 446
+[2022-08-09T14:57:48.055Z INFO  worker::batch_maker] Batch JknVZlqLSuDSOZX8Jo/9O2dt4WE3rUYWcs1mHAnvqlk= contains 32768 B
+[2022-08-09T14:57:48.256Z INFO  worker::batch_maker] Batch Z47RTTOumgfDCLK9t1MbUvug5lQWq0xwv+EirHkY54U= contains sample tx 447
+[2022-08-09T14:57:48.256Z INFO  worker::batch_maker] Batch Z47RTTOumgfDCLK9t1MbUvug5lQWq0xwv+EirHkY54U= contains sample tx 448
+[2022-08-09T14:57:48.256Z INFO  worker::batch_maker] Batch Z47RTTOumgfDCLK9t1MbUvug5lQWq0xwv+EirHkY54U= contains sample tx 449
+[2022-08-09T14:57:48.256Z INFO  worker::batch_maker] Batch Z47RTTOumgfDCLK9t1MbUvug5lQWq0xwv+EirHkY54U= contains sample tx 450
+[2022-08-09T14:57:48.256Z INFO  worker::batch_maker] Batch Z47RTTOumgfDCLK9t1MbUvug5lQWq0xwv+EirHkY54U= contains 32768 B
+[2022-08-09T14:57:48.458Z INFO  worker::batch_maker] Batch GcNTIdheeLx8wICzJ/cprikQ8bAQ6H9smy+4uKGE5tM= contains sample tx 451
+[2022-08-09T14:57:48.458Z INFO  worker::batch_maker] Batch GcNTIdheeLx8wICzJ/cprikQ8bAQ6H9smy+4uKGE5tM= contains sample tx 452
+[2022-08-09T14:57:48.458Z INFO  worker::batch_maker] Batch GcNTIdheeLx8wICzJ/cprikQ8bAQ6H9smy+4uKGE5tM= contains sample tx 453
+[2022-08-09T14:57:48.458Z INFO  worker::batch_maker] Batch GcNTIdheeLx8wICzJ/cprikQ8bAQ6H9smy+4uKGE5tM= contains sample tx 454
+[2022-08-09T14:57:48.458Z INFO  worker::batch_maker] Batch GcNTIdheeLx8wICzJ/cprikQ8bAQ6H9smy+4uKGE5tM= contains 32768 B
+[2022-08-09T14:57:48.659Z INFO  worker::batch_maker] Batch bE2Kn4jgDLVAJ8l4H4PUjlW/hPww0xRSOEt7LkjUk3w= contains sample tx 455
+[2022-08-09T14:57:48.659Z INFO  worker::batch_maker] Batch bE2Kn4jgDLVAJ8l4H4PUjlW/hPww0xRSOEt7LkjUk3w= contains sample tx 456
+[2022-08-09T14:57:48.659Z INFO  worker::batch_maker] Batch bE2Kn4jgDLVAJ8l4H4PUjlW/hPww0xRSOEt7LkjUk3w= contains sample tx 457
+[2022-08-09T14:57:48.659Z INFO  worker::batch_maker] Batch bE2Kn4jgDLVAJ8l4H4PUjlW/hPww0xRSOEt7LkjUk3w= contains sample tx 458
+[2022-08-09T14:57:48.659Z INFO  worker::batch_maker] Batch bE2Kn4jgDLVAJ8l4H4PUjlW/hPww0xRSOEt7LkjUk3w= contains 32768 B
+[2022-08-09T14:57:48.862Z INFO  worker::batch_maker] Batch rs+QlreptdSS9NmoHvD9UHQgiVMfOjxblP2elBSsGus= contains sample tx 459
+[2022-08-09T14:57:48.862Z INFO  worker::batch_maker] Batch rs+QlreptdSS9NmoHvD9UHQgiVMfOjxblP2elBSsGus= contains sample tx 460
+[2022-08-09T14:57:48.862Z INFO  worker::batch_maker] Batch rs+QlreptdSS9NmoHvD9UHQgiVMfOjxblP2elBSsGus= contains sample tx 461
+[2022-08-09T14:57:48.862Z INFO  worker::batch_maker] Batch rs+QlreptdSS9NmoHvD9UHQgiVMfOjxblP2elBSsGus= contains sample tx 462
+[2022-08-09T14:57:48.862Z INFO  worker::batch_maker] Batch rs+QlreptdSS9NmoHvD9UHQgiVMfOjxblP2elBSsGus= contains 32768 B
+[2022-08-09T14:57:49.063Z INFO  worker::batch_maker] Batch I7g83c9qNh5CbBWdcbDS7D/QkhUjboUBLZvR2sQgvDc= contains sample tx 463
+[2022-08-09T14:57:49.063Z INFO  worker::batch_maker] Batch I7g83c9qNh5CbBWdcbDS7D/QkhUjboUBLZvR2sQgvDc= contains sample tx 464
+[2022-08-09T14:57:49.063Z INFO  worker::batch_maker] Batch I7g83c9qNh5CbBWdcbDS7D/QkhUjboUBLZvR2sQgvDc= contains sample tx 465
+[2022-08-09T14:57:49.063Z INFO  worker::batch_maker] Batch I7g83c9qNh5CbBWdcbDS7D/QkhUjboUBLZvR2sQgvDc= contains sample tx 466
+[2022-08-09T14:57:49.063Z INFO  worker::batch_maker] Batch I7g83c9qNh5CbBWdcbDS7D/QkhUjboUBLZvR2sQgvDc= contains 32768 B
+[2022-08-09T14:57:49.265Z INFO  worker::batch_maker] Batch q3ANz+Rjd+aFPnnpjuSjxwyFC5ROd9VIB2nT0X30+/g= contains sample tx 467
+[2022-08-09T14:57:49.266Z INFO  worker::batch_maker] Batch q3ANz+Rjd+aFPnnpjuSjxwyFC5ROd9VIB2nT0X30+/g= contains sample tx 468
+[2022-08-09T14:57:49.266Z INFO  worker::batch_maker] Batch q3ANz+Rjd+aFPnnpjuSjxwyFC5ROd9VIB2nT0X30+/g= contains sample tx 469
+[2022-08-09T14:57:49.266Z INFO  worker::batch_maker] Batch q3ANz+Rjd+aFPnnpjuSjxwyFC5ROd9VIB2nT0X30+/g= contains sample tx 470
+[2022-08-09T14:57:49.266Z INFO  worker::batch_maker] Batch q3ANz+Rjd+aFPnnpjuSjxwyFC5ROd9VIB2nT0X30+/g= contains 32768 B
+[2022-08-09T14:57:49.467Z INFO  worker::batch_maker] Batch QaHGbKNlTe5WPqmC6Kkpa5zLYZkvYPBu6MM+vkbgzNI= contains sample tx 471
+[2022-08-09T14:57:49.467Z INFO  worker::batch_maker] Batch QaHGbKNlTe5WPqmC6Kkpa5zLYZkvYPBu6MM+vkbgzNI= contains sample tx 472
+[2022-08-09T14:57:49.467Z INFO  worker::batch_maker] Batch QaHGbKNlTe5WPqmC6Kkpa5zLYZkvYPBu6MM+vkbgzNI= contains sample tx 473
+[2022-08-09T14:57:49.467Z INFO  worker::batch_maker] Batch QaHGbKNlTe5WPqmC6Kkpa5zLYZkvYPBu6MM+vkbgzNI= contains sample tx 474
+[2022-08-09T14:57:49.467Z INFO  worker::batch_maker] Batch QaHGbKNlTe5WPqmC6Kkpa5zLYZkvYPBu6MM+vkbgzNI= contains 32768 B
+[2022-08-09T14:57:49.668Z INFO  worker::batch_maker] Batch R144VwK3JXMYIF64T0Ehv3y99n1GIiKEkOCSCh3/dYs= contains sample tx 475
+[2022-08-09T14:57:49.668Z INFO  worker::batch_maker] Batch R144VwK3JXMYIF64T0Ehv3y99n1GIiKEkOCSCh3/dYs= contains sample tx 476
+[2022-08-09T14:57:49.668Z INFO  worker::batch_maker] Batch R144VwK3JXMYIF64T0Ehv3y99n1GIiKEkOCSCh3/dYs= contains sample tx 477
+[2022-08-09T14:57:49.668Z INFO  worker::batch_maker] Batch R144VwK3JXMYIF64T0Ehv3y99n1GIiKEkOCSCh3/dYs= contains sample tx 478
+[2022-08-09T14:57:49.668Z INFO  worker::batch_maker] Batch R144VwK3JXMYIF64T0Ehv3y99n1GIiKEkOCSCh3/dYs= contains 32768 B
+[2022-08-09T14:57:49.869Z INFO  worker::batch_maker] Batch mf9hiOBMRYCXLNuPXga/6/zpsoje9uXTGWRuQvhVPNc= contains sample tx 479
+[2022-08-09T14:57:49.869Z INFO  worker::batch_maker] Batch mf9hiOBMRYCXLNuPXga/6/zpsoje9uXTGWRuQvhVPNc= contains sample tx 480
+[2022-08-09T14:57:49.869Z INFO  worker::batch_maker] Batch mf9hiOBMRYCXLNuPXga/6/zpsoje9uXTGWRuQvhVPNc= contains sample tx 481
+[2022-08-09T14:57:49.869Z INFO  worker::batch_maker] Batch mf9hiOBMRYCXLNuPXga/6/zpsoje9uXTGWRuQvhVPNc= contains sample tx 482
+[2022-08-09T14:57:49.869Z INFO  worker::batch_maker] Batch mf9hiOBMRYCXLNuPXga/6/zpsoje9uXTGWRuQvhVPNc= contains 32768 B
+[2022-08-09T14:57:50.070Z INFO  worker::batch_maker] Batch cz35H2HWJpPsa0+lgpF8I86eqx5bYWipGABzszU8zH8= contains sample tx 483
+[2022-08-09T14:57:50.070Z INFO  worker::batch_maker] Batch cz35H2HWJpPsa0+lgpF8I86eqx5bYWipGABzszU8zH8= contains sample tx 484
+[2022-08-09T14:57:50.070Z INFO  worker::batch_maker] Batch cz35H2HWJpPsa0+lgpF8I86eqx5bYWipGABzszU8zH8= contains sample tx 485
+[2022-08-09T14:57:50.070Z INFO  worker::batch_maker] Batch cz35H2HWJpPsa0+lgpF8I86eqx5bYWipGABzszU8zH8= contains sample tx 486
+[2022-08-09T14:57:50.070Z INFO  worker::batch_maker] Batch cz35H2HWJpPsa0+lgpF8I86eqx5bYWipGABzszU8zH8= contains 32768 B
+[2022-08-09T14:57:50.271Z INFO  worker::batch_maker] Batch PAj5IVBCXPQp2WtKqMsjmgy3iwrLSwe10UJc+9GaMuM= contains sample tx 487
+[2022-08-09T14:57:50.271Z INFO  worker::batch_maker] Batch PAj5IVBCXPQp2WtKqMsjmgy3iwrLSwe10UJc+9GaMuM= contains sample tx 488
+[2022-08-09T14:57:50.271Z INFO  worker::batch_maker] Batch PAj5IVBCXPQp2WtKqMsjmgy3iwrLSwe10UJc+9GaMuM= contains sample tx 489
+[2022-08-09T14:57:50.271Z INFO  worker::batch_maker] Batch PAj5IVBCXPQp2WtKqMsjmgy3iwrLSwe10UJc+9GaMuM= contains sample tx 490
+[2022-08-09T14:57:50.271Z INFO  worker::batch_maker] Batch PAj5IVBCXPQp2WtKqMsjmgy3iwrLSwe10UJc+9GaMuM= contains 32768 B
+[2022-08-09T14:57:50.472Z INFO  worker::batch_maker] Batch MMD4msNWALtc6cs4aI4fjDGwsfrTScU8kUG8bFZgfaU= contains sample tx 491
+[2022-08-09T14:57:50.472Z INFO  worker::batch_maker] Batch MMD4msNWALtc6cs4aI4fjDGwsfrTScU8kUG8bFZgfaU= contains sample tx 492
+[2022-08-09T14:57:50.472Z INFO  worker::batch_maker] Batch MMD4msNWALtc6cs4aI4fjDGwsfrTScU8kUG8bFZgfaU= contains sample tx 493
+[2022-08-09T14:57:50.472Z INFO  worker::batch_maker] Batch MMD4msNWALtc6cs4aI4fjDGwsfrTScU8kUG8bFZgfaU= contains sample tx 494
+[2022-08-09T14:57:50.472Z INFO  worker::batch_maker] Batch MMD4msNWALtc6cs4aI4fjDGwsfrTScU8kUG8bFZgfaU= contains 32768 B
+[2022-08-09T14:57:50.623Z WARN  network::reliable_sender] Receive unexpected ACK from 129.13.88.187:9009
+[2022-08-09T14:57:50.623Z WARN  network::receiver] Connection closed by peer 129.13.88.187:36562
+[2022-08-09T14:57:50.623Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.187:9009
+[2022-08-09T14:57:50.624Z WARN  network::reliable_sender] Receive unexpected ACK from 129.13.88.187:9009
+[2022-08-09T14:57:50.624Z WARN  network::reliable_sender] Failed to connect to 129.13.88.187:9009 (retry 0): Connection refused (os error 111)
+[2022-08-09T14:57:50.625Z WARN  network::reliable_sender] Receive unexpected ACK from 129.13.88.187:9014
+[2022-08-09T14:57:50.625Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.187:9014
+[2022-08-09T14:57:50.625Z WARN  network::receiver] Connection closed by peer 129.13.88.187:36560
+[2022-08-09T14:57:50.626Z WARN  network::reliable_sender] Receive unexpected ACK from 129.13.88.187:9014
+[2022-08-09T14:57:50.626Z WARN  network::reliable_sender] Failed to connect to 129.13.88.187:9014 (retry 0): Connection refused (os error 111)
+[2022-08-09T14:57:50.627Z WARN  network::reliable_sender] Receive unexpected ACK from 129.13.88.187:9004
+[2022-08-09T14:57:50.627Z WARN  network::receiver] Connection closed by peer 129.13.88.187:36558
+[2022-08-09T14:57:50.627Z INFO  network::reliable_sender] Outgoing connection established with 129.13.88.187:9004
+[2022-08-09T14:57:50.628Z WARN  network::reliable_sender] Receive unexpected ACK from 129.13.88.187:9004
+[2022-08-09T14:57:50.628Z WARN  network::reliable_sender] Failed to connect to 129.13.88.187:9004 (retry 0): Connection refused (os error 111)
+[2022-08-09T14:57:50.634Z WARN  network::receiver] Connection closed by peer 10.112.112.1:41620
