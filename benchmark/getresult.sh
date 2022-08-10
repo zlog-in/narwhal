@@ -1,6 +1,6 @@
 cd ../logs/
 
-rm logs/*.json
+rm *.json
 
 scp mpc-0:/home/zhan/narwhal/logs/*.json ./
 scp mpc-1:/home/zhan/narwhal/logs/*.json ./
