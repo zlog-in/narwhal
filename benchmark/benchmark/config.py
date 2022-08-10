@@ -282,6 +282,7 @@ class BenchParameters:
             self.local = bool(json['local'])
             self.faults = int(json['faults'])
             self.runs = int(json['runs']) if 'runs' in json else 1
+            self.nodes = [self.replicas * self.servers]
         except KeyError as e:
             raise ConfigError(f'Malformed bench parameters: missing key {e}')
 
