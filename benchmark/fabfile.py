@@ -3,6 +3,7 @@ from fabric import task
 
 from benchmark.local import LocalBench
 from benchmark.logs import ParseError, LogParser
+from benchmark.mpc.fabfile import benchmarking
 from benchmark.utils import Print
 from benchmark.plot import Ploter, PlotError
 from benchmark.instance import InstanceManager
@@ -182,12 +183,14 @@ def logs(ctx):
 def parsing_remote(ctx):
     ''' Parsing logs remotely '''
     try:
-        with open('config.json') as f:
-            config = json.load(f)
-        f.close()
-        if config['parsing'] == 1:
+        with open('bench_parameters.json') as f:
+            benchmar_parameters = json.load(f)
+            f.close()
+        if benchmar_parameters['parsing'] == True:
             print(LogParser.process('./logs', faults='?').remote_result())
-
+            print("Remote parsing completed")
+        else:
+            print("No remote parsing happened.")
         # print(LogParser.process('./logs', node_i, faults='?').result())
 
     except ParseError as e:
