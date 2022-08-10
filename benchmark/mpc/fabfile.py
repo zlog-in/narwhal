@@ -6,7 +6,8 @@ import subprocess
 import random
 import json
 from datetime import datetime
-from multiprocessing import Pool
+import sqlite3
+
 
 
 @task
@@ -34,6 +35,7 @@ def faulty(ctx):
     hosts.run('docker cp narwhal/bench_parameters.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/node_parameters.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker exec -t narwhal bash ben.sh')
+
 
 
 
@@ -67,8 +69,8 @@ def getresult(ctx):
 
 @task
 def summary(ctx):
-    with open('../config.json') as f:
-        config = json.load(f)
+    with open('../bench_parameters.json') as f:
+        bench_parameters = json.load(f)
         f.close()
     consensus_bytes_list = []
     consensus_start_list = []
@@ -85,7 +87,7 @@ def summary(ctx):
     end2end_bps_list = []
     end2end_tps_list = []
 
-    for node_i in range(config['servers']):
+    for node_i in range(bench_parameters['servers']):
         with open(f'../logs/result-{node_i}.json') as f:
             result = json.load(f)
             f.close()
@@ -122,46 +124,44 @@ def summary(ctx):
     consensus_tps = sum(consensus_tps_list)
     end2end_bps = sum(end2end_bps_list)
     end2end_tps = sum(end2end_tps_list)
-    print(consensus_bps, consensus_tps)
-    print(end2end_bps, end2end_tps)
+    print(round(consensus_bps), round(consensus_tps))
+    print(round(end2end_bps), round(end2end_tps))
 
     consensus_latency = mean(consensus_latency_list)
     end2end_latency = mean(end2end_latency_list)
     print(round(consensus_latency), round(end2end_latency))
 
-    # print(
-    #         '\n'
-    #         '-----------------------------------------\n'
-    #         ' SUMMARY:\n'
-    #         '-----------------------------------------\n'
-    #         ' + CONFIG:\n'
-    #         f' Faults: {config['faults']} node(s)\n'
-    #         f' Committee size: {nodes} node(s)\n'
-    #         f' Worker(s) per node: 1 worker(s)\n'
-    #         f' Collocate primary and workers: {self.collocate}\n'
-    #         f' Input rate: {sum(self.rate):,} tx/s\n'
-    #         f' Transaction size: {self.size[0]:,} B\n'
-    #         f' Execution time: {round(duration):,} s\n'
-    #         '\n'
-    #         f' Header size: {header_size:,} B\n'
-    #         f' Max header delay: {max_header_delay:,} ms\n'
-    #         f' GC depth: {gc_depth:,} round(s)\n'
-    #         f' Sync retry delay: {sync_retry_delay:,} ms\n'
-    #         f' Sync retry nodes: {sync_retry_nodes:,} node(s)\n'
-    #         f' batch size: {batch_size:,} B\n'
-    #         f' Max batch delay: {max_batch_delay:,} ms\n'
-    #         '\n'
-    #         ' + RESULTS:\n'
-    #         f' Consensus TPS: {round(consensus_tps):,} tx/s\n'
-    #         f' Consensus BPS: {round(consensus_bps):,} B/s\n'
-    #         f' Consensus latency: {round(consensus_latency):,} ms\n'
-    #         '\n'
-    #         f' End-to-end TPS: {round(end_to_end_tps):,} tx/s\n'
-    #         f' End-to-end BPS: {round(end_to_end_bps):,} B/s\n'
-    #         f' End-to-end latency: {round(end_to_end_latency):,} ms\n'
-    #         '-----------------------------------------\n'
-    #     )
+
+
+    replicas = bench_parameters['replicas']
+    servers = bench_parameters['servers']
+    local = bench_parameters['local'] 
+    duration = bench_parameters['duration']  
+    rate = bench_parameters['rate'] 
+    faults = bench_parameters['faults']
+    delay = bench_parameters['delay']
+    nodes = replicas * servers
     
+    with open('../faulty.json') as f:
+            faulty_config = json.load(f)
+            f.close()
+    time_seed = faulty_config['time_seed']
+    results_db = sqlite3.connect('./results.db')
+    if faults == 0 and delay == 0:
+        insert_S1Narwhal_results = f'INSERT INTO S1Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end2end_latency)})'
+        results_db.cursor().execute(insert_S1Narwhal_results)
+        results_db.commit()
+        results_db.close()
+    
+    elif faults > 0 and delay ==0:
+        insert_S2Narwhal_results = f'INSERT INTO S2Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end2end_latency)})'
+        results_db.cursor().execute(insert_S2Narwhal_results)
+        results_db.commit()
+        results_db.close()
+    
+    elif delay > 0 and faults == 0:
+        print("S3")
+
         
 
 
@@ -188,7 +188,6 @@ def faulty_config():
     faulty_servers = set()
     #time_seed = read_time()
     time_seed = datetime.now()
-    print(time_seed)
     random.seed(time_seed)
     while len(faulty_servers) != faults:
         faulty_servers.add(random.randrange(0, servers*replicas))

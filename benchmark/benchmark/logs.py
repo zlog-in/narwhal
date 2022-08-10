@@ -182,7 +182,7 @@ class LogParser:
         bytes = sum(self.sizes.values())
         bps = bytes / duration
         tps = bps / self.size[0]
-        if PARSING == 1:
+        if PARSING == True:
             with open(f'./logs/result-{NODE_I}.json') as f:
                 result = json.load(f)
                 f.close()
@@ -196,9 +196,9 @@ class LogParser:
 
     def _consensus_latency(self):
         # print("_consensu_latency")
-        if PARSING == 0:
+        if PARSING == False:
             latency = [c - self.proposals[d] for d, c in self.commits.items()]
-        if PARSING == 1:
+        if PARSING == True:
             latency = [c - self.proposals[d] for d, c in self.commits.items() if d in self.proposals]
             with open(f'./logs/result-{NODE_I}.json') as f:
                 result = json.load(f)
@@ -206,6 +206,7 @@ class LogParser:
                 result.update({'consensus_latency': mean(latency) * 1000})
             with open(f'./logs/result-{NODE_I}.json', 'w') as f:
                 json.dump(result, f, indent=4)
+                f.close()
                
         return mean(latency) if latency else 0
 
@@ -218,7 +219,7 @@ class LogParser:
         bytes = sum(self.sizes.values())
         bps = bytes / duration
         tps = bps / self.size[0]
-        if PARSING == 1:
+        if PARSING == True:
             with open(f'./logs/result-{NODE_I}.json') as f:
                 result = json.load(f)
                 f.close()
@@ -244,7 +245,7 @@ class LogParser:
                     latency += [end-start]
                     # print(latency)
         
-        if PARSING == 1:
+        if PARSING == True:
             with open(f'./logs/result-{NODE_I}.json') as f:
                 result = json.load(f)
                 f.close()
@@ -327,10 +328,6 @@ class LogParser:
             '-----------------------------------------\n'
         )
 
-    # def print(self, filename):
-    #     assert isinstance(filename, str)
-    #     with open(filename, 'a') as f:
-    #         f.write(self.result())
 
     def remote_result(self):
         # print("reults printed")
@@ -352,7 +349,7 @@ class LogParser:
         self._end_to_end_throughput()
         self._end_to_end_latency()
 
-        print('Remote results are summarized')
+        print('Remote results are summarized into json file')
 
 
 
