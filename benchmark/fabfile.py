@@ -51,7 +51,9 @@ def local(ctx, debug=True):
         elif bench_parameters['local'] == False and bench_parameters['parsing'] == False:
             LocalBench(bench_parameters,node_parameters).run(debug)
             print("Parsing logs locally")
-        
+        elif bench_parameters['local'] == False and bench_parameters['parsing'] == True:
+            LocalBench(bench_parameters,node_parameters).run(debug)
+            print("Parsing logs remotely")
         
         
     except BenchError as e:
