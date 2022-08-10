@@ -141,18 +141,20 @@ def summary(ctx):
     delay = bench_parameters['delay']
     nodes = replicas * servers
     
-    with open('../faulty.json') as f:
-            faulty_config = json.load(f)
-            f.close()
-    time_seed = faulty_config['time_seed']
+    
     results_db = sqlite3.connect('./results.db')
     if faults == 0 and delay == 0:
+        time_seed = datetime.now()
         insert_S1Narwhal_results = f'INSERT INTO S1Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end2end_latency)})'
         results_db.cursor().execute(insert_S1Narwhal_results)
         results_db.commit()
         results_db.close()
     
     elif faults > 0 and delay ==0:
+        with open('../faulty.json') as f:
+            faulty_config = json.load(f)
+            f.close()
+        time_seed = faulty_config['time_seed']
         insert_S2Narwhal_results = f'INSERT INTO S2Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end2end_latency)})'
         results_db.cursor().execute(insert_S2Narwhal_results)
         results_db.commit()
