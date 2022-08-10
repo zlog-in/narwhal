@@ -237,9 +237,6 @@ class NodeParameters:
         if not all(isinstance(x, int) for x in inputs):
             raise ConfigError('Invalid parameters type')
         
-        #Z
-        #print("Node parameters:")
-        #print(json)
 
         self.json = json
 
@@ -292,9 +289,6 @@ class BenchParameters:
         if min(self.nodes) <= self.faults:
             raise ConfigError('There should be more nodes than faults')
         
-        #Z
-        #print("Bench parameters:")
-        #print(json)
 
 
 class PlotParameters:

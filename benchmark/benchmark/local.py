@@ -62,8 +62,6 @@ class LocalBench:
 
             
             nodes, rate, replicas, servers, local, faults, duration = self.nodes[0], self.rate[0], self.replicas, self.servers, self.local, self.faults, self.duration
-          
-            nodes = replicas * servers
 
             # Cleanup all files.
             cmd = f'{CommandMaker.clean_logs()} ; {CommandMaker.cleanup()}'
@@ -92,18 +90,39 @@ class LocalBench:
                 f.close()
 
             node_ip = '127.0.0.1'
-            match node_i:
-                case 0: node_ip = '129.13.88.182'
-                case 1: node_ip = '129.13.88.183'
-                case 2: node_ip = '129.13.88.184'
-                case 3: node_ip = '129.13.88.185'
-                case 4: node_ip = '129.13.88.186'
-                case 5: node_ip = '129.13.88.187'
-                case 6: node_ip = '129.13.88.188'
-                case 7: node_ip = '129.13.88.189'
-                case 8: node_ip = '129.13.88.190' 
-                case 9: node_ip = '129.13.88.180'
+            # match node_i:
+            #     case 0: node_ip = '129.13.88.182'
+            #     case 1: node_ip = '129.13.88.183'
+            #     case 2: node_ip = '129.13.88.184'
+            #     case 3: node_ip = '129.13.88.185'
+            #     case 4: node_ip = '129.13.88.186'
+            #     case 5: node_ip = '129.13.88.187'
+            #     case 6: node_ip = '129.13.88.188'
+            #     case 7: node_ip = '129.13.88.189'
+            #     case 8: node_ip = '129.13.88.190' 
+            #     case 9: node_ip = '129.13.88.180'
 
+            if node_i == 0:
+                node_ip = '129.13.88.182'
+            elif node_i == 1:
+                node_ip = '129.13.88.183'
+            elif node_i == 2 :
+                node_ip = '129.13.88.184'
+            elif node_i == 3:
+                node_ip = '129.13.88.185'
+            elif node_i == 4:
+                node_ip = '129.13.88.186'
+            elif node_i == 5:
+                node_ip = '129.13.88.187'
+            elif node_i == 6:
+                node_ip = '129.13.88.188'
+            elif node_i == 7:
+                node_ip = '129.13.88.189'
+            elif node_i == 8:
+                node_ip = '129.13.88.190'
+            elif node_i == 9:
+                node_ip = '129.13.88.180'
+            
             names = [x.name for x in keys]
             committee = LocalCommittee(names, self.BASE_PORT, self.workers, local, servers)
             committee.print(PathMaker.committee_file())
@@ -205,15 +224,15 @@ class LocalBench:
                 faulty_config = json.load(f)
                 f.close()
             
-
-            for r in range(replicas):
-                # print(f'r: {r}')
-                replica_i = node_i + r * servers
-                flag = faulty_config[f'{replica_i}'][0]
-                if flag == 1:
-                    # print(f'flag: {flag}')
-                    faulty_duration = faulty_config[f'{replica_i}'][1]
-                    Thread(target=self._kill_faulty, args=(replica_i,faulty_duration)).start()
+            if faults > 0:
+                for r in range(replicas):
+                    # print(f'r: {r}')
+                    replica_i = node_i + r * servers
+                    flag = faulty_config[f'{replica_i}'][0]
+                    if flag == 1:
+                        # print(f'flag: {flag}')
+                        faulty_duration = faulty_config[f'{replica_i}'][1]
+                        Thread(target=self._kill_faulty, args=(replica_i,faulty_duration)).start()
             
             Print.info(f'Running benchmark ({duration} sec)...')
             sleep(duration)
