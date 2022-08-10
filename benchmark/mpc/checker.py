@@ -4,7 +4,6 @@ import json
 
 
 bench_parameters = {
-    "faults": 13,
     "nodes": 4,
     "workers": 1,
     "rate": 30000,
@@ -12,6 +11,7 @@ bench_parameters = {
     "duration": 25,
     "delay": 0,
     "replicas": 4,
+    "faults": 0,
     "servers": 10,
     "local": False,
     "parsing": True

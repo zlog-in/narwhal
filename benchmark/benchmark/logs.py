@@ -279,7 +279,8 @@ class LogParser:
         local = bench_parameters['local'] 
         duration = bench_parameters['duration']  
         rate = bench_parameters['rate'] 
-        faults = bench_parameters['faults']   
+        faults = bench_parameters['faults']  
+        delay = bench_parameters['delay'] 
         nodes = replicas * servers
         f.close()
 
@@ -288,10 +289,18 @@ class LogParser:
             f.close()
         time_seed = faulty_config['time_seed']
         results_db = sqlite3.connect('./mpc/results.db')
-        insert_S2Narwhal_results = f'INSERT INTO S2Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
-        results_db.cursor().execute(insert_S2Narwhal_results)
-        results_db.commit()
-        results_db.close()
+
+        if faults == 0 and delay == 0:
+            insert_S1Narwhal_results = f'INSERT INTO S1Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
+            results_db.cursor().execute(insert_S1Narwhal_results)
+            results_db.commit()
+            results_db.close()
+
+        elif faults > 0 and delay == 0:
+            insert_S2Narwhal_results = f'INSERT INTO S2Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
+            results_db.cursor().execute(insert_S2Narwhal_results)
+            results_db.commit()
+            results_db.close()
        
         # add results to sqlite
 

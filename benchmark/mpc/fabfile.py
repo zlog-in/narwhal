@@ -8,7 +8,7 @@ import json
 from datetime import datetime
 import sqlite3
 
-
+import os
 
 @task
 def benchmarking(ctx):
@@ -23,10 +23,9 @@ def benchmarking(ctx):
 def faulty(ctx):
     hosts = ThreadingGroup('mpc-0','mpc-1','mpc-2','mpc-3','mpc-4','mpc-5','mpc-6','mpc-7','mpc-8','mpc-9')
     faulty_config()
-    # hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/config.json', remote  = '/home/zhan/narwhal/')
-    hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/faulty.json', remote  = '/home/zhan/narwhal/')
-    hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/bench_parameters.json', remote  = '/home/zhan/narwhal/')
-    hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/node_parameters.json', remote  = '/home/zhan/narwhal/')
+    hosts.put(f'{os.pardir}/faulty.json', remote  = '/home/zhan/narwhal/')
+    hosts.put(f'{os.pardir}/bench_parameters.json', remote  = '/home/zhan/narwhal/')
+    hosts.put(f'{os.pardir}/node_parameters.json', remote  = '/home/zhan/narwhal/')
     # hosts.run('docker stop narwhal')
     hosts.run('docker stop hotstuff')
     hosts.run('docker start narwhal')
@@ -47,8 +46,8 @@ def container(ctx):
     hosts.run('rm -rf narwhal/logs/')
     hosts.run('mkdir -p narwhal/logs')
     hosts.run('docker stop hotstuff')
-    hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/mpc/ben.sh', remote='/home/zhan/narwhal')
-    hosts.put('/home/z/Sync/Study/DSN/Marc/Code/narwhal/benchmark/mpc/update.sh', remote='/home/zhan/narwhal')
+    hosts.put(f'{os.getcwd()}/ben.sh', remote='/home/zhan/narwhal')
+    hosts.put(f'{os.getcwd()}/update.sh', remote='/home/zhan/narwhal')
 
     hosts.run('docker rm -f narwhal')
     hosts.run('docker run -itd --name narwhal -p 9000-9049:9000-9049 --mount type=bind,source=/home/zhan/narwhal/logs,destination=/home/narwhal/benchmark/logs image_narwhal')
@@ -106,30 +105,30 @@ def summary(ctx):
             end2end_bps_list.append(result['end2end_bps'])
             end2end_tps_list.append(result['end2end_tps'])
     
-    print(consensus_bytes_list)
-    print(end2end_bytes_list)
+    # print(consensus_bytes_list)
+    # print(end2end_bytes_list)
 
     consensus_duration = max(consensus_end_list) - min(consensus_start_list)
     end2end_duration = max(end2end_end_list) - min(end2end_start_list)
-    print(consensus_duration)
-    print(end2end_duration)
+    # print(consensus_duration)
+    # print(end2end_duration)
     
     # consensus_bps = (sum(consensus_bytes_list)) / consensus_duration
     # end2end_bps = (sum(end2end_bytes_list)) / end2end_duration
     # consensus_tps = consensus_bps / result['consensus_size']
     # end2end_tps = end2end_bps / result['end2end_size']
-    print(consensus_bps_list)
-    print(consensus_tps_list)
+    # print(consensus_bps_list)
+    # print(consensus_tps_list)
     consensus_bps = sum(consensus_bps_list)
     consensus_tps = sum(consensus_tps_list)
     end2end_bps = sum(end2end_bps_list)
     end2end_tps = sum(end2end_tps_list)
-    print(round(consensus_bps), round(consensus_tps))
-    print(round(end2end_bps), round(end2end_tps))
+    # print(round(consensus_bps), round(consensus_tps))
+    # print(round(end2end_bps), round(end2end_tps))
 
     consensus_latency = mean(consensus_latency_list)
     end2end_latency = mean(end2end_latency_list)
-    print(round(consensus_latency), round(end2end_latency))
+    # print(round(consensus_latency), round(end2end_latency))
 
 
 
@@ -162,8 +161,15 @@ def summary(ctx):
     elif delay > 0 and faults == 0:
         print("S3")
 
+@task
+def getdb(ctx):
+    host = Connection('checker')
+    host.get('/home/zhan/narwhal/benchmark/mpc/results.db', local = f'{os.getcwd()}/results/')
         
-
+@task
+def checker(ctx):
+    host = Connection('checker')
+    host.put('./checker.py', remote='hotstuff/benchmark/mpc/')
 
 @task
 def build(ctx):
@@ -231,3 +237,5 @@ def read_time():
         faulty_config = json.load(f)
         f.close()
     return faulty_config['time_seed']
+
+
