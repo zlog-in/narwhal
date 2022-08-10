@@ -1,7 +1,0 @@
-[2022-08-09T14:57:25.669Z INFO  benchmark_client] Node address: 129.13.88.189:9013
-[2022-08-09T14:57:25.669Z INFO  benchmark_client] Transactions size: 512 B
-[2022-08-09T14:57:25.669Z INFO  benchmark_client] Transactions rate: 334 tx/s
-[2022-08-09T14:57:25.669Z INFO  benchmark_client] Waiting for all nodes to be online...
-[2022-08-09T14:57:25.725Z INFO  benchmark_client] Start sending transactions
-[2022-08-09T14:57:25.727Z INFO  benchmark_client] Sending sample transaction 0
-[2022-08-09T14:57:25.727Z WARN  benchmark_client] Failed to send transaction: Broken pipe (os error 32)

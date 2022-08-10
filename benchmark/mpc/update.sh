@@ -3,4 +3,4 @@ git restore .committee.json
 
 git pull
 
-git checkout benchmarking
+git checkout debug

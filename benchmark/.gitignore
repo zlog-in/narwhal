@@ -1,4 +1,5 @@
 node
+logs/
 benchmark_client
 index.txt
 config.json
