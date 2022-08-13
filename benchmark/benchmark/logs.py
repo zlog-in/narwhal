@@ -379,8 +379,5 @@ class LogParser:
         for filename in sorted(glob(join(directory, 'worker-*.log'))):
             with open(filename, 'r') as f:
                 workers += [f.read()]
-        # cls means class, which is the first parameters of a class method.
-        # clients, primaries and workers are the names of all logs under folder log
-        # print("process ends")
         
         return cls(clients, primaries, workers, faults=faults)

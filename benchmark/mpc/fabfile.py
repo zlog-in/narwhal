@@ -36,10 +36,6 @@ def faulty(ctx):
     hosts.run('docker exec -t narwhal bash ben.sh')
 
 
-
-
-
-
 @task
 def container(ctx):
     hosts = ThreadingGroup('mpc-0','mpc-1','mpc-2','mpc-3','mpc-4','mpc-5','mpc-6','mpc-7','mpc-8','mpc-9')
