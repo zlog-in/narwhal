@@ -217,16 +217,14 @@ class LocalBench:
                         self._background_run(cmd, log_file)
 
 
-            with open('faulty.json','r') as f:
-                faulty_config = json.load(f)
-                f.close()
+            
             
             
             Print.info(f'Running benchmark ({duration} sec)...')
             if faults > 0 and delay == 0:
-                with open('delay.json', 'r') as f:
-                    delay_config = json.load(f)
-                    f.close
+                with open('faulty.json','r') as f:
+                    faulty_config = json.load(f)
+                    f.close()
                 for r in range(replicas):
                     # print(f'r: {r}')
                     replica_i = node_i + r * servers

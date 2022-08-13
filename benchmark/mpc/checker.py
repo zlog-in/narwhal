@@ -105,7 +105,6 @@ for scenario in scenarios:
 
         for rep in replicas:
             bench_parameters['replicas'] = rep
-            bench_parameters['faults'] = rep*3 + (rep-1)//3
             
             for rat in rates:
                     bench_parameters['rate'] = rat

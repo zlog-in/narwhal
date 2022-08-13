@@ -24,6 +24,7 @@ def faulty(ctx):
     hosts = ThreadingGroup('mpc-0','mpc-1','mpc-2','mpc-3','mpc-4','mpc-5','mpc-6','mpc-7','mpc-8','mpc-9')
     faulty_config()
     hosts.put(f'{os.pardir}/faulty.json', remote  = '/home/zhan/narwhal/')
+    hosts.put(f'{os.pardir}/delay.json', remote  = '/home/zhan/narwhal/')
     hosts.put(f'{os.pardir}/bench_parameters.json', remote  = '/home/zhan/narwhal/')
     hosts.put(f'{os.pardir}/node_parameters.json', remote  = '/home/zhan/narwhal/')
     # hosts.run('docker stop narwhal')
@@ -31,6 +32,7 @@ def faulty(ctx):
     hosts.run('docker start narwhal')
     # hosts.run('docker cp narwhal/config.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/faulty.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker cp narwhal/delay.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/bench_parameters.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/node_parameters.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker exec -t narwhal bash ben.sh')
@@ -162,8 +164,7 @@ def summary(ctx):
     nodes = replicas * servers
 
     sync_retry = node_parameters['sync_retry_delay']
-    
-    
+
     results_db = sqlite3.connect('./results.db')
     if faults == 0 and delay == 0:
         time_seed = datetime.now()
