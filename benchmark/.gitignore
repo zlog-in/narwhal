@@ -10,6 +10,7 @@ logs/result-*.json
 faulty.json
 bench_parameters.json
 node_parameters.json
+delay.json
 results
 plots
 

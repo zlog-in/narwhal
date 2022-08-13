@@ -42,16 +42,18 @@ def timeout(ctx):
     delay_config()
     hosts.run('docker stop hotstuff')
     hosts.run('docker start narwhal')
-
+    
     hosts.put(f'{os.pardir}/bench_parameters.json', remote  = '/home/zhan/narwhal/')
     hosts.put(f'{os.pardir}/node_parameters.json', remote  = '/home/zhan/narwhal/')
     hosts.put(f'{os.pardir}/delay.json', remote  = '/home/zhan/narwhal/')
+    hosts.put(f'{os.pardir}/faulty.json', remote  = '/home/zhan/narwhal/')
 
     hosts.run('docker cp narwhal/bench_parameters.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/node_parameters.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/delay.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker cp narwhal/faulty.json narwhal:/home/narwhal/benchmark/')
 
-    hosts.run('docker exec -t hotstuff bash ben.sh')
+    hosts.run('docker exec -t narwhal bash ben.sh')
 
 
 @task
@@ -64,7 +66,7 @@ def container(ctx):
     hosts.put(f'{os.getcwd()}/update.sh', remote='/home/zhan/narwhal')
 
     hosts.run('docker rm -f narwhal')
-    hosts.run('docker run -itd --name narwhal -p 9000-9049:9000-9049 --mount type=bind,source=/home/zhan/narwhal/logs,destination=/home/narwhal/benchmark/logs image_narwhal')
+    hosts.run('docker run -itd --cap-add=NET_ADMIN --name narwhal -p 9000-9049:9000-9049 --mount type=bind,source=/home/zhan/narwhal/logs,destination=/home/narwhal/benchmark/logs image_narwhal')
     hosts.run('docker cp index.txt narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/ben.sh narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/update.sh narwhal:/home/narwhal/benchmark/')
@@ -84,6 +86,10 @@ def getresult(ctx):
 def summary(ctx):
     with open('../bench_parameters.json') as f:
         bench_parameters = json.load(f)
+        f.close()
+
+    with open('../node_parameters.json')  as f:
+        node_parameters = json.load(f)
         f.close()
     consensus_bytes_list = []
     consensus_start_list = []
@@ -154,6 +160,8 @@ def summary(ctx):
     faults = bench_parameters['faults']
     delay = bench_parameters['delay']
     nodes = replicas * servers
+
+    sync_retry = node_parameters['sync_retry_delay']
     
     
     results_db = sqlite3.connect('./results.db')
@@ -175,7 +183,14 @@ def summary(ctx):
         results_db.close()
     
     elif delay > 0 and faults == 0:
-        print("S3")
+        with open('../delay.json') as f:
+            delay_config = json.load(f)
+            f.close()
+        time_seed = delay_config['time_seed']
+        insert_S3Narwhal_results = f'INSERT INTO S3Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {delay}, {sync_retry}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end2end_latency)})'
+        results_db.cursor().execute(insert_S3Narwhal_results)
+        results_db.commit()
+        results_db.close()
 
 @task
 def getdb(ctx):
@@ -248,38 +263,43 @@ def delay_config():
     servers = bench_parameters['servers']
     duration = bench_parameters['duration']
     delay = bench_parameters['delay']
-    delay_servers = set()
-    time_seed = datetime.now()
-    random.seed(time_seed)
-    while len(delay_servers) != servers/2:
-        delay_servers.add(random.randrange(0, servers))
-    
-    with open('../delay.json', 'w') as f:
-        json.dump({f'{idx}': [0,0,0] for idx in range(servers)}, f, indent=4)
-        f.close()
-    
-    with open('../delay.json', 'r') as f:
-        delay_config = json.load(f)
-        f.close()
-    while len(delay_servers) != 0 and delay > 0:
-        idx = delay_servers.pop()
-        delay_config[f'{idx}'][0] = 1
-        # delay_config[f'{idx}'][1] = random.randint(100, delay) if delay > 100 else random.randint(100, 10000)
-        delay_config[f'{idx}'][1] = random.randint(round(delay/2), round(delay*3/2))
-        delay_config[f'{idx}'][2] = random.randint(1, duration-10)
 
-    with open('../delay.json', 'w') as f:
-        json.dump(delay_config, f, indent=4)
-        f.close()
+    if delay == 0:
+        print("No delay")
 
-    with open(f'../delay.json') as f:
-        delay_config = json.load(f)
-        f.close()
-    delay_config.update({'time_seed': f'{time_seed}'})
+    elif delay > 0:
+        delay_servers = set()
+        time_seed = datetime.now()
+        random.seed(time_seed)
+        while len(delay_servers) != servers/2:
+            delay_servers.add(random.randrange(0, servers))
+        
+        with open('../delay.json', 'w') as f:
+            json.dump({f'{idx}': [0,0,0] for idx in range(servers)}, f, indent=4)
+            f.close()
+        
+        with open('../delay.json', 'r') as f:
+            delay_config = json.load(f)
+            f.close()
+        while len(delay_servers) != 0 and delay > 0:
+            idx = delay_servers.pop()
+            delay_config[f'{idx}'][0] = 1
+            # delay_config[f'{idx}'][1] = random.randint(100, delay) if delay > 100 else random.randint(100, 10000)
+            delay_config[f'{idx}'][1] = random.randint(round(delay/2), round(delay*3/2))
+            delay_config[f'{idx}'][2] = random.randint(1, duration-10)
 
-    with open('../delay.json', 'w') as f:
-        json.dump(delay_config, f, indent=4)
-        f.close()
+        with open('../delay.json', 'w') as f:
+            json.dump(delay_config, f, indent=4)
+            f.close()
+
+        with open(f'../delay.json') as f:
+            delay_config = json.load(f)
+            f.close()
+        delay_config.update({'time_seed': f'{time_seed}'})
+
+        with open('../delay.json', 'w') as f:
+            json.dump(delay_config, f, indent=4)
+            f.close()
 
 def write_time(seed):
     with open(f'../faulty.json') as f:

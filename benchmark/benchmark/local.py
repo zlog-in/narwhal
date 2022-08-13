@@ -236,7 +236,7 @@ class LocalBench:
                         faulty_duration = faulty_config[f'{replica_i}'][1]
                         Thread(target=self._kill_faulty, args=(replica_i,faulty_duration)).start()
 
-            if delay > 0 and faults == 0:
+            elif delay > 0 and faults == 0:
                 with open('delay.json') as f:
                     delay_config = json.load(f)
                     f.close()
