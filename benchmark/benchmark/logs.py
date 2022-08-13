@@ -22,7 +22,7 @@ with open('bench_parameters.json') as f:
     bench_parameters = json.load(f)
     f.close()
 PARSING = bench_parameters['parsing']
-
+DURATION = bench_parameters['duration']
 
 class LogParser:
     def __init__(self, clients, primaries, workers, faults=0):
@@ -179,6 +179,8 @@ class LogParser:
             return 0, 0, 0
         start, end = min(self.proposals.values()), max(self.commits.values())
         duration = end - start
+
+        
         bytes = sum(self.sizes.values())
         bps = bytes / duration
         tps = bps / self.size[0]
@@ -216,6 +218,11 @@ class LogParser:
             return 0, 0, 0
         start, end = min(self.start), max(self.commits.values())
         duration = end - start
+
+        # print(f'end2end start: {start}')
+        # print(f'end2end end: {end}')
+        # print(f'duration:{end - start}')
+        # duration = DURATION
         bytes = sum(self.sizes.values())
         bps = bytes / duration
         tps = bps / self.size[0]

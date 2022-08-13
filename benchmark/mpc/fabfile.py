@@ -27,6 +27,7 @@ def faulty(ctx):
     hosts.put(f'{os.pardir}/delay.json', remote  = '/home/zhan/narwhal/')
     hosts.put(f'{os.pardir}/bench_parameters.json', remote  = '/home/zhan/narwhal/')
     hosts.put(f'{os.pardir}/node_parameters.json', remote  = '/home/zhan/narwhal/')
+    hosts.put(f'{os.pardir}/benchmark/local.py', remote  = '/home/zhan/narwhal/')
     # hosts.run('docker stop narwhal')
     hosts.run('docker stop hotstuff')
     hosts.run('docker start narwhal')
@@ -35,6 +36,7 @@ def faulty(ctx):
     hosts.run('docker cp narwhal/delay.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/bench_parameters.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/node_parameters.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker cp narwhal/local.py narwhal:/home/narwhal/benchmark/benchmark')
     hosts.run('docker exec -t narwhal bash ben.sh')
 
 

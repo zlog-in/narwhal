@@ -57,13 +57,17 @@ class LocalBench:
         subprocess.run('tc qdisc del dev eth0 root', shell=True)
         print(f'Communication delay for server {node_i} ends after {delay_duration}s')
 
-    def _partion(self):
+    def _partion(self, duration, partion):
+        print("Normal network")
+        sleep(duration - partion)
         print("Partion happened")
+        os.popen('tc qdisc del dev eth0 root')
         os.popen('tc qdisc add dev eth0 root handle 1: prio')
         os.popen('tc qdisc add dev eth0 parent 1:3 handle 30: netem loss 100%')
-        os.popen('tc filter add dev eth0 protocol ip parent 1:0 prio 3 u32 match ip dst 192.168.1.2 flowid 1:3')
-        
-        os.popen('tc qdisc del eth0 root')
+        os.popen('tc filter add dev eth0 protocol ip parent 1:0 prio 3 u32 match ip dst 129.13.88.0/24 flowid 1:3')
+        sleep(partion)
+        os.popen('tc qdisc del dev eth0 root')
+
         
     def run(self, debug=False):
         assert isinstance(debug, bool)
@@ -249,16 +253,9 @@ class LocalBench:
                 if delay_config[f'{node_i}'][0] == 1:
                     Thread(target=self._delay, args=(node_i, delay_config[f'{node_i}'][1], delay_config[f'{node_i}'][2])).start()
             
-            print("Partion happened")
-            sleep(10)
-            os.popen('tc qdisc del dev eth0 root')
-            os.popen('tc qdisc add dev eth0 root handle 1: prio')
-            os.popen('tc qdisc add dev eth0 parent 1:3 handle 30: netem loss 100%')
-            os.popen('tc filter add dev eth0 protocol ip parent 1:0 prio 3 u32 match ip dst 129.13.88.0/24 flowid 1:3')
-            sleep(duration-10)
+            sleep(duration)
             self._kill_nodes()
-            os.popen('tc qdisc del dev eth0 root')
-
+            
             # Parse logs and return the parser.
             
             
