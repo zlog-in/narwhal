@@ -250,6 +250,7 @@ class LocalBench:
                     Thread(target=self._delay, args=(node_i, delay_config[f'{node_i}'][1], delay_config[f'{node_i}'][2])).start()
             
             print("Partion happened")
+            os.popen('tc qdisc del eth0 root')
             sleep(5)
             os.popen('tc qdisc add dev eth0 root handle 1: prio')
             os.popen('tc qdisc add dev eth0 parent 1:3 handle 30: netem loss 100%')
