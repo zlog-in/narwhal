@@ -250,14 +250,14 @@ class LocalBench:
                     Thread(target=self._delay, args=(node_i, delay_config[f'{node_i}'][1], delay_config[f'{node_i}'][2])).start()
             
             print("Partion happened")
-            os.popen('tc qdisc del eth0 root')
-            sleep(5)
+            sleep(10)
+            os.popen('tc qdisc del dev eth0 root')
             os.popen('tc qdisc add dev eth0 root handle 1: prio')
             os.popen('tc qdisc add dev eth0 parent 1:3 handle 30: netem loss 100%')
             os.popen('tc filter add dev eth0 protocol ip parent 1:0 prio 3 u32 match ip dst 129.13.88.0/24 flowid 1:3')
-            sleep(duration-5)
+            sleep(duration-10)
             self._kill_nodes()
-            os.popen('tc qdisc del eth0 root')
+            os.popen('tc qdisc del dev eth0 root')
 
             # Parse logs and return the parser.
             
