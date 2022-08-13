@@ -34,7 +34,7 @@ with open('../node_parameters.json', 'w') as f:
     f.close()
 
 
-scenarios = ["S1"]
+scenarios = ["S3"]
 
 for scenario in scenarios:
 
@@ -88,6 +88,3 @@ for scenario in scenarios:
                     for r in range(round):
                         os.system('fab faulty')
                         os.system('fab getresult')
-
-if scenario == "S3":
-    print("S3")

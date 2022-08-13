@@ -37,6 +37,24 @@ def faulty(ctx):
 
 
 @task
+def timeout(ctx):
+    hosts = ThreadingGroup('mpc-0','mpc-1','mpc-2','mpc-3','mpc-4','mpc-5','mpc-6','mpc-7','mpc-8','mpc-9')
+    delay_config()
+    hosts.run('docker stop hotstuff')
+    hosts.run('docker start narwhal')
+
+    hosts.put(f'{os.pardir}/bench_parameters.json', remote  = '/home/zhan/narwhal/')
+    hosts.put(f'{os.pardir}/node_parameters.json', remote  = '/home/zhan/narwhal/')
+    hosts.put(f'{os.pardir}/delay.json', remote  = '/home/zhan/narwhal/')
+
+    hosts.run('docker cp narwhal/bench_parameters.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker cp narwhal/node_parameters.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker cp narwhal/delay.json narwhal:/home/narwhal/benchmark/')
+
+    hosts.run('docker exec -t hotstuff bash ben.sh')
+
+
+@task
 def container(ctx):
     hosts = ThreadingGroup('mpc-0','mpc-1','mpc-2','mpc-3','mpc-4','mpc-5','mpc-6','mpc-7','mpc-8','mpc-9')
     hosts.run('rm -rf narwhal/logs/')
@@ -222,6 +240,46 @@ def faulty_config():
         f.close()
 
     write_time(time_seed)
+
+def delay_config():
+    with open('../bench_parameters.json', 'r') as f:
+        bench_parameters = json.load(f)
+        f.close()
+    servers = bench_parameters['servers']
+    duration = bench_parameters['duration']
+    delay = bench_parameters['delay']
+    delay_servers = set()
+    time_seed = datetime.now()
+    random.seed(time_seed)
+    while len(delay_servers) != servers/2:
+        delay_servers.add(random.randrange(0, servers))
+    
+    with open('../delay.json', 'w') as f:
+        json.dump({f'{idx}': [0,0,0] for idx in range(servers)}, f, indent=4)
+        f.close()
+    
+    with open('../delay.json', 'r') as f:
+        delay_config = json.load(f)
+        f.close()
+    while len(delay_servers) != 0 and delay > 0:
+        idx = delay_servers.pop()
+        delay_config[f'{idx}'][0] = 1
+        # delay_config[f'{idx}'][1] = random.randint(100, delay) if delay > 100 else random.randint(100, 10000)
+        delay_config[f'{idx}'][1] = random.randint(round(delay/2), round(delay*3/2))
+        delay_config[f'{idx}'][2] = random.randint(1, duration-10)
+
+    with open('../delay.json', 'w') as f:
+        json.dump(delay_config, f, indent=4)
+        f.close()
+
+    with open(f'../delay.json') as f:
+        delay_config = json.load(f)
+        f.close()
+    delay_config.update({'time_seed': f'{time_seed}'})
+
+    with open('../delay.json', 'w') as f:
+        json.dump(delay_config, f, indent=4)
+        f.close()
 
 def write_time(seed):
     with open(f'../faulty.json') as f:

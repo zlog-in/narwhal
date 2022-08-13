@@ -49,6 +49,14 @@ class LocalBench:
         subprocess.run(['tmux', 'kill-session', '-t', f'client-{id}-0'])
         print(f'and replica {id} crashed after {duration}s exectution')
 
+    def _delay(self, node_i, delay, delay_duration):
+        sleep(5)
+        print(f'Communication delay for server {node_i} increases to {delay}ms for duration {delay_duration}s')
+        subprocess.run(f'tc qdisc add dev eth0 root netem delay {delay}ms {round(delay/10)}ms distribution normal', shell = True)# specification about delay distribution 
+        sleep(delay_duration)
+        subprocess.run('tc qdisc del dev eth0 root', shell=True)
+        print(f'Communication delay for server {node_i} ends after {delay_duration}s')
+
     def run(self, debug=False):
         assert isinstance(debug, bool)
         Print.heading('Starting local benchmark')
@@ -61,7 +69,7 @@ class LocalBench:
             Print.info('Reading configuration')
 
             
-            nodes, rate, replicas, servers, local, faults, duration = self.nodes[0], self.rate[0], self.replicas, self.servers, self.local, self.faults, self.duration
+            nodes, rate, replicas, servers, local, faults, duration, delay = self.nodes[0], self.rate[0], self.replicas, self.servers, self.local, self.faults, self.duration, self.delay
 
             # Cleanup all files.
             cmd = f'{CommandMaker.clean_logs()} ; {CommandMaker.cleanup()}'
@@ -90,17 +98,6 @@ class LocalBench:
                 f.close()
 
             node_ip = '127.0.0.1'
-            # match node_i:
-            #     case 0: node_ip = '129.13.88.182'
-            #     case 1: node_ip = '129.13.88.183'
-            #     case 2: node_ip = '129.13.88.184'
-            #     case 3: node_ip = '129.13.88.185'
-            #     case 4: node_ip = '129.13.88.186'
-            #     case 5: node_ip = '129.13.88.187'
-            #     case 6: node_ip = '129.13.88.188'
-            #     case 7: node_ip = '129.13.88.189'
-            #     case 8: node_ip = '129.13.88.190' 
-            #     case 9: node_ip = '129.13.88.180'
 
             if node_i == 0:
                 node_ip = '129.13.88.182'
@@ -224,7 +221,12 @@ class LocalBench:
                 faulty_config = json.load(f)
                 f.close()
             
-            if faults > 0:
+            
+            Print.info(f'Running benchmark ({duration} sec)...')
+            if faults > 0 and delay == 0:
+                with open('delay.json', 'r') as f:
+                    delay_config = json.load(f)
+                    f.close
                 for r in range(replicas):
                     # print(f'r: {r}')
                     replica_i = node_i + r * servers
@@ -233,8 +235,15 @@ class LocalBench:
                         # print(f'flag: {flag}')
                         faulty_duration = faulty_config[f'{replica_i}'][1]
                         Thread(target=self._kill_faulty, args=(replica_i,faulty_duration)).start()
+
+            if delay > 0 and faults == 0:
+                with open('delay.json') as f:
+                    delay_config = json.load(f)
+                    f.close()
+                if delay_config[f'{node_i}'][0] == 1:
+                    Thread(target=self._delay, args=(node_i, delay_config[f'{node_i}'][1], delay_config[f'{node_i}'][2])).start()
             
-            Print.info(f'Running benchmark ({duration} sec)...')
+            
             sleep(duration)
             self._kill_nodes()
 
