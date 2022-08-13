@@ -8,7 +8,7 @@ bench_parameters = {
     "workers": 1,
     "rate": 30000,
     "tx_size": 512,
-    "duration": 25,
+    "duration": 50,
     "delay": 0,
     "replicas": 4,
     "faults": 0,
@@ -43,9 +43,9 @@ for scenario in scenarios:
         bench_parameters['delay'] = 0
         bench_parameters['faults'] = 0
 
-        replicas = [1]
-        rates = [120000]
-        round = 1
+        replicas = [1, 2, 3, 4, 5]
+        rates = [20000, 30000, 40000, 50000,60000]
+        round = 20
 
         # replicas = [1,2,3,4,5,6]
         # rates = [20000, 30000, 40000, 50000,60000]
@@ -65,9 +65,9 @@ for scenario in scenarios:
 
     elif scenario == "S2":
         bench_parameters['delay'] = 0
-        replicas = [1]
-        rates = [120000]
-        round = 1
+        replicas = [1, 2, 3, 4, 5]
+        rates = [20000, 30000, 40000, 50000,60000]
+        round = 20
         # replicas = [1,2,3,4,5,6]
         # rates = [20000, 30000, 40000, 50000,60000]
         # rate = 20
@@ -92,10 +92,10 @@ for scenario in scenarios:
     elif scenario == "S3":
         bench_parameters['faults'] = 0
 
-        replicas = [1]
-        rates = [120000]
-        delay = [1000]
-        round = 1
+        replicas = [4,5,6]
+        rates = [40000, 50000,60000]
+        delays = [1000, 2000, 3000, 4000, 5000]
+        round = 20
         # replicas = [1,2,3,4,5,6]
         # rates = [20000, 30000, 40000, 50000,60000]
         # rate = 20
@@ -108,7 +108,7 @@ for scenario in scenarios:
             
             for rat in rates:
                     bench_parameters['rate'] = rat
-                    for dela in delay:
+                    for dela in delays:
                         bench_parameters['delay'] = dela
                         with open('../bench_parameters.json', 'w') as f:
                                 json.dump(bench_parameters, f, indent=4)

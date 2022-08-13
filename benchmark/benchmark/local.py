@@ -50,13 +50,19 @@ class LocalBench:
         print(f'and replica {id} crashed after {duration}s exectution')
 
     def _delay(self, node_i, delay, delay_duration):
-        sleep(5)
+        sleep(5) # after 5s of consensus process
         print(f'Communication delay for server {node_i} increases to {delay}ms for duration {delay_duration}s')
         subprocess.run(f'tc qdisc add dev eth0 root netem delay {delay}ms {round(delay/10)}ms distribution normal', shell = True)# specification about delay distribution 
         sleep(delay_duration)
         subprocess.run('tc qdisc del dev eth0 root', shell=True)
         print(f'Communication delay for server {node_i} ends after {delay_duration}s')
 
+    def _partion(self):
+        print("Partion happened")
+        subprocess.run('tc qdisc add dev eth0 root handle 1: prio')
+        subprocess.run('tc qdisc add dev eth0 parent 1:3 handle 30: netem loss 100%')
+        subprocess.run('tc filter add dev eth0 protocol ip parent 1:0 prio 3 u32 match ip dst 192.168.1.2 flowid 1:3')
+        subprocess.run('tc qdisc del eth0 root')
     def run(self, debug=False):
         assert isinstance(debug, bool)
         Print.heading('Starting local benchmark')
@@ -241,9 +247,13 @@ class LocalBench:
                 if delay_config[f'{node_i}'][0] == 1:
                     Thread(target=self._delay, args=(node_i, delay_config[f'{node_i}'][1], delay_config[f'{node_i}'][2])).start()
             
-            
+            print("Partion happened")
+            subprocess.run('tc qdisc add dev eth0 root handle 1: prio')
+            subprocess.run('tc qdisc add dev eth0 parent 1:3 handle 30: netem loss 100%')
+            subprocess.run('tc filter add dev eth0 protocol ip parent 1:0 prio 3 u32 match ip dst 129.13.88.0/24 flowid 1:3')
             sleep(duration)
             self._kill_nodes()
+            subprocess.run('tc qdisc del eth0 root')
 
             # Parse logs and return the parser.
             
