@@ -1,5 +1,4 @@
 # Copyright(C) Facebook, Inc. and its affiliates.
-from operator import index
 import subprocess
 from math import ceil
 from os.path import basename, splitext
@@ -12,6 +11,7 @@ from benchmark.config import Key, LocalCommittee, NodeParameters, BenchParameter
 from benchmark.logs import LogParser, ParseError
 from benchmark.utils import Print, BenchError, PathMaker
 
+import os
 
 
 class LocalBench:
@@ -59,10 +59,12 @@ class LocalBench:
 
     def _partion(self):
         print("Partion happened")
-        subprocess.run('tc qdisc add dev eth0 root handle 1: prio')
-        subprocess.run('tc qdisc add dev eth0 parent 1:3 handle 30: netem loss 100%')
-        subprocess.run('tc filter add dev eth0 protocol ip parent 1:0 prio 3 u32 match ip dst 192.168.1.2 flowid 1:3')
-        subprocess.run('tc qdisc del eth0 root')
+        os.popen('tc qdisc add dev eth0 root handle 1: prio')
+        os.popen('tc qdisc add dev eth0 parent 1:3 handle 30: netem loss 100%')
+        os.popen('tc filter add dev eth0 protocol ip parent 1:0 prio 3 u32 match ip dst 192.168.1.2 flowid 1:3')
+        
+        os.popen('tc qdisc del eth0 root')
+        
     def run(self, debug=False):
         assert isinstance(debug, bool)
         Print.heading('Starting local benchmark')
@@ -248,12 +250,13 @@ class LocalBench:
                     Thread(target=self._delay, args=(node_i, delay_config[f'{node_i}'][1], delay_config[f'{node_i}'][2])).start()
             
             print("Partion happened")
-            subprocess.run('tc qdisc add dev eth0 root handle 1: prio')
-            subprocess.run('tc qdisc add dev eth0 parent 1:3 handle 30: netem loss 100%')
-            subprocess.run('tc filter add dev eth0 protocol ip parent 1:0 prio 3 u32 match ip dst 129.13.88.0/24 flowid 1:3')
-            sleep(duration)
+            sleep(5)
+            os.popen('tc qdisc add dev eth0 root handle 1: prio')
+            os.popen('tc qdisc add dev eth0 parent 1:3 handle 30: netem loss 100%')
+            os.popen('tc filter add dev eth0 protocol ip parent 1:0 prio 3 u32 match ip dst 129.13.88.0/24 flowid 1:3')
+            sleep(duration-5)
             self._kill_nodes()
-            subprocess.run('tc qdisc del eth0 root')
+            os.popen('tc qdisc del eth0 root')
 
             # Parse logs and return the parser.
             
