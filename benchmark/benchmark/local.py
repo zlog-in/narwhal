@@ -9,6 +9,7 @@ from threading import Thread
 from benchmark.commands import CommandMaker
 from benchmark.config import Key, LocalCommittee, NodeParameters, BenchParameters, ConfigError
 from benchmark.logs import LogParser, ParseError
+
 from benchmark.utils import Print, BenchError, PathMaker
 
 import os
@@ -57,15 +58,17 @@ class LocalBench:
         subprocess.run('tc qdisc del dev eth0 root', shell=True)
         print(f'Communication delay for server {node_i} ends after {delay_duration}s')
 
-    def _partion(self, duration, partion):
-        print("Normal network")
-        sleep(duration - partion)
-        print("Partion happened")
+    def _partition(self, targets, start, end):
+        print(f'{start}s normal network before partition')
+        sleep(start)
+        print(f'Partition into two networks happened for {end}s ')
+        
         os.popen('tc qdisc del dev eth0 root')
         os.popen('tc qdisc add dev eth0 root handle 1: prio')
         os.popen('tc qdisc add dev eth0 parent 1:3 handle 30: netem loss 100%')
-        os.popen('tc filter add dev eth0 protocol ip parent 1:0 prio 3 u32 match ip dst 129.13.88.0/24 flowid 1:3')
-        sleep(partion)
+        for tar in targets:
+            os.popen(f'tc filter add dev eth0 protocol ip parent 1:0 prio 3 u32 match ip dst {tar} flowid 1:3')
+        sleep(end)
         os.popen('tc qdisc del dev eth0 root')
 
         
@@ -81,7 +84,7 @@ class LocalBench:
             Print.info('Reading configuration')
 
             
-            nodes, rate, replicas, servers, local, faults, duration, delay = self.nodes[0], self.rate[0], self.replicas, self.servers, self.local, self.faults, self.duration, self.delay
+            nodes, rate, replicas, servers, local, faults, duration, delay, partition = self.nodes[0], self.rate[0], self.replicas, self.servers, self.local, self.faults, self.duration, self.delay, self.partition
 
             # Cleanup all files.
             cmd = f'{CommandMaker.clean_logs()} ; {CommandMaker.cleanup()}'
@@ -132,6 +135,8 @@ class LocalBench:
             elif node_i == 9:
                 node_ip = '129.13.88.180'
             
+            ips = ['129.13.88.182', '129.13.88.183', '129.13.88.184', '129.13.88.185', '129.13.88.186', '129.13.88.187', '129.13.88.188', '129.13.88.189', '129.13.88.190', '129.13.88.180']
+
             names = [x.name for x in keys]
             committee = LocalCommittee(names, self.BASE_PORT, self.workers, local, servers)
             committee.print(PathMaker.committee_file())
@@ -252,7 +257,17 @@ class LocalBench:
                     f.close()
                 if delay_config[f'{node_i}'][0] == 1:
                     Thread(target=self._delay, args=(node_i, delay_config[f'{node_i}'][1], delay_config[f'{node_i}'][2])).start()
+            elif partition == True and faults == 0 and delay == 0:
+                with open('partition.json') as f:
+                    partition_config = json.load(f)
+                    f.close()
+                    targets = []
+                    for node in range(servers):
+                        if partition_config[f'{node_i}'][0] != partition_config[f'{node}'][0]:
+                            targets.append(ips[node])
+                    Thread(target=self._partition, args=(targets, partition_config[f'{node_i}'][1], partition_config[f'{node_i}'][2])).start()
             
+
             sleep(duration)
             self._kill_nodes()
             

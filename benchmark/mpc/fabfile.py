@@ -59,6 +59,27 @@ def timeout(ctx):
 
     hosts.run('docker exec -t narwhal bash ben.sh')
 
+@task
+def partition(ctx):
+    hosts = ThreadingGroup('mpc-0','mpc-1','mpc-2','mpc-3','mpc-4','mpc-5','mpc-6','mpc-7','mpc-8','mpc-9')
+    partition_config()
+    hosts.run('docker stop hotstuff')
+    hosts.run('docker start narwhal')
+    
+    hosts.put(f'{os.pardir}/bench_parameters.json', remote  = '/home/zhan/narwhal/')
+    hosts.put(f'{os.pardir}/node_parameters.json', remote  = '/home/zhan/narwhal/')
+    hosts.put(f'{os.pardir}/delay.json', remote  = '/home/zhan/narwhal/')
+    hosts.put(f'{os.pardir}/faulty.json', remote  = '/home/zhan/narwhal/')
+    hosts.put(f'{os.pardir}/partition.json', remote  = '/home/zhan/narwhal/')
+
+    hosts.run('docker cp narwhal/bench_parameters.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker cp narwhal/node_parameters.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker cp narwhal/delay.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker cp narwhal/faulty.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker cp narwhal/partition.json narwhal:/home/narwhal/benchmark/')
+    
+
+    # hosts.run('docker exec -t narwhal bash ben.sh')
 
 @task
 def container(ctx):
@@ -253,6 +274,7 @@ def faulty_config():
         faulty_config[f'{idx}'][0] = 1
         faulty_config[f'{idx}'][1] = random.randrange(10,duration)
     
+    # fault_config.update('time_seed': f'{time_seed}'})
     with open('../faulty.json', 'w') as f:
         json.dump(faulty_config, f, indent=4)
         f.close()
@@ -291,6 +313,9 @@ def delay_config():
             delay_config[f'{idx}'][1] = random.randint(round(delay/2), round(delay*3/2))
             delay_config[f'{idx}'][2] = random.randint(1, duration-10)
 
+
+
+        # delay_config.update('time_seed': f'{time_seed}'})
         with open('../delay.json', 'w') as f:
             json.dump(delay_config, f, indent=4)
             f.close()
@@ -303,6 +328,47 @@ def delay_config():
         with open('../delay.json', 'w') as f:
             json.dump(delay_config, f, indent=4)
             f.close()
+
+def partition_config():
+    with open('../bench_parameters.json', 'r') as f:
+        bench_parameters = json.load(f)
+        f.close()
+    servers = bench_parameters['servers']
+    duration = bench_parameters['duration']
+    partition = bench_parameters['partition']
+
+    
+
+    if partition == False:
+        print("No network partitions!")
+    else:
+
+        time_seed = datetime.now()
+        random.seed(time_seed)
+        subnet = set()
+        start = random.randrange(5, duration-10)
+        end = random.randrange(10, duration - start)
+        with open('../partition.json', 'w') as f:
+            json.dump({f'{idx}': [0, start, end] for idx in range(servers)}, f, indent=4)
+            f.close()
+
+        
+
+        while len(subnet) != servers/2:
+            subnet.add(random.randrange(0, servers))
+
+        with open('../partition.json') as f:
+            partition_config = json.load(f)
+            f.close()
+            partition_config.update({'time_seed': f'{time_seed}'})
+        
+        for sub in subnet:
+            partition_config[f'{sub}'][0] = 1
+
+        with open('../partition.json', 'w')  as f:
+            json.dump(partition_config, f, indent= 4)
+        
+
 
 def write_time(seed):
     with open(f'../faulty.json') as f:

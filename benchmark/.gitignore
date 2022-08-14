@@ -11,6 +11,7 @@ faulty.json
 bench_parameters.json
 node_parameters.json
 delay.json
+partition.json
 results
 plots
 
