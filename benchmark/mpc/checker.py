@@ -47,7 +47,7 @@ for scenario in scenarios:
         # rates = [120000]
         # round = 2
 
-        replicas = [1,2,3,4,5]
+        replicas = [6, 7, 8, 9, 10]
         rates = [20000, 30000, 40000, 50000,60000, 70000, 80000, 90000, 100000]
         round = 20
         # time = 16.7 Hour

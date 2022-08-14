@@ -27,7 +27,7 @@ def faulty(ctx):
     hosts.put(f'{os.pardir}/delay.json', remote  = '/home/zhan/narwhal/')
     hosts.put(f'{os.pardir}/bench_parameters.json', remote  = '/home/zhan/narwhal/')
     hosts.put(f'{os.pardir}/node_parameters.json', remote  = '/home/zhan/narwhal/')
-    hosts.put(f'{os.pardir}/benchmark/local.py', remote  = '/home/zhan/narwhal/')
+    
     # hosts.run('docker stop narwhal')
     hosts.run('docker stop hotstuff')
     hosts.run('docker start narwhal')
@@ -36,7 +36,7 @@ def faulty(ctx):
     hosts.run('docker cp narwhal/delay.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/bench_parameters.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/node_parameters.json narwhal:/home/narwhal/benchmark/')
-    hosts.run('docker cp narwhal/local.py narwhal:/home/narwhal/benchmark/benchmark')
+    
     hosts.run('docker exec -t narwhal bash ben.sh')
 
 
@@ -71,15 +71,17 @@ def partition(ctx):
     hosts.put(f'{os.pardir}/delay.json', remote  = '/home/zhan/narwhal/')
     hosts.put(f'{os.pardir}/faulty.json', remote  = '/home/zhan/narwhal/')
     hosts.put(f'{os.pardir}/partition.json', remote  = '/home/zhan/narwhal/')
+    hosts.put(f'{os.pardir}/benchmark/local.py', remote  = '/home/zhan/narwhal/')
 
     hosts.run('docker cp narwhal/bench_parameters.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/node_parameters.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/delay.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/faulty.json narwhal:/home/narwhal/benchmark/')
     hosts.run('docker cp narwhal/partition.json narwhal:/home/narwhal/benchmark/')
+    hosts.run('docker cp narwhal/local.py narwhal:/home/narwhal/benchmark/benchmark')
     
 
-    # hosts.run('docker exec -t narwhal bash ben.sh')
+    hosts.run('docker exec -t narwhal bash ben.sh')
 
 @task
 def container(ctx):
@@ -121,15 +123,11 @@ def summary(ctx):
     consensus_end_list = []
     consensus_latency_list = []
     consensus_size_list = []
-    consensus_bps_list = []
-    consensus_tps_list = []
     end2end_bytes_list = []
     end2end_start_list = []
     end2end_end_list = []
     end2end_latency_list = []
     end2end_size_list = []
-    end2end_bps_list = []
-    end2end_tps_list = []
 
     for node_i in range(bench_parameters['servers']):
         with open(f'../logs/result-{node_i}.json') as f:
@@ -140,40 +138,28 @@ def summary(ctx):
             consensus_end_list.append(result['consensus_end'])
             consensus_latency_list.append(result['consensus_latency'])
             consensus_size_list.append(result['consensus_size'])
-            consensus_bps_list.append(result['consensus_bps'])
-            consensus_tps_list.append(result['consensus_tps'])
             end2end_bytes_list.append(result['end2end_bytes'])
             end2end_start_list.append(result['end2end_start'])
             end2end_end_list.append(result['end2end_end'])
             end2end_latency_list.append(result['end2end_latency'])
             end2end_size_list.append(result['end2end_size'])
-            end2end_bps_list.append(result['end2end_bps'])
-            end2end_tps_list.append(result['end2end_tps'])
-    
-    # print(consensus_bytes_list)
-    # print(end2end_bytes_list)
+        
+ 
 
     consensus_duration = max(consensus_end_list) - min(consensus_start_list)
+    print(consensus_duration)
     end2end_duration = max(end2end_end_list) - min(end2end_start_list)
-    # print(consensus_duration)
-    # print(end2end_duration)
+    print(end2end_duration)
     
-    # consensus_bps = (sum(consensus_bytes_list)) / consensus_duration
-    # end2end_bps = (sum(end2end_bytes_list)) / end2end_duration
-    # consensus_tps = consensus_bps / result['consensus_size']
-    # end2end_tps = end2end_bps / result['end2end_size']
-    # print(consensus_bps_list)
-    # print(consensus_tps_list)
-    consensus_bps = sum(consensus_bps_list)
-    consensus_tps = sum(consensus_tps_list)
-    end2end_bps = sum(end2end_bps_list)
-    end2end_tps = sum(end2end_tps_list)
-    # print(round(consensus_bps), round(consensus_tps))
-    # print(round(end2end_bps), round(end2end_tps))
-
+    
+    consensus_bps = (sum(consensus_bytes_list)) / consensus_duration
+    consensus_tps = consensus_bps / mean(consensus_size_list)
+   
+    end2end_bps = (sum(end2end_bytes_list)) / end2end_duration
+    end2end_tps = end2end_bps / mean(end2end_size_list)
+    
     consensus_latency = mean(consensus_latency_list)
     end2end_latency = mean(end2end_latency_list)
-    # print(round(consensus_latency), round(end2end_latency))
 
 
 
@@ -185,18 +171,18 @@ def summary(ctx):
     faults = bench_parameters['faults']
     delay = bench_parameters['delay']
     nodes = replicas * servers
-
+    partition = bench_parameters['partition']
     sync_retry = node_parameters['sync_retry_delay']
 
     results_db = sqlite3.connect('./results.db')
-    if faults == 0 and delay == 0:
+    if partition == False and faults == 0 and delay == 0:
         time_seed = datetime.now()
         insert_S1Narwhal_results = f'INSERT INTO S1Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end2end_latency)})'
         results_db.cursor().execute(insert_S1Narwhal_results)
         results_db.commit()
         results_db.close()
     
-    elif faults > 0 and delay ==0:
+    elif partition == False and faults > 0 and delay ==0:
         with open('../faulty.json') as f:
             faulty_config = json.load(f)
             f.close()
@@ -206,7 +192,7 @@ def summary(ctx):
         results_db.commit()
         results_db.close()
     
-    elif delay > 0 and faults == 0:
+    elif partition == False and delay > 0 and faults == 0:
         with open('../delay.json') as f:
             delay_config = json.load(f)
             f.close()
@@ -215,6 +201,17 @@ def summary(ctx):
         results_db.cursor().execute(insert_S3Narwhal_results)
         results_db.commit()
         results_db.close()
+    
+    elif partition == True and delay == 0 and faults == 0:
+         with open('../partition.json') as f:
+            partition_config = json.load(f)
+            f.close()
+         time_seed = partition_config['time_seed']
+         partition_duration = partition_config['0'][2]
+         insert_S4Narwhal_results = f'INSERT INTO S4Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {partition_duration}, {sync_retry}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end2end_latency)})'
+         results_db.cursor().execute(insert_S4Narwhal_results)
+         results_db.commit()
+         results_db.close()
 
 @task
 def getdb(ctx):

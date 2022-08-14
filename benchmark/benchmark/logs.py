@@ -179,16 +179,18 @@ class LogParser:
             return 0, 0, 0
         start, end = min(self.proposals.values()), max(self.commits.values())
         duration = end - start
-
-        
+        print(f'consensus duration: {duration}')
+        # duration = DURATION
         bytes = sum(self.sizes.values())
+        print(f'size of commits:{len(self.sizes)}')
+        
         bps = bytes / duration
         tps = bps / self.size[0]
         if PARSING == True:
             with open(f'./logs/result-{NODE_I}.json') as f:
                 result = json.load(f)
                 f.close()
-            result.update({'consensus_start': start, 'consensus_end': end, 'consensus_bytes': bytes, 'consensus_size': self.size[0], 'consensus_bps': bps, 'consensus_tps': tps})
+            result.update({'consensus_start': start, 'consensus_end': end, 'consensus_bytes': bytes, 'consensus_size': self.size[0]})
 
             with open(f'./logs/result-{NODE_I}.json', 'w') as f:
                 json.dump(result, f, indent=4)
@@ -218,7 +220,7 @@ class LogParser:
             return 0, 0, 0
         start, end = min(self.start), max(self.commits.values())
         duration = end - start
-
+        print(f'end2end duration: {duration}')
         # print(f'end2end start: {start}')
         # print(f'end2end end: {end}')
         # print(f'duration:{end - start}')
@@ -230,7 +232,7 @@ class LogParser:
             with open(f'./logs/result-{NODE_I}.json') as f:
                 result = json.load(f)
                 f.close()
-            result.update({'end2end_start': start, 'end2end_end': end, 'end2end_bytes': bytes, 'end2end_size': self.size[0], 'end2end_bps': bps, 'end2end_tps':tps})
+            result.update({'end2end_start': start, 'end2end_end': end, 'end2end_bytes': bytes, 'end2end_size': self.size[0]})
 
             with open(f'./logs/result-{NODE_I}.json', 'w') as f:
                 json.dump(result, f, indent=4)

@@ -48,6 +48,22 @@ creat_scenario3_narwhal = """CREATE TABLE IF NOT EXISTS S3Narwhal (
                          )
                          """
 results_db.cursor().execute(creat_scenario3_narwhal)
+
+creat_scenario4_narwhal = """CREATE TABLE IF NOT EXISTS S4Narwhal (
+                         Date text,
+                         Local integer,
+                         Replicas integer,
+                         Faults integer,
+                         Partition interger,
+                         Sync_Retry interger,
+                         Duration integer,
+                         Input_Rate integer,
+                         TPS integer,
+                         Consensus_Latency integer,
+                         E2E_Latency integer
+                         )
+                         """
+results_db.cursor().execute(creat_scenario4_narwhal)
 results_db.commit()
 results_db.close()
 

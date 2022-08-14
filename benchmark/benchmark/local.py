@@ -63,7 +63,7 @@ class LocalBench:
         sleep(start)
         print(f'Partition into two networks happened for {end}s ')
         
-        os.popen('tc qdisc del dev eth0 root')
+        # os.popen('tc qdisc del dev eth0 root')
         os.popen('tc qdisc add dev eth0 root handle 1: prio')
         os.popen('tc qdisc add dev eth0 parent 1:3 handle 30: netem loss 100%')
         for tar in targets:
