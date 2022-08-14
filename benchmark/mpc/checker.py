@@ -34,7 +34,7 @@ with open('../node_parameters.json', 'w') as f:
     f.close()
 
 
-scenarios = ["S1", "S2", "S3"]
+scenarios = ["S1"]
 
 for scenario in scenarios:
 
@@ -43,13 +43,13 @@ for scenario in scenarios:
         bench_parameters['delay'] = 0
         bench_parameters['faults'] = 0
 
-        replicas = [1, 2, 3, 4, 5]
-        rates = [20000, 30000, 40000, 50000,60000]
-        round = 20
+        # replicas = [1]
+        # rates = [120000]
+        # round = 2
 
-        # replicas = [1,2,3,4,5,6]
-        # rates = [20000, 30000, 40000, 50000,60000]
-        # rate = 20
+        replicas = [1,2,3,4,5]
+        rates = [20000, 30000, 40000, 50000,60000, 70000, 80000, 90000, 100000]
+        round = 20
         # time = 16.7 Hour
 
         for rep in replicas:
