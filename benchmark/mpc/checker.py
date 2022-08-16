@@ -6,15 +6,16 @@ import json
 bench_parameters = {
     "nodes": 4,
     "workers": 1,
-    "rate": 30000,
+    "rate": 120000,
     "tx_size": 512,
     "duration": 50,
     "delay": 0,
-    "replicas": 4,
+    "replicas": 1,
     "faults": 0,
     "servers": 10,
     "local": False,
-    "parsing": True
+    "parsing": False,
+    "partition": False
 }
 
 
@@ -47,9 +48,9 @@ for scenario in scenarios:
         # rates = [120000]
         # round = 2
 
-        replicas = [6, 7, 8, 9, 10]
-        rates = [20000, 30000, 40000, 50000,60000, 70000, 80000, 90000, 100000]
-        round = 20
+        replicas = [10]
+        rates = [100000]
+        round = 2
         # time = 16.7 Hour
 
         for rep in replicas:
@@ -61,7 +62,7 @@ for scenario in scenarios:
                         f.close()
                 for r in range(round):
                     os.system('fab faulty')
-                    os.system('fab getresult')
+                    os.system('fab parsing')
 
     elif scenario == "S2":
         bench_parameters['delay'] = 0
@@ -87,7 +88,7 @@ for scenario in scenarios:
                     
                     for r in range(round):
                         os.system('fab faulty')
-                        os.system('fab getresult')
+                        os.system('fab farsing')
 
     elif scenario == "S3":
         bench_parameters['faults'] = 0
@@ -116,5 +117,5 @@ for scenario in scenarios:
                         
                         for r in range(round):
                             os.system('fab timeout')
-                            os.system('fab getresult')
+                            os.system('fab farsing')
 

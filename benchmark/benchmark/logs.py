@@ -18,6 +18,7 @@ with open('index.txt') as f:
     f.close()
 
 
+
 with open('bench_parameters.json') as f:
     bench_parameters = json.load(f)
     f.close()
@@ -49,10 +50,11 @@ class LogParser:
         self.size, self.rate, self.start, misses, self.sent_samples \
             = zip(*results)
         
+        
         self.misses = sum(misses)
 
         
-        # print(f'self.sent_samples: {self.sent_samples}')
+  
 
         # Parse the primaries logs.
         try:
@@ -63,11 +65,11 @@ class LogParser:
         
         proposals, commits, self.configs, primary_ips = zip(*results)
 
-      
+     
+        
         self.proposals = self._merge_results([x.items() for x in proposals])
-  
         self.commits = self._merge_results([x.items() for x in commits])
-        # print(f'self.commits: {self.commits}')
+ 
         # Parse the workers logs.
         try:
             with Pool() as p:
@@ -75,21 +77,21 @@ class LogParser:
         except (ValueError, IndexError, AttributeError) as e:
             raise ParseError(f'Failed to parse workers\' logs: {e}')
         sizes, self.received_samples, workers_ips = zip(*results)
-        # print(f'sizes: {sizes}')
+
         self.sizes = {
             k: v for x in sizes for k, v in x.items() if k in self.commits
         }
+
+
         # Determine whether the primary and the workers are collocated.
         self.collocate = set(primary_ips) == set(workers_ips)
         
-        # print(f'self.received_sample: {self.received_samples}')
         # Check whether clients missed their target rate.
         if self.misses != 0:
             Print.warn(
                 f'Clients missed their target rate {self.misses:,} time(s)'
             )
         
-        # print("__init__ ends")
 
     def _merge_results(self, input):
         # Keep the earliest timestamp.
@@ -166,7 +168,6 @@ class LogParser:
         tmp = findall(r'Batch ([^ ]+) contains sample tx (\d+)', log)
         samples = {int(s): d for d, s in tmp}
         ip = search(r'booted on (\d+.\d+.\d+.\d+)', log).group(1)
-        
         return sizes, samples, ip  # received samples
 
     def _to_posix(self, string):
@@ -174,16 +175,15 @@ class LogParser:
         return datetime.timestamp(x)
 
     def _consensus_throughput(self):
-        # print("consensus tps")
         if not self.commits:
             return 0, 0, 0
         start, end = min(self.proposals.values()), max(self.commits.values())
+        
+        
         duration = end - start
-        print(f'consensus duration: {duration}')
+        print(f'consensu duration: {duration}')
         # duration = DURATION
         bytes = sum(self.sizes.values())
-        print(f'size of commits:{len(self.sizes)}')
-        
         bps = bytes / duration
         tps = bps / self.size[0]
         if PARSING == True:
@@ -199,11 +199,11 @@ class LogParser:
         return tps, bps, duration
 
     def _consensus_latency(self):
-        # print("_consensu_latency")
         if PARSING == False:
             latency = [c - self.proposals[d] for d, c in self.commits.items()]
         if PARSING == True:
-            latency = [c - self.proposals[d] for d, c in self.commits.items() if d in self.proposals]
+            latency = [c - self.proposals[d] for d, c in self.commits.items()]
+            
             with open(f'./logs/result-{NODE_I}.json') as f:
                 result = json.load(f)
                 f.close()
@@ -215,15 +215,12 @@ class LogParser:
         return mean(latency) if latency else 0
 
     def _end_to_end_throughput(self):
-        # print("end to end tps")
         if not self.commits:
             return 0, 0, 0
-        start, end = min(self.start), max(self.commits.values())
+        start, end = min(self.start), max(self.commits.values())  # start is different with consensus throughput
         duration = end - start
         print(f'end2end duration: {duration}')
-        # print(f'end2end start: {start}')
-        # print(f'end2end end: {end}')
-        # print(f'duration:{end - start}')
+
         # duration = DURATION
         bytes = sum(self.sizes.values())
         bps = bytes / duration
@@ -240,7 +237,7 @@ class LogParser:
         return tps, bps, duration
 
     def _end_to_end_latency(self):
-        # print("end to end latency")
+      
         
             
 
@@ -252,13 +249,12 @@ class LogParser:
                     start = sent[tx_id]
                     end = self.commits[batch_id]
                     latency += [end-start]
-                    # print(latency)
         
         if PARSING == True:
             with open(f'./logs/result-{NODE_I}.json') as f:
                 result = json.load(f)
                 f.close()
-            result.update({'end2end_latency': mean(latency)*1000})
+            result.update({'end_to_end_latency': mean(latency)*1000})
             
             with open(f'./logs/result-{NODE_I}.json', 'w') as f:
                 json.dump(result, f, indent=4)
@@ -277,11 +273,12 @@ class LogParser:
 
         consensus_latency = self._consensus_latency() * 1_000
         consensus_tps, consensus_bps, _ = self._consensus_throughput()
-        end_to_end_tps, end_to_end_bps, duration = self._end_to_end_throughput()
+        end_to_end_tps, end_to_end_bps, exe_duration = self._end_to_end_throughput()
         end_to_end_latency = self._end_to_end_latency() * 1_000
 
         with open('bench_parameters.json') as f:
             bench_parameters = json.load(f)
+            f.close()
         
         replicas = bench_parameters['replicas']
         servers = bench_parameters['servers']
@@ -290,27 +287,49 @@ class LogParser:
         rate = bench_parameters['rate'] 
         faults = bench_parameters['faults']  
         delay = bench_parameters['delay'] 
+        partition = bench_parameters['partition']
         nodes = replicas * servers
-        f.close()
 
-        with open('faulty.json') as f:
-            faulty_config = json.load(f)
-            f.close()
-        time_seed = faulty_config['time_seed']
+
         results_db = sqlite3.connect('./mpc/results.db')
 
-        if faults == 0 and delay == 0:
+        if partition == False and faults == 0 and delay == 0:
+            time_seed = datetime.now()
             insert_S1Narwhal_results = f'INSERT INTO S1Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
             results_db.cursor().execute(insert_S1Narwhal_results)
             results_db.commit()
             results_db.close()
-
-        elif faults > 0 and delay == 0:
+    
+        elif partition == False and faults > 0 and delay ==0:
+            with open('../faulty.json') as f:
+                faulty_config = json.load(f)
+                f.close()
+            time_seed = faulty_config['time_seed']
             insert_S2Narwhal_results = f'INSERT INTO S2Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
             results_db.cursor().execute(insert_S2Narwhal_results)
             results_db.commit()
             results_db.close()
-       
+        
+        elif partition == False and delay > 0 and faults == 0:
+            with open('../delay.json') as f:
+                delay_config = json.load(f)
+                f.close()
+            time_seed = delay_config['time_seed']
+            insert_S3Narwhal_results = f'INSERT INTO S3Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {delay}, {sync_retry}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
+            results_db.cursor().execute(insert_S3Narwhal_results)
+            results_db.commit()
+            results_db.close()
+        
+        elif partition == True and delay == 0 and faults == 0:
+            with open('../partition.json') as f:
+                partition_config = json.load(f)
+                f.close()
+            time_seed = partition_config['time_seed']
+            partition_duration = partition_config['0'][2]
+            insert_S4Narwhal_results = f'INSERT INTO S4Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {partition_duration}, {sync_retry}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
+            results_db.cursor().execute(insert_S4Narwhal_results)
+            results_db.commit()
+            results_db.close()
         # add results to sqlite
 
         return (
@@ -325,7 +344,7 @@ class LogParser:
             f' Collocate primary and workers: {self.collocate}\n'
             f' Input rate: {sum(self.rate):,} tx/s\n'
             f' Transaction size: {self.size[0]:,} B\n'
-            f' Execution time: {round(duration):,} s\n'
+            f' Execution time: {round(exe_duration):,} s\n'
             '\n'
             f' Header size: {header_size:,} B\n'
             f' Max header delay: {max_header_delay:,} ms\n'
@@ -343,12 +362,10 @@ class LogParser:
             f' End-to-end TPS: {round(end_to_end_tps):,} tx/s\n'
             f' End-to-end BPS: {round(end_to_end_bps):,} B/s\n'
             f' End-to-end latency: {round(end_to_end_latency):,} ms\n'
-            '-----------------------------------------\n'
-        )
+            '-----------------------------------------\n')
 
 
     def remote_result(self):
-        # print("reults printed")
         header_size = self.configs[0]['header_size']
         max_header_delay = self.configs[0]['max_header_delay']
         gc_depth = self.configs[0]['gc_depth']
@@ -362,9 +379,11 @@ class LogParser:
             json.dump({'header_size': int(header_size), 'max_header_delay':int(max_header_delay), 'gc_depth': int(gc_depth), 'sync_retry_delay': int(sync_retry_delay), 'sync_retry_nodes': int(sync_retry_nodes), 'batch_size': int(batch_size), 'max_batch_delay': int(max_batch_delay) }, f, indent=4)
             f.close()
 
-        self._consensus_latency()
+        
         self._consensus_throughput()
         self._end_to_end_throughput()
+        self._consensus_latency()
+        
         self._end_to_end_latency()
 
         print('Remote results are summarized into json file')

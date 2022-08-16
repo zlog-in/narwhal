@@ -269,7 +269,7 @@ def faulty_config():
     while len(faulty_servers) != 0:
         idx = faulty_servers.pop()
         faulty_config[f'{idx}'][0] = 1
-        faulty_config[f'{idx}'][1] = random.randrange(10,duration)
+        faulty_config[f'{idx}'][1] = random.randrange(5,duration-10)
     
     # fault_config.update('time_seed': f'{time_seed}'})
     with open('../faulty.json', 'w') as f:
@@ -364,8 +364,6 @@ def partition_config():
 
         with open('../partition.json', 'w')  as f:
             json.dump(partition_config, f, indent= 4)
-        
-
 
 def write_time(seed):
     with open(f'../faulty.json') as f:
