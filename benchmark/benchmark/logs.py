@@ -301,7 +301,7 @@ class LogParser:
             results_db.close()
     
         elif partition == False and faults > 0 and delay ==0:
-            with open('../faulty.json') as f:
+            with open('./faulty.json') as f:
                 faulty_config = json.load(f)
                 f.close()
             time_seed = faulty_config['time_seed']
@@ -311,7 +311,7 @@ class LogParser:
             results_db.close()
         
         elif partition == False and delay > 0 and faults == 0:
-            with open('../delay.json') as f:
+            with open('./delay.json') as f:
                 delay_config = json.load(f)
                 f.close()
             time_seed = delay_config['time_seed']
@@ -321,7 +321,7 @@ class LogParser:
             results_db.close()
         
         elif partition == True and delay == 0 and faults == 0:
-            with open('../partition.json') as f:
+            with open('./partition.json') as f:
                 partition_config = json.load(f)
                 f.close()
             time_seed = partition_config['time_seed']
