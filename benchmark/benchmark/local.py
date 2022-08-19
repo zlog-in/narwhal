@@ -268,7 +268,7 @@ class LocalBench:
                     Thread(target=self._partition, args=(targets, partition_config[f'{node_i}'][1], partition_config[f'{node_i}'][2])).start()
             
 
-            sleep(duration)
+            sleep(duration+2) # 2s more because clients sleep 2s before sending tx
             self._kill_nodes()
             
             # Parse logs and return the parser.

@@ -222,9 +222,9 @@ def getdb(ctx):
 def checker(ctx):
     host = Connection('checker')
     host.put('./checker.py', remote='narwhal/benchmark/mpc/')
-    host.put('../faulty.json', remote = 'narwhal/benchmark/')
-    host.put('../bench_parameters.json', remote = 'narwhal/benchmark/')
-    host.put('../node_parameters.json', remote = 'narwhal/benchmark/')
+    # host.put('../faulty.json', remote = 'narwhal/benchmark/')
+    # host.put('../bench_parameters.json', remote = 'narwhal/benchmark/')
+    # host.put('../node_parameters.json', remote = 'narwhal/benchmark/')
 
 @task
 def build(ctx):
