@@ -8,7 +8,7 @@ bench_parameters = {
     "workers": 1,
     "rate": 120000,
     "tx_size": 512,
-    "duration": 50,
+    "duration": 20,
     "delay": 0,
     "replicas": 1,
     "faults": 0,
@@ -26,8 +26,8 @@ node_parameters = {
     "gc_depth": 50,  
     "sync_retry_delay": 10000,  
     "sync_retry_nodes": 10,  
-    "batch_size": 500000,  
-    "max_batch_delay": 200  
+    "batch_size": 2048,  # in bytes
+    "max_batch_delay": 1000 # 1000  
 }
 
 with open('../node_parameters.json', 'w') as f:
@@ -49,8 +49,8 @@ for scenario in scenarios:
         # round = 2
 
         replicas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        rates = [20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000]
-        round = 20
+        rates = [4500, 5000, 5500, 60000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000, 11000, 12000, 13000, 14000, 15000]
+        round = 5
         # time = 16.7 Hour
 
         for rep in replicas:
@@ -66,8 +66,8 @@ for scenario in scenarios:
 
     elif scenario == "S2":
         bench_parameters['delay'] = 0
-        replicas = [8,9,10]
-        rates = [80000, 90000, 100000]
+        replicas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        rates = [20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000]
         round = 20
         # replicas = [1,2,3,4,5,6]
         # rates = [20000, 30000, 40000, 50000,60000]

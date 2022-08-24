@@ -181,8 +181,8 @@ class LogParser:
         
         
         duration = end - start
-        print(f'consensu duration: {duration}')
-        # duration = DURATION
+        print(f'consensus duration: {duration}')
+        duration = DURATION
         bytes = sum(self.sizes.values())
         bps = bytes / duration
         tps = bps / self.size[0]
@@ -221,7 +221,7 @@ class LogParser:
         duration = end - start
         print(f'end2end duration: {duration}')
 
-        # duration = DURATION
+        duration = DURATION
         bytes = sum(self.sizes.values())
         bps = bytes / duration
         tps = bps / self.size[0]
