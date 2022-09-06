@@ -21,6 +21,7 @@ class LocalBench:
     def __init__(self, bench_parameters_dict, node_parameters_dict):
         try:
             self.bench_parameters = BenchParameters(bench_parameters_dict)
+            # print(self.bench_parameters)
             self.node_parameters = NodeParameters(node_parameters_dict)
         except ConfigError as e:
             raise BenchError('Invalid nodes or bench parameters', e)

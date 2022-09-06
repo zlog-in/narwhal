@@ -278,6 +278,7 @@ class BenchParameters:
             self.servers = int(json['servers'])
             self.local = bool(json['local'])
             self.faults = int(json['faults'])
+            self.S2f = bool(json['S2f'])
             self.runs = int(json['runs']) if 'runs' in json else 1
             self.nodes = [self.replicas * self.servers]
             self.delay = int(json['delay'])
