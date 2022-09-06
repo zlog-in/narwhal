@@ -36,7 +36,7 @@ with open('../node_parameters.json', 'w') as f:
     f.close()
 
 
-scenarios = ["S1"]
+scenarios = ["S1", "S2", "S2f"]
 
 for scenario in scenarios:
 
@@ -52,9 +52,9 @@ for scenario in scenarios:
         # rates = [4000, 5000, 6000, 7000, 8000, 9000, 10000]
         # round = 20
 
-        replicas = [10]
+        replicas = [1]
         rates = [10000]
-        round = 2
+        round = 1
       
         for rep in replicas:
             bench_parameters['replicas'] = rep
@@ -70,7 +70,7 @@ for scenario in scenarios:
     elif scenario == "S2":
         bench_parameters['delay'] = 0
         bench_parameters['S2f'] = False
-        replicas = [10]
+        replicas = [1]
         rates = [10000]
         round = 1
         # replicas = [1,2,3,4,5,6]
@@ -97,7 +97,7 @@ for scenario in scenarios:
     elif scenario == "S2f":
         bench_parameters['delay'] = 0
         bench_parameters['S2f'] = True
-        replicas = [5]
+        replicas = [1]
         rates = [10000]
         round = 1
 
