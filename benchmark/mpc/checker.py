@@ -44,7 +44,7 @@ for scenario in scenarios:
     if scenario == "S1":
         bench_parameters['delay'] = 0
         bench_parameters['faults'] = 0
-
+        bench_parameters['S2f'] = False
    
 
 

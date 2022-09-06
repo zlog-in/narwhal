@@ -283,7 +283,8 @@ class LogParser:
         local = bench_parameters['local'] 
         duration = bench_parameters['duration']  
         rate = bench_parameters['rate'] 
-        faults = bench_parameters['faults']  
+        faults = bench_parameters['faults']
+        S2f = bench_parameters['S2f']  
         delay = bench_parameters['delay'] 
         partition = bench_parameters['partition']
         nodes = replicas * servers
@@ -291,20 +292,30 @@ class LogParser:
 
         results_db = sqlite3.connect('./mpc/results.db')
 
-        if partition == False and faults == 0 and delay == 0:
+        if partition == False and faults == 0 and S2f == False and delay == 0:
             time_seed = datetime.now()
             insert_S1Narwhal_results = f'INSERT INTO S1Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
             results_db.cursor().execute(insert_S1Narwhal_results)
             results_db.commit()
             results_db.close()
     
-        elif partition == False and faults > 0 and delay ==0:
+        elif partition == False and faults > 0 and S2f == False and delay ==0:
             with open('./faulty.json') as f:
                 faulty_config = json.load(f)
                 f.close()
             time_seed = faulty_config['time_seed']
             insert_S2Narwhal_results = f'INSERT INTO S2Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
             results_db.cursor().execute(insert_S2Narwhal_results)
+            results_db.commit()
+            results_db.close()
+
+        elif partition == False and faults >= 0 and S2f == True and delay ==0:
+            with open('./faulty.json') as f:
+                faulty_config = json.load(f)
+                f.close()
+            time_seed = faulty_config['time_seed']
+            insert_S2FNarwhal_results = f'INSERT INTO S2FNarwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
+            results_db.cursor().execute(insert_S2FNarwhal_results)
             results_db.commit()
             results_db.close()
         
