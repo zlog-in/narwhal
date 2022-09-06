@@ -15,18 +15,19 @@ bench_parameters = {
     "servers": 10,
     "local": False,
     "parsing": False,
-    "partition": False
+    "partition": False,
+    "S2f": True
 }
 
 
 
 node_parameters = {
-    "header_size": 1000,  
-    "max_header_delay": 200,  
+    "header_size": 100,    
+    "max_header_delay": 25,  
     "gc_depth": 50,  
-    "sync_retry_delay": 10000,  
+    "sync_retry_delay": 3000,  
     "sync_retry_nodes": 10,  
-    "batch_size": 2048,  # in bytes
+    "batch_size": 513,  # in bytes
     "max_batch_delay": 1000 # 1000  
 }
 
@@ -35,7 +36,7 @@ with open('../node_parameters.json', 'w') as f:
     f.close()
 
 
-scenarios = ["S1"]
+scenarios = ["S2f"]
 
 for scenario in scenarios:
 
@@ -44,15 +45,13 @@ for scenario in scenarios:
         bench_parameters['delay'] = 0
         bench_parameters['faults'] = 0
 
-        # replicas = [1]
-        # rates = [120000]
-        # round = 2
+   
+
 
         replicas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        rates = [4500, 5000, 5500, 60000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000, 11000, 12000, 13000, 14000, 15000]
-        round = 5
-        # time = 16.7 Hour
-
+        rates = [4000, 5000, 6000, 7000, 8000, 9000, 10000]
+        round = 20
+      
         for rep in replicas:
             bench_parameters['replicas'] = rep
             for rat in rates:
@@ -66,9 +65,10 @@ for scenario in scenarios:
 
     elif scenario == "S2":
         bench_parameters['delay'] = 0
-        replicas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        rates = [20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000]
-        round = 20
+        bench_parameters['S2f'] = False
+        replicas = [1, 5, 10]
+        rates = [10000]
+        round = 3
         # replicas = [1,2,3,4,5,6]
         # rates = [20000, 30000, 40000, 50000,60000]
         # rate = 20
@@ -90,9 +90,33 @@ for scenario in scenarios:
                         os.system('fab faulty')
                         os.system('fab parsing')
 
+    elif scenario == "S2f":
+        bench_parameters['delay'] = 0
+        bench_parameters['S2f'] = True
+        replicas = [1, 2]
+        rates = [10000]
+        round = 1
+
+        for rep in replicas:
+            bench_parameters['replicas'] = rep
+            faults = rep*3 + (rep-1)//3
+            
+            for f in range(faults+1):
+                bench_parameters['faults'] = f
+                for rat in rates:
+                        bench_parameters['rate'] = rat
+                        with open('../bench_parameters.json', 'w') as f:
+                                json.dump(bench_parameters, f, indent=4)
+                                f.close()
+                        
+                        for r in range(round):
+                            os.system('fab faulty')
+                            os.system('fab parsing')
+
+
     elif scenario == "S3":
         bench_parameters['faults'] = 0
-
+        
         replicas = [4,5,6]
         rates = [40000, 50000,60000]
         delays = [1000, 2000, 3000, 4000, 5000]

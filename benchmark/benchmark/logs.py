@@ -178,8 +178,6 @@ class LogParser:
         if not self.commits:
             return 0, 0, 0
         start, end = min(self.proposals.values()), max(self.commits.values())
-        
-        
         duration = end - start
         print(f'consensus duration: {duration}')
         duration = DURATION

@@ -1,6 +1,6 @@
 # Copyright(C) Facebook, Inc. and its affiliates.
 import subprocess
-from math import ceil
+from math import ceil, floor
 from os.path import basename, splitext
 from time import sleep
 import json
@@ -84,7 +84,7 @@ class LocalBench:
             Print.info('Reading configuration')
 
             
-            nodes, rate, replicas, servers, local, faults, duration, delay, partition = self.nodes[0], self.rate[0], self.replicas, self.servers, self.local, self.faults, self.duration, self.delay, self.partition
+            nodes, rate, replicas, servers, local, faults, S2f, duration, delay, partition = self.nodes[0], self.rate[0], self.replicas, self.servers, self.local, self.faults, self.S2f, self.duration, self.delay, self.partition
 
             # Cleanup all files.
             cmd = f'{CommandMaker.clean_logs()} ; {CommandMaker.cleanup()}'
@@ -145,7 +145,7 @@ class LocalBench:
             # Run the clients (they will wait for the nodes to be ready).
             # workers_addresses = committee.workers_addresses(self.faults)
             workers_addresses = committee.workers_addresses(0)
-            rate_share = ceil(rate / committee.workers())
+            rate_share = ceil(rate / committee.workers())   # ceil or floor
             if local == False:
                 for i, addresses in enumerate(workers_addresses):
                     for (id, address) in addresses:
@@ -235,10 +235,8 @@ class LocalBench:
 
 
             
-            
-            
             Print.info(f'Running benchmark ({duration} sec)...')
-            if faults > 0 and delay == 0:
+            if faults > 0 and delay == 0 and S2f == False:
                 with open('faulty.json','r') as f:
                     faulty_config = json.load(f)
                     f.close()
@@ -250,6 +248,22 @@ class LocalBench:
                         # print(f'flag: {flag}')
                         faulty_duration = faulty_config[f'{replica_i}'][1]
                         Thread(target=self._kill_faulty, args=(replica_i,faulty_duration)).start()
+            elif faults >= 0 and delay == 0 and S2f == True:
+                
+                if f > 0:
+                    with open('faulty.json','r') as f:
+                        faulty_config = json.load(f)
+                        f.close()
+                    for r in range(replicas):
+                        # print(f'r: {r}')
+                        replica_i = node_i + r * servers
+                        flag = faulty_config[f'{replica_i}'][0]
+                        if flag == 1:
+                            # print(f'flag: {flag}')
+                            faulty_duration = 5   # kill faulty nodes after 5s
+                            Thread(target=self._kill_faulty, args=(replica_i,faulty_duration)).start()
+                else:
+                    print("All replicas are correct")
 
             elif delay > 0 and faults == 0:
                 with open('delay.json') as f:
@@ -257,6 +271,7 @@ class LocalBench:
                     f.close()
                 if delay_config[f'{node_i}'][0] == 1:
                     Thread(target=self._delay, args=(node_i, delay_config[f'{node_i}'][1], delay_config[f'{node_i}'][2])).start()
+           
             elif partition == True and faults == 0 and delay == 0:
                 with open('partition.json') as f:
                     partition_config = json.load(f)
