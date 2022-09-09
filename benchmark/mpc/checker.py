@@ -8,7 +8,7 @@ bench_parameters = {
     "workers": 1,
     "rate": 120000,
     "tx_size": 512,
-    "duration": 20,
+    "duration": 50,
     "delay": 0,
     "replicas": 1,
     "faults": 0,
@@ -25,7 +25,7 @@ node_parameters = {
     "header_size": 100,    
     "max_header_delay": 25,  
     "gc_depth": 50,  
-    "sync_retry_delay": 3000,  
+    "sync_retry_delay": 1000,  
     "sync_retry_nodes": 10,  
     "batch_size": 513,  # in bytes
     "max_batch_delay": 1000 # 1000  
@@ -36,7 +36,7 @@ with open('../node_parameters.json', 'w') as f:
     f.close()
 
 
-scenarios = ["S1", "S2", "S2f"]
+scenarios = ["S2f"]
 
 for scenario in scenarios:
 
@@ -70,9 +70,9 @@ for scenario in scenarios:
     elif scenario == "S2":
         bench_parameters['delay'] = 0
         bench_parameters['S2f'] = False
-        replicas = [1]
+        replicas = [1, 5, 10]
         rates = [10000]
-        round = 1
+        round = 20
         # replicas = [1,2,3,4,5,6]
         # rates = [20000, 30000, 40000, 50000,60000]
         # rate = 20
@@ -97,15 +97,14 @@ for scenario in scenarios:
     elif scenario == "S2f":
         bench_parameters['delay'] = 0
         bench_parameters['S2f'] = True
-        replicas = [1]
+        replicas = [10]
         rates = [10000]
-        round = 1
+        round = 2
 
         for rep in replicas:
             bench_parameters['replicas'] = rep
             faults = rep*3 + (rep-1)//3
-            
-            for f in range(faults+1):
+            for f in range(33, faults+1):
                 bench_parameters['faults'] = f
                 for rat in rates:
                         bench_parameters['rate'] = rat
@@ -121,10 +120,10 @@ for scenario in scenarios:
     elif scenario == "S3":
         bench_parameters['faults'] = 0
         
-        replicas = [4,5,6]
-        rates = [40000, 50000,60000]
-        delays = [1000, 2000, 3000, 4000, 5000]
-        round = 20
+        replicas = [1]
+        rates = [10000]
+        delays = [10, 25, 50, 100, 250, 500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
+        round = 1
         # replicas = [1,2,3,4,5,6]
         # rates = [20000, 30000, 40000, 50000,60000]
         # rate = 20

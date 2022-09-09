@@ -324,7 +324,7 @@ class LogParser:
                 delay_config = json.load(f)
                 f.close()
             time_seed = delay_config['time_seed']
-            insert_S3Narwhal_results = f'INSERT INTO S3Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {delay}, {sync_retry}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
+            insert_S3Narwhal_results = f'INSERT INTO S3Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {delay}, {sync_retry_delay}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
             results_db.cursor().execute(insert_S3Narwhal_results)
             results_db.commit()
             results_db.close()

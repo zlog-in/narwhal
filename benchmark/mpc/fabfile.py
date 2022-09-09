@@ -307,8 +307,8 @@ def delay_config():
             idx = delay_servers.pop()
             delay_config[f'{idx}'][0] = 1
             # delay_config[f'{idx}'][1] = random.randint(100, delay) if delay > 100 else random.randint(100, 10000)
-            delay_config[f'{idx}'][1] = random.randint(round(delay/2), round(delay*3/2))
-            delay_config[f'{idx}'][2] = random.randint(1, duration-10)
+            delay_config[f'{idx}'][1] =  delay # random.randint(round(delay/2), round(delay*3/2))
+            delay_config[f'{idx}'][2] =  duration - 5 # random.randint(1, duration-10)
 
 
 

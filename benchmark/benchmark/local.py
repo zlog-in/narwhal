@@ -249,6 +249,7 @@ class LocalBench:
                         # print(f'flag: {flag}')
                         faulty_duration = faulty_config[f'{replica_i}'][1]
                         Thread(target=self._kill_faulty, args=(replica_i,faulty_duration)).start()
+            
             elif faults >= 0 and delay == 0 and S2f == True:
                 
                 if faults > 0:
@@ -261,7 +262,7 @@ class LocalBench:
                         flag = faulty_config[f'{replica_i}'][0]
                         if flag == 1:
                             # print(f'flag: {flag}')
-                            faulty_duration = 5   # kill faulty nodes after 5s
+                            faulty_duration = 10   # kill faulty nodes after 5s
                             Thread(target=self._kill_faulty, args=(replica_i,faulty_duration)).start()
                 else:
                     print("All replicas are correct")
