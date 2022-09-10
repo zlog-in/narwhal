@@ -36,7 +36,7 @@ with open('../node_parameters.json', 'w') as f:
     f.close()
 
 
-scenarios = ["S2f"]
+scenarios = ["S3"]
 
 for scenario in scenarios:
 
@@ -99,12 +99,12 @@ for scenario in scenarios:
         bench_parameters['S2f'] = True
         replicas = [10]
         rates = [10000]
-        round = 2
+        round = 20
 
         for rep in replicas:
             bench_parameters['replicas'] = rep
             faults = rep*3 + (rep-1)//3
-            for f in range(33, faults+1):
+            for f in range(24, 34):
                 bench_parameters['faults'] = f
                 for rat in rates:
                         bench_parameters['rate'] = rat
@@ -120,10 +120,11 @@ for scenario in scenarios:
     elif scenario == "S3":
         bench_parameters['faults'] = 0
         
-        replicas = [1]
+        replicas = [1, 5]
         rates = [10000]
-        delays = [10, 25, 50, 100, 250, 500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
-        round = 1
+        delays = [10, 25, 50]
+        # delays = [10, 25, 50, 100, 250, 500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
+        round = 3
         # replicas = [1,2,3,4,5,6]
         # rates = [20000, 30000, 40000, 50000,60000]
         # rate = 20
@@ -145,4 +146,6 @@ for scenario in scenarios:
                         for r in range(round):
                             os.system('fab timeout')
                             os.system('fab parsing')
+
+
 
