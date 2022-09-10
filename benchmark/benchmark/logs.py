@@ -286,20 +286,21 @@ class LogParser:
         faults = bench_parameters['faults']
         S2f = bench_parameters['S2f']  
         delay = bench_parameters['delay'] 
+        S3_delay = bench_parameters['S3_delay']
         partition = bench_parameters['partition']
         nodes = replicas * servers
 
 
         results_db = sqlite3.connect('./mpc/results.db')
 
-        if partition == False and faults == 0 and S2f == False and delay == 0:
+        if partition == False and faults == 0 and S2f == False and delay == 0 and S3_delay == False:
             time_seed = datetime.now()
             insert_S1Narwhal_results = f'INSERT INTO S1Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
             results_db.cursor().execute(insert_S1Narwhal_results)
             results_db.commit()
             results_db.close()
     
-        elif partition == False and faults > 0 and S2f == False and delay ==0:
+        elif partition == False and faults > 0 and S2f == False and delay ==0 and S3_delay == False:
             with open('./faulty.json') as f:
                 faulty_config = json.load(f)
                 f.close()
@@ -309,7 +310,7 @@ class LogParser:
             results_db.commit()
             results_db.close()
 
-        elif partition == False and faults >= 0 and S2f == True and delay ==0:
+        elif partition == False and faults >= 0 and S2f == True and delay ==0 and S3_delay == False:
             with open('./faulty.json') as f:
                 faulty_config = json.load(f)
                 f.close()
@@ -319,7 +320,7 @@ class LogParser:
             results_db.commit()
             results_db.close()
         
-        elif partition == False and delay > 0 and faults == 0:
+        elif partition == False and delay >=  0 and faults == 0 and S3_delay == True:
             with open('./delay.json') as f:
                 delay_config = json.load(f)
                 f.close()
