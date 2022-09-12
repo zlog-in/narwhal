@@ -51,14 +51,24 @@ class LocalBench:
         subprocess.run(['tmux', 'kill-session', '-t', f'client-{id}-0'])
         print(f'and replica {id} crashed after {duration}s exectution')
 
-    def _delay(self, node_i, delay, delay_duration):
-        sleep(10) # after 5s of consensus process
-        print(f'Communication delay for server {node_i} increases to {delay}ms for duration {delay_duration}s')
+    # def _delay(self, node_i, delay, delay_duration):
+    #     sleep(10) # after 5s of consensus process
+    #     print(f'Communication delay for server {node_i} increases to {delay}ms for duration {delay_duration}s')
+    #     # subprocess.run(f'tc qdisc add dev eth0 root netem delay {delay}ms {round(delay/10)}ms distribution normal', shell = True)# specification about delay distribution 
+    #     subprocess.run(f'tc qdisc add dev eth0 root netem delay {delay}ms', shell = True)# specification about delay distribution 
+    #     sleep(delay_duration)
+    #     subprocess.run('tc qdisc del dev eth0 root', shell=True)
+    #     print(f'Communication delay for server {node_i} ends after {delay_duration}s')
+
+
+    def _delay(self, node_i, delay, delay_start, duration):
+        sleep(delay_start) # after 5s of consensus process
+        print(f'Communication delay for server {node_i} increases to {delay}ms after duration {delay_start}s')
         # subprocess.run(f'tc qdisc add dev eth0 root netem delay {delay}ms {round(delay/10)}ms distribution normal', shell = True)# specification about delay distribution 
         subprocess.run(f'tc qdisc add dev eth0 root netem delay {delay}ms', shell = True)# specification about delay distribution 
-        sleep(delay_duration)
+        sleep(duration - delay_start)
         subprocess.run('tc qdisc del dev eth0 root', shell=True)
-        print(f'Communication delay for server {node_i} ends after {delay_duration}s')
+        print(f'Communication delay for server {node_i} ends')
 
     def _partition(self, targets, start, end):
         print(f'{start}s normal network before partition')
@@ -273,7 +283,7 @@ class LocalBench:
                     delay_config = json.load(f)
                     f.close()
                 if delay_config[f'{node_i}'][0] == 1:
-                    Thread(target=self._delay, args=(node_i, delay_config[f'{node_i}'][1], delay_config[f'{node_i}'][2])).start()
+                    Thread(target=self._delay, args=(node_i, delay_config[f'{node_i}'][1], delay_config[f'{node_i}'][2], duration)).start()
            
             elif partition == True and faults == 0 and delay == 0:
                 with open('partition.json') as f:

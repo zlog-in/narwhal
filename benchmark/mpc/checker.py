@@ -8,7 +8,7 @@ bench_parameters = {
     "workers": 1,
     "rate": 120000,
     "tx_size": 512,
-    "duration": 100,
+    "duration": 50,
     "delay": 0,
     "replicas": 1,
     "faults": 0,
@@ -124,10 +124,10 @@ for scenario in scenarios:
         bench_parameters['faults'] = 0
         bench_parameters['S2f'] = False
         bench_parameters['S3_delay'] = True
-        replicas = [1]
+        replicas = [10]
         rates = [10000]
         # delays = [10, 25, 50, 100, 250, 500, 1000, 2000, 3000, 4000, 5000]
-        delays = [50000, 60000, 70000]
+        delays = [10, 25, 50, 100, 250, 500, 1000, 2000, 3000, 4000, 5000]
         round = 1
 
         # replicas = [1,2,3,4,5,6]
