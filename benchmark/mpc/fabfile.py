@@ -299,7 +299,7 @@ def delay_config():
     with open('../delay.json', 'r') as f:
         delay_config = json.load(f)
         f.close()
-    while len(delay_servers) != 0 and delay > 0:
+    while len(delay_servers) != 0 and delay >= 0:
         idx = delay_servers.pop()
         delay_config[f'{idx}'][0] = 1
         # delay_config[f'{idx}'][1] = random.randint(100, delay) if delay > 100 else random.randint(100, 10000)

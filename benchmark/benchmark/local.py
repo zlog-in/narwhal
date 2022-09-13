@@ -283,6 +283,8 @@ class LocalBench:
                     delay_config = json.load(f)
                     f.close()
                 if delay_config[f'{node_i}'][0] == 1:
+                    if delay == 0:
+                        print("zero delay")
                     Thread(target=self._delay, args=(node_i, delay_config[f'{node_i}'][1], delay_config[f'{node_i}'][2], duration)).start()
            
             elif partition == True and faults == 0 and delay == 0:
