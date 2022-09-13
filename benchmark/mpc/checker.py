@@ -124,10 +124,10 @@ for scenario in scenarios:
         bench_parameters['faults'] = 0
         bench_parameters['S2f'] = False
         bench_parameters['S3_delay'] = True
-        replicas = [1,5,10]
+        replicas = [1, 3, 5]
         rates = [10000]
-        delays = [0, 10, 5120]
-        round = 2
+        delays = [0, 5]
+        round = 3
         # 0, 5, 10, 20, 40, 80, 160, 320, 640, 1280, 2560, 5120
         # replicas = [1,2,3,4,5,6]
         # rates = [20000, 30000, 40000, 50000,60000]

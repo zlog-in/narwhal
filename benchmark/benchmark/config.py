@@ -282,6 +282,7 @@ class BenchParameters:
             self.runs = int(json['runs']) if 'runs' in json else 1
             self.nodes = [self.replicas * self.servers]
             self.delay = int(json['delay'])
+            self.S3_delay = bool(json['S3_delay'])
             self.partition = bool(json['partition'])
         except KeyError as e:
             raise ConfigError(f'Malformed bench parameters: missing key {e}')

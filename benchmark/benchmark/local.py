@@ -96,7 +96,7 @@ class LocalBench:
             Print.info('Reading configuration')
 
             
-            nodes, rate, replicas, servers, local, faults, S2f, duration, delay, partition = self.nodes[0], self.rate[0], self.replicas, self.servers, self.local, self.faults, self.S2f, self.duration, self.delay, self.partition
+            nodes, rate, replicas, servers, local, faults, S2f, duration, delay, S3_delay, partition = self.nodes[0], self.rate[0], self.replicas, self.servers, self.local, self.faults, self.S2f, self.duration, self.delay, self.S3_delay, self.partition
 
             # Cleanup all files.
             cmd = f'{CommandMaker.clean_logs()} ; {CommandMaker.cleanup()}'
@@ -248,7 +248,7 @@ class LocalBench:
 
             
             Print.info(f'Running benchmark ({duration} sec)...')
-            if faults > 0 and delay == 0 and S2f == False:
+            if faults > 0 and delay == 0 and S2f == False and S3_delay == False:
                 with open('faulty.json','r') as f:
                     faulty_config = json.load(f)
                     f.close()
@@ -261,7 +261,7 @@ class LocalBench:
                         faulty_duration = faulty_config[f'{replica_i}'][1]
                         Thread(target=self._kill_faulty, args=(replica_i,faulty_duration)).start()
             
-            elif faults >= 0 and delay == 0 and S2f == True:
+            elif faults >= 0 and delay == 0 and S2f == True and S3_delay == False:
                 
                 if faults > 0:
                     with open('faulty.json','r') as f:
@@ -278,7 +278,7 @@ class LocalBench:
                 else:
                     print("All replicas are correct")
 
-            elif delay > 0 and faults == 0:
+            elif delay >= 0 and faults == 0 and S3_delay == True:
                 with open('delay.json') as f:
                     delay_config = json.load(f)
                     f.close()
