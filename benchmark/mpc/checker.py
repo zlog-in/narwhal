@@ -127,7 +127,7 @@ for scenario in scenarios:
         bench_parameters['S3_delay'] = True
         replicas = [1]
         rates = [10000]
-        delays = [0]
+        delays = [0, 5, 10, 20, 40]
         round = 1
         # 0, 5, 10, 20, 40, 80, 160, 320, 640, 1280, 2560, 5120
         # replicas = [1,2,3,4,5,6]
