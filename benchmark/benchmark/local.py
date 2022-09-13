@@ -63,7 +63,7 @@ class LocalBench:
 
     def _delay(self, node_i, delay, delay_start, duration):
         sleep(delay_start) # after 5s of consensus process
-        print(f'Communication delay for server {node_i} increases to {delay}ms after duration {delay_start}s')
+        print(f'Communication delay for server {node_i} increases to {delay}ms after {delay_start}s')
         # subprocess.run(f'tc qdisc add dev eth0 root netem delay {delay}ms {round(delay/10)}ms distribution normal', shell = True)# specification about delay distribution 
         subprocess.run(f'tc qdisc add dev eth0 root netem delay {delay}ms', shell = True)# specification about delay distribution 
         sleep(duration - delay_start)
