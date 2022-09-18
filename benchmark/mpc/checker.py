@@ -37,7 +37,7 @@ with open('../node_parameters.json', 'w') as f:
     f.close()
 
 
-scenarios = ["S3"]
+scenarios = ["S2f"]
 
 for scenario in scenarios:
 
@@ -56,7 +56,7 @@ for scenario in scenarios:
 
         replicas = [1]
         rates = [10000]
-        round = 1
+        round = 2
       
         for rep in replicas:
             bench_parameters['replicas'] = rep
@@ -73,9 +73,9 @@ for scenario in scenarios:
         bench_parameters['delay'] = 0
         bench_parameters['S2f'] = False
         bench_parameters['S3_delay'] = False
-        replicas = [1]
+        replicas = [3, 7]
         rates = [10000]
-        round = 1
+        round = 20
         # replicas = [1,2,3,4,5,6]
         # rates = [20000, 30000, 40000, 50000,60000]
         # rate = 20
@@ -101,14 +101,14 @@ for scenario in scenarios:
         bench_parameters['delay'] = 0
         bench_parameters['S2f'] = True
         bench_parameters['S3_delay'] = False
-        replicas = [1]
+        replicas = [10]
         rates = [10000]
         round = 1
 
         for rep in replicas:
             bench_parameters['replicas'] = rep
             faults = rep*3 + (rep-1)//3
-            for f in range(faults+1):
+            for f in range(faults - rep//2, faults+1):
                 bench_parameters['faults'] = f
                 for rat in rates:
                         bench_parameters['rate'] = rat
@@ -125,10 +125,10 @@ for scenario in scenarios:
         bench_parameters['faults'] = 0
         bench_parameters['S2f'] = False
         bench_parameters['S3_delay'] = True
-        replicas = [1]
+        replicas = [3, 7]
         rates = [10000]
-        delays = [0, 5, 10, 20, 40]
-        round = 1
+        delays = [0, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]
+        round = 15
         # 0, 5, 10, 20, 40, 80, 160, 320, 640, 1280, 2560, 5120
         # replicas = [1,2,3,4,5,6]
         # rates = [20000, 30000, 40000, 50000,60000]
