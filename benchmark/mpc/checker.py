@@ -101,14 +101,15 @@ for scenario in scenarios:
         bench_parameters['delay'] = 0
         bench_parameters['S2f'] = True
         bench_parameters['S3_delay'] = False
-        replicas = [10]
+        replicas = []
         rates = [10000]
         round = 1
 
         for rep in replicas:
             bench_parameters['replicas'] = rep
             faults = rep*3 + (rep-1)//3
-            for f in range(faults - rep//2, faults+1):
+            # for f in range(faults - rep//2, faults+1):
+            for f in range(faults + 1):
                 bench_parameters['faults'] = f
                 for rat in rates:
                         bench_parameters['rate'] = rat
