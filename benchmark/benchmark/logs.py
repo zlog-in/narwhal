@@ -24,6 +24,7 @@ with open('bench_parameters.json') as f:
     f.close()
 PARSING = bench_parameters['parsing']
 DURATION = bench_parameters['duration']
+DELAY = bench_parameters['S3_delay']
 
 class LogParser:
     def __init__(self, clients, primaries, workers, faults=0):
@@ -209,8 +210,8 @@ class LogParser:
             with open(f'./logs/result-{NODE_I}.json', 'w') as f:
                 json.dump(result, f, indent=4)
                 f.close()
-               
-        return mean(latency) if latency else 0
+
+        return mean(latency) if latency else DURATION
 
     def _end_to_end_throughput(self):
         if not self.commits:
@@ -235,9 +236,6 @@ class LogParser:
         return tps, bps, duration
 
     def _end_to_end_latency(self):
-      
-        
-            
 
         latency = []
         for sent, received in zip(self.sent_samples, self.received_samples):
@@ -258,7 +256,7 @@ class LogParser:
                 json.dump(result, f, indent=4)
                 f.close()
 
-        return mean(latency) if latency else 0
+        return mean(latency) if latency else DURATION/1000
 
     def result(self):
         header_size = self.configs[0]['header_size']
@@ -290,6 +288,8 @@ class LogParser:
         partition = bench_parameters['partition']
         nodes = replicas * servers
 
+        print(f'consensus latency: {consensus_latency}')
+        print(f'end2end latency: {end_to_end_latency}')
 
         results_db = sqlite3.connect('./mpc/results.db')
 
@@ -325,6 +325,13 @@ class LogParser:
                 delay_config = json.load(f)
                 f.close()
             time_seed = delay_config['time_seed']
+            
+            print(delay)
+            print(end_to_end_latency)
+            if consensus_latency < 2*delay:
+                consensus_latency = min(DURATION*1000, 2*delay+consensus_latency)
+            if end_to_end_latency < 2*delay:
+                end_to_end_latency = min(DURATION*1000, 2*delay+end_to_end_latency)
             insert_S3Narwhal_results = f'INSERT INTO S3Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {delay}, {sync_retry_delay}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
             results_db.cursor().execute(insert_S3Narwhal_results)
             results_db.commit()
