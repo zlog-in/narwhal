@@ -1,0 +1,3697 @@
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 3 increases to 256ms after 15s
+Communication delay for server 5 increases to 256ms after 15s
+Communication delay for server 2 increases to 256ms after 15s
+Communication delay for server 1 increases to 256ms after 15s
+Communication delay for server 7 increases to 256ms after 15s
+Communication delay for server 4 increases to 256ms after 15s
+Communication delay for server 9 increases to 256ms after 15s
+Communication delay for server 8 increases to 256ms after 15s
+Communication delay for server 0 increases to 256ms after 15s
+Communication delay for server 6 increases to 256ms after 15s
+Communication delay for server 3 ends
+Communication delay for server 5 ends
+Communication delay for server 2 ends
+Communication delay for server 1 ends
+Communication delay for server 7 ends
+Communication delay for server 9 ends
+Communication delay for server 4 ends
+Communication delay for server 8 ends
+Communication delay for server 0 ends
+Communication delay for server 6 ends
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+consensus duration: 49.930999994277954
+end2end duration: 49.9449999332428
+consensus latency: 5137.970728683598
+end2end latency: 6760.653061534368
+256
+6760.653061534368
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 10 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,000 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 3,735 tx/s
+ Consensus BPS: 1,912,566 B/s
+ Consensus latency: 5,138 ms
+
+ End-to-end TPS: 3,735 tx/s
+ End-to-end BPS: 1,912,566 B/s
+ End-to-end latency: 6,761 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 5 increases to 512ms after 15s
+Communication delay for server 1 increases to 512ms after 15s
+Communication delay for server 2 increases to 512ms after 15s
+Communication delay for server 3 increases to 512ms after 15s
+Communication delay for server 6 increases to 512ms after 15s
+Communication delay for server 8 increases to 512ms after 15s
+Communication delay for server 0 increases to 512ms after 15s
+Communication delay for server 4 increases to 512ms after 15s
+Communication delay for server 7 increases to 512ms after 15s
+Communication delay for server 9 increases to 512ms after 15s
+Communication delay for server 5 ends
+Communication delay for server 1 ends
+Communication delay for server 2 ends
+Communication delay for server 3 ends
+Communication delay for server 6 ends
+Communication delay for server 8 ends
+Communication delay for server 0 ends
+Communication delay for server 4 ends
+Communication delay for server 7 ends
+Communication delay for server 9 ends
+[1m[93mWARN[0m: Clients missed their target rate 1 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 1 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 1 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 1 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 9 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 1 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 1 time(s)
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 1 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 2 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 1 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 19 time(s)
+consensus duration: 49.89199995994568
+end2end duration: 49.895999908447266
+consensus latency: 6898.060257637981
+end2end latency: 13115.348446811655
+512
+13115.348446811655
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 10 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,000 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 2,918 tx/s
+ Consensus BPS: 1,493,914 B/s
+ Consensus latency: 6,898 ms
+
+ End-to-end TPS: 2,918 tx/s
+ End-to-end BPS: 1,493,914 B/s
+ End-to-end latency: 13,115 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 1 increases to 1024ms after 15s
+Communication delay for server 6 increases to 1024ms after 15s
+Communication delay for server 4 increases to 1024ms after 15s
+Communication delay for server 9 increases to 1024ms after 15s
+Communication delay for server 0 increases to 1024ms after 15s
+Communication delay for server 8 increases to 1024ms after 15s
+Communication delay for server 3 increases to 1024ms after 15s
+Communication delay for server 7 increases to 1024ms after 15s
+Communication delay for server 2 increases to 1024ms after 15s
+Communication delay for server 5 increases to 1024ms after 15s
+Communication delay for server 1 ends
+Communication delay for server 9 ends
+Communication delay for server 6 ends
+Communication delay for server 4 ends
+Communication delay for server 0 ends
+Communication delay for server 8 ends
+Communication delay for server 3 ends
+Communication delay for server 7 ends
+Communication delay for server 2 ends
+Communication delay for server 5 ends
+[1m[93mWARN[0m: Clients missed their target rate 3 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 4 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 3 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 5 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 4 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 4 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 4 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 3 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 4 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 4 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 38 time(s)
+consensus duration: 45.501999855041504
+end2end duration: 45.51600003242493
+consensus latency: 367.0556524314385
+end2end latency: 414.1792330764918
+1024
+414.1792330764918
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 10 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,000 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 829 tx/s
+ Consensus BPS: 424,325 B/s
+ Consensus latency: 2,415 ms
+
+ End-to-end TPS: 829 tx/s
+ End-to-end BPS: 424,325 B/s
+ End-to-end latency: 2,462 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 2 increases to 2048ms after 15s
+Communication delay for server 5 increases to 2048ms after 15s
+Communication delay for server 0 increases to 2048ms after 15s
+Communication delay for server 8 increases to 2048ms after 15s
+Communication delay for server 7 increases to 2048ms after 15s
+Communication delay for server 1 increases to 2048ms after 15s
+Communication delay for server 3 increases to 2048ms after 15s
+Communication delay for server 6 increases to 2048ms after 15s
+Communication delay for server 9 increases to 2048ms after 15s
+Communication delay for server 4 increases to 2048ms after 15s
+Communication delay for server 5 ends
+Communication delay for server 2 ends
+Communication delay for server 0 ends
+Communication delay for server 8 ends
+Communication delay for server 7 ends
+Communication delay for server 1 ends
+Communication delay for server 6 ends
+Communication delay for server 3 ends
+Communication delay for server 9 ends
+Communication delay for server 4 ends
+[1m[93mWARN[0m: Clients missed their target rate 6 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 6 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 11 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 6 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 6 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 6 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 6 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 6 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 6 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 6 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 65 time(s)
+consensus duration: 35.246999979019165
+end2end duration: 35.25099992752075
+consensus latency: 162.50085378312278
+end2end latency: 187.73716522183253
+2048
+187.73716522183253
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 10 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,000 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 818 tx/s
+ Consensus BPS: 418,796 B/s
+ Consensus latency: 4,259 ms
+
+ End-to-end TPS: 818 tx/s
+ End-to-end BPS: 418,796 B/s
+ End-to-end latency: 4,284 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+[92mStarting local benchmark[0m
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+Setting up testbed...
+Reading configuration
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 1 increases to 4096ms after 15s
+Communication delay for server 5 increases to 4096ms after 15s
+Communication delay for server 3 increases to 4096ms after 15s
+Communication delay for server 2 increases to 4096ms after 15s
+Communication delay for server 4 increases to 4096ms after 15s
+Communication delay for server 6 increases to 4096ms after 15s
+Communication delay for server 0 increases to 4096ms after 15s
+Communication delay for server 8 increases to 4096ms after 15s
+Communication delay for server 7 increases to 4096ms after 15s
+Communication delay for server 9 increases to 4096ms after 15s
+Communication delay for server 1 ends
+Communication delay for server 3 ends
+Communication delay for server 5 ends
+Communication delay for server 2 ends
+Communication delay for server 4 ends
+Communication delay for server 0 ends
+Communication delay for server 6 ends
+Communication delay for server 8 ends
+Communication delay for server 7 ends
+Communication delay for server 9 ends
+[1m[93mWARN[0m: Clients missed their target rate 7 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 8 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 8 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 9 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 8 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 9 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 9 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 8 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 7 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 8 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 81 time(s)
+consensus duration: 16.992000102996826
+end2end duration: 16.996999979019165
+consensus latency: 144.57082596384106
+end2end latency: 156.74707130528986
+4096
+156.74707130528986
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 10 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,000 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 822 tx/s
+ Consensus BPS: 420,741 B/s
+ Consensus latency: 8,337 ms
+
+ End-to-end TPS: 822 tx/s
+ End-to-end BPS: 420,741 B/s
+ End-to-end latency: 8,349 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 2 increases to 256ms after 15s
+Communication delay for server 3 increases to 256ms after 15s
+Communication delay for server 4 increases to 256ms after 15s
+Communication delay for server 5 increases to 256ms after 15s
+Communication delay for server 0 increases to 256ms after 15s
+Communication delay for server 1 increases to 256ms after 15s
+Communication delay for server 8 increases to 256ms after 15s
+Communication delay for server 7 increases to 256ms after 15s
+Communication delay for server 9 increases to 256ms after 15s
+Communication delay for server 6 increases to 256ms after 15s
+Communication delay for server 2 ends
+Communication delay for server 3 ends
+Communication delay for server 4 ends
+Communication delay for server 5 ends
+Communication delay for server 0 ends
+Communication delay for server 1 ends
+Communication delay for server 8 ends
+Communication delay for server 7 ends
+Communication delay for server 9 ends
+Communication delay for server 6 ends
+[1m[93mWARN[0m: Clients missed their target rate 6 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 3 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 8 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 5 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 3 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 5 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 4 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 6 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 5 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 4 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 49 time(s)
+consensus duration: 48.9060001373291
+end2end duration: 48.91600012779236
+consensus latency: 7897.460920360393
+end2end latency: 11087.43014314081
+256
+11087.43014314081
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 30 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,020 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 1,248 tx/s
+ Consensus BPS: 638,996 B/s
+ Consensus latency: 7,897 ms
+
+ End-to-end TPS: 1,248 tx/s
+ End-to-end BPS: 638,996 B/s
+ End-to-end latency: 11,087 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 2 increases to 512ms after 15s
+Communication delay for server 4 increases to 512ms after 15s
+Communication delay for server 3 increases to 512ms after 15s
+Communication delay for server 7 increases to 512ms after 15s
+Communication delay for server 9 increases to 512ms after 15s
+Communication delay for server 1 increases to 512ms after 15s
+Communication delay for server 8 increases to 512ms after 15s
+Communication delay for server 0 increases to 512ms after 15s
+Communication delay for server 6 increases to 512ms after 15s
+Communication delay for server 5 increases to 512ms after 15s
+Communication delay for server 2 ends
+Communication delay for server 4 ends
+Communication delay for server 3 ends
+Communication delay for server 7 ends
+Communication delay for server 9 ends
+Communication delay for server 1 ends
+Communication delay for server 8 ends
+Communication delay for server 0 ends
+Communication delay for server 6 ends
+Communication delay for server 5 ends
+[1m[93mWARN[0m: Clients missed their target rate 19 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 13 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 23 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 20 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 25 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 29 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 29 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 19 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 20 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 16 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 213 time(s)
+consensus duration: 42.15299987792969
+end2end duration: 42.15599989891052
+consensus latency: 356.13638157760965
+end2end latency: 374.10974296829437
+512
+374.10974296829437
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 30 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,020 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 737 tx/s
+ Consensus BPS: 377,385 B/s
+ Consensus latency: 1,380 ms
+
+ End-to-end TPS: 737 tx/s
+ End-to-end BPS: 377,385 B/s
+ End-to-end latency: 1,398 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 3 increases to 1024ms after 15s
+Communication delay for server 0 increases to 1024ms after 15s
+Communication delay for server 6 increases to 1024ms after 15s
+Communication delay for server 1 increases to 1024ms after 15s
+Communication delay for server 7 increases to 1024ms after 15s
+Communication delay for server 5 increases to 1024ms after 15s
+Communication delay for server 4 increases to 1024ms after 15s
+Communication delay for server 2 increases to 1024ms after 15s
+Communication delay for server 9 increases to 1024ms after 15s
+Communication delay for server 8 increases to 1024ms after 15s
+Communication delay for server 3 ends
+Communication delay for server 0 ends
+Communication delay for server 6 ends
+Communication delay for server 1 ends
+Communication delay for server 7 ends
+Communication delay for server 5 ends
+Communication delay for server 4 ends
+Communication delay for server 8 ends
+Communication delay for server 9 ends
+Communication delay for server 2 ends
+[1m[93mWARN[0m: Clients missed their target rate 12 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 26 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 14 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 18 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 22 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 23 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 30 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 16 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 20 time(s)
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 20 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 201 time(s)
+consensus duration: 49.76900005340576
+end2end duration: 49.776999950408936
+consensus latency: 695.6403879079455
+end2end latency: 710.9982360195432
+1024
+710.9982360195432
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 30 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,020 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 751 tx/s
+ Consensus BPS: 384,758 B/s
+ Consensus latency: 2,744 ms
+
+ End-to-end TPS: 751 tx/s
+ End-to-end BPS: 384,758 B/s
+ End-to-end latency: 2,759 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 3 increases to 2048ms after 15s
+Communication delay for server 7 increases to 2048ms after 15s
+Communication delay for server 0 increases to 2048ms after 15s
+Communication delay for server 2 increases to 2048ms after 15s
+Communication delay for server 5 increases to 2048ms after 15s
+Communication delay for server 4 increases to 2048ms after 15s
+Communication delay for server 1 increases to 2048ms after 15s
+Communication delay for server 9 increases to 2048ms after 15s
+Communication delay for server 8 increases to 2048ms after 15s
+Communication delay for server 6 increases to 2048ms after 15s
+Communication delay for server 3 ends
+Communication delay for server 7 ends
+Communication delay for server 0 ends
+Communication delay for server 2 ends
+Communication delay for server 5 ends
+Communication delay for server 4 ends
+Communication delay for server 1 ends
+Communication delay for server 9 ends
+Communication delay for server 8 ends
+Communication delay for server 6 ends
+[1m[93mWARN[0m: Clients missed their target rate 23 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 19 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 27 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 25 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 22 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 24 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 24 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 24 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 20 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 20 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 228 time(s)
+consensus duration: 27.262999773025513
+end2end duration: 27.26799988746643
+consensus latency: 231.2417560024187
+end2end latency: 246.53775815386325
+2048
+246.53775815386325
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 30 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,020 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 737 tx/s
+ Consensus BPS: 377,487 B/s
+ Consensus latency: 4,327 ms
+
+ End-to-end TPS: 737 tx/s
+ End-to-end BPS: 377,487 B/s
+ End-to-end latency: 4,343 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 0 increases to 4096ms after 15s
+Communication delay for server 8 increases to 4096ms after 15s
+Communication delay for server 6 increases to 4096ms after 15s
+Communication delay for server 1 increases to 4096ms after 15s
+Communication delay for server 2 increases to 4096ms after 15s
+Communication delay for server 3 increases to 4096ms after 15s
+Communication delay for server 4 increases to 4096ms after 15s
+Communication delay for server 9 increases to 4096ms after 15s
+Communication delay for server 5 increases to 4096ms after 15s
+Communication delay for server 7 increases to 4096ms after 15s
+Communication delay for server 0 ends
+Communication delay for server 8 ends
+Communication delay for server 3 ends
+Communication delay for server 6 ends
+Communication delay for server 1 ends
+Communication delay for server 2 ends
+Communication delay for server 4 ends
+Communication delay for server 9 ends
+Communication delay for server 5 ends
+Communication delay for server 7 ends
+[1m[93mWARN[0m: Clients missed their target rate 11 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 11 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 14 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 14 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 10 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 15 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 11 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 11 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 14 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 11 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 122 time(s)
+consensus duration: 12.815999984741211
+end2end duration: 12.82200002670288
+consensus latency: 182.45792410598548
+end2end latency: 197.84624739952864
+4096
+197.84624739952864
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 30 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,020 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 748 tx/s
+ Consensus BPS: 382,833 B/s
+ Consensus latency: 8,374 ms
+
+ End-to-end TPS: 748 tx/s
+ End-to-end BPS: 382,833 B/s
+ End-to-end latency: 8,390 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 5 increases to 256ms after 15s
+Communication delay for server 4 increases to 256ms after 15s
+Communication delay for server 7 increases to 256ms after 15s
+Communication delay for server 0 increases to 256ms after 15s
+Communication delay for server 3 increases to 256ms after 15s
+Communication delay for server 2 increases to 256ms after 15s
+Communication delay for server 6 increases to 256ms after 15s
+Communication delay for server 1 increases to 256ms after 15s
+Communication delay for server 9 increases to 256ms after 15s
+Communication delay for server 8 increases to 256ms after 15s
+Communication delay for server 5 ends
+Communication delay for server 4 ends
+Communication delay for server 0 ends
+Communication delay for server 7 ends
+Communication delay for server 3 ends
+Communication delay for server 6 ends
+Communication delay for server 2 ends
+Communication delay for server 1 ends
+Communication delay for server 9 ends
+Communication delay for server 8 ends
+[1m[93mWARN[0m: Clients missed their target rate 8 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 21 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 19 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 18 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 3 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 12 time(s)
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 3 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 23 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 9 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 4 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 120 time(s)
+consensus duration: 49.57699990272522
+end2end duration: 49.62400007247925
+consensus latency: 2542.1373602038548
+end2end latency: 2748.5559825687224
+256
+2748.5559825687224
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 50 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,000 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 814 tx/s
+ Consensus BPS: 416,870 B/s
+ Consensus latency: 2,542 ms
+
+ End-to-end TPS: 814 tx/s
+ End-to-end BPS: 416,870 B/s
+ End-to-end latency: 2,749 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 4 increases to 512ms after 15s
+Communication delay for server 8 increases to 512ms after 15s
+Communication delay for server 6 increases to 512ms after 15s
+Communication delay for server 7 increases to 512ms after 15s
+Communication delay for server 0 increases to 512ms after 15s
+Communication delay for server 2 increases to 512ms after 15s
+Communication delay for server 1 increases to 512ms after 15s
+Communication delay for server 3 increases to 512ms after 15s
+Communication delay for server 5 increases to 512ms after 15s
+Communication delay for server 9 increases to 512ms after 15s
+Communication delay for server 4 ends
+Communication delay for server 8 ends
+Communication delay for server 6 ends
+Communication delay for server 7 ends
+Communication delay for server 0 ends
+Communication delay for server 2 ends
+Communication delay for server 1 ends
+Communication delay for server 3 ends
+Communication delay for server 5 ends
+Communication delay for server 9 ends
+[1m[93mWARN[0m: Clients missed their target rate 39 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 35 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 26 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 21 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 38 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 47 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 31 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 31 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 45 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 19 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 332 time(s)
+consensus duration: 48.973000049591064
+end2end duration: 48.99799990653992
+consensus latency: 1329.148752260184
+end2end latency: 1386.397239567369
+512
+1386.397239567369
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 50 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,000 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 784 tx/s
+ Consensus BPS: 401,613 B/s
+ Consensus latency: 1,329 ms
+
+ End-to-end TPS: 784 tx/s
+ End-to-end BPS: 401,613 B/s
+ End-to-end latency: 1,386 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 2 increases to 1024ms after 15s
+Communication delay for server 3 increases to 1024ms after 15s
+Communication delay for server 4 increases to 1024ms after 15s
+Communication delay for server 6 increases to 1024ms after 15s
+Communication delay for server 8 increases to 1024ms after 15s
+Communication delay for server 1 increases to 1024ms after 15s
+Communication delay for server 0 increases to 1024ms after 15s
+Communication delay for server 7 increases to 1024ms after 15s
+Communication delay for server 9 increases to 1024ms after 15s
+Communication delay for server 5 increases to 1024ms after 15s
+Communication delay for server 2 ends
+Communication delay for server 3 ends
+Communication delay for server 4 ends
+Communication delay for server 8 ends
+Communication delay for server 6 ends
+Communication delay for server 1 ends
+Communication delay for server 0 ends
+Communication delay for server 7 ends
+Communication delay for server 9 ends
+Communication delay for server 5 ends
+[1m[93mWARN[0m: Clients missed their target rate 37 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 22 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 28 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 41 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 38 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 30 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 39 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 32 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 39 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 28 time(s)
+Parsing logs locally
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 334 time(s)
+consensus duration: 17.0
+end2end duration: 17.050999879837036
+consensus latency: 739.1162650080316
+end2end latency: 796.8946252867906
+1024
+796.8946252867906
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 50 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,000 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 790 tx/s
+ Consensus BPS: 404,275 B/s
+ Consensus latency: 2,787 ms
+
+ End-to-end TPS: 790 tx/s
+ End-to-end BPS: 404,275 B/s
+ End-to-end latency: 2,845 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 5 increases to 2048ms after 15s
+Communication delay for server 0 increases to 2048ms after 15s
+Communication delay for server 3 increases to 2048ms after 15s
+Communication delay for server 1 increases to 2048ms after 15s
+Communication delay for server 6 increases to 2048ms after 15s
+Communication delay for server 2 increases to 2048ms after 15s
+Communication delay for server 8 increases to 2048ms after 15s
+Communication delay for server 4 increases to 2048ms after 15s
+Communication delay for server 7 increases to 2048ms after 15s
+Communication delay for server 9 increases to 2048ms after 15s
+Communication delay for server 5 ends
+Communication delay for server 0 ends
+Communication delay for server 3 ends
+Communication delay for server 1 ends
+Communication delay for server 6 ends
+Communication delay for server 2 ends
+Communication delay for server 8 ends
+Communication delay for server 4 ends
+Communication delay for server 7 ends
+Communication delay for server 9 ends
+[1m[93mWARN[0m: Clients missed their target rate 15 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 22 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 22 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 23 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 22 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 18 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 23 time(s)
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 21 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 25 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 18 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 209 time(s)
+consensus duration: 12.80400013923645
+end2end duration: 12.835000038146973
+consensus latency: 696.5185626615564
+end2end latency: 755.8362267695968
+2048
+755.8362267695968
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 50 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,000 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 788 tx/s
+ Consensus BPS: 403,702 B/s
+ Consensus latency: 4,793 ms
+
+ End-to-end TPS: 788 tx/s
+ End-to-end BPS: 403,702 B/s
+ End-to-end latency: 4,852 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 6 increases to 4096ms after 15s
+Communication delay for server 4 increases to 4096ms after 15s
+Communication delay for server 1 increases to 4096ms after 15s
+Communication delay for server 0 increases to 4096ms after 15s
+Communication delay for server 7 increases to 4096ms after 15s
+Communication delay for server 2 increases to 4096ms after 15s
+Communication delay for server 9 increases to 4096ms after 15s
+Communication delay for server 5 increases to 4096ms after 15s
+Communication delay for server 3 increases to 4096ms after 15s
+Communication delay for server 8 increases to 4096ms after 15s
+Communication delay for server 6 ends
+Communication delay for server 4 ends
+Communication delay for server 1 ends
+Communication delay for server 0 ends
+Communication delay for server 2 ends
+Communication delay for server 7 ends
+Communication delay for server 5 ends
+Communication delay for server 9 ends
+Communication delay for server 3 ends
+Communication delay for server 8 ends
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 4 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 9 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 9 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 13 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 10 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 5 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 13 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 5 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 5 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 73 time(s)
+consensus duration: 49.043999910354614
+end2end duration: 49.085999965667725
+consensus latency: 1269.6573652998943
+end2end latency: 1330.4697801416048
+4096
+1330.4697801416048
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 50 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,000 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 797 tx/s
+ Consensus BPS: 407,880 B/s
+ Consensus latency: 9,462 ms
+
+ End-to-end TPS: 797 tx/s
+ End-to-end BPS: 407,880 B/s
+ End-to-end latency: 9,522 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 1 increases to 256ms after 15s
+Communication delay for server 0 increases to 256ms after 15s
+Communication delay for server 2 increases to 256ms after 15s
+Communication delay for server 4 increases to 256ms after 15s
+Communication delay for server 8 increases to 256ms after 15s
+Communication delay for server 3 increases to 256ms after 15s
+Communication delay for server 6 increases to 256ms after 15s
+Communication delay for server 5 increases to 256ms after 15s
+Communication delay for server 7 increases to 256ms after 15s
+Communication delay for server 9 increases to 256ms after 15s
+Communication delay for server 0 ends
+Communication delay for server 1 ends
+Communication delay for server 2 ends
+Communication delay for server 3 ends
+Communication delay for server 8 ends
+Communication delay for server 4 ends
+Communication delay for server 6 ends
+Communication delay for server 7 ends
+Communication delay for server 5 ends
+Communication delay for server 9 ends
+[1m[93mWARN[0m: Clients missed their target rate 2 time(s)
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 2 time(s)
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 4 time(s)
+consensus duration: 49.16499996185303
+end2end duration: 49.24199986457825
+consensus latency: 3685.179395076434
+end2end latency: 3836.497808683876
+256
+3836.497808683876
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 70 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,060 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 518 tx/s
+ Consensus BPS: 264,991 B/s
+ Consensus latency: 3,685 ms
+
+ End-to-end TPS: 518 tx/s
+ End-to-end BPS: 264,991 B/s
+ End-to-end latency: 3,836 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 6 increases to 512ms after 15s
+Communication delay for server 4 increases to 512ms after 15s
+Communication delay for server 9 increases to 512ms after 15s
+Communication delay for server 8 increases to 512ms after 15s
+Communication delay for server 2 increases to 512ms after 15s
+Communication delay for server 3 increases to 512ms after 15s
+Communication delay for server 7 increases to 512ms after 15s
+Communication delay for server 1 increases to 512ms after 15s
+Communication delay for server 0 increases to 512ms after 15s
+Communication delay for server 5 increases to 512ms after 15s
+Communication delay for server 6 ends
+Communication delay for server 9 ends
+Communication delay for server 4 ends
+Communication delay for server 8 ends
+Communication delay for server 2 ends
+Communication delay for server 7 ends
+Communication delay for server 1 ends
+Communication delay for server 0 ends
+Communication delay for server 3 ends
+Communication delay for server 5 ends
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 7 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 19 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 4 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 7 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 17 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 7 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 25 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 14 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 24 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 124 time(s)
+consensus duration: 13.335999965667725
+end2end duration: 13.463000059127808
+consensus latency: 1796.5883233669374
+end2end latency: 1949.3059136989687
+512
+1949.3059136989687
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 70 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,060 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 499 tx/s
+ Consensus BPS: 255,406 B/s
+ Consensus latency: 1,797 ms
+
+ End-to-end TPS: 499 tx/s
+ End-to-end BPS: 255,406 B/s
+ End-to-end latency: 1,949 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 2 increases to 1024ms after 15s
+Communication delay for server 0 increases to 1024ms after 15s
+Communication delay for server 3 increases to 1024ms after 15s
+Communication delay for server 5 increases to 1024ms after 15s
+Communication delay for server 7 increases to 1024ms after 15s
+Communication delay for server 1 increases to 1024ms after 15s
+Communication delay for server 4 increases to 1024ms after 15s
+Communication delay for server 9 increases to 1024ms after 15s
+Communication delay for server 6 increases to 1024ms after 15s
+Communication delay for server 8 increases to 1024ms after 15s
+Communication delay for server 2 ends
+Communication delay for server 0 ends
+Communication delay for server 3 ends
+Communication delay for server 1 ends
+Communication delay for server 5 ends
+Communication delay for server 4 ends
+Communication delay for server 7 ends
+Communication delay for server 9 ends
+Communication delay for server 8 ends
+Communication delay for server 6 ends
+[1m[93mWARN[0m: Clients missed their target rate 37 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 28 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 30 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 27 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 7 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 28 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 34 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 21 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 20 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 23 time(s)
+Parsing logs locally
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 255 time(s)
+consensus duration: 48.776000022888184
+end2end duration: 48.8510000705719
+consensus latency: 3718.5489372459624
+end2end latency: 3872.392862335361
+1024
+3872.392862335361
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 70 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,060 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 525 tx/s
+ Consensus BPS: 268,616 B/s
+ Consensus latency: 3,719 ms
+
+ End-to-end TPS: 525 tx/s
+ End-to-end BPS: 268,616 B/s
+ End-to-end latency: 3,872 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 1 increases to 2048ms after 15s
+Communication delay for server 6 increases to 2048ms after 15s
+Communication delay for server 3 increases to 2048ms after 15s
+Communication delay for server 5 increases to 2048ms after 15s
+Communication delay for server 4 increases to 2048ms after 15s
+Communication delay for server 0 increases to 2048ms after 15s
+Communication delay for server 2 increases to 2048ms after 15s
+Communication delay for server 7 increases to 2048ms after 15s
+Communication delay for server 8 increases to 2048ms after 15s
+Communication delay for server 9 increases to 2048ms after 15s
+Communication delay for server 1 ends
+Communication delay for server 3 ends
+Communication delay for server 4 ends
+Communication delay for server 6 ends
+Communication delay for server 0 ends
+Communication delay for server 5 ends
+Communication delay for server 2 ends
+Communication delay for server 7 ends
+Communication delay for server 8 ends
+Communication delay for server 9 ends
+[1m[93mWARN[0m: Clients missed their target rate 15 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 22 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 12 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 36 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 14 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 11 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 17 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 5 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 18 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 15 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 165 time(s)
+consensus duration: 21.091000080108643
+end2end duration: 21.18400001525879
+consensus latency: 2474.5765031044866
+end2end latency: 2628.023843599869
+2048
+2628.023843599869
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 70 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,060 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 505 tx/s
+ Consensus BPS: 258,621 B/s
+ Consensus latency: 6,571 ms
+
+ End-to-end TPS: 505 tx/s
+ End-to-end BPS: 258,621 B/s
+ End-to-end latency: 6,724 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 1 increases to 4096ms after 15s
+Communication delay for server 0 increases to 4096ms after 15s
+Communication delay for server 4 increases to 4096ms after 15s
+Communication delay for server 2 increases to 4096ms after 15s
+Communication delay for server 6 increases to 4096ms after 15s
+Communication delay for server 8 increases to 4096ms after 15s
+Communication delay for server 7 increases to 4096ms after 15s
+Communication delay for server 5 increases to 4096ms after 15s
+Communication delay for server 3 increases to 4096ms after 15s
+Communication delay for server 9 increases to 4096ms after 15s
+Communication delay for server 1 ends
+Communication delay for server 4 ends
+Communication delay for server 2 ends
+Communication delay for server 0 ends
+Communication delay for server 6 ends
+Communication delay for server 5 ends
+Communication delay for server 8 ends
+Communication delay for server 7 ends
+Communication delay for server 3 ends
+Communication delay for server 9 ends
+[1m[93mWARN[0m: Clients missed their target rate 9 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 3 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 4 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 1 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 5 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 85 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 1 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 2 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 11 time(s)
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 121 time(s)
+consensus duration: 12.23799991607666
+end2end duration: 12.394999980926514
+consensus latency: 1779.669382607327
+end2end latency: 1923.4923666079771
+4096
+1923.4923666079771
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 70 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,060 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 461 tx/s
+ Consensus BPS: 236,134 B/s
+ Consensus latency: 9,972 ms
+
+ End-to-end TPS: 461 tx/s
+ End-to-end BPS: 236,134 B/s
+ End-to-end latency: 10,115 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 6 increases to 256ms after 15s
+Communication delay for server 1 increases to 256ms after 15s
+Communication delay for server 3 increases to 256ms after 15s
+Communication delay for server 8 increases to 256ms after 15s
+Communication delay for server 4 increases to 256ms after 15s
+Communication delay for server 7 increases to 256ms after 15s
+Communication delay for server 0 increases to 256ms after 15s
+Communication delay for server 2 increases to 256ms after 15s
+Communication delay for server 5 increases to 256ms after 15s
+Communication delay for server 9 increases to 256ms after 15s
+Communication delay for server 3 ends
+Communication delay for server 1 ends
+Communication delay for server 6 ends
+Communication delay for server 4 ends
+Communication delay for server 0 ends
+Communication delay for server 8 ends
+Communication delay for server 5 ends
+Communication delay for server 2 ends
+Communication delay for server 7 ends
+Communication delay for server 9 ends
+[1m[93mWARN[0m: Clients missed their target rate 2 time(s)
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 5 time(s)
+Parsing logs locally
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 7 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 2 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 1 time(s)
+Parsing logs locally
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 17 time(s)
+consensus duration: 12.265999794006348
+end2end duration: 12.408999919891357
+consensus latency: 7136.108200103262
+end2end latency: 7743.935378387567
+256
+7743.935378387567
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 100 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,000 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 384 tx/s
+ Consensus BPS: 196,485 B/s
+ Consensus latency: 7,136 ms
+
+ End-to-end TPS: 384 tx/s
+ End-to-end BPS: 196,485 B/s
+ End-to-end latency: 7,744 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 3 increases to 512ms after 15s
+Communication delay for server 2 increases to 512ms after 15s
+Communication delay for server 5 increases to 512ms after 15s
+Communication delay for server 0 increases to 512ms after 15s
+Communication delay for server 8 increases to 512ms after 15s
+Communication delay for server 7 increases to 512ms after 15s
+Communication delay for server 4 increases to 512ms after 15s
+Communication delay for server 6 increases to 512ms after 15s
+Communication delay for server 1 increases to 512ms after 15s
+Communication delay for server 9 increases to 512ms after 15s
+Communication delay for server 3 ends
+Communication delay for server 0 ends
+Communication delay for server 8 ends
+Communication delay for server 2 ends
+Communication delay for server 5 ends
+Communication delay for server 4 ends
+Communication delay for server 7 ends
+Communication delay for server 1 ends
+Communication delay for server 9 ends
+Communication delay for server 6 ends
+[1m[93mWARN[0m: Clients missed their target rate 3 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 26 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 5 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 24 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 26 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 19 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 21 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 12 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 26 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 44 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 206 time(s)
+consensus duration: 9.477999925613403
+end2end duration: 9.625
+consensus latency: 6219.253543324689
+end2end latency: 6798.1650186932975
+512
+6798.1650186932975
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 100 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,000 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 226 tx/s
+ Consensus BPS: 115,917 B/s
+ Consensus latency: 6,219 ms
+
+ End-to-end TPS: 226 tx/s
+ End-to-end BPS: 115,917 B/s
+ End-to-end latency: 6,798 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 1 increases to 1024ms after 15s
+Communication delay for server 2 increases to 1024ms after 15s
+Communication delay for server 0 increases to 1024ms after 15s
+Communication delay for server 3 increases to 1024ms after 15s
+Communication delay for server 9 increases to 1024ms after 15s
+Communication delay for server 4 increases to 1024ms after 15s
+Communication delay for server 8 increases to 1024ms after 15s
+Communication delay for server 7 increases to 1024ms after 15s
+Communication delay for server 5 increases to 1024ms after 15s
+Communication delay for server 6 increases to 1024ms after 15s
+Communication delay for server 1 ends
+Communication delay for server 2 ends
+Communication delay for server 0 ends
+Communication delay for server 4 ends
+Communication delay for server 8 ends
+Communication delay for server 9 ends
+Communication delay for server 3 ends
+Communication delay for server 5 ends
+Communication delay for server 7 ends
+Communication delay for server 6 ends
+[1m[93mWARN[0m: Clients missed their target rate 46 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 35 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 35 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 53 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 39 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 28 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 42 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 52 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 27 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 43 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 409 time(s)
+consensus duration: 50.3529999256134
+end2end duration: 50.501999855041504
+consensus latency: 17081.23389216851
+end2end latency: 17675.184824782602
+1024
+17675.184824782602
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 100 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,000 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 503 tx/s
+ Consensus BPS: 257,516 B/s
+ Consensus latency: 17,081 ms
+
+ End-to-end TPS: 503 tx/s
+ End-to-end BPS: 257,516 B/s
+ End-to-end latency: 17,675 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 3 increases to 2048ms after 15s
+Communication delay for server 1 increases to 2048ms after 15s
+Communication delay for server 0 increases to 2048ms after 15s
+Communication delay for server 4 increases to 2048ms after 15s
+Communication delay for server 2 increases to 2048ms after 15s
+Communication delay for server 9 increases to 2048ms after 15s
+Communication delay for server 8 increases to 2048ms after 15s
+Communication delay for server 5 increases to 2048ms after 15s
+Communication delay for server 6 increases to 2048ms after 15s
+Communication delay for server 7 increases to 2048ms after 15s
+Communication delay for server 3 ends
+Communication delay for server 1 ends
+Communication delay for server 4 ends
+Communication delay for server 0 ends
+Communication delay for server 9 ends
+Communication delay for server 2 ends
+Communication delay for server 8 ends
+Communication delay for server 6 ends
+Communication delay for server 7 ends
+Communication delay for server 5 ends
+[1m[93mWARN[0m: Clients missed their target rate 25 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 22 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 16 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 19 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 11 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 29 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 18 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 17 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 7 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 19 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 183 time(s)
+consensus duration: 49.45700001716614
+end2end duration: 49.58699989318848
+consensus latency: 18105.79618267934
+end2end latency: 18717.575864334733
+2048
+18717.575864334733
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 100 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,000 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 550 tx/s
+ Consensus BPS: 281,559 B/s
+ Consensus latency: 18,106 ms
+
+ End-to-end TPS: 550 tx/s
+ End-to-end BPS: 281,559 B/s
+ End-to-end latency: 18,718 ms
+-----------------------------------------
+
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+hotstuff
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+narwhal
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+[92mStarting local benchmark[0m
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+Setting up testbed...
+Reading configuration
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+[92mStarting local benchmark[0m
+Setting up testbed...
+Reading configuration
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+For the first run, it takes a little longer to compile
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Running benchmark (50 sec)...
+Communication delay for server 0 increases to 4096ms after 15s
+Communication delay for server 5 increases to 4096ms after 15s
+Communication delay for server 4 increases to 4096ms after 15s
+Communication delay for server 8 increases to 4096ms after 15s
+Communication delay for server 9 increases to 4096ms after 15s
+Communication delay for server 6 increases to 4096ms after 15s
+Communication delay for server 3 increases to 4096ms after 15s
+Communication delay for server 2 increases to 4096ms after 15s
+Communication delay for server 7 increases to 4096ms after 15s
+Communication delay for server 1 increases to 4096ms after 15s
+Communication delay for server 0 ends
+Communication delay for server 8 ends
+Communication delay for server 5 ends
+Communication delay for server 4 ends
+Communication delay for server 9 ends
+Communication delay for server 6 ends
+Communication delay for server 2 ends
+Communication delay for server 3 ends
+Communication delay for server 1 ends
+Communication delay for server 7 ends
+[1m[93mWARN[0m: Clients missed their target rate 3 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 6 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 3 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 6 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 18 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 3 time(s)
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 14 time(s)
+[1m[93mWARN[0m: Clients missed their target rate 3 time(s)
+Parsing logs locally
+Parsing logs locally
+[1m[93mWARN[0m: Clients missed their target rate 63 time(s)
+Parsing logs locally
+/home/zhan/narwhal/benchmark/logs
+[1m[93mWARN[0m: Clients missed their target rate 119 time(s)
+consensus duration: 49.23300004005432
+end2end duration: 49.36500000953674
+consensus latency: 18624.91631940498
+end2end latency: 19244.23660351816
+4096
+19244.23660351816
+
+-----------------------------------------
+ SUMMARY:
+-----------------------------------------
+ + CONFIG:
+ Faults: 0 node(s)
+ Committee size: 100 node(s)
+ Worker(s) per node: 1 worker(s)
+ Collocate primary and workers: True
+ Input rate: 4,000 tx/s
+ Transaction size: 512 B
+ Execution time: 50 s
+
+ Header size: 100 B
+ Max header delay: 25 ms
+ GC depth: 50 round(s)
+ Sync retry delay: 5,000 ms
+ Sync retry nodes: 10 node(s)
+ batch size: 513 B
+ Max batch delay: 5,000 ms
+
+ + RESULTS:
+ Consensus TPS: 562 tx/s
+ Consensus BPS: 287,805 B/s
+ Consensus latency: 18,625 ms
+
+ End-to-end TPS: 562 tx/s
+ End-to-end BPS: 287,805 B/s
+ End-to-end latency: 19,244 ms
+-----------------------------------------
+

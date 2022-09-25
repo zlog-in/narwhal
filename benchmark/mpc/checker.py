@@ -133,11 +133,10 @@ for scenario in scenarios:
         # delays = [0, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]
         # round = 10
 
-        replicas = [1, 3, 5, 7, 10]
+        replicas = [1]
         rates = [4000]
-        delays = [0, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]
-        round = 1 
-        
+        delays = [64, 128, 256, 512, 1024, 2048, 4096]
+        round = 1
         bench_parameters['duration'] = 50
 
         for rep in replicas:
