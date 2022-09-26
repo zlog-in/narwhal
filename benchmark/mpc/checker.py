@@ -24,9 +24,9 @@ bench_parameters = {
 
 node_parameters = {
     "header_size": 100,    
-    "max_header_delay": 25,  
+    "max_header_delay": 500,  
     "gc_depth": 50,  
-    "sync_retry_delay": 5000,  
+    "sync_retry_delay":5000,  
     "sync_retry_nodes": 10,  
     "batch_size": 513,  # in bytes
     "max_batch_delay": 5000 # 1000  
@@ -135,7 +135,7 @@ for scenario in scenarios:
 
         replicas = [1]
         rates = [4000]
-        delays = [64, 128, 256, 512, 1024, 2048, 4096]
+        delays = [128, 256, 512, 1024, 2048, 4096]
         round = 1
         bench_parameters['duration'] = 50
 
