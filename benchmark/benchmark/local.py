@@ -250,7 +250,7 @@ class LocalBench:
                         self._background_run(cmd, log_file)
 
 
-            sleep(2)
+            
             Print.info(f'Running benchmark ({duration} sec)...')
             if faults > 0 and delay == 0 and S2f == False and S3_delay == False:
                 with open('faulty.json','r') as f:
@@ -277,7 +277,7 @@ class LocalBench:
                         flag = faulty_config[f'{replica_i}'][0]
                         if flag == 1:
                             # print(f'flag: {flag}')
-                            faulty_duration = 5   # kill faulty nodes after 5s
+                            faulty_duration = 0   # kill faulty nodes after 5s
                             Thread(target=self._kill_faulty, args=(replica_i,faulty_duration)).start()
                 else:
                     print("All replicas are correct")
@@ -300,7 +300,7 @@ class LocalBench:
                     Thread(target=self._partition, args=(targets, partition_config[f'{node_i}'][1], partition_config[f'{node_i}'][2])).start()
             
 
-            sleep(duration) # 2s more because clients sleep 2s before sending tx
+            sleep(duration+2) # 2s more because clients sleep 2s before sending tx
             self._kill_nodes()
             
             # Parse logs and return the parser.
