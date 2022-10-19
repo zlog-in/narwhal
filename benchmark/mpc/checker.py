@@ -28,7 +28,7 @@ node_parameters = {
     "gc_depth": 50,  
     "sync_retry_delay":10000,  
     "sync_retry_nodes": 10,  
-    "batch_size": 520,  # 513 in bytes 500000
+    "batch_size": 500000,  # 513 in bytes or 500000
     "max_batch_delay": 10000 # 1000  
 }
 
@@ -37,7 +37,7 @@ with open('../node_parameters.json', 'w') as f:
     f.close()
 
 
-scenarios = ["S2"]
+scenarios = ["S1"]
 
 for scenario in scenarios:
 
@@ -58,20 +58,29 @@ for scenario in scenarios:
         rates = [250, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3250, 3500, 3750, 4000, 4250, 4500, 4750, 5000]
         round = 10
        
-        durations = [150, 200]
+        durations = [50]
+
+        gc_depths = [50, 100, 150, 200, 250, 300]
         
-        for dur in durations:
-            bench_parameters['duration'] = dur
-            for rep in replicas:
-                bench_parameters['replicas'] = rep
-                for rat in rates:
-                    bench_parameters['rate'] = rat
-                    with open('../bench_parameters.json', 'w') as f:
-                            json.dump(bench_parameters, f, indent=4)
-                            f.close()
-                    for r in range(round):
-                        os.system('fab faulty')
-                        os.system('fab parsing')
+        for dep in gc_depths:
+            node_parameters['gc_depth'] = dep
+            with open('../node_parameters.json', 'w') as f:
+                json.dump(node_parameters, f, indent=4)
+                f.close()
+            for dur in durations:
+                bench_parameters['duration'] = dur
+                for rep in replicas:
+                    bench_parameters['replicas'] = rep
+                    for rat in rates:
+                        bench_parameters['rate'] = rat
+                        with open('../bench_parameters.json', 'w') as f:
+                                json.dump(bench_parameters, f, indent=4)
+                                f.close()
+
+                        
+                        for r in range(round):
+                            os.system('fab faulty')
+                            os.system('fab parsing')
 
     elif scenario == "S2":
         bench_parameters['delay'] = 0

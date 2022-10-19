@@ -26,6 +26,12 @@ PARSING = bench_parameters['parsing']
 DURATION = bench_parameters['duration']
 DELAY = bench_parameters['S3_delay']
 
+
+with open('node_parameters.json') as f:
+    node_parameters = json.load(f)
+    f.close()
+
+GC = node_parameters['gc_depth']
 class LogParser:
     def __init__(self, clients, primaries, workers, faults=0):
         inputs = [clients, primaries, workers]
@@ -304,7 +310,7 @@ class LogParser:
 
         if partition == False and faults == 0 and S2f == False and delay == 0 and S3_delay == False:
             time_seed = datetime.now()
-            insert_S1Narwhal_results = f'INSERT INTO S1Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)})'
+            insert_S1Narwhal_results = f'INSERT INTO S1Narwhal VALUES ("{time_seed}", {local}, {nodes}, {faults}, {duration}, {rate}, {round(consensus_tps)}, {round(consensus_latency)}, {round(end_to_end_latency)}, {GC})'
             results_db.cursor().execute(insert_S1Narwhal_results)
             results_db.commit()
             results_db.close()

@@ -78,8 +78,12 @@ creat_scenario4_narwhal = """CREATE TABLE IF NOT EXISTS S4Narwhal (
                          )
                          """
 results_db.cursor().execute(creat_scenario4_narwhal)
+
+
+
+
+results_db.cursor().execute("ALTER TABLE S1Narwhal ADD COLUMN gc_depth integer")
 results_db.commit()
 results_db.close()
-
 
 
