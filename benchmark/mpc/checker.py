@@ -37,7 +37,7 @@ with open('../node_parameters.json', 'w') as f:
     f.close()
 
 
-scenarios = ["S1"]
+scenarios = ["S2f"]
 
 for scenario in scenarios:
 
@@ -56,6 +56,7 @@ for scenario in scenarios:
 
         replicas = [1]
         rates = [250, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3250, 3500, 3750, 4000, 4250, 4500, 4750, 5000]
+        
         round = 10
        
         durations = [50]
